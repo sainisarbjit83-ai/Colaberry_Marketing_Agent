@@ -195,10 +195,10 @@ is true (`agentDomainStoryTemplates.ts:160`; Query C shows 0 capabilities with a
   database access. The matrix itself declines to assert the production `autonomy_level` of
   `DeptCampaignPerformanceAgent` (`marketing.json:7719`). What would close it: a read-only query
   of `ai_agents.autonomy_level` for the agents in `AGENT_GROUP_MAP.marketing`.
-- **Whether each legacy OpenClaw agent calls an LLM with tools or runs as a fixed workflow:
-  unknown.** I did not read their 15 source files for this story. This matters, because some of
-  what this document calls "fixed workflow" may already be tool-using. It is the right scope for
-  `02-agent-anatomy.md`.
+- ~~Whether each legacy OpenClaw agent calls an LLM with tools or runs as a fixed workflow.~~
+  **Resolved in [02-agent-anatomy.md](02-agent-anatomy.md):** they are fixed workflows with
+  model-generated text. No OpenClaw or Skool file passes `tools` or `tool_choice` to a model
+  (02, Query F).
 - **Domain boundary is unresolved.** 13 of the 40 legacy rows reached this domain by a name match
   rather than a product decision, and the ten `Intel_*` rows produce learner-facing content
   (`marketing.json:7718`). If they leave the domain, the 40 and the 64 both change. The
