@@ -3,6 +3,9 @@
 **Story:** `marketing.RESEARCH-3-ROLE-AND-DA-TRANSITION` · **Release:** Discovery and validation
 **Accountable human:** Sohail Syed (`sohail@colaberry.com`), Marketing Lead · **Author:** Sarbjit Kaur, with Claude Code · **Date:** 2026-10-23
 **Status:** draft for Sohail's review. Nothing here enables an agent, grants a tool, changes an autonomy level or sends anything.
+**Every "transition" in this document is a proposal.** No role change has been approved. Each one
+needs Sohail to validate the capability first (all 64 are `draft`, `marketing.json:7714`), and the
+budget or strategy parts also need Ali (launch brief `:69`).
 
 > **Source convention.** As in [01](01-system-classes.md) and [02](02-agent-anatomy.md): paths are
 > in the public platform repo
@@ -21,9 +24,9 @@
   says three researchers found this independently, and my search below confirms it for this repo.
   The matrix labels **one** capability as "DA responsibility in transition": recurring
   performance reporting. Its basis is an agent description, not a human role document.
-- **Proposed to transition to the agent:** content drafting in full. For four more
-  responsibilities, only the preparation work transitions: strategy proposals, the recurring
-  report, the publishing package and landing-page drafts.
+- **Proposed transition to the agent (not approved):** content drafting in full. For four more
+  responsibilities, only the preparation work is proposed to transition: strategy proposals, the
+  recurring report, the publishing package and landing-page drafts.
 - **Stays human:** every approval, every publish, every send, campaign go-live, metric-trust
   calls, relationship work with people, and managing the agent itself.
 - **The DA source material does not exist.** [What would have to be written](#what-would-have-to-be-written)
@@ -59,31 +62,38 @@ deliverables due from 2026-06-05 (launch brief `:18`). The matching job posting 
 part-time contract "through Jul 10, 2026", reporting to Ali (`TEAM_LEAD_JOB_DESCRIPTIONS.md:51-55`).
 Whether this is still Sohail's role in late October is **unknown**. That's open question 1.
 
+**Caveat on "as actually performed".** The brief asks for the role as it is actually performed.
+This document is built from written sources only. Nobody has observed the work or interviewed
+Sohail, so how the role is performed day to day is **unknown**. The interview in RESEARCH-4
+(`04-manager-interview.md`) is where these rows get confirmed or corrected.
+
 ---
 
-## Responsibilities: stays human, transitions to AI, or splits
+## Responsibilities: stays human, proposed transition to AI, or proposed split
 
-Each row is a responsibility named in a source. I added none.
+Each row is a responsibility named in a source. I added none. The brief's three categories (stays
+human / transitions to AI / splits) are kept, but any move to the agent is labelled *proposed*,
+because none is approved.
 
 | # | Responsibility | Source | Decision | Reason |
 |---|---|---|---|---|
-| 1 | Marketing strategy: channels, per-channel hypothesis and KPI, budget allocation | launch brief `:22`, `:69` | **splits** | Budget and strategy are decided by Ali and Sohail. The matrix allows an agent to *propose* initiatives from evidence, at most in a supervised pilot (`R6`), with "a human accepting each initiative" (`marketing.json:4897`) |
-| 2 | Drafting copy: landing pages, social, blog, newsletter, email | launch brief `:3`, `:26`, `:68` | **transitions to AI** | AI already drafts today ("CB drafts"). The matrix rates composition as fully reversible, because nothing it drafts can publish without a separate approval (`marketing.json:2657`) |
+| 1 | Marketing strategy: channels, per-channel hypothesis and KPI, budget allocation | launch brief `:22`, `:69` | **proposed split** | Budget and strategy are decided by Ali and Sohail. The matrix allows an agent to *propose* initiatives from evidence, at most in a supervised pilot (`R6`), with "a human accepting each initiative" (`marketing.json:4897`) |
+| 2 | Drafting copy: landing pages, social, blog, newsletter, email | launch brief `:3`, `:26`, `:68` | **proposed transition to AI** | AI already drafts today ("CB drafts"). The matrix rates composition as fully reversible, because nothing it drafts can publish without a separate approval (`marketing.json:2657`) |
 | 3 | Copy direction and approval (Marketing Approval) | `03-team-roster.md:30`; launch brief `:59` | **stays human** | "An agent that could approve its own content would dissolve every other control" (`marketing.json:2899`) |
-| 4 | Social publishing | launch brief `:41` | **splits** | "No auto-posts to LinkedIn. Every social media post is human-approved before publish." The platform enforces a human yes for every public post (`agentAutonomy.ts:123`) |
-| 5 | Landing pages: outline and direction (Tejesh builds) | launch brief `:23` | **splits** | Drafting and preview can be automated. Publishing is "a published claim about the business", and the generator has "a recorded history of inventing copy nobody wrote" (`marketing.json:3725`) |
+| 4 | Social publishing | launch brief `:41` | **proposed split** | "No auto-posts to LinkedIn. Every social media post is human-approved before publish." The platform enforces a human yes for every public post (`agentAutonomy.ts:123`) |
+| 5 | Landing pages: outline and direction (Tejesh builds) | launch brief `:23` | **proposed split** | Drafting and preview can be automated. Publishing is "a published claim about the business", and the generator has "a recorded history of inventing copy nobody wrote" (`marketing.json:3725`) |
 | 6 | Email campaigns, including the Mailchimp alumni push | launch brief `:3`, `:28-35` | **stays human** (the send) | Real email is denied to agents by default (`delivery/execution/executionPolicy.ts:33`). Drafting is covered by row 2. **Gap:** the matrix has no email-campaign capability (S7 in [Queries](#queries)) |
 | 7 | Campaign approval and go-live | launch brief `:59`; `marketing.json:4669` | **stays human** | "Approving a campaign authorises outbound contact with real people. An agent must never hold that decision" (`marketing.json:4669`) |
 | 8 | A/B testing | launch brief `:3` | **unknown** | The matrix covers generating variants (`marketing.json:2657`), not choosing a winner. No source says who decides or how. Open question 3 |
 | 9 | Spot-checking auto-generated Build Log posts before they publish | `TEAM_LEAD_JOB_DESCRIPTIONS.md:63` | **stays human** | The spot-check *is* the human gate on auto-generated content. Automating it would remove the gate |
-| 10 | Ali's LinkedIn lives, testimonial capture, sequencing viral video | launch brief `:38`, `:47-53` | **stays human** | Coordinating people and their calendars. No matrix capability covers it, and nothing in this project authorizes outbound contact |
-| 11 | **Recurring marketing performance report: the matrix's one DA item** (campaign ROI, open/reply rates, cost per lead, funnel velocity) | `marketing.json:6406`; `agentRegistrySeed.ts:1678-1686` | **splits** | "Composing the report is safe and is the clearest DA task to hand over. Delivering it sends real mail, which is a denied capability" (`marketing.json:6406`, `max_autonomy_rationale`) |
+| 10 | Ali's LinkedIn lives, testimonial capture, sequencing viral video | launch brief `:38`, `:47-53` | **stays human** | Coordinating people and their calendars. No matrix capability covers it (S8 in [Queries](#queries)), and nothing in this project authorizes outbound contact |
+| 11 | **Recurring marketing performance report: the matrix's one DA item** (campaign ROI, open/reply rates, cost per lead, funnel velocity) | `marketing.json:6406`; `agentRegistrySeed.ts:1678-1686` | **proposed split** | "Composing the report is safe and is the clearest DA task to hand over. Delivering it sends real mail, which is a denied capability" (`marketing.json:6406`, `max_autonomy_rationale`) |
 | 12 | Deciding which metrics can be trusted when one is in doubt | `marketing.json:6169` | **stays human** | Human-reserved in the matrix. **Source caveat:** this comes from the matrix, not Sohail's brief, so Sohail has to confirm it's his |
 | 13 | Managing the marketing AI employee: restrictions, goals, one-to-ones, approving what it learns | `marketing.json:6278` | **stays human** | A new duty created by having an agent at all. Human-reserved, with a ceiling of `R2`. Blocked today by a 403 until the agent's `reports_to` points at him (`marketing.json:7716`) |
 
-### Where each split falls
+### Where each proposed split falls
 
-| # | Agent's side | Human's side | Who holds the human side |
+| # | Agent's side (proposed) | Human's side | Who holds the human side |
 |---|---|---|---|
 | 1 | Turns department health signals into proposed initiatives, citing real data. Persists nothing until accepted | Accepting or rejecting each initiative; all budget allocation | Sohail accepts initiatives. Ali decides budget (launch brief `:69`) |
 | 4 | Prepares the post and its publishing package in the queue. Zero direct posts to a network | Approving the post, then publishing it | Sohail approves, with Ali for Marketing Approval (`03-team-roster.md:30`). The person who publishes is **unknown**: the launch brief says only "you sequence + distribute" (`:38`) |
@@ -94,12 +104,12 @@ Each row is a responsibility named in a source. I added none.
 
 ## What would show the agent is ready
 
-For every responsibility, or part of one, that is proposed to transition. The criteria are the
+For every responsibility, or part of one, with a proposed transition. The criteria are the
 matrix's own acceptance criteria for each autonomy level. On top of that, the platform refuses
 elapsed time, story completion, a good conversation or passing mocked tests as evidence of
 readiness (`agentDomain/promotionCriteria.ts:6-11`).
 
-| # | Transitioning part | Evidence of readiness | Source |
+| # | Part proposed to transition | Evidence of readiness | Source |
 |---|---|---|---|
 | 1 | Proposing strategic initiatives | `R2`: every signal cited resolves to real data, and no initiative or ticket is created. `R6`: no initiative exists that a human did not accept, and the open-ticket count doesn't grow without a named owner | `marketing.json:4897` |
 | 2 | Drafting copy | `R4`: an edit after approval always invalidates that approval. `R7`: no item reaches a published state without passing approval, and every edit is attributable | `marketing.json:2657` |
@@ -114,6 +124,13 @@ and none exist yet (see [02](02-agent-anatomy.md), element 9).
 ---
 
 ## Responsibilities that stay human, and why
+
+The table has 11 rows, but they are **not 11 more responsibilities**. They come from the same 13
+in the main table:
+- the 7 that stay human entirely (rows 3, 6, 7, 9, 10, 12, 13);
+- the human side of the 4 proposed splits (rows 1, 4, 5, 11).
+
+Row 2 (a proposed transition) and row 8 (unknown) are not here.
 
 | # | Responsibility | Why it's reserved |
 |---|---|---|
@@ -147,7 +164,7 @@ would fill the gap.
    campaign tables, Mailchimp or LinkedIn analytics) and which steps are done by hand.
 3. **The decisions each report feeds,** and who makes them.
 4. **Which figures are trusted** and which are known to be shaky.
-5. **For each duty, a proposed disposition** (stays human / transitions / splits) using the table
+5. **For each duty, a proposed disposition** (stays human / proposed transition / proposed split) using the table
    format above, which turns this outline straight into an update to this document.
 
 Until that document exists, row 11 is the only DA item, and it rests on the matrix's label, not on
@@ -220,4 +237,8 @@ node -e 'const C=require("./backend/src/services/agentDomain/capabilities/market
 
 # S7: email / Mailchimp / newsletter capabilities -> none
 node -e 'const C=require("./backend/src/services/agentDomain/capabilities/marketing.json").capabilities;console.log(C.filter(c=>/email|mailchimp|newsletter|sequence/i.test(c.capability_id+" "+c.name)).length)'
+
+# S8: capabilities covering lives / testimonials / video / podcasts -> 1, a false positive:
+#     intelligence_card_generation, where "video" is a content stream, not Ali's lives or testimonials
+node -e 'const C=require("./backend/src/services/agentDomain/capabilities/marketing.json").capabilities;console.log(C.filter(c=>/testimon|webinar|livestream|linkedin live|video|calendar coordinat|podcast/i.test(c.capability_id+" "+c.name+" "+c.business_outcome)).map(c=>c.capability_id))'
 ```
