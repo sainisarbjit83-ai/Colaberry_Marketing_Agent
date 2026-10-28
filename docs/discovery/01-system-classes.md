@@ -156,10 +156,11 @@ recommendation depends on those two numbers.
   `marketing.community_signal_detection` relies on `skoolSupervisorAgent` for stuck-task recovery
   (Query E). That is a recovery dependency, not shared work.
 - **The platform has no handoff mechanism to build on** (`agentDomainStoryTemplates.ts:160`). Today
-  the 15 OpenClaw outreach agents coordinate by writing to shared tables, and the write
-  permissions they rely on are not enforced for them: `validateAgentWrite` has one real caller,
-  and it covers no OpenClaw or Skool agent (`marketing.json:7722`). Adding more agents that pass
-  work between them would multiply an enforcement gap that already exists.
+  the 15 OpenClaw outreach agents coordinate by writing to shared tables, and no code checks those
+  writes against the platform's grant map. Its write check, `validateAgentWrite`, has one non-test
+  caller, the AI Workforce director runtime, which no OpenClaw or Skool agent uses
+  (`agentPermissionService.ts:125`; `workforceAgentRuntime.ts:160`; `marketing.json:7722`). Adding
+  more agents that pass work between them would multiply that gap.
 
 ---
 
@@ -176,9 +177,12 @@ when **all** of these are true. Each is a checkable condition, not "more maturit
 3. **It passed `R5` shadow evaluation against approved reference outcomes, then an `R6` pilot that
    was approved separately** (`autonomyLadder.ts:64-65`, `:202-205`). Check: the recorded pilot
    approval and its evaluation results.
-4. **Write permissions are actually enforced for the agent doing it.** Today they are
-   "declarative for every marketing agent except WorkforceMarketingDirector"
-   (`marketing.json:7722`). Check: `validateAgentWrite` is called on that agent's write path.
+4. **Write permissions are actually enforced for the agent doing it.** Today the grant map is
+   checked on one path only, for 9 of its 36 agents, and there only by tier and a caller-declared
+   table. Its `allowedOperations` lists are enforced nowhere (`agentPermissionService.ts:125-169`;
+   `workforceAgentRuntime.ts:160-168`). Check: the agent's real write path calls a check that
+   inspects the table actually written and the operation performed, and a test proves a
+   disallowed write is refused.
 5. **Sohail can manage the agent.** He has a login, but a request as him returned 403 "This agent
    is not in your reporting chain" until `reports_to` points at him (`marketing.json:7716`). Check:
    the marketing agent's `reports_to` resolves to Sohail.
@@ -239,6 +243,7 @@ All paths are in the platform repo at commit `b058da6`.
 | Sohail's 403 before `reports_to` | `marketing.json:7716` |
 | Unresolved domain boundary (13 rows) | `marketing.json:7718` |
 | Write-permission enforcement gap | `marketing.json:7722` |
+| Write check reads tier and table only; one non-test caller (9 of 36 grant-map agents) | `backend/src/services/agentPermissionService.ts:125-169`; `backend/src/services/workforce/workforceAgentRuntime.ts:160-168`; `backend/src/services/workforce/directorActions.ts:48`, `:96`, `:131` |
 
 ### Queries
 

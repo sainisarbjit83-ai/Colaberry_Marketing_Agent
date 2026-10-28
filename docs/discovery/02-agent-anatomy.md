@@ -22,7 +22,7 @@
 | 5 | Tools | none granted; 39 declared in the matrix | known, missing |
 | 6 | Procedures | nothing: no marketing employee charter or directive | **unknown** |
 | 7 | Coordination | does not exist in the platform | known, missing |
-| 8 | Safeguards | platform gates exist; write enforcement does not reach marketing agents | known, partial |
+| 8 | Safeguards | platform gates exist; the grant map is checked only on the workforce-director path, and partially | known, partial |
 | 9 | Verification | nothing: no reference outcomes to evaluate it against | **unknown** |
 
 **0 of 9 exist for this agent**, because the agent itself does not exist. The marketing domain has
@@ -158,8 +158,15 @@ here.
   (`agentPermissionService.ts:125`) has one real caller (`workforce/workforceAgentRuntime.ts:160`),
   and its tier table lists no OpenClaw or Skool agent (`marketing.json:7722`). The matrix raises
   this as `marketing.agent_write_authorization_enforcement`, state `absent` (`marketing.json:6752`).
+- **What the check actually does** (verified 2026-10-28): `validateAgentWrite` reads only the
+  agent's tier and, for two tiers, the table (`agentPermissionService.ts:146-168`). It never checks
+  `allowedOperations`, and the table it checks is the one the caller declares, not the one
+  actually written (`workforceAgentRuntime.ts:160-168`). Only 9 of the 36 agents in the grant map
+  reach it. See [05](05-three-proposed-tasks.md), "Write-permission enforcement".
 - **First honest version:** run the marketing agent only through `workforceAgentRuntime`, so that
-  every write passes `validateAgentWrite`. Never let it write the way OpenClaw does today.
+  its writes at least pass `validateAgentWrite`'s tier and declared-table check. Add a check on the
+  table actually written and the operation performed, since nothing checks those today. Never let
+  it write the way OpenClaw does today.
 
 ## 9. Verification: unknown
 
@@ -210,6 +217,7 @@ All paths are under `backend/src/` in the platform repo at `b058da6`, unless the
 | Default-denied capabilities | `services/delivery/execution/executionPolicy.ts:33` |
 | Runtime kill switch, safe mode, enabled checks | `services/workforce/workforceAgentRuntime.ts:69-71` |
 | `validateAgentWrite` and its one caller | `services/agentPermissionService.ts:125`; `services/workforce/workforceAgentRuntime.ts:160` |
+| The check reads tier and declared table only; it never reads operations | `services/agentPermissionService.ts:146-168`; `services/workforce/workforceAgentRuntime.ts:160-168` |
 | Promotion refuses time, completion, conversation, mocks | `services/agentDomain/promotionCriteria.ts:6-11`, `:24-28` |
 | No agent-to-agent handoff | `services/agentDomain/agentDomainStoryTemplates.ts:160` |
 | Super agent over the marketing group | `services/agentRegistrySeed.ts:2151-2159`, `:3360` |
