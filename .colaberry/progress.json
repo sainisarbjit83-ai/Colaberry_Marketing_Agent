@@ -1043,18 +1043,23 @@
       "criteria": [
         {
           "text": "The plan accounts for every inherited legacy record for this domain, each one kept, merged or retired with a reason.",
-          "passed": false
+          "passed": true,
+          "evidence": "legacy-migration-plan.md:41-101 (one row per legacy record, all 40 reconciled to marketing.json:7431-7712 by agent_name; each with disposition, category, successor and a quoted reason line); :101 totals 19 kept, 19 merged, 1 superseded (counted as kept), 1 retired; :109 special cases"
         },
         {
           "text": "The migration is described as replayable: running it twice leaves the same end state, with no duplicated side effects.",
-          "passed": false
+          "passed": true,
+          "evidence": "legacy-migration-plan.md:180 (proposed replayable steps: keyed on agent_name, no deletions, explicit idempotent disable, keyed mapping, no outbound side effects, and a required zero-change second run; labelled as requirements, not implemented)"
         },
         {
           "text": "The plan states what happens to a record the migration cannot classify, rather than assuming none exist.",
-          "passed": false
+          "passed": true,
+          "evidence": "legacy-migration-plan.md:156 (proposed rule for an unclassifiable record: recorded unknown, left untouched, one question and person, counted separately); :127 states this domain has none today and treats 13 ownership-unconfirmed records as provisional"
         }
       ],
-      "files_touched": [],
+      "files_touched": [
+        "docs/migration/legacy-migration-plan.md"
+      ],
       "tests_added": [],
       "notes": null,
       "updated_at": null,
