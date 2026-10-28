@@ -123,15 +123,31 @@ be computed. For drafting: how often you approve a draft without edits.**
 
 ### E. What gets switched off immediately
 
-**Q7. What would the agent have to do for you to want it off at once? And who besides you should
-be able to switch it off?**
-- *Purpose:* define stop conditions. Switches already exist: an agent can be disabled, and a
-  global kill switch and safe mode block it before it acts
-  (`workforce/workforceAgentRuntime.ts:69-71`). The publishing worker also halts on the kill
-  switch "before any claim" (`agentRegistrySeed.ts:3101`).
-- *Expected decision:* a short list of triggers, and the people allowed to act on them.
-- *What we do with the answer:* each trigger becomes a "must NOT do" boundary in RESEARCH-5. Who
-  can flip the switch is recorded as his request. It changes no permission.
+**Q7. Marketing-agent stop conditions: what specific marketing behavior would make you want the
+agent switched off immediately? For example, content reaching "approved" without your decision, a
+report presenting an unverified financial figure as fact, or a funnel analysis mixing data across
+customers or tenants. What other behavior should trigger an immediate stop?**
+- *Purpose:* define stop conditions in this domain's terms. The three examples come from verified
+  findings:
+  - **Content approved without his decision:** the `/transition` route can do this today, and no
+    detector exists ([05](05-three-proposed-tasks.md), "Task 3 approval boundary").
+  - **An unverified financial figure:** Task 2 is barred from money figures until
+    `marketing.revenue_and_cost_metric_truthing` lands (`marketing.json:6406`, `blocked_by`).
+  - **Tenant mixing:** the funnel analysis's own header records that it once merged tenants and
+    now partitions its output by tenant
+    (`agents/departments/marketing/campaignPerformanceAgent.ts:15-20`). That's the header's
+    statement; the partitioning code and any test enforcing it weren't checked here.
+
+  Mechanisms to stop an agent already exist: an agent can be disabled, and a global kill switch
+  and safe mode block it before it acts (`workforce/workforceAgentRuntime.ts:69-71`). The
+  publishing worker also halts on the kill switch "before any claim"
+  (`agentRegistrySeed.ts:3101`). These are ways to *stop* an agent, not ways to *detect* a
+  condition.
+- *Expected decision:* a short list of stop conditions in his words.
+- *What we do with the answer:* record each stop condition, identify how it could be detected, and
+  distinguish controls already enforced in code from proposed controls that still need
+  implementation and testing. An unimplemented stop condition is not treated as an active
+  safeguard.
 
 ### F. Access item to raise
 
@@ -239,6 +255,8 @@ this repo.
 | Funnel analysis: read-only, verdict per campaign | `backend/src/services/agentRegistrySeed.ts:1937-1945` |
 | Publishing worker halts on the kill switch | `backend/src/services/agentRegistrySeed.ts:3101` |
 | Runtime: disabled agent, kill switch, safe mode | `backend/src/services/workforce/workforceAgentRuntime.ts:69-71` |
+| Funnel analysis header: tenant mixing fixed by partitioning | `backend/src/services/agents/departments/marketing/campaignPerformanceAgent.ts:15-20` |
+| Approved without a decision (`/transition`); money figures barred from Task 2 | [05-three-proposed-tasks.md](05-three-proposed-tasks.md), "Task 3 approval boundary"; `marketing.json:6406` |
 | Thresholds stay proposed until a named human accepts | `backend/src/services/agentDomain/promotionCriteria.ts:18-22` |
 | Human yes for every public post | `backend/src/services/agentAutonomy.ts:123` |
 | His scope; Monday drafts for a Tuesday–Friday refine | `docs/training-program-2026-q3/launch-briefs/13-sohail-marketing.md:3`, `:26`, `:28-35` |

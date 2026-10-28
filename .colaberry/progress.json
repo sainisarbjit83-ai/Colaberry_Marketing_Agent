@@ -1,0 +1,1241 @@
+{
+  "schema_version": 2,
+  "project": "marketing",
+  "totals": {
+    "stories_total": 71,
+    "stories_verified": 0,
+    "stories_submitted": 0,
+    "stories_in_progress": 0,
+    "stories_not_started": 71,
+    "criteria_total": 87,
+    "criteria_passed": 0,
+    "points_awarded": 0
+  },
+  "stories": [
+    {
+      "id": "marketing.CAP.agent_write_authorization_enforcement",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "The enumeration is complete against a source sweep; an agent with no declared tier is named, not defaulted silently.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.ai_news_ingestion_and_card_publication",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every card cites its library item and source feed; no generation occurs.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.authority_content_drafting",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Claims cite openclaw_signals and openclaw_authority_content rows; no generation occurs.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.banned_copy_compliance_scanning",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every occurrence is classified; none is reported without its role.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.brand_and_competitor_mention_monitoring",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "The brand and competitor lists are written down and the response policy names a human for every negative-mention case.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.brand_attribution_of_campaigns",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Unresolved campaigns are listed individually; none is guessed into a brand.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.brand_governance_enforcement",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Answer names the rulesVersion; a brand with no rows is reported ungoverned, never compliant.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.brand_network_connection_administration",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Requirements match the recorded runbook; no flow is initiated and no credential is read.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.brand_registry_and_readiness",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every gap named maps to a real missing account or an absent governance row; a brand with no rules is reported ungoverned, never compliant.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.brand_social_publishing",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every provider still in handoff is named as such; no job is claimed during the answer.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.browser_session_reliability",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Health verdicts reproduce from openclaw_sessions; no restart is attempted.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.campaign_and_channel_metric_reporting",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every figure cites its registry key; any unavailable metric is reported as such with its reason.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.campaign_approval_and_golive",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "The bypass population is reported explicitly by comparing status against approval_status.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.campaign_funnel_performance_analysis",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Verdict reproduces from the stored report; the failure rate and its denominator are both stated.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.channel_account_connection_and_credential_cust",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "No credential value appears in any output or log; health verdicts match the stored expiry.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.community_direct_message_response",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Counts reconcile to skool_engagements; no navigation and no send in the trace.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.community_signal_detection",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every claim resolves to a skool_signals row; no browser is launched.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.content_approval_workflow",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Queue contents reconcile to content_approval_requests; no decision is written.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.content_composition_and_variant_generation",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every provider in the target set gets a variant; revision increments on every recorded edit.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.content_history_import_from_loomly",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every category names its destination table or states explicitly that it is not imported.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.content_idea_proposal_queue",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Claims cite the signal and the pending proposals; no new proposal is written.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.content_platform_fitness_validation",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "The explanation names the limit and the actual value; re-running validation reproduces it exactly.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.content_repurposing_and_template_library",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Each template pattern names its channel, its cadence and its approver.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.conversation_followup_sequencing",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Stage and stall age reproduce from openclaw_conversations; no draft is written.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.engagement_monitoring_and_intent_scoring",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every answer cites an openclaw_engagement_events row; no fetch occurs.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.free_tier_learner_journey_scoring",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every component resolves to a stored snapshot; no recompute occurs during the answer.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.free_tier_next_best_action_decisioning",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every suppressed candidate names its reason; the chosen action reproduces from the stored row.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.handoff_package_manual_publication",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "The handoff list matches the live-connector configuration; no package is marked complete.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.intelligence_card_generation",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every card resolves to an intel_items row; unreviewable attribution claims are named as such.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.intelligence_card_prepublication_review",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "The quote and market-brief streams are named explicitly as attribution and figure risks.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.landing_page_generation_and_publication",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every section in the brief appears; a count of generated sentences not present in the brief is reported, not hidden.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.lifecycle_content_catalogue_projection",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every asset resolves to a published source card; approval columns are reported as unset, never as approved.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.linkedin_comment_watch_and_reply_drafting",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every commenter cited exists in openclaw_responses; no scrape runs.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.linkedin_relationship_action_suggestions",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every suggestion type is produced for its fixture; caps are asserted per type.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.manager_marketing_brief_subscription",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Unmeasurable sections are named; no delivery is attempted.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.marketing_agent_management_and_oversight",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every statement resolves to a stored record; a goal with no backing metric reports unmeasured, never a number.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.marketing_calendar_planning",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every item cited exists with that schedule; all times stated in Central and labelled as such.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.marketing_department_strategy_planning",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every signal cited resolves to real data; no initiative or ticket is created.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.marketing_overview_and_attention_triage",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Any metric the registry cannot compute is named as unavailable, never reported as zero.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.marketing_surface_problem_reporting",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every pattern claim cites the reports behind it; no mail is sent in the trace.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.metric_trust_escalation_decisions",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Each finding names the file, the constant or column at fault, and the rule it contradicts.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.multi_touch_attribution",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Coverage is always stated; an uncovered lead is reported as uncovered, never as direct.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_consent_and_channel_suppression",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "The verdict cites the opt-out row and its channel; no suppression state is written.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_conversion_attribution",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every hop in the chain resolves to a stored row; no stage is advanced.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_coverage_and_blind_spot_reporting",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Each surface has a written coverage definition and a named owner for its blind spot.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_daily_human_action_queue",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every item names the thread and the signal behind its priority; nothing is persisted.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_human_approval_gap_closure",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Each test fails before the fix and passes after; removing the fix makes the named test die.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_lead_capture_and_scoring",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every lead cited exists in leads with an opportunity score; nothing is written.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_learning_loop",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every claim reports its sample size; a thin sample is labelled as such, never rounded into a recommendation.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_post_verification",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Unverifiable platforms are reported as unknown, never as verified or as zero.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_quality_gate",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "The named rule reproduces the stored score when re-run; no new verdict is written.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_queue_supervision",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Figures reconcile to openclaw_tasks and skool_tasks; nothing is mutated.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_rate_and_circuit_control",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Counts reconcile to openclaw_responses.posted_at; no verdict is cached.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_reply_drafting",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every fixture produces a draft; the sign-off rule is asserted per platform strategy, both branches covered.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.outreach_reply_publication",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every post traces to a named human action; no scheduled run publishes anything.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.platform_app_review_and_representation",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Each claim is marked verified or unverified with its file reference; an unmet requirement is reported as a blocker.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.platform_change_surveillance",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Each answer cites a tech_update row and its date; no fetch is performed.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.publishing_calendar_operations_ownership",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every category states its destination or that it is deliberately not imported; nothing is reported as none that has not been looked at.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.publishing_failure_and_handoff_recovery",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Explanation cites the delivery events and the dead-letter reason; no job state changes.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.recurring_marketing_performance_reporting",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every figure cites its registry key and trust status; uncomputable figures are named, never zeroed.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.revenue_and_cost_metric_truthing",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every finding names the file and the constant or column; nothing is reported as fixed that is not.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.signal_triage_and_prioritisation",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Explanation reproduces the stored verdict exactly; no re-scoring occurs during the answer.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.social_signal_discovery",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every answer cites a stored openclaw_signals row id; zero outbound network calls in the trace.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.CAP.tracked_link_and_utm_governance",
+      "release": "r2",
+      "acceptance_total": 1,
+      "criteria": [
+        {
+          "text": "Every flagged source cites its traffic rows; no link is created.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.LEGACY-MIGRATION-PLAN",
+      "release": "r1",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "The plan accounts for every inherited legacy record for this domain, each one kept, merged or retired with a reason.",
+          "passed": false
+        },
+        {
+          "text": "The migration is described as replayable: running it twice leaves the same end state, with no duplicated side effects.",
+          "passed": false
+        },
+        {
+          "text": "The plan states what happens to a record the migration cannot classify, rather than assuming none exist.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.RESEARCH-1-SYSTEM-CLASSES",
+      "release": "r0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "The document compares all five system classes (chatbot, fixed workflow, tool-using agent, agentic system, multi-agent system) and names which one this domain needs.",
+          "passed": true,
+          "evidence": "01-system-classes.md:32-61 (one section per class: chatbot, fixed workflow, tool-using agent, agentic system, multi-agent system); :114 (recommendation: a tool-using agent inside fixed workflows)"
+        },
+        {
+          "text": "The choice cites this domain's own capability count and its human-reserved count, so the argument would change if those numbers changed.",
+          "passed": true,
+          "evidence": "01-system-classes.md:20 and :124 (64 capabilities, 28 human-reserved; \"the binding number is 28\"); :142-144 (\"If 28 were close to 0 and the 64 were validated, the argument would change\")"
+        },
+        {
+          "text": "The document states explicitly which class this domain does NOT need, and what would have to change to justify the next class up.",
+          "passed": true,
+          "evidence": "01-system-classes.md:148 (multi-agent system explicitly not needed) and :167 (five checkable conditions before the next class up, agentic, is justified)"
+        }
+      ],
+      "files_touched": [
+        "docs/discovery/01-system-classes.md"
+      ],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.RESEARCH-2-AGENT-ANATOMY",
+      "release": "r0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "All nine anatomy elements are addressed, with none left blank and none dismissed as not applicable without a stated reason.",
+          "passed": true,
+          "evidence": "02-agent-anatomy.md:43-171 (nine sections; each states what exists today, what is missing and a first honest version; no element marked not applicable)"
+        },
+        {
+          "text": "Each element names the concrete platform surface, tool or record it maps to, rather than describing the element in general terms.",
+          "passed": true,
+          "evidence": "02-agent-anatomy.md:43-171 (each element cites the platform surface it maps to, e.g. AiAgent.system_prompt, agentMemoryProposalService, tools_granted, workforceAgentRuntime, autonomyLadder R5); sources at :198"
+        },
+        {
+          "text": "Any element that cannot be filled is recorded as a gap with what is missing, rather than omitted.",
+          "passed": true,
+          "evidence": "02-agent-anatomy.md:14 (headline: 4 of 9 unknown) and each unknown section's \"Missing\" line naming what is absent"
+        }
+      ],
+      "files_touched": [
+        "docs/discovery/02-agent-anatomy.md"
+      ],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.RESEARCH-3-ROLE-AND-DA-TRANSITION",
+      "release": "r0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "The document names the accountable human for this domain and the specific responsibilities proposed to transition to the agent.",
+          "passed": true,
+          "evidence": "03-role-and-da-transition.md:4 (accountable human: Sohail Syed); :27 and the table at :72 (responsibilities proposed to transition, labelled as proposals)"
+        },
+        {
+          "text": "Each transitioning responsibility states what evidence would show the agent is ready to hold it.",
+          "passed": true,
+          "evidence": "03-role-and-da-transition.md:105 (readiness evidence for every part proposed to transition: rows 1, 2, 4, 5, 11)"
+        },
+        {
+          "text": "Responsibilities that must stay human are listed separately, each with the reason it is reserved.",
+          "passed": true,
+          "evidence": "03-role-and-da-transition.md:126 (separate stay-human table, each row with its reason)"
+        }
+      ],
+      "files_touched": [
+        "docs/discovery/03-role-and-da-transition.md"
+      ],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.RESEARCH-4-MANAGER-INTERVIEW",
+      "release": "r0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "The interview plan fits 30 minutes, and every question is specific to this domain rather than reusable for any agent.",
+          "passed": true,
+          "evidence": "04-manager-interview.md:34 (agenda summing to 30 minutes); eight questions at :57-154, each tied to this domain (Q7 reworded to marketing-specific stop conditions)"
+        },
+        {
+          "text": "A weekly check-in is proposed with a named day, a duration, and the three things it reviews.",
+          "passed": true,
+          "evidence": "04-manager-interview.md:171-182 (proposed check-in: Tuesday, 20 minutes, three review items)"
+        },
+        {
+          "text": "The plan states what to do with each answer, so a completed interview changes the build rather than only recording opinions.",
+          "passed": true,
+          "evidence": "04-manager-interview.md:57-154 (each question carries a \"What we do with the answer\" line)"
+        }
+      ],
+      "files_touched": [
+        "docs/discovery/04-manager-interview.md"
+      ],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "marketing.RESEARCH-5-THREE-PROPOSED-TASKS",
+      "release": "r0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Exactly three agent tasks are proposed, each with its boundary stated as what the agent must NOT do.",
+          "passed": true,
+          "evidence": "05-three-proposed-tasks.md:69, :122, :165 (exactly three tasks); \"Must NOT do\" boundaries at :84, :133, :177"
+        },
+        {
+          "text": "Each task names the evidence that proves it completed, and that evidence is something other than the task being marked done.",
+          "passed": true,
+          "evidence": "05-three-proposed-tasks.md:71, :124, :167 (completion evidence per task, written first); :73 excludes marked-done, elapsed time, good conversations and mocked tests"
+        },
+        {
+          "text": "Each task names the human who approves it wherever approval is required.",
+          "passed": true,
+          "evidence": "05-three-proposed-tasks.md:113, :156, :206 (approval gates naming Sohail Syed, with Ali for Marketing Approval)"
+        }
+      ],
+      "files_touched": [
+        "docs/discovery/05-three-proposed-tasks.md"
+      ],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    },
+    {
+      "id": "STORY-000",
+      "release": null,
+      "acceptance_total": 5,
+      "criteria": [
+        {
+          "text": "Given the Command Center, when it is opened, then every tab is reachable and every card drills down one level.",
+          "passed": false
+        },
+        {
+          "text": "Given sample mode, when any tab is shown, then the sample data is visibly labelled as sample.",
+          "passed": false
+        },
+        {
+          "text": "Given the Command Center, when any tab renders, then .colaberry/plan.json and .colaberry/progress.json are both committed in this repo and every tab reads its content from them at runtime rather than from hard-coded values.",
+          "passed": false
+        },
+        {
+          "text": "Given the Command Center, when any tab is shown, then .colaberry/manifest.json is committed in this repo and every tab shows how old that data is and warns when the age exceeds a week.",
+          "passed": false
+        },
+        {
+          "text": "Trust — no tab shows a number, a connection or a result the project has not actually produced.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": null
+    }
+  ]
+}
