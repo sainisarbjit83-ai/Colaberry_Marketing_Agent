@@ -176,7 +176,12 @@ passing, a good conversation, or a mocked test passing does not count
 
 ### Must NOT do (boundary)
 
-- Approve its own draft, or anyone's. Approval stays human at every level (`marketing.json:2899`).
+- Approve its own draft, or anyone's. "Approval stays human at every level" is the **matrix's
+  requirement** (`marketing.json:2899`). **The current code does not enforce it.** There is no
+  self-approval check, no human-versus-agent check, and the `/transition` route reaches `approved`
+  with no approval decision at all (see
+  [Task 3 approval boundary](#task-3-approval-boundary-verified-2026-10-28)). Until that is fixed,
+  this line is a boundary the agent is held to, not one the platform guarantees.
 - Publish or schedule anything. Every public post needs a human yes (`agentAutonomy.ts:123`). Live
   connectors are off by default (`publishing/providerCapabilities.ts:310-321`), and the publishing
   worker is seeded disabled (`agentRegistrySeed.ts:3102`).
@@ -202,7 +207,7 @@ passing, a good conversation, or a mocked test passing does not count
 | **Measurable success** | The release criteria above, pass or fail. A quality measure such as "share of drafts approved without edits" is a **candidate** for Sohail to set ([04](04-manager-interview.md) Q6). No current rate is known and none is assumed | criteria verified; quality threshold **unknown** |
 | **Autonomy** | **Current:** `R0`. **Proposed next step:** `R1` only (fixture-based evaluation). `R4` and above, which write persistent drafts, are **blocked** pending write enforcement and verification of the approval boundary. **Ceiling:** `R7`, because "Composing is fully reversible: an item stays a draft until a separate approval and a separate publish act on it" (`marketing.json:2657`, `max_autonomy_rationale`). **Authorized:** none | current and ceiling verified; the step is proposed |
 | **Risks** | Off-brand or invented copy reaching the approval queue and wasting reviewer time. Approval fatigue, where a busy reviewer approves without reading, which is the failure the timer-decided approvals show (`promotionCriteria.ts:14-15`) | verified (pattern); likelihood here **unknown** |
-| **Switch it off if** | Any draft reaches a published or scheduled state without a human approval event; the agent appears as an approver; a draft contradicts the brand canon after brand voice has been validated | proposed |
+| **Switch it off if** | Any draft reaches a published or scheduled state without a human approval event; the agent appears as an approver; a draft contradicts the brand canon after brand voice has been validated; **any content item reaches `approved` without a matching recorded decision**, meaning no `content_approval_events` row for that `content_item_id` with `event_type = 'approved'`, a non-null `actor_admin_id`, and `payload.revision` equal to the item's current revision (the row `decideApproval` writes, `contentApprovalService.ts:65-74`). **No detector for this exists today.** It's a proposed check, and the `/transition` route would trigger it | proposed |
 | **Unresolved** | Brand voice and default networks (`marketing.json:2657`, `blocked_by`); whether email copy is in scope ([03](03-role-and-da-transition.md) row 6, [04](04-manager-interview.md) Q4) | **unknown** |
 
 ---
@@ -240,10 +245,95 @@ map.
 |---|---|---|---|
 | 1. Funnel health | `R2` answers and `R4` sandbox scans, read-only on business data | — (no climb beyond `R4` proposed) | It never writes business tables. Run bookkeeping is the existing job's behaviour, and the switch-off condition excludes it |
 | 2. Recurring report | `R2` on-demand answers, no stored output | The real write path checks the table actually written and the operation performed, and a test proves an unauthorized write is refused | `R4` stores reports and writes `kpi_snapshots` |
-| 3. Drafting | `R1` fixture-based evaluation | The same write enforcement, **and** code verification that the agent can never be recorded as the approver | `R4`+ writes `content_items` / `content_variants` / `content_item_media` |
+| 3. Drafting | `R1` fixture-based evaluation | The same write enforcement, **and** the approval-boundary conditions in [Task 3 approval boundary](#task-3-approval-boundary-verified-2026-10-28), which code review found **not enforced** | `R4`+ writes `content_items` / `content_variants` / `content_item_media` |
 
 None of this grants anything. Every "allowed to proceed" is still a proposal awaiting Sohail's
 validation.
+
+---
+
+## Task 3 approval boundary (verified 2026-10-28)
+
+This review asks one question: does the code enforce that an AI agent can't approve its own
+generated content? It is a **separate control** from the grant map and ABAC in the previous
+section. None of them substitutes for another, and none of them closes this gap: the grant map
+governs table writes for 9 agents, ABAC governs action categories when in enforce mode, and
+neither inspects who approved a content item.
+
+**Verdict: not enforced.** Some protections exist, but self-approval isn't checked, humans and
+agents aren't distinguished, and one route reaches `approved` with no approval decision.
+
+**The approval flow at `b058da6`**
+1. **Send for approval:** `sendForApproval` creates a `content_approval_requests` row with
+   `requested_by: actor.adminId ?? null` and moves the item to `ready_for_review`
+   (`content/composerActionService.ts:152-169`).
+2. **Decide:** `POST /api/admin/content/:id/approval` (`routes/admin/contentComposerRoutes.ts:432-443`)
+   builds the actor from the verified token (`:139-141`). `decideApproval` then writes
+   `decided_by`, appends an event, and sets the item to `approved` with `human_approved: true`
+   (`content/contentApprovalService.ts:31-77`).
+3. **Schedule / publish:** moving to `scheduled` is allowed only from `approved`
+   (`content/contentWorkflow.ts:35`). It is then gated by content validation and queues jobs
+   (`content/composerActionService.ts:55-67`, `:73-100`, `:173-194`).
+
+**Verified controls**
+
+| Control | Source |
+|---|---|
+| The approval route takes the approver from a verified JWT; the request body can't name one (`ApprovalSchema` is `.strict()`, `decision` and `note` only) | `middlewares/authMiddleware.ts:58-78`; `routes/admin/contentComposerRoutes.ts:87-90`, `:139-141` |
+| A decision on a stale revision is refused | `content/contentApprovalService.ts:43-50` |
+| An edit after approval invalidates it, recorded as an event | `content/contentWorkflowService.ts:25-28` |
+| A draft can't jump straight to `approved` or `scheduled` | `content/contentWorkflow.ts:30` |
+
+**Enforcement gaps**
+
+| Gap | Source |
+|---|---|
+| No self-approval check: `decided_by` is never compared with `requested_by`, and `required_approver_id` is never read | `content/contentApprovalService.ts:31-77`; `models/ContentApprovalRequest.ts:80` |
+| No human-versus-agent check: the approver is an admin UUID only | `content/contentApprovalService.ts:60`; `content/contentWorkflowService.ts:49-52` |
+| A missing approver still approves: `decided_by` becomes `null`, yet `human_approved` is set `true` | `content/contentApprovalService.ts:60`, `:75` |
+| The services accept any `Actor` from their caller; only the route binds it to a token | `content/contentApprovalService.ts:34`; `content/composerActionService.ts:204` |
+| The schema doesn't constrain the approver: `decided_by UUID` is nullable, with no foreign key and no check against `requested_by`. The event's `actor_admin_id` is nullable too | `db/ensureContentOsSchema.ts:218-238`, `:248-259` |
+| An admin token doesn't prove a human: any JWT signed with the server secret and role `admin` or `super_admin` passes. Repo scripts mint such tokens with arbitrary identities | `middlewares/authMiddleware.ts:55`, `:67-71`; `scripts/captureAdminOpsScreenshots.js:32` (repo root) |
+
+**The `/transition` bypass.** `POST /api/admin/content/:id/transition` accepts any status
+(`routes/admin/contentComposerRoutes.ts:72`, `:354-363`). The rules allow
+`ready_for_review → approved` (`content/contentWorkflow.ts:31`). `transitionContentItem` writes
+`status: 'approved'` with no decision, no `decided_by`, no event and no recorded actor
+(`content/contentWorkflowService.ts:61-74`). Scheduling checks status and content validation
+only, never `human_approved` or the approval record (`content/composerActionService.ts:173-194`).
+So any admin token can take an item from review to queued publishing jobs with no recorded
+approver.
+
+**What limits the impact today, without enforcing the boundary.** No non-route code calls the
+approval, transition or action services (backend-wide search). Live connectors are off by default
+and the publishing worker is seeded disabled, so queued jobs hand a package to a person
+(`publishing/providerCapabilities.ts:310-321`; `agentRegistrySeed.ts:3102`). Production values of
+both are **unknown**.
+
+**Limits of the existing tests.** Approval tests use `decideApproval` only as setup, with a fixed
+human reviewer (`content/__tests__/composerEdits.test.ts:33`, `:41`). One test pins that
+`requested_by` may be null when the actor has no id
+(`content/__tests__/composerActionService.test.ts:131`). The route test covers only `created_by`
+and a 401 without a session (`routes/admin/__tests__/contentComposerRoutes.createdBy.test.ts:54`,
+`:67`). **No test covers** self-approval, an agent identity, a missing or forged approver,
+authorization on `/approval` or `/transition`, or `/transition` to `approved`.
+
+**Production uncertainties (unknown).** Whether any agent, service or automation holds an admin
+JWT in production. Whether token-minting scripts run against production. The production values of
+`LIVE_CONNECTORS` and the publishing worker's `enabled` flag. Database roles or triggers outside
+the repo's schema code.
+
+**Required before Task 3's persistent writes can proceed.** All of these, each with a test that
+exercises the real path:
+1. The server refuses an approval when the approver is the requester, is an agent identity, or is
+   missing.
+2. `approved` is reachable only through `decideApproval`, not through `/transition`.
+3. Scheduling requires a non-stale approval record decided by a human.
+4. The write enforcement from the previous section: the actual table and operation are checked,
+   and an unauthorized write is proved to be refused.
+
+Fixture-based evaluation (`R1`) may continue within its existing boundaries. It writes no
+persistent drafts and doesn't touch the approval path.
 
 ---
 
@@ -304,6 +394,12 @@ Paths are in the platform repo at `b058da6` unless noted.
 | Funnel agent's own note on wrapper writes | `backend/src/services/agents/departments/marketing/campaignPerformanceAgent.ts:6-8` |
 | `CampaignHealthScanner` schedule and writes | `backend/src/services/aiOpsScheduler.ts:174`; `backend/src/services/campaignHealthScanner.ts:273-291` |
 | ABAC modes, decision basis, callers, default | `backend/src/services/agentAuthorizationService.ts:37-46`, `:227-252`; `backend/src/services/integration/legacyErpIntegrationAgent.ts:102`; `backend/src/services/integration/realtimeSyncEngine.ts:69`; `backend/src/services/workLedger/agentActionAuthorizationBridge.ts:123`; `backend/src/services/settingsService.ts:69` |
+| Approval flow, decision and event writes | `backend/src/services/content/composerActionService.ts:152-169`, `:173-194`; `backend/src/services/content/contentApprovalService.ts:31-77` |
+| Approval route, actor binding, strict body | `backend/src/routes/admin/contentComposerRoutes.ts:87-90`, `:139-141`, `:432-443`; `backend/src/middlewares/authMiddleware.ts:55`, `:58-78` |
+| `/transition` bypass | `backend/src/routes/admin/contentComposerRoutes.ts:72`, `:354-363`; `backend/src/services/content/contentWorkflow.ts:30-35`; `backend/src/services/content/contentWorkflowService.ts:49-52`, `:61-74` |
+| Approval schema columns and event table | `backend/src/models/ContentApprovalRequest.ts:80`; `backend/src/db/ensureContentOsSchema.ts:218-238`, `:248-259` |
+| Approval tests and their limits | `backend/src/services/content/__tests__/composerEdits.test.ts:33`, `:41`; `backend/src/services/content/__tests__/composerActionService.test.ts:131`; `backend/src/routes/admin/__tests__/contentComposerRoutes.createdBy.test.ts:54`, `:67` |
+| Token minted with an arbitrary identity | `scripts/captureAdminOpsScreenshots.js:32` |
 | Brand canon; "CB drafts"; Marketing Approval | `docs/training-program-2026-q3/launch-briefs/13-sohail-marketing.md:3`, `:65`; `03-team-roster.md:30` |
 
 ### Queries
