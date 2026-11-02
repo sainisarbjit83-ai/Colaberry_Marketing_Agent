@@ -7,7 +7,7 @@
     "stories_submitted": 0,
     "stories_in_progress": 63,
     "stories_not_started": 2,
-    "criteria_total": 87,
+    "criteria_total": 82,
     "criteria_passed": 18,
     "points_awarded": 66
   },
@@ -2027,55 +2027,50 @@
       }
     },
     {
-      "id": "STORY-000",
-      "release": null,
-      "acceptance_total": 5,
+      "id": "marketing.STORY-000",
+      "release": "autonomy:R0",
+      "acceptance_total": 6,
       "criteria": [
         {
-          "text": "Given the Command Center, when it is opened, then every tab is reachable and every card drills down one level.",
-          "passed": true,
-          "evidence": "Commit 94a4d1f: all 9 tabs render (index.html, assets/app.js TABS); the test suite opened every card link found on every tab, in Real and Sample, and each drill-down loaded content (281/281 rendered-page checks against an export of the commit)"
+          "text": "Given the Command Center, when it is opened, then all six panels render and each one names the endpoint it read.",
+          "passed": false
         },
         {
-          "text": "Given sample mode, when any tab is shown, then the sample data is visibly labelled as sample.",
-          "passed": true,
-          "evidence": "Commit 94a4d1f: in Sample mode every tab shows the SAMPLE DATA banner and every card a SAMPLE tag, and sample drill-downs are labelled (assets/app.js sampleBanner, assets/ui.js card); verified on all 9 tabs and every drill-down in the suite"
+          "text": "Given a panel whose endpoint returned nothing, when it renders, then it says so in words and is visibly distinct from a panel that is still loading.",
+          "passed": false
         },
         {
-          "text": "Given the Command Center, when any tab renders, then .colaberry/plan.json and .colaberry/progress.json are both committed in this repo and every tab reads its content from them at runtime rather than from hard-coded values.",
-          "passed": true,
-          "evidence": "Commit 94a4d1f: .colaberry/plan.json and .colaberry/progress.json are tracked; assets/data.js fetches both at runtime (the only fetch); none of 143 probed plan values appears in code; editing a copy of plan.json changed Overview, Project management and Knowledge base on reload"
+          "text": "Given the autonomy ladder panel, when it renders, then all ten rungs are present with the owner's wording, and each capability's ceiling is marked against the rung it stops at.",
+          "passed": false
         },
         {
-          "text": "Given the Command Center, when any tab is shown, then .colaberry/manifest.json is committed in this repo and every tab shows how old that data is and warns when the age exceeds a week.",
-          "passed": true,
-          "evidence": "Commit 94a4d1f: .colaberry/manifest.json is tracked; every tab header shows \"Data as of\" (absolute Central time plus relative age, assets/data.js dataAge); a copy aged 10 days showed the over-a-week warning on all 9 tabs; a missing manifest showed \"unknown\" on all 9"
+          "text": "Given a capability above `autonomy:R2` with no granted tools, when its authority is shown, then the page shows the effective authority `effectiveAuthority()` returns and the reason `no_tool_grants`, not the authority the capability record asks for.",
+          "passed": false
         },
         {
-          "text": "Trust — no tab shows a number, a connection or a result the project has not actually produced.",
-          "passed": true,
-          "evidence": "Commit 94a4d1f: in Real mode every figure is read from the data files (no plan values in code); connections are grey \"not checked from here\"; story status shows \"not reported\" when the platform has none; totals are labelled as the platform's; unavailable fields (employee, autonomy, capability ceilings) are labelled unavailable"
+          "text": "Given the governance panel, when a tool request is shown, then nothing on the page states or implies that filing it granted anything.",
+          "passed": false
+        },
+        {
+          "text": "Trust -- no panel shows a number, a grant, a rung or a result this domain has not actually produced.",
+          "passed": false
         }
       ],
-      "files_touched": [
-        "index.html",
-        "assets/tokens.css",
-        "assets/app.css",
-        "assets/ui.js",
-        "assets/data.js",
-        "assets/sample.js",
-        "assets/chat.js",
-        "assets/tabs-plan.js",
-        "assets/tabs-work.js",
-        "assets/app.js"
-      ],
-      "tests_added": [
-        "tests/command-center/render.test.js",
-        "tests/command-center/chat.test.js"
-      ],
+      "files_touched": [],
+      "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 0,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
     }
   ]
 }

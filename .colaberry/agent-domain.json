@@ -1,0 +1,422 @@
+{
+  "schema": "colaberry.agent-domain/v1",
+  "domain_key": "marketing",
+  "sources": {
+    "agent": "GET /api/admin/agent-domains-mine",
+    "capabilities": "GET /api/admin/agent-domains/marketing",
+    "governance": "GET /api/admin/agent-domain-change-requests-mine"
+  },
+  "autonomy_models": {
+    "agent_level": "observe | suggest | act_audited | communicate -- a property of the employee",
+    "capability_ladder": "autonomy:R0 .. autonomy:R9 -- a property of each capability",
+    "warning": "These are different scales on different objects. Never render one as a position on the other, and never compare them."
+  },
+  "staleness_note": "This file deliberately carries no timestamp: a clock here would make every sync commit a file whose only change is the time. Read `generated_at` from `.colaberry/manifest.json` and label it \"last changed\", not \"last checked\".",
+  "agent": {
+    "exists": true,
+    "agent_id": "cf617c6d-f5d0-4e42-a45a-6b654adb265f",
+    "display_name": null,
+    "enabled": false,
+    "autonomy_level": "observe",
+    "autonomy_level_set_at": "2026-10-18T16:08:12.387Z",
+    "autonomy_level_source": "auto",
+    "autonomy_level_set_by": null,
+    "tools_granted": [],
+    "tools_granted_count": 0
+  },
+  "authority": [
+    {
+      "capability_id": "marketing.agent_write_authorization_enforcement",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.ai_news_ingestion_and_card_publication",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.authority_content_drafting",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.banned_copy_compliance_scanning",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.brand_and_competitor_mention_monitoring",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.brand_attribution_of_campaigns",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.brand_governance_enforcement",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.brand_network_connection_administration",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.brand_registry_and_readiness",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.brand_social_publishing",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.browser_session_reliability",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.campaign_and_channel_metric_reporting",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.campaign_approval_and_golive",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.campaign_funnel_performance_analysis",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.channel_account_connection_and_credential_custody",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.community_direct_message_response",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.community_signal_detection",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.content_approval_workflow",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.content_composition_and_variant_generation",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.content_history_import_from_loomly",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.content_idea_proposal_queue",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.content_platform_fitness_validation",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.content_repurposing_and_template_library",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.conversation_followup_sequencing",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.engagement_monitoring_and_intent_scoring",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.free_tier_learner_journey_scoring",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.free_tier_next_best_action_decisioning",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.handoff_package_manual_publication",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.intelligence_card_generation",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.intelligence_card_prepublication_review",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.landing_page_generation_and_publication",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.lifecycle_content_catalogue_projection",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.linkedin_comment_watch_and_reply_drafting",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.linkedin_relationship_action_suggestions",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.manager_marketing_brief_subscription",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.marketing_agent_management_and_oversight",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.marketing_calendar_planning",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.marketing_department_strategy_planning",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.marketing_overview_and_attention_triage",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.marketing_surface_problem_reporting",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.metric_trust_escalation_decisions",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.multi_touch_attribution",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.outreach_consent_and_channel_suppression",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_conversion_attribution",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.outreach_coverage_and_blind_spot_reporting",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.outreach_daily_human_action_queue",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.outreach_human_approval_gap_closure",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_lead_capture_and_scoring",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.outreach_learning_loop",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.outreach_post_verification",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.outreach_quality_gate",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.outreach_queue_supervision",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.outreach_rate_and_circuit_control",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.outreach_reply_drafting",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.outreach_reply_publication",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.platform_app_review_and_representation",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.platform_change_surveillance",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.publishing_calendar_operations_ownership",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.publishing_failure_and_handoff_recovery",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.recurring_marketing_performance_reporting",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.revenue_and_cost_metric_truthing",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": [
+        "human_decision_required_at_every_level"
+      ]
+    },
+    {
+      "capability_id": "marketing.signal_triage_and_prioritisation",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.social_signal_discovery",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    },
+    {
+      "capability_id": "marketing.tracked_link_and_utm_governance",
+      "effective_autonomy": "autonomy:R0",
+      "reasons": []
+    }
+  ],
+  "authority_rule": {
+    "rule": "A capability approved above autonomy:R2 with no granted tools is forced back down to autonomy:R2, with the reason no_tool_grants. Tool grants are the throttle.",
+    "approved_above_r2": 0,
+    "binds_nothing": true,
+    "note": "When this binds nothing, say so in words. It means no capability in this domain has been approved above autonomy:R2 yet, not that the rule is absent or that the panel failed."
+  },
+  "governance": {
+    "disclosure": "A filed request grants nothing. Status is what a named human decided, and a pending row means nobody has decided yet.",
+    "requests": [],
+    "pending": 0
+  },
+  "not_recorded": [
+    {
+      "field": "agent.autonomy_level_set_by",
+      "reason": "The platform does not store who set an agent's autonomy level. `ai_agents` carries `autonomy_level_set_at` and `autonomy_level_source` but no `set_by` column, so the time and whether a person chose it are known and the identity is not. Do not render a name here."
+    }
+  ]
+}
