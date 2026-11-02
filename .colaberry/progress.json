@@ -3,13 +3,13 @@
   "project": "marketing",
   "totals": {
     "stories_total": 71,
-    "stories_verified": 0,
+    "stories_verified": 6,
     "stories_submitted": 0,
-    "stories_in_progress": 0,
-    "stories_not_started": 71,
+    "stories_in_progress": 63,
+    "stories_not_started": 2,
     "criteria_total": 87,
-    "criteria_passed": 0,
-    "points_awarded": 0
+    "criteria_passed": 18,
+    "points_awarded": 66
   },
   "stories": [
     {
@@ -26,7 +26,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "The enumeration is complete against a source sweep; an agent with no declared tier is named, not defaulted silently."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.ai_news_ingestion_and_card_publication",
@@ -42,7 +54,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every card cites its library item and source feed; no generation occurs."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.authority_content_drafting",
@@ -58,7 +82,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Claims cite openclaw_signals and openclaw_authority_content rows; no generation occurs."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.banned_copy_compliance_scanning",
@@ -74,7 +110,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every occurrence is classified; none is reported without its role."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.brand_and_competitor_mention_monitoring",
@@ -90,7 +138,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "The brand and competitor lists are written down and the response policy names a human for every negative-mention case."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.brand_attribution_of_campaigns",
@@ -106,7 +166,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Unresolved campaigns are listed individually; none is guessed into a brand."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.brand_governance_enforcement",
@@ -122,7 +194,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Answer names the rulesVersion; a brand with no rows is reported ungoverned, never compliant."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.brand_network_connection_administration",
@@ -138,7 +222,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Requirements match the recorded runbook; no flow is initiated and no credential is read."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.brand_registry_and_readiness",
@@ -154,7 +250,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every gap named maps to a real missing account or an absent governance row; a brand with no rules is reported ungoverned, never compliant."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.brand_social_publishing",
@@ -170,7 +278,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every provider still in handoff is named as such; no job is claimed during the answer."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.browser_session_reliability",
@@ -186,7 +306,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Health verdicts reproduce from openclaw_sessions; no restart is attempted."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.campaign_and_channel_metric_reporting",
@@ -202,7 +334,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every figure cites its registry key; any unavailable metric is reported as such with its reason."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.campaign_approval_and_golive",
@@ -218,7 +362,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "The bypass population is reported explicitly by comparing status against approval_status."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.campaign_funnel_performance_analysis",
@@ -234,7 +390,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Verdict reproduces from the stored report; the failure rate and its denominator are both stated."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.channel_account_connection_and_credential_cust",
@@ -266,7 +434,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Counts reconcile to skool_engagements; no navigation and no send in the trace."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.community_signal_detection",
@@ -282,7 +462,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every claim resolves to a skool_signals row; no browser is launched."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.content_approval_workflow",
@@ -298,7 +490,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Queue contents reconcile to content_approval_requests; no decision is written."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.content_composition_and_variant_generation",
@@ -314,7 +518,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every provider in the target set gets a variant; revision increments on every recorded edit."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.content_history_import_from_loomly",
@@ -330,7 +546,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every category names its destination table or states explicitly that it is not imported."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.content_idea_proposal_queue",
@@ -346,7 +574,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Claims cite the signal and the pending proposals; no new proposal is written."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.content_platform_fitness_validation",
@@ -362,7 +602,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "The explanation names the limit and the actual value; re-running validation reproduces it exactly."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.content_repurposing_and_template_library",
@@ -378,7 +630,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Each template pattern names its channel, its cadence and its approver."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.conversation_followup_sequencing",
@@ -394,7 +658,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Stage and stall age reproduce from openclaw_conversations; no draft is written."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.engagement_monitoring_and_intent_scoring",
@@ -410,7 +686,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every answer cites an openclaw_engagement_events row; no fetch occurs."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.free_tier_learner_journey_scoring",
@@ -426,7 +714,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every component resolves to a stored snapshot; no recompute occurs during the answer."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.free_tier_next_best_action_decisioning",
@@ -442,7 +742,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every suppressed candidate names its reason; the chosen action reproduces from the stored row."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.handoff_package_manual_publication",
@@ -458,7 +770,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "The handoff list matches the live-connector configuration; no package is marked complete."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.intelligence_card_generation",
@@ -474,7 +798,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every card resolves to an intel_items row; unreviewable attribution claims are named as such."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.intelligence_card_prepublication_review",
@@ -490,7 +826,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "The quote and market-brief streams are named explicitly as attribution and figure risks."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.landing_page_generation_and_publication",
@@ -506,7 +854,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every section in the brief appears; a count of generated sentences not present in the brief is reported, not hidden."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.lifecycle_content_catalogue_projection",
@@ -522,7 +882,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every asset resolves to a published source card; approval columns are reported as unset, never as approved."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.linkedin_comment_watch_and_reply_drafting",
@@ -538,7 +910,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every commenter cited exists in openclaw_responses; no scrape runs."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.linkedin_relationship_action_suggestions",
@@ -554,7 +938,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every suggestion type is produced for its fixture; caps are asserted per type."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.manager_marketing_brief_subscription",
@@ -570,7 +966,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Unmeasurable sections are named; no delivery is attempted."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.marketing_agent_management_and_oversight",
@@ -586,7 +994,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every statement resolves to a stored record; a goal with no backing metric reports unmeasured, never a number."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.marketing_calendar_planning",
@@ -602,7 +1022,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every item cited exists with that schedule; all times stated in Central and labelled as such."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.marketing_department_strategy_planning",
@@ -618,7 +1050,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every signal cited resolves to real data; no initiative or ticket is created."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.marketing_overview_and_attention_triage",
@@ -634,7 +1078,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Any metric the registry cannot compute is named as unavailable, never reported as zero."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.marketing_surface_problem_reporting",
@@ -650,7 +1106,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every pattern claim cites the reports behind it; no mail is sent in the trace."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.metric_trust_escalation_decisions",
@@ -666,7 +1134,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Each finding names the file, the constant or column at fault, and the rule it contradicts."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.multi_touch_attribution",
@@ -682,7 +1162,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Coverage is always stated; an uncovered lead is reported as uncovered, never as direct."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_consent_and_channel_suppression",
@@ -698,7 +1190,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "The verdict cites the opt-out row and its channel; no suppression state is written."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_conversion_attribution",
@@ -714,7 +1218,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every hop in the chain resolves to a stored row; no stage is advanced."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_coverage_and_blind_spot_reporting",
@@ -730,7 +1246,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Each surface has a written coverage definition and a named owner for its blind spot."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_daily_human_action_queue",
@@ -746,7 +1274,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every item names the thread and the signal behind its priority; nothing is persisted."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_human_approval_gap_closure",
@@ -762,7 +1302,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Each test fails before the fix and passes after; removing the fix makes the named test die."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_lead_capture_and_scoring",
@@ -778,7 +1330,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every lead cited exists in leads with an opportunity score; nothing is written."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_learning_loop",
@@ -794,7 +1358,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every claim reports its sample size; a thin sample is labelled as such, never rounded into a recommendation."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_post_verification",
@@ -810,7 +1386,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Unverifiable platforms are reported as unknown, never as verified or as zero."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_quality_gate",
@@ -826,7 +1414,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "The named rule reproduces the stored score when re-run; no new verdict is written."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_queue_supervision",
@@ -842,7 +1442,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Figures reconcile to openclaw_tasks and skool_tasks; nothing is mutated."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_rate_and_circuit_control",
@@ -858,7 +1470,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Counts reconcile to openclaw_responses.posted_at; no verdict is cached."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_reply_drafting",
@@ -874,7 +1498,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every fixture produces a draft; the sign-off rule is asserted per platform strategy, both branches covered."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.outreach_reply_publication",
@@ -890,7 +1526,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every post traces to a named human action; no scheduled run publishes anything."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.platform_app_review_and_representation",
@@ -906,7 +1554,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Each claim is marked verified or unverified with its file reference; an unmet requirement is reported as a blocker."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.platform_change_surveillance",
@@ -922,7 +1582,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Each answer cites a tech_update row and its date; no fetch is performed."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.publishing_calendar_operations_ownership",
@@ -938,7 +1610,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every category states its destination or that it is deliberately not imported; nothing is reported as none that has not been looked at."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.publishing_failure_and_handoff_recovery",
@@ -954,7 +1638,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Explanation cites the delivery events and the dead-letter reason; no job state changes."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.recurring_marketing_performance_reporting",
@@ -970,7 +1666,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every figure cites its registry key and trust status; uncomputable figures are named, never zeroed."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.revenue_and_cost_metric_truthing",
@@ -986,7 +1694,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every finding names the file and the constant or column; nothing is reported as fixed that is not."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.signal_triage_and_prioritisation",
@@ -1002,7 +1722,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Explanation reproduces the stored verdict exactly; no re-scoring occurs during the answer."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.social_signal_discovery",
@@ -1018,7 +1750,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": "0af6f49fe44d10f0f7ed239d056c979d6fd0a0ed",
+        "commit_url": "https://github.com/sainisarbjit83-ai/Colaberry_Marketing_Agent/commit/0af6f49fe44d10f0f7ed239d056c979d6fd0a0ed",
+        "commit_at": "2026-10-30T16:38:26Z",
+        "points_awarded": null,
+        "outstanding": [
+          "Every answer cites a stored openclaw_signals row id; zero outbound network calls in the trace."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.tracked_link_and_utm_governance",
@@ -1034,7 +1778,19 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "Every flagged source cites its traffic rows; no link is created."
+        ]
+      }
     },
     {
       "id": "marketing.LEGACY-MIGRATION-PLAN",
@@ -1063,7 +1819,17 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "verified",
+        "criteria_passed": 3,
+        "criteria_total": 3,
+        "verified_at": "2026-10-28T17:42:56.000Z",
+        "commit_sha": "e08f24b579654bfa355bd5f5ea7f0a65b15bf024",
+        "commit_url": "https://github.com/sainisarbjit83-ai/Colaberry_Marketing_Agent/commit/e08f24b579654bfa355bd5f5ea7f0a65b15bf024",
+        "commit_at": "2026-10-28T17:42:45Z",
+        "points_awarded": 11,
+        "outstanding": []
+      }
     },
     {
       "id": "marketing.RESEARCH-1-SYSTEM-CLASSES",
@@ -1092,7 +1858,17 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "verified",
+        "criteria_passed": 3,
+        "criteria_total": 3,
+        "verified_at": "2026-10-28T17:16:19.067Z",
+        "commit_sha": "208076d37cade18a1330d9418b35fff3d3ea3afd",
+        "commit_url": "https://github.com/sainisarbjit83-ai/Colaberry_Marketing_Agent/commit/208076d37cade18a1330d9418b35fff3d3ea3afd",
+        "commit_at": "2026-10-28T17:16:09Z",
+        "points_awarded": 11,
+        "outstanding": []
+      }
     },
     {
       "id": "marketing.RESEARCH-2-AGENT-ANATOMY",
@@ -1121,7 +1897,17 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "verified",
+        "criteria_passed": 3,
+        "criteria_total": 3,
+        "verified_at": "2026-10-28T17:16:19.139Z",
+        "commit_sha": "208076d37cade18a1330d9418b35fff3d3ea3afd",
+        "commit_url": "https://github.com/sainisarbjit83-ai/Colaberry_Marketing_Agent/commit/208076d37cade18a1330d9418b35fff3d3ea3afd",
+        "commit_at": "2026-10-28T17:16:09Z",
+        "points_awarded": 11,
+        "outstanding": []
+      }
     },
     {
       "id": "marketing.RESEARCH-3-ROLE-AND-DA-TRANSITION",
@@ -1150,7 +1936,17 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "verified",
+        "criteria_passed": 3,
+        "criteria_total": 3,
+        "verified_at": "2026-10-28T17:16:19.174Z",
+        "commit_sha": "208076d37cade18a1330d9418b35fff3d3ea3afd",
+        "commit_url": "https://github.com/sainisarbjit83-ai/Colaberry_Marketing_Agent/commit/208076d37cade18a1330d9418b35fff3d3ea3afd",
+        "commit_at": "2026-10-28T17:16:09Z",
+        "points_awarded": 11,
+        "outstanding": []
+      }
     },
     {
       "id": "marketing.RESEARCH-4-MANAGER-INTERVIEW",
@@ -1179,7 +1975,17 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "verified",
+        "criteria_passed": 3,
+        "criteria_total": 3,
+        "verified_at": "2026-10-28T17:16:19.215Z",
+        "commit_sha": "208076d37cade18a1330d9418b35fff3d3ea3afd",
+        "commit_url": "https://github.com/sainisarbjit83-ai/Colaberry_Marketing_Agent/commit/208076d37cade18a1330d9418b35fff3d3ea3afd",
+        "commit_at": "2026-10-28T17:16:09Z",
+        "points_awarded": 11,
+        "outstanding": []
+      }
     },
     {
       "id": "marketing.RESEARCH-5-THREE-PROPOSED-TASKS",
@@ -1208,7 +2014,17 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "verified",
+        "criteria_passed": 3,
+        "criteria_total": 3,
+        "verified_at": "2026-10-28T17:16:19.248Z",
+        "commit_sha": "208076d37cade18a1330d9418b35fff3d3ea3afd",
+        "commit_url": "https://github.com/sainisarbjit83-ai/Colaberry_Marketing_Agent/commit/208076d37cade18a1330d9418b35fff3d3ea3afd",
+        "commit_at": "2026-10-28T17:16:09Z",
+        "points_awarded": 11,
+        "outstanding": []
+      }
     },
     {
       "id": "STORY-000",

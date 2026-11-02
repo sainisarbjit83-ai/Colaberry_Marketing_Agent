@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-28T16:22:09.000Z",
+  "generated_at": "2026-11-02T04:26:46.496Z",
   "plan_version": 1,
   "plan_sha256": "3551a58b38932557d08df0f2fcb0a76250d09e5bb9d845af796ad2e1d9206746",
-  "correlation_id": null,
+  "correlation_id": "4751a6d7-6e98-46d4-97c4-1e4382a0661f",
   "project_id": "26cb06c4-75f3-5397-89f4-b56a4cc49483",
   "truth_revision": null,
   "files": [
@@ -24,7 +24,7 @@
     },
     {
       "path": "CLAUDE.md",
-      "sha256": "f7046b8cb5b5a2ce73b31f7cf6305c0afca57ec4fa125e7331deb27e745009be"
+      "sha256": "b6d0d875752631846bcb129aaf3d9831ff5b6c3276de6c8910d1da16829cc218"
     },
     {
       "path": "docs/stories/marketing.CAP.agent_write_authorization_enforcement.md",
@@ -312,15 +312,15 @@
     },
     {
       "path": ".colaberry/plan.json",
-      "sha256": "dfe0dba90dcfbcc40e9f6bf27dd62f7876cca119aacb454c8677010ead7f764d"
+      "sha256": "ea730253e5c33f68d96b53ad41bc96ab6b10a6ff87f098ed4673fb1b92b7236a"
     },
     {
       "path": ".colaberry/progress.json",
-      "sha256": "b23cbac556754b478860ad43ce0af0980cbc82ae098ed9477aa00a4524254a77"
+      "sha256": "9581308f514e1b500263d032b931caec69c0a25486a26f3916f481c0a7375a37"
     },
     {
       "path": ".colaberry/profile.json",
-      "sha256": "23a23259ef9033421479380c44c0c928276bb7066f34ef0fee30bb7661a46e88"
+      "sha256": "7e4babcb6dd913110f8fc91e55e3e0208bca7ea0a7a9b87e9ea754a1157ae844"
     }
   ]
 }
