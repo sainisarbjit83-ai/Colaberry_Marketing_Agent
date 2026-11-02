@@ -1217,27 +1217,46 @@
       "criteria": [
         {
           "text": "Given the Command Center, when it is opened, then every tab is reachable and every card drills down one level.",
-          "passed": false
+          "passed": true,
+          "evidence": "Commit 94a4d1f: all 9 tabs render (index.html, assets/app.js TABS); the test suite opened every card link found on every tab, in Real and Sample, and each drill-down loaded content (281/281 rendered-page checks against an export of the commit)"
         },
         {
           "text": "Given sample mode, when any tab is shown, then the sample data is visibly labelled as sample.",
-          "passed": false
+          "passed": true,
+          "evidence": "Commit 94a4d1f: in Sample mode every tab shows the SAMPLE DATA banner and every card a SAMPLE tag, and sample drill-downs are labelled (assets/app.js sampleBanner, assets/ui.js card); verified on all 9 tabs and every drill-down in the suite"
         },
         {
           "text": "Given the Command Center, when any tab renders, then .colaberry/plan.json and .colaberry/progress.json are both committed in this repo and every tab reads its content from them at runtime rather than from hard-coded values.",
-          "passed": false
+          "passed": true,
+          "evidence": "Commit 94a4d1f: .colaberry/plan.json and .colaberry/progress.json are tracked; assets/data.js fetches both at runtime (the only fetch); none of 143 probed plan values appears in code; editing a copy of plan.json changed Overview, Project management and Knowledge base on reload"
         },
         {
           "text": "Given the Command Center, when any tab is shown, then .colaberry/manifest.json is committed in this repo and every tab shows how old that data is and warns when the age exceeds a week.",
-          "passed": false
+          "passed": true,
+          "evidence": "Commit 94a4d1f: .colaberry/manifest.json is tracked; every tab header shows \"Data as of\" (absolute Central time plus relative age, assets/data.js dataAge); a copy aged 10 days showed the over-a-week warning on all 9 tabs; a missing manifest showed \"unknown\" on all 9"
         },
         {
           "text": "Trust — no tab shows a number, a connection or a result the project has not actually produced.",
-          "passed": false
+          "passed": true,
+          "evidence": "Commit 94a4d1f: in Real mode every figure is read from the data files (no plan values in code); connections are grey \"not checked from here\"; story status shows \"not reported\" when the platform has none; totals are labelled as the platform's; unavailable fields (employee, autonomy, capability ceilings) are labelled unavailable"
         }
       ],
-      "files_touched": [],
-      "tests_added": [],
+      "files_touched": [
+        "index.html",
+        "assets/tokens.css",
+        "assets/app.css",
+        "assets/ui.js",
+        "assets/data.js",
+        "assets/sample.js",
+        "assets/chat.js",
+        "assets/tabs-plan.js",
+        "assets/tabs-work.js",
+        "assets/app.js"
+      ],
+      "tests_added": [
+        "tests/command-center/render.test.js",
+        "tests/command-center/chat.test.js"
+      ],
       "notes": null,
       "updated_at": null,
       "verification": null

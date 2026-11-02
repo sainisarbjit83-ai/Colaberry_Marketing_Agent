@@ -105,6 +105,7 @@ function overviewCards(data) {
   const progress = !totals
     ? h('p', { class: 'empty' }, 'No totals in the progress file.')
     : h('div', {},
+      h('div', { class: 'muted' }, 'Platform-reported at its last sync (may be out of date):'),
       h('div', { class: 'big' }, `${totals.stories_verified} of ${totals.stories_total} stories verified`),
       h('div', {}, `${totals.criteria_passed} of ${totals.criteria_total} criteria passed · ${totals.points_awarded} points`),
       h('p', { class: 'muted' }, 'These totals are written by the platform when it syncs. Criteria ticked since then are not counted here until the next sync. Progress is not authority: nothing here raises an agent’s autonomy.'));
