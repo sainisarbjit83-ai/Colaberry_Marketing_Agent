@@ -1,0 +1,43 @@
+/*
+ * Design tokens: the ONLY place colours, spacing and type are defined.
+ * No brand colours have been chosen for this project yet, so this is a neutral palette.
+ * Changing the brand later means editing this file and nothing else.
+ */
+:root {
+  --color-bg: #f6f7f9;
+  --color-surface: #ffffff;
+  --color-border: #d9dde3;
+  --color-text: #1f2328;
+  --color-text-muted: #5b6370;
+  --color-accent: #3d5a80;
+  --color-accent-text: #ffffff;
+
+  /* Status colours. Grey means "unknown", never "fine". */
+  --color-status-unknown: #8a919c;
+  --color-warning-bg: #fff4d6;
+  --color-warning-border: #e0b44c;
+  --color-warning-text: #6b4e00;
+  --color-error-bg: #fde8e8;
+  --color-error-border: #d97070;
+  --color-error-text: #7a1f1f;
+  --color-sample-bg: #fdeaf3;
+  --color-sample-border: #c2457f;
+  --color-sample-text: #7a1f4b;
+  --color-info-bg: #e9eef6;
+  --color-info-border: #9fb1cc;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --radius: 8px;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --text-sm: 13px;
+  --text-md: 15px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+}
