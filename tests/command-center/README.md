@@ -15,20 +15,44 @@ node tests/command-center/chat.test.js     # Knowledge base question-box checks
 
 Each prints `N passed, M failed` and exits non-zero if anything fails.
 
-- **`render.test.js`** serves the site on ports 8765 and 8781–8785 and loads every tab in
+- **`render.test.js`** serves the site on ports 8765 and 8781–8790 (plus 9333 for Edge's debugging port) and loads every tab in
   headless Edge, in Real and Sample mode. It opens every card link it finds, and checks
   edited, stale and missing copies of the data files. Set `EDGE_PATH` if Edge is not at
   `C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe`.
-- **`chat.test.js`** runs the question-box logic in Node against the repo's own data files.
-- **`serve.js`** is the small localhost-only server the browser suite uses.
+- **`chat.test.js`** runs the question-box logic in Node against the repo's own data files,
+  with and without the agent-domain snapshot.
+- **`serve.js`** is the small localhost-only server the browser suite uses. An optional fourth
+  argument names paths it never answers, which is how the suite sees a panel still loading.
 
 Set `CC_REPO` to test a different copy, for example an export of a commit:
 `CC_REPO=/path/to/export node tests/command-center/render.test.js`.
 
+## The six STORY-000 panels
+
+The Overview's six panels read `.colaberry/agent-domain.json`. The browser suite checks them on
+the real snapshot, then on copies where the snapshot is:
+
+| Copy | Snapshot | Expected on every panel |
+|---|---|---|
+| F | deleted | `missing`, with the HTTP 404 named |
+| G | not JSON | `invalid` |
+| H | an empty file | `empty` |
+| I | edited: no agent, one pending tool request, one capability capped by `no_tool_grants` | panel 1 `empty`; the count of 1 and the pending request shown as not granted |
+| J | never answered by the server | `loading`, while the plan cards still render |
+
+Copy J is read over Edge's DevTools protocol (debugging port 9333), not `--dump-dom`. Virtual
+time waits for every pending request, so a file that never arrives would never dump. A plain
+dump fires at the load event, which can come before the other files arrive. The test therefore
+polls until the plan cards are drawn, then reads the page.
+
+The ten rung descriptions are checked against a copy of the platform's `AUTONOMY_MEANINGS`
+written into the test, not against the page's own list.
+
 ## Expected to change when the platform syncs
 
 `chat.test.js` checks some answers against today's data: the "Data as of" date, the
-`0 of 71` totals, and the three releases. When a platform sync rewrites `.colaberry/`, update
-those expectations to the new data rather than treating the failure as a page bug.
-`render.test.js` takes its story ids and figures from the data files. The exception is one check
-that names release `r1` ("Legacy migration plan"), which needs updating if that release changes.
+`6 of 71` totals, the three releases, the agent record and the `no_tool_grants` count of
+`0 of 64`. When a platform sync rewrites `.colaberry/`, update those expectations to the new data
+rather than treating the failure as a page bug. `render.test.js` takes its story ids and figures
+from the data files. The exception is one check that names release `r1` ("Legacy migration
+plan"), which needs updating if that release changes.

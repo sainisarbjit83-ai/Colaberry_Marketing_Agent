@@ -97,18 +97,7 @@ CC.tabs = CC.tabs || {};
   };
 
   // ── AI agents ───────────────────────────────────────────────────────────────
-  const RUNGS = [
-    ['R0', 'Define the workflow, requirements, risks and human decisions.'],
-    ['R1', 'Prepare isolated development, fixtures and baseline tests.'],
-    ['R2', 'Answer questions using approved knowledge and records.'],
-    ['R3', 'Perform approved, user-initiated sandbox tool operations.'],
-    ['R4', 'Execute and verify stateful, multi-step sandbox tasks.'],
-    ['R5', 'Evaluate in shadow mode against approved reference outcomes.'],
-    ['R6', 'Conduct a separately approved, supervised production pilot.'],
-    ['R7', 'Automate only explicitly authorized action classes within limits.'],
-    ['R8', 'Coordinate necessary, authorized handoffs with other agents.'],
-    ['R9', 'Demonstrate reliable operation, monitoring, recovery and ownership.'],
-  ];
+  const { RUNGS } = CC.ui;
 
   function owners(data) {
     const map = new Map();
@@ -140,7 +129,7 @@ CC.tabs = CC.tabs || {};
           `${CC.FILES.plan} → stories[].owner_agent`));
       }
       cards.push(card(data, '#/agents/ladder', 'Autonomy ladder and capability ceilings',
-        h('div', {}, h('p', {}, 'Capability ceilings and per-rung behaviour: unavailable. Your plan files do not contain them.'),
+        h('div', {}, h('p', {}, 'Capability ceilings and per-rung behaviour: unavailable. Neither your plan files nor the public snapshot contains them. Effective authority is on the Overview, panel 3.'),
           h('p', { class: 'muted' }, 'R8 is unreachable by fact: agent-to-agent handoff does not exist in this platform.')), PLATFORM_RULES_SOURCE));
       return [h('h2', {}, 'AI agents'), note, h('div', { class: 'cards' }, cards)];
     },
@@ -153,7 +142,7 @@ CC.tabs = CC.tabs || {};
           h('table', {}, h('tr', {}, h('th', {}, 'Rung'), h('th', {}, 'What it means'), h('th', {}, 'Availability')),
             RUNGS.map(([r, text]) => h('tr', {}, h('td', {}, `autonomy:${r}`), h('td', {}, text),
               h('td', {}, r === 'R8' ? 'Unreachable by fact: agent-to-agent handoff does not exist in this platform today' : '')))),
-          h('p', {}, 'Where your employee currently sits, and each capability’s ceiling and per-rung behaviour: unavailable. Those are not in your plan files, and this page calls no signed-in endpoint.'),
+          h('p', {}, 'Each capability’s ceiling and per-rung behaviour: unavailable. Neither your plan files nor the public snapshot (.colaberry/agent-domain.json) contains them, and this page calls no signed-in endpoint. Your employee’s record and each capability’s effective authority are on the Overview, panels 1 and 3.'),
           h('ul', {},
             h('li', {}, 'Draft is not approved: a capability in draft has not been agreed by anyone.'),
             h('li', {}, 'Without granted tools, the platform caps any capability at R2 (effectiveAuthority, no_tool_grants).'),

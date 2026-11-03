@@ -1,9 +1,13 @@
 /*
  * The one place the Command Center gets its data.
  *
- * Real mode reads the three files the platform commits into .colaberry/, at runtime, every
+ * Real mode reads the four files the platform commits into .colaberry/, at runtime, every
  * page load. Nothing from them is copied into this code. Sample mode swaps in sample.js,
  * which is made-up data and is labelled as such everywhere it shows.
+ *
+ * `agent-domain.json` is the committed snapshot of three signed-in admin endpoints. The page is
+ * public, so it reads the snapshot instead of the endpoints (platform agentDomainSnapshot.ts,
+ * owner decision of 2 Nov 2026), and names the endpoint each part came from.
  *
  * Fields we don't know are ignored, and a newer schema_version still renders, because the
  * platform only ever adds fields (docs/stories/STORY-000.md, "Where the data comes from").
@@ -14,30 +18,70 @@ CC.FILES = {
   plan: '.colaberry/plan.json',
   progress: '.colaberry/progress.json',
   manifest: '.colaberry/manifest.json',
+  agentDomain: '.colaberry/agent-domain.json',
 };
 CC.BUILT_AGAINST_SCHEMA = 2;
+CC.AGENT_DOMAIN_SCHEMA = 'colaberry.agent-domain/v1';
 CC.STALE_AFTER_DAYS = 7;
 
-/** Fetch one JSON file. A failure names the file instead of returning a guess. */
+/**
+ * Fetch one JSON file and classify the result. Never throws, never guesses:
+ *   loaded  — parsed JSON object
+ *   empty   — HTTP 200 with an empty body
+ *   missing — HTTP error or the request failed
+ *   invalid — a body that is not a JSON object
+ */
 async function fetchJson(path) {
-  const res = await fetch(path, { cache: 'no-store' });
-  if (!res.ok) throw new Error(`${path} could not be loaded (HTTP ${res.status})`);
+  let res;
   try {
-    return await res.json();
+    res = await fetch(path, { cache: 'no-store' });
   } catch {
-    throw new Error(`${path} is not valid JSON`);
+    return { status: 'missing', error: `${path} could not be loaded (request failed)` };
+  }
+  if (!res.ok) return { status: 'missing', error: `${path} could not be loaded (HTTP ${res.status})` };
+  const text = await res.text();
+  if (!text.trim()) return { status: 'empty', error: `${path} is empty` };
+  try {
+    const value = JSON.parse(text);
+    if (!value || typeof value !== 'object' || Array.isArray(value)) return { status: 'invalid', error: `${path} is not a JSON object` };
+    return { status: 'loaded', value };
+  } catch {
+    return { status: 'invalid', error: `${path} is not valid JSON` };
   }
 }
 
+/** A snapshot that does not declare the agent-domain schema is not trusted as one. */
+function checkAgentDomain(result) {
+  if (result.status !== 'loaded') return result;
+  const schema = result.value.schema;
+  if (typeof schema !== 'string' || !schema.startsWith('colaberry.agent-domain/')) {
+    return { status: 'invalid', error: `${CC.FILES.agentDomain} does not declare the ${CC.AGENT_DOMAIN_SCHEMA} schema` };
+  }
+  return result;
+}
+
 /**
- * Load the real data. Returns { plan, progress, manifest, errors }. Any file that fails is
- * null, and its error is listed; the page then shows that error rather than any number.
+ * Load the real data. Returns { plan, progress, manifest, agentDomain, status, errors }. Any
+ * file that fails is null, its status says why, and its error is listed; the page then shows
+ * that error rather than any number. `status[key]` is 'loading' until that file settles, and
+ * `onUpdate` is called as each one does, so a panel can show it is still loading.
  */
-CC.loadReal = async function loadReal() {
-  const out = { mode: 'real', plan: null, progress: null, manifest: null, errors: [] };
+CC.loadReal = async function loadReal(onUpdate) {
+  const out = { mode: 'real', plan: null, progress: null, manifest: null, agentDomain: null, status: {}, errors: [] };
+  for (const key of Object.keys(CC.FILES)) out.status[key] = 'loading';
+  if (onUpdate) onUpdate(out);
   await Promise.all(Object.entries(CC.FILES).map(async ([key, path]) => {
-    try { out[key] = await fetchJson(path); } catch (e) { out.errors.push(e.message); }
+    let r = await fetchJson(path);
+    if (key === 'agentDomain') r = checkAgentDomain(r);
+    out.status[key] = r.status;
+    if (r.status === 'loaded') out[key] = r.value;
+    else out.errors.push(r.error);
+    if (onUpdate) onUpdate(out);
   }));
+  const schema = out.agentDomain && out.agentDomain.schema;
+  if (schema && schema !== CC.AGENT_DOMAIN_SCHEMA) {
+    out.schemaNote = `${CC.FILES.agentDomain} declares ${schema}; this page was built against ${CC.AGENT_DOMAIN_SCHEMA} and still renders the fields it knows.`;
+  }
   for (const key of ['plan', 'progress']) {
     const v = out[key] && out[key].schema_version;
     if (out[key] && typeof v === 'number' && v > CC.BUILT_AGAINST_SCHEMA) {

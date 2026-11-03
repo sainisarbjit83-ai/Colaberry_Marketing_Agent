@@ -66,4 +66,27 @@ h3 { font-size: var(--text-md); margin: var(--space-6) 0 var(--space-3); }
 .chat-input { flex: 1; padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius); font: inherit; }
 .chat button { border: 1px solid var(--color-accent); background: var(--color-accent); color: var(--color-accent-text); border-radius: var(--radius); padding: var(--space-2) var(--space-4); font: inherit; cursor: pointer; }
 .chat-answer { margin-top: var(--space-3); }
+/* The six STORY-000 panels. Each state looks different, and says its state in words too. */
+.section-title { margin-top: var(--space-4); }
+.panels { display: grid; grid-template-columns: repeat(auto-fill, minmax(520px, 1fr)); gap: var(--space-4); }
+@media (max-width: 600px) { .panels { grid-template-columns: 1fr; } }
+.panel { background: var(--color-surface); border: 1px solid var(--color-border); border-left-width: 4px; border-radius: var(--radius); padding: var(--space-4); min-width: 0; overflow-x: auto; }
+.panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-3); }
+.panel h3 { margin: 0; }
+.panel h4 { margin: var(--space-4) 0 var(--space-2); font-size: var(--text-sm); }
+.panel .source { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 0; }
+.state-badge { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px var(--space-2); border-radius: var(--radius); border: 1px solid var(--color-border); white-space: nowrap; }
+.panel.is-loaded { border-left-color: var(--color-accent); }
+.panel.is-loading { border-style: dashed; border-color: var(--color-info-border); background: var(--color-info-bg); }
+.panel.is-loading .state-badge { background: var(--color-info-bg); border-color: var(--color-info-border); }
+.panel.is-empty, .panel.is-missing { border-left-color: var(--color-status-unknown); background: var(--color-bg); }
+.panel.is-empty .state-badge, .panel.is-missing .state-badge { background: var(--color-status-unknown); border-color: var(--color-status-unknown); color: var(--color-accent-text); }
+.panel.is-invalid { border-color: var(--color-error-border); background: var(--color-error-bg); }
+.panel.is-invalid .state-badge { background: var(--color-error-border); border-color: var(--color-error-border); color: var(--color-accent-text); }
+.loading-text { color: var(--color-text); font-weight: 600; }
+.disclosure { font-weight: 600; }
+.big-ish { font-size: var(--text-md); font-weight: 600; }
+.warning-text { color: var(--color-warning-text); background: var(--color-warning-bg); padding: var(--space-2); border-radius: var(--radius); }
+.panels-off { background: var(--color-surface); border: 1px dashed var(--color-border); border-radius: var(--radius); padding: var(--space-4); }
+details summary { cursor: pointer; color: var(--color-accent); margin: var(--space-2) 0; }
 .placeholder { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: var(--space-6); }

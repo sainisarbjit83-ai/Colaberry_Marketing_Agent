@@ -1,12 +1,16 @@
 // Minimal local static server for previewing the Command Center. Localhost only.
+// Optional 4th argument: a comma-separated list of paths (e.g. /.colaberry/agent-domain.json)
+// that are never answered, so a test can see a panel that is still loading.
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const ROOT = process.argv[2];
 const PORT = Number(process.argv[3] || 8765);
+const HOLD = new Set((process.argv[4] || '').split(',').filter(Boolean));
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.md': 'text/markdown' };
 http.createServer((req, res) => {
   const rel = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+  if (HOLD.has(rel)) return; // deliberately left pending
   const file = path.normalize(path.join(ROOT, rel === '/' ? 'index.html' : rel));
   if (!file.startsWith(path.normalize(ROOT))) { res.writeHead(403); return res.end(); }
   fs.readFile(file, (err, buf) => {

@@ -76,5 +76,33 @@ window.CC = window.CC || {};
     return p && p.verification && p.verification.state ? p.verification.state : null;
   }
 
-  CC.ui = { PLATFORM_RULES_SOURCE, h, orNotSet, card, detailRow, back, sourceLine, arr, enc, dec, progressFor, stateOf };
+  /**
+   * The ten rungs in the owner's own words, copied verbatim from AUTONOMY_MEANINGS in the
+   * platform's autonomyLadder.ts. These are platform rules, not domain data, so they are the
+   * one list on the page that does not come from a data file.
+   */
+  const RUNGS = Object.freeze([
+    ['R0', 'Define the workflow, requirements, risks and human decisions.'],
+    ['R1', 'Prepare isolated development, fixtures and baseline tests.'],
+    ['R2', 'Answer questions using approved knowledge and records.'],
+    ['R3', 'Perform approved, user-initiated sandbox tool operations.'],
+    ['R4', 'Execute and verify stateful, multi-step sandbox tasks.'],
+    ['R5', 'Evaluate in shadow mode against approved reference outcomes.'],
+    ['R6', 'Conduct a separately approved, supervised production pilot.'],
+    ['R7', 'Automate only explicitly authorized action classes within limits.'],
+    ['R8', 'Coordinate necessary, authorized handoffs with other agents.'],
+    ['R9', 'Demonstrate reliable operation, monitoring, recovery and ownership.'],
+  ]);
+
+  /** An ISO timestamp from a data file, shown in Central time; null stays a labelled gap. */
+  function central(iso, what = 'not recorded') {
+    const d = iso ? new Date(iso) : null;
+    if (!d || Number.isNaN(d.getTime())) return orNotSet(null, what);
+    return d.toLocaleString('en-US', {
+      timeZone: 'America/Chicago', day: 'numeric', month: 'long', year: 'numeric',
+      hour: 'numeric', minute: '2-digit', timeZoneName: 'short',
+    });
+  }
+
+  CC.ui = { PLATFORM_RULES_SOURCE, RUNGS, h, orNotSet, card, detailRow, back, sourceLine, arr, enc, dec, progressFor, stateOf, central };
 })();

@@ -67,10 +67,23 @@ window.CC = window.CC || {};
       return answer(r.length ? `${count(r, 'requirement', 'requirements')} in your plan.` : 'Your plan has no requirements yet.',
         'Knowledge base', `${CC.FILES.plan} → requirements`);
     }
-    if (has(q, 'agent', 'owner', 'autonomy')) {
+    if (has(q, 'no_tool_grants', 'tool grant', 'authority', 'effective')) {
+      const snap = data.agentDomain;
+      if (!snap || !Array.isArray(snap.authority)) return answer('The public snapshot is not loaded, so effective authority cannot be shown.', 'Overview', CC.FILES.agentDomain);
+      const n = snap.authority.filter((c) => arr(c.reasons).includes('no_tool_grants')).length;
+      return answer(`The no_tool_grants rule currently constrains ${n} of ${snap.authority.length} capabilities.${n === 0 ? ' None is approved above autonomy:R2, so it binds nothing.' : ''}`,
+        'Overview', `${CC.FILES.agentDomain} → authority[].reasons, authority_rule`);
+    }
+    if (has(q, 'agent', 'owner', 'autonomy', 'employee')) {
+      const ag = data.agentDomain && data.agentDomain.agent;
+      if (ag && ag.exists) {
+        return answer(`Your employee exists and is ${ag.enabled ? 'enabled' : 'disabled'}, with agent-level autonomy "${ag.autonomy_level || 'not recorded'}" (not a ladder rung) and ${count(arr(ag.tools_granted), 'tool', 'tools')} granted. Capability ceilings are not in the public snapshot.`,
+          'Overview', `${CC.FILES.agentDomain} → agent`);
+      }
+      if (ag && ag.exists === false) return answer('No agent yet: no AI employee is linked to this domain.', 'Overview', `${CC.FILES.agentDomain} → agent`);
       const a = arr(plan.agents);
       return answer(a.length ? `${count(a, 'agent', 'agents')}: ${a.map((x) => x.name).join(', ')}. No runs are recorded.`
-        : 'Your plan has no scoped agent roster. Autonomy levels and capability ceilings are not in your data files.',
+        : 'Your plan has no scoped agent roster, and the public snapshot is not loaded. Autonomy levels and capability ceilings are not in your data files.',
       'AI agents', `${CC.FILES.plan} → agents`);
     }
     if (has(q, 'project', 'name', 'what is this', 'descriptor')) {
@@ -98,7 +111,7 @@ window.CC = window.CC || {};
 
   function render(data) {
     const out = h('div', { class: 'chat-answer', 'aria-live': 'polite' },
-      h('span', { class: 'muted' }, 'Ask about releases, progress, stories, measures, roles, guardrails, systems, requirements, agents or how fresh the data is.'));
+      h('span', { class: 'muted' }, 'Ask about releases, progress, stories, measures, roles, guardrails, systems, requirements, agents, authority or how fresh the data is.'));
     const input = h('input', { type: 'text', class: 'chat-input', 'aria-label': 'Question', placeholder: 'e.g. Which stories mention signal?' });
     const form = h('form', { class: 'chat' }, input, h('button', { type: 'submit' }, 'Ask'));
     form.addEventListener('submit', (e) => {

@@ -8,7 +8,7 @@
 window.CC = window.CC || {};
 CC.tabs = CC.tabs || {};
 
-const { h, orNotSet, card, detailRow, back, sourceLine, PLATFORM_RULES_SOURCE } = CC.ui;
+const { h, orNotSet, card, detailRow, back, sourceLine } = CC.ui;
 
 const TABS = [
   { id: 'overview', label: 'Overview' },
@@ -45,7 +45,9 @@ function renderHeader(data, route) {
   const project = data.plan && data.plan.project;
   const age = CC.dataAge(data.manifest);
   let stamp;
-  if (!age) {
+  if (data.status && data.status.manifest === 'loading') {
+    stamp = h('div', { class: 'data-stamp' }, `Data as of: loading ${CC.FILES.manifest}…`);
+  } else if (!age) {
     stamp = h('div', { class: 'data-stamp is-error' },
       `Data as of: unknown. ${CC.FILES.manifest} is missing or has no generated_at.`);
   } else if (age.stale) {
@@ -114,10 +116,6 @@ function overviewCards(data) {
     ? h('p', { class: 'empty' }, 'Nothing is reported live. Your plan names no external system.')
     : h('ul', {}, systems.map((s) => h('li', {}, h('span', { class: 'dot', title: 'unknown' }), `${s}: not checked from here`)));
 
-  const authority = h('div', {},
-    h('p', {}, 'Your AI employee’s status and autonomy are not available on this page: they need a signed-in platform endpoint, and a public static page holds no credentials.'),
-    h('p', { class: 'muted' }, 'Draft is not approved. R8 (agent-to-agent handoff) does not exist in this platform, so it is unreachable by fact.'));
-
   return [
     card(data, '#/overview/project', 'What this is',
       h('div', {}, h('div', { class: 'big' }, orNotSet(plan.project && plan.project.name)),
@@ -126,12 +124,24 @@ function overviewCards(data) {
     card(data, '#/overview/releases', 'Where you are', where, `${CC.FILES.plan} → releases, schedule`),
     card(data, '#/overview/progress', 'How far along', progress, `${CC.FILES.progress} → totals`),
     card(data, '#/overview/live', 'What is live', live, `${CC.FILES.plan} → derived.systems`),
-    card(data, '#/overview/authority', 'Your AI employee and its authority', authority, PLATFORM_RULES_SOURCE),
   ];
 }
 
+/** True while any of the given data files is still being fetched. */
+const isLoading = (data, ...keys) => keys.some((k) => data.status && data.status[k] === 'loading');
+
+/**
+ * The Overview leads with the six STORY-000 panels (panels.js), then the plan and progress
+ * cards. The cards wait for their own files rather than drawing "nothing in your plan" early.
+ */
 function renderOverview(data) {
-  return [h('h2', {}, 'Overview'), h('div', { class: 'cards' }, overviewCards(data))];
+  return [h('h2', {}, 'Overview'),
+    h('h3', { class: 'section-title' }, 'Your Command Center: six panels'),
+    CC.panels.render(data),
+    h('h3', { class: 'section-title' }, 'Plan and progress'),
+    isLoading(data, 'plan', 'progress')
+      ? h('p', { class: 'loading-text' }, `Loading ${CC.FILES.plan} and ${CC.FILES.progress}…`)
+      : h('div', { class: 'cards' }, overviewCards(data))];
 }
 
 const OVERVIEW_DETAILS = {
@@ -178,16 +188,6 @@ const OVERVIEW_DETAILS = {
         : h('ul', {}, systems.map((s) => h('li', {}, h('span', { class: 'dot', title: 'unknown' }), `${s}: not checked from here`))),
       sourceLine(data, `${CC.FILES.plan} → derived.systems`)];
   },
-  authority() {
-    return [h('h2', {}, 'Your AI employee and its authority'),
-      h('p', {}, 'Not available on this page. The employee’s record, its enabled state, autonomy level and tool grants come from signed-in platform endpoints. This page is public and static, so it holds no credentials and calls no such endpoint.'),
-      h('ul', {},
-        h('li', {}, 'Draft is not approved. A capability in draft has not been agreed by anyone.'),
-        h('li', {}, 'R8, coordinated handoff between agents, does not exist in this platform today, so it is unreachable by fact rather than by choice.'),
-        h('li', {}, 'Without granted tools, the platform caps any capability at R2 (effectiveAuthority, no_tool_grants). Whether any tool is granted to this domain’s agent cannot be read from this page.'),
-        h('li', {}, 'Progress shown on this page is never authority.')),
-      h('p', { class: 'muted' }, `Source: ${PLATFORM_RULES_SOURCE}`)];
-  },
 };
 
 CC.tabs.overview = {
@@ -217,15 +217,22 @@ function render() {
   if (current.schemaNote) main.append(h('div', { class: 'banner' }, current.schemaNote));
   let content;
   if (!impl) content = [h('h2', {}, tab.label), h('p', { class: 'empty' }, 'This tab failed to load.')];
-  else if (route.detail) content = impl.detail(current, route.detail);
+  else if ((tab.id !== 'overview' || route.detail) && isLoading(current, 'plan', 'progress', 'manifest')) {
+    content = [h('h2', {}, tab.label), h('p', { class: 'loading-text' }, 'Loading your data files…')];
+  } else if (route.detail) content = impl.detail(current, route.detail);
   else content = impl.render(current);
   main.append(...content);
   root.append(main);
 }
 
+/** Real mode re-renders as each data file settles, so a panel can show it is still loading. */
 async function start() {
-  current = getMode() === 'sample' ? CC.loadSample() : await CC.loadReal();
-  render();
+  if (getMode() === 'sample') {
+    current = CC.loadSample();
+    render();
+    return;
+  }
+  await CC.loadReal((d) => { current = d; render(); });
 }
 
 window.addEventListener('hashchange', () => { if (current) render(); });

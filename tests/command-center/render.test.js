@@ -14,25 +14,85 @@ let pass = 0, fail = 0;
 const failures = [];
 
 function dom(url) {
-  const r = spawnSync(EDGE, ['--headless=new', '--disable-gpu', `--user-data-dir=${TMP}/edge-profile`, '--virtual-time-budget=4000', '--dump-dom', url], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  const r = spawnSync(EDGE, ['--headless=new', '--disable-gpu', `--user-data-dir=${TMP}/edge-profile`, '--virtual-time-budget=4000', '--dump-dom', url], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, timeout: 60000 });
   return r.stdout || '';
+}
+/**
+ * The DOM once `ready` (a page expression) is true, read over the DevTools protocol.
+ *
+ * Needed for a page with a request that never returns: virtual time waits for every pending
+ * request and never dumps, and a plain --dump-dom fires at the load event, which can come before
+ * the other files arrive. This drives Edge directly and polls until the page reaches the state
+ * being tested. Uses Node's built-in WebSocket (Node 22+); no dependency.
+ */
+async function domWhen(url, ready, timeoutMs = 20000) {
+  const port = 9333;
+  const edge = spawn(EDGE, ['--headless=new', '--disable-gpu', `--user-data-dir=${TMP}/edge-cdp`, `--remote-debugging-port=${port}`, 'about:blank'], { stdio: 'ignore' });
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  try {
+    let target = null;
+    for (let i = 0; i < 50 && !target; i++) {
+      await wait(200);
+      try { target = (await (await fetch(`http://127.0.0.1:${port}/json/list`)).json()).find((t) => t.type === 'page'); } catch { /* not listening yet */ }
+    }
+    if (!target) return '';
+    const ws = new WebSocket(target.webSocketDebuggerUrl);
+    await new Promise((res, rej) => { ws.onopen = res; ws.onerror = rej; });
+    let id = 0;
+    const pending = new Map();
+    ws.onmessage = (m) => { const msg = JSON.parse(m.data); if (pending.has(msg.id)) { pending.get(msg.id)(msg.result); pending.delete(msg.id); } };
+    const send = (method, params) => new Promise((res) => { pending.set(++id, res); ws.send(JSON.stringify({ id, method, params })); });
+    const evaluate = async (expression) => ((await send('Runtime.evaluate', { expression, returnByValue: true })) || {}).result || {};
+    await send('Page.navigate', { url });
+    const until = Date.now() + timeoutMs;
+    while (Date.now() < until && !(await evaluate(ready)).value) await wait(200);
+    const html = (await evaluate('document.documentElement.outerHTML')).value || '';
+    ws.close();
+    return html;
+  } finally {
+    edge.kill();
+  }
 }
 const text = (html) => html.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<[^>]*>/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ');
 function check(cond, label) { if (cond) pass++; else { fail++; failures.push(label); } }
 const cardHrefs = (html) => [...html.matchAll(/<a class="card" href="([^"]+)"/g)].map((m) => m[1]);
+
+// The six STORY-000 panels: their data-state attributes in order, and one panel's own text.
+const panelStates = (html) => [...html.matchAll(/<section class="panel [^"]*" data-state="([a-z]+)"/g)].map((m) => m[1]);
+function panelText(html, n) {
+  const start = html.indexOf(`id="panel-${n}"`);
+  if (start < 0) return '';
+  const end = html.indexOf('</section>', start);
+  return text(html.slice(start, end < 0 ? undefined : end));
+}
+
+// The owner's wording for the ten rungs, copied independently from AUTONOMY_MEANINGS in the
+// platform's autonomyLadder.ts, so the page is checked against the source rather than itself.
+const OWNER_RUNGS = [
+  'Define the workflow, requirements, risks and human decisions.',
+  'Prepare isolated development, fixtures and baseline tests.',
+  'Answer questions using approved knowledge and records.',
+  'Perform approved, user-initiated sandbox tool operations.',
+  'Execute and verify stateful, multi-step sandbox tasks.',
+  'Evaluate in shadow mode against approved reference outcomes.',
+  'Conduct a separately approved, supervised production pilot.',
+  'Automate only explicitly authorized action classes within limits.',
+  'Coordinate necessary, authorized handoffs with other agents.',
+  'Demonstrate reliable operation, monitoring, recovery and ownership.',
+];
 
 function copySite(dest, mutate) {
   fs.rmSync(dest, { recursive: true, force: true });
   fs.mkdirSync(path.join(dest, '.colaberry'), { recursive: true });
   fs.cpSync(path.join(REPO, 'assets'), path.join(dest, 'assets'), { recursive: true });
   fs.copyFileSync(path.join(REPO, 'index.html'), path.join(dest, 'index.html'));
-  for (const f of ['plan.json', 'progress.json', 'manifest.json']) fs.copyFileSync(path.join(REPO, '.colaberry', f), path.join(dest, '.colaberry', f));
+  for (const f of ['plan.json', 'progress.json', 'manifest.json', 'agent-domain.json']) fs.copyFileSync(path.join(REPO, '.colaberry', f), path.join(dest, '.colaberry', f));
   mutate(dest);
 }
 const rw = (file, fn) => { const j = JSON.parse(fs.readFileSync(file, 'utf8')); fn(j); fs.writeFileSync(file, JSON.stringify(j)); };
 
 const servers = [];
-function serve(dir, port) { servers.push(spawn('node', [path.join(HERE, 'serve.js'), dir, String(port)], { stdio: 'ignore' })); }
+function serve(dir, port, hold) { servers.push(spawn('node', [path.join(HERE, 'serve.js'), dir, String(port), ...(hold ? [hold] : [])], { stdio: 'ignore' })); }
 
 async function main() {
   const V = path.join(TMP, 'variants');
@@ -43,9 +103,29 @@ async function main() {
     C: [8783, (d) => fs.rmSync(path.join(d, '.colaberry/manifest.json'))],
     D: [8784, (d) => fs.rmSync(path.join(d, '.colaberry/plan.json'))],
     E: [8785, (d) => fs.rmSync(path.join(d, '.colaberry/progress.json'))],
+    // Snapshot variants for the six panels.
+    F: [8786, (d) => fs.rmSync(path.join(d, '.colaberry/agent-domain.json'))],
+    G: [8787, (d) => fs.writeFileSync(path.join(d, '.colaberry/agent-domain.json'), '{ not json')],
+    H: [8788, (d) => fs.writeFileSync(path.join(d, '.colaberry/agent-domain.json'), '')],
+    I: [8789, (d) => rw(path.join(d, '.colaberry/agent-domain.json'), (s) => {
+      // An edited COPY: no agent, one capability capped by no_tool_grants, and three requests using
+      // the platform's real values (kind change|tool, status submitted|approved|declined) plus one
+      // whose kind and status the platform does not define.
+      s.agent = { exists: false };
+      s.governance.requests = [
+        { id: 'copy-1', kind: 'tool', title: 'COPY-TOOL-REQUEST read_marketing_database', status: 'submitted', requested_at: '2026-11-02T15:00:00Z', approved_at: null, declined_reason: null },
+        { id: 'copy-4', kind: 'tool', title: 'COPY-APPROVED-TOOL screenshot_capture', status: 'approved', requested_at: '2026-11-01T15:00:00Z', approved_at: '2026-11-01T18:00:00Z', declined_reason: null },
+        { id: 'copy-2', kind: 'change', title: 'COPY-CHANGE-REQUEST rename', status: 'declined', requested_at: '2026-11-02T15:00:00Z', approved_at: '2026-11-02T16:30:00Z', declined_reason: 'COPY-REASON' },
+        { id: 'copy-3', kind: 'tool_grant', title: 'COPY-ODD-REQUEST', status: 'on_hold', requested_at: null, approved_at: null, declined_reason: null },
+      ];
+      s.authority[0] = { capability_id: s.authority[0].capability_id, effective_autonomy: 'autonomy:R2', reasons: ['no_tool_grants'] };
+      s.authority_rule.approved_above_r2 = 1;
+      s.authority_rule.binds_nothing = false;
+    })],
+    J: [8790, () => {}, '/.colaberry/agent-domain.json'],
   };
   serve(REPO, 8765);
-  for (const [k, [port, mut]] of Object.entries(variants)) { copySite(path.join(V, k), mut); serve(path.join(V, k), port); }
+  for (const [k, [port, mut, hold]] of Object.entries(variants)) { copySite(path.join(V, k), mut); serve(path.join(V, k), port, hold); }
   await new Promise((r) => setTimeout(r, 1200));
 
   for (const mode of ['real', 'sample']) {
@@ -73,6 +153,58 @@ async function main() {
   // A real story detail opened from the task table (not a card).
   const sd = text(dom(`http://127.0.0.1:8765/?mode=real#/project/${encodeURIComponent('story:' + firstStory)}`));
   check(sd.includes(firstStory) && /Acceptance criteria/.test(sd) && /Platform status/.test(sd), 'real story detail opens from task table');
+
+  // The six STORY-000 panels on the real snapshot.
+  const ov = dom('http://127.0.0.1:8765/?mode=real#/overview');
+  const snap = JSON.parse(fs.readFileSync(path.join(REPO, '.colaberry/agent-domain.json'), 'utf8'));
+  check(panelStates(ov).length === 6, 'real: six panels render');
+  for (let n = 1; n <= 6; n++) check(/Endpoint read: GET \/api\/admin\//.test(panelText(ov, n)), `real: panel ${n} names the endpoint it read`);
+  for (const ep of Object.values(snap.sources)) check(text(ov).includes(ep), `real: snapshot source ${ep} named on the page`);
+  const p1 = panelText(ov, 1);
+  check(p1.includes(snap.agent.agent_id) && /Enabled No: this agent is disabled/.test(p1) && /Tools granted 0\./.test(p1), 'real panel 1: agent record from the snapshot');
+  check(/not a rung on the autonomy:R0 to R9 ladder/.test(p1) && /Set by Not recorded/.test(p1), 'real panel 1: agent scale labelled, set-by not invented');
+  const p2 = panelText(ov, 2);
+  const humanCount = snap.authority.filter((c) => c.reasons.includes('human_decision_required_at_every_level')).length;
+  check(p2.includes(`${snap.authority.length} capabilities in the snapshot. ${humanCount} of them`), 'real panel 2: counts match the snapshot');
+  check((ov.match(/<code>marketing\.[^<]+<\/code>/g) || []).length >= snap.authority.length, 'real panel 2: one row per capability');
+  const p3 = panelText(ov, 3);
+  check(OWNER_RUNGS.every((w) => p3.includes(w)), 'real panel 3: all ten rungs in the owner’s wording');
+  check(/autonomy:R8 Coordinate[^.]*\. \d+ Unreachable by fact/.test(p3), 'real panel 3: R8 marked unreachable by fact');
+  check(/In force, and currently constrains 0 capabilities/.test(p3) && /no_tool_grants/.test(p3), 'real panel 3: no_tool_grants named with its count, zero said in words');
+  check(/Ceilings \(max_permitted_autonomy\) are not in the public snapshot/.test(p3), 'real panel 3: missing ceilings labelled, not drawn');
+  check(panelStates(ov)[3] === 'missing' && /Not in the public snapshot: release_behaviour/.test(panelText(ov, 4)), 'real panel 4: per-rung behaviour labelled missing');
+  const p5 = panelText(ov, 5);
+  check(panelStates(ov)[4] === 'empty' && /A filed request grants nothing/.test(p5) && /Nothing returned: no change requests and no tool requests/.test(p5), 'real panel 5: empty queue said in words, with the disclosure');
+  check(/agent\.autonomy_level_set_by/.test(panelText(ov, 6)) && /unreachable by fact/.test(panelText(ov, 6)), 'real panel 6: declared gaps listed');
+  check(!/class="panel /.test(dom('http://127.0.0.1:8765/?mode=sample#/overview')), 'sample: the six panels are not drawn with made-up data');
+
+  // Snapshot variants: each state is named in words and has its own data-state.
+  const fO = dom('http://127.0.0.1:8786/?mode=real#/overview');
+  check(panelStates(fO).join() === 'missing,missing,missing,missing,missing,missing' && /Not loaded: \.colaberry\/agent-domain\.json could not be loaded \(HTTP 404\)/.test(text(fO)), 'F: missing snapshot stated on every panel');
+  check(!/constrains 0/.test(text(fO)) && /expected: the snapshot that names it did not load/.test(text(fO)), 'F: no figure from a missing snapshot; endpoint marked as expected');
+  const gO = dom('http://127.0.0.1:8787/?mode=real#/overview');
+  check(panelStates(gO).join() === 'invalid,invalid,invalid,invalid,invalid,invalid' && /is not valid JSON/.test(text(gO)), 'G: invalid snapshot stated on every panel');
+  const hO = dom('http://127.0.0.1:8788/?mode=real#/overview');
+  check(panelStates(hO).join() === 'empty,empty,empty,empty,empty,empty' && /Nothing returned: \.colaberry\/agent-domain\.json is empty/.test(text(hO)), 'H: empty snapshot stated on every panel');
+  const iO = dom('http://127.0.0.1:8789/?mode=real#/overview');
+  check(panelStates(iO)[0] === 'empty' && /No agent yet/.test(panelText(iO, 1)), 'I: no agent said in words, distinct state');
+  check(/currently constrains 1 capability: each is held at autonomy:R2 because no tool is granted/.test(panelText(iO, 3)), 'I: a real no_tool_grants count is shown');
+  const i5 = panelText(iO, 5);
+  check(/Tool requests \(asked for, not granted\) Request Status Filed Decided COPY-TOOL-REQUEST read_marketing_database Submitted: nobody has decided yet\. Grants nothing\./.test(i5) && /0 granted/.test(i5), 'I: a submitted tool request shown as asked for, not granted');
+  // The platform writes approved_at on a decline too (the decision time), so it shows as Decided.
+  check(/Change requests Request Status Filed Decided COPY-CHANGE-REQUEST rename Declined: COPY-REASON November 2, 2026 at 9:00 AM CST November 2, 2026 at 10:30 AM CST/.test(i5), 'I: a declined change request listed under change requests, with its decision time');
+  check(/Requests of an unknown type Their kind is not one the platform defines \(change or tool\): "tool_grant"\.[^]*COPY-ODD-REQUEST Unknown status "on_hold"/.test(i5), 'I: an unknown kind and status shown as unknown, not guessed');
+  check(!/Tool requests[^]*COPY-ODD-REQUEST[^]*Change requests/.test(i5), 'I: a kind merely containing "tool" is not counted as a tool request');
+  check(/COPY-APPROVED-TOOL screenshot_capture Approved by a named human/.test(i5) && /0 granted/.test(i5), 'I: an approved tool request is shown as approved, and the grant count still comes from the agent record');
+  check(/Pending \(status submitted\): 1 · Approved: 1 · Declined: 1 · Unknown status: 1/.test(i5), 'I: summary counts submitted as pending, approved and declined separately, unknown status apart');
+  const p5real = panelText(ov, 5);
+  check(/none is awaiting a decision/.test(p5real), 'real panel 5: empty governance state preserved');
+  check(/Pending \(status submitted\): 0 · Approved: 0 · Declined: 0/.test(p5real) && !/Unknown status/.test(p5real), 'real panel 5: empty request list counts 0 / 0 / 0 and no unknown');
+  // Read once the plan cards are drawn: the other files have arrived, the held snapshot never does.
+  const jO = await domWhen('http://127.0.0.1:8790/?mode=real#/overview', "document.body.innerText.includes('How far along')");
+  check(panelStates(jO).join() === 'loading,loading,loading,loading,loading,loading' && /Loading: waiting for \.colaberry\/agent-domain\.json/.test(text(jO)), 'J: a held snapshot shows every panel as loading');
+  check(/is still loading/.test(text(jO)) && !/did not load/.test(text(jO)), 'J: a loading snapshot is not described as failed');
+  check(/How far along/.test(text(jO)) && !/Nothing returned|Not loaded/.test(text(jO)), 'J: loading is distinct from empty and missing, and other files still render');
 
   // Default mode: the plain address opens Real.
   check(!/SAMPLE/.test(text(dom('http://127.0.0.1:8765/#/overview'))), 'plain address opens in Real mode');
