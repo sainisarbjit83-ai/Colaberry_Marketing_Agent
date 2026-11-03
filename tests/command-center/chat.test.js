@@ -16,8 +16,8 @@ function t(q, expectText, expectCite, d = data) {
   ok ? pass++ : fail++;
   console.log(`${ok ? 'PASS' : 'FAIL'}  "${q}"\n      → ${a && a.text}\n      ${a && a.cite ? 'From: ' + a.cite : '(no citation)'}`);
 }
-t('How fresh is the data?', /as of November 2, 2026 at 8:59 AM CST/, /Every tab · \.colaberry\/manifest\.json → generated_at/);
-t('How many stories are verified?', /6 of 71 stories verified; 18 of 82 criteria passed; 66 points/, /Overview tab · \.colaberry\/progress\.json → totals/);
+t('How fresh is the data?', /as of November 3, 2026 at 7:24 AM CST/, /Every tab · \.colaberry\/manifest\.json → generated_at/);
+t('How many stories are verified?', /6 of 71 stories verified; 18 of 88 criteria passed; 66 points/, /Overview tab · \.colaberry\/progress\.json → totals/);
 t('What are the releases?', /3 releases: r0 Discovery and validation \(5\); r1 Legacy migration plan \(1\); r2 r2 \(64\)/, /Project management tab/);
 t('What outcomes are we measuring?', /no measures/, /Outcomes tab/);
 t('Who are the users?', /do not name a role/, /Users and use case tab/);
