@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-03T13:24:19.167Z",
+  "generated_at": "2026-11-04T16:45:02.202Z",
   "plan_version": 1,
   "plan_sha256": "3551a58b38932557d08df0f2fcb0a76250d09e5bb9d845af796ad2e1d9206746",
-  "correlation_id": "34dafef1-14f2-4fd5-86bb-b442a379a3fe",
+  "correlation_id": "aea8e5bd-a4dc-4149-b780-6ab75468931a",
   "project_id": "26cb06c4-75f3-5397-89f4-b56a4cc49483",
   "truth_revision": null,
   "files": [
@@ -324,7 +324,7 @@
     },
     {
       "path": ".colaberry/agent-domain.json",
-      "sha256": "3a68d29e91f8c5d8425fea8258b4fe7ad1a9975cceea5777f211c7eee102a923"
+      "sha256": "f0c6af33dbc444b6e7fc8732ae1948675c712c2a9c5bfd640a4b578a8684e7db"
     },
     {
       "path": "docs/stories/STORY-000.md",
