@@ -66,6 +66,15 @@ function panelText(html, n) {
   return text(html.slice(start, end < 0 ? undefined : end));
 }
 
+// One capability's row in panel 3's ceiling table: its cells' text, and each rung cell's classes.
+function capRow(html, id) {
+  const m = html.match(new RegExp(`<tr data-capability="${id.replace(/\./g, '\\.')}">([\\s\\S]*?)</tr>`));
+  if (!m) return null;
+  const cells = [...m[1].matchAll(/<td>([\s\S]*?)<\/td>/g)].map((c) => text(c[1]).trim());
+  const rungs = Object.fromEntries([...m[1].matchAll(/<span class="rung ([^"]*)" data-rung="(R\d)"/g)].map((r) => [r[2], r[1]]));
+  return { cells, rungs };
+}
+
 // The owner's wording for the ten rungs, copied independently from AUTONOMY_MEANINGS in the
 // platform's autonomyLadder.ts, so the page is checked against the source rather than itself.
 const OWNER_RUNGS = [
@@ -123,6 +132,18 @@ async function main() {
       s.authority_rule.binds_nothing = false;
     })],
     J: [8790, () => {}, '/.colaberry/agent-domain.json'],
+    // Per-capability gaps in the five autonomy fields, on an edited COPY.
+    K: [8791, (d) => rw(path.join(d, '.colaberry/agent-domain.json'), (s) => {
+      const [, c1, c2, c3, c4] = s.authority;
+      delete c1.max_permitted_autonomy; delete c1.max_permitted_autonomy_note; delete c1.ceiling_reason;
+      c2.approved_autonomy = null; c2.approved_autonomy_note = 'starting_autonomy is "R2b", which is not one of the ten rungs';
+      c3.ceiling_reason = '';
+      c4.max_permitted_autonomy = null; c4.max_permitted_autonomy_note = null;
+    })],
+    // A snapshot from before AF12.3: none of the five fields, anywhere.
+    L: [8792, (d) => rw(path.join(d, '.colaberry/agent-domain.json'), (s) => {
+      for (const c of s.authority) for (const f of ['approved_autonomy', 'approved_autonomy_note', 'max_permitted_autonomy', 'max_permitted_autonomy_note', 'ceiling_reason']) delete c[f];
+    })],
   };
   serve(REPO, 8765);
   for (const [k, [port, mut, hold]] of Object.entries(variants)) { copySite(path.join(V, k), mut); serve(path.join(V, k), port, hold); }
@@ -171,7 +192,34 @@ async function main() {
   check(OWNER_RUNGS.every((w) => p3.includes(w)), 'real panel 3: all ten rungs in the owner’s wording');
   check(/autonomy:R8 Coordinate[^.]*\. \d+ Unreachable by fact/.test(p3), 'real panel 3: R8 marked unreachable by fact');
   check(/In force, and currently constrains 0 capabilities/.test(p3) && /no_tool_grants/.test(p3), 'real panel 3: no_tool_grants named with its count, zero said in words');
-  check(/Ceilings \(max_permitted_autonomy\) are not in the public snapshot/.test(p3), 'real panel 3: missing ceilings labelled, not drawn');
+  // Panel 3's ceilings, checked against the snapshot itself.
+  const caps = snap.authority;
+  check((ov.match(/<tr data-capability="marketing\./g) || []).length === caps.length, 'real panel 3: one ceiling row per capability');
+  const idOf = (pred) => (caps.find(pred) || {}).capability_id;
+  const examples = [
+    idOf((c) => c.reasons.includes('human_decision_required_at_every_level')),
+    idOf((c) => c.reasons.length === 0 && c.max_permitted_autonomy === 'autonomy:R9'),
+    idOf((c) => c.max_permitted_autonomy === 'autonomy:R4'),
+  ];
+  for (const id of examples) {
+    const c = caps.find((x) => x.capability_id === id);
+    const row = capRow(ov, id);
+    check(row && row.cells[1] === c.approved_autonomy && row.cells[2] === c.max_permitted_autonomy && row.cells[3] === c.effective_autonomy && row.cells[5] === c.ceiling_reason,
+      `real panel 3: ${id} shows approved, ceiling, effective and ceiling reason from the snapshot`);
+    check(row && row.cells[6] === (c.reasons.length ? c.reasons.join(', ') : 'none recorded') && row.cells[5] !== row.cells[6],
+      `real panel 3: ${id} keeps reasons and ceiling reason in separate columns`);
+  }
+  check(caps.every((c) => { const r = capRow(ov, c.capability_id); return r && /is-fact/.test(r.rungs.R8) && !/is-open/.test(r.rungs.R8); }), 'real panel 3: R8 is unreachable by fact in every capability’s strip');
+  const r9 = caps.filter((c) => c.max_permitted_autonomy === 'autonomy:R9');
+  check(r9.length > 0 && r9.every((c) => { const r = capRow(ov, c.capability_id); return /cannot rise above autonomy:R7 today/.test(r.cells[4]) && /is-fact/.test(r.rungs.R8) && /is-ceiling/.test(r.rungs.R9); }), 'real panel 3: an R9 ceiling does not make R8 reachable');
+  check((text(ov).match(/cannot rise above autonomy:R7 today/g) || []).length === caps.filter((c) => /R[89]$/.test(c.max_permitted_autonomy)).length, 'real panel 3: only R8/R9 ceilings carry the R7 limit');
+  const r4 = capRow(ov, examples[2]);
+  check(/Stops at autonomy:R4: autonomy:R5 to R9 are above its ceiling/.test(r4.cells[4]) && /is-above/.test(r4.rungs.R5) && /is-open/.test(r4.rungs.R3) && /is-effective/.test(r4.rungs.R0), 'real panel 3: rungs above a ceiling are marked unreachable for that capability');
+  const r9count = r9.length;
+  check(new RegExp(`autonomy:R9 Demonstrate[^.]*\\. \\d+ ${r9count} \\(autonomy:R8 below it is still unreachable by fact\\)`).test(p3), 'real panel 3: rung table counts R9 ceilings without implying R8 is reachable');
+  check(!/Not a rung|null/.test(p3), 'real panel 3: null notes beside valid rungs are not shown as gaps');
+  check(/Each of the \d+ capabilities has its ceiling marked against the ladder/.test(p3) && !/Ceilings \(max_permitted_autonomy\) are not in the public snapshot/.test(p3), 'real panel 3: ceilings present, no claim that they are missing');
+  check(/approved autonomy, ceiling and ceiling reason are on panel 3/.test(p2) && !/max_permitted_autonomy \(each ceiling\)/.test(panelText(ov, 6)), 'real panels 2 and 6: no longer claim ceilings are missing');
   check(panelStates(ov)[3] === 'missing' && /Not in the public snapshot: release_behaviour/.test(panelText(ov, 4)), 'real panel 4: per-rung behaviour labelled missing');
   const p5 = panelText(ov, 5);
   check(panelStates(ov)[4] === 'empty' && /A filed request grants nothing/.test(p5) && /Nothing returned: no change requests and no tool requests/.test(p5), 'real panel 5: empty queue said in words, with the disclosure');
@@ -200,6 +248,21 @@ async function main() {
   const p5real = panelText(ov, 5);
   check(/none is awaiting a decision/.test(p5real), 'real panel 5: empty governance state preserved');
   check(/Pending \(status submitted\): 0 · Approved: 0 · Declined: 0/.test(p5real) && !/Unknown status/.test(p5real), 'real panel 5: empty request list counts 0 / 0 / 0 and no unknown');
+  // K: per-capability gaps are explained, never blank.
+  const kO = dom('http://127.0.0.1:8791/?mode=real#/overview');
+  const [, k1, k2, k3, k4] = snap.authority.map((c) => capRow(kO, c.capability_id));
+  check(k1 && k1.cells[2] === 'No ceiling in the snapshot for this capability' && k1.cells[5] === 'No ceiling rationale in the snapshot for this capability.' && /No ceiling recorded, so this capability cannot be marked/.test(k1.cells[4]) && /is-unknown/.test(k1.rungs.R5) && /is-fact/.test(k1.rungs.R8), 'K: a missing ceiling and rationale are explained, R8 still unreachable by fact');
+  check(k2 && k2.cells[1] === 'Not a rung: starting_autonomy is "R2b", which is not one of the ten rungs', 'K: a non-rung approved value shows the platform’s note');
+  check(k3 && k3.cells[5] === 'No ceiling rationale recorded (empty).', 'K: an empty ceiling rationale is stated, not blank');
+  check(k4 && k4.cells[2] === 'No ceiling recorded (null, with no note)', 'K: a null ceiling with no note is stated, not blank');
+  check(/2 capabilities have no valid ceiling recorded/.test(panelText(kO, 3)), 'K: panel 3 counts the capabilities with no valid ceiling (the deleted and the null one)');
+
+  // L: a snapshot without the five fields keeps the earlier, honest wording.
+  const lO = dom('http://127.0.0.1:8792/?mode=real#/overview');
+  const l3 = panelText(lO, 3);
+  check(/Ceilings \(max_permitted_autonomy\) are not in the public snapshot/.test(l3) && /Not in the public snapshot/.test(l3) && !/data-capability=/.test(lO), 'L: no ceilings in the snapshot is said in words, with no ceiling table');
+  check(/max_permitted_autonomy \(each ceiling\)/.test(panelText(lO, 6)), 'L: panel 6 lists ceilings as missing when they are');
+
   // Read once the plan cards are drawn: the other files have arrived, the held snapshot never does.
   const jO = await domWhen('http://127.0.0.1:8790/?mode=real#/overview', "document.body.innerText.includes('How far along')");
   check(panelStates(jO).join() === 'loading,loading,loading,loading,loading,loading' && /Loading: waiting for \.colaberry\/agent-domain\.json/.test(text(jO)), 'J: a held snapshot shows every panel as loading');

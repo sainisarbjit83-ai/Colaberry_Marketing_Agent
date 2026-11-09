@@ -15,7 +15,7 @@ node tests/command-center/chat.test.js     # Knowledge base question-box checks
 
 Each prints `N passed, M failed` and exits non-zero if anything fails.
 
-- **`render.test.js`** serves the site on ports 8765 and 8781–8790 (plus 9333 for Edge's debugging port) and loads every tab in
+- **`render.test.js`** serves the site on ports 8765 and 8781–8792 (plus 9333 for Edge's debugging port) and loads every tab in
   headless Edge, in Real and Sample mode. It opens every card link it finds, and checks
   edited, stale and missing copies of the data files. Set `EDGE_PATH` if Edge is not at
   `C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe`.
@@ -39,6 +39,13 @@ the real snapshot, then on copies where the snapshot is:
 | H | an empty file | `empty` |
 | I | edited: no agent, one pending tool request, one capability capped by `no_tool_grants` | panel 1 `empty`; the count of 1 and the pending request shown as not granted |
 | J | never answered by the server | `loading`, while the plan cards still render |
+| K | edited: one capability with no ceiling or rationale, one with a non-rung approved value and its note, one with an empty rationale, one with a null ceiling | each gap stated in words in panel 3, never blank; R8 still unreachable by fact |
+| L | edited: the five autonomy fields removed from every capability (a snapshot from before AF12.3) | panel 3 says ceilings are not in the snapshot and draws no ceiling table |
+
+On the real snapshot, panel 3 is checked capability by capability against `agent-domain.json`:
+approved, ceiling, effective and ceiling reason in their own columns, `reasons` kept apart from
+`ceiling_reason`, R8 unreachable by fact in every strip, and R9 ceilings stated as unable to rise
+above R7 today.
 
 Copy J is read over Edge's DevTools protocol (debugging port 9333), not `--dump-dom`. Virtual
 time waits for every pending request, so a file that never arrives would never dump. A plain

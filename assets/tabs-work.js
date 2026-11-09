@@ -129,7 +129,9 @@ CC.tabs = CC.tabs || {};
           `${CC.FILES.plan} → stories[].owner_agent`));
       }
       cards.push(card(data, '#/agents/ladder', 'Autonomy ladder and capability ceilings',
-        h('div', {}, h('p', {}, 'Capability ceilings and per-rung behaviour: unavailable. Neither your plan files nor the public snapshot contains them. Effective authority is on the Overview, panel 3.'),
+        h('div', {}, h('p', {}, CC.ladder.snapshotHasCeilings(data.agentDomain)
+          ? 'Each capability’s ceiling and effective authority are on the Overview, panel 3. Per-rung behaviour: unavailable, because the public snapshot does not contain it.'
+          : 'Capability ceilings and per-rung behaviour: unavailable. Neither your plan files nor the public snapshot contains them. Effective authority is on the Overview, panel 3.'),
           h('p', { class: 'muted' }, 'R8 is unreachable by fact: agent-to-agent handoff does not exist in this platform.')), PLATFORM_RULES_SOURCE));
       return [h('h2', {}, 'AI agents'), note, h('div', { class: 'cards' }, cards)];
     },
@@ -142,7 +144,9 @@ CC.tabs = CC.tabs || {};
           h('table', {}, h('tr', {}, h('th', {}, 'Rung'), h('th', {}, 'What it means'), h('th', {}, 'Availability')),
             RUNGS.map(([r, text]) => h('tr', {}, h('td', {}, `autonomy:${r}`), h('td', {}, text),
               h('td', {}, r === 'R8' ? 'Unreachable by fact: agent-to-agent handoff does not exist in this platform today' : '')))),
-          h('p', {}, 'Each capability’s ceiling and per-rung behaviour: unavailable. Neither your plan files nor the public snapshot (.colaberry/agent-domain.json) contains them, and this page calls no signed-in endpoint. Your employee’s record and each capability’s effective authority are on the Overview, panels 1 and 3.'),
+          h('p', {}, CC.ladder.snapshotHasCeilings(data.agentDomain)
+            ? 'Each capability’s approved autonomy, ceiling, ceiling reason and effective authority are on the Overview, panel 3, from the public snapshot (.colaberry/agent-domain.json). Per-rung behaviour: unavailable, because the snapshot does not contain it. Your employee’s record is on panel 1.'
+            : 'Each capability’s ceiling and per-rung behaviour: unavailable. Neither your plan files nor the public snapshot (.colaberry/agent-domain.json) contains them, and this page calls no signed-in endpoint. Your employee’s record and each capability’s effective authority are on the Overview, panels 1 and 3.'),
           h('ul', {},
             h('li', {}, 'Draft is not approved: a capability in draft has not been agreed by anyone.'),
             h('li', {}, 'Without granted tools, the platform caps any capability at R2 (effectiveAuthority, no_tool_grants).'),

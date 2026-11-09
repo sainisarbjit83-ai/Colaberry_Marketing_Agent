@@ -77,7 +77,7 @@ window.CC = window.CC || {};
     if (has(q, 'agent', 'owner', 'autonomy', 'employee')) {
       const ag = data.agentDomain && data.agentDomain.agent;
       if (ag && ag.exists) {
-        return answer(`Your employee exists and is ${ag.enabled ? 'enabled' : 'disabled'}, with agent-level autonomy "${ag.autonomy_level || 'not recorded'}" (not a ladder rung) and ${count(arr(ag.tools_granted), 'tool', 'tools')} granted. Capability ceilings are not in the public snapshot.`,
+        return answer(`Your employee exists and is ${ag.enabled ? 'enabled' : 'disabled'}, with agent-level autonomy "${ag.autonomy_level || 'not recorded'}" (not a ladder rung) and ${count(arr(ag.tools_granted), 'tool', 'tools')} granted. ${CC.ladder.snapshotHasCeilings(data.agentDomain) ? 'Each capability’s ceiling is on the Overview, panel 3.' : 'Capability ceilings are not in the public snapshot.'}`,
           'Overview', `${CC.FILES.agentDomain} → agent`);
       }
       if (ag && ag.exists === false) return answer('No agent yet: no AI employee is linked to this domain.', 'Overview', `${CC.FILES.agentDomain} → agent`);

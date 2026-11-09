@@ -11,17 +11,18 @@
 window.CC = window.CC || {};
 
 (function () {
-  const { h, arr, orNotSet, central, detailRow, RUNGS } = CC.ui;
+  const { h, arr, orNotSet, central, detailRow } = CC.ui;
   const SNAP = () => CC.FILES.agentDomain;
   const HUMAN = 'human_decision_required_at_every_level';
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
-  /** What the story asks for that the public snapshot does not carry. */
+  /** What the story asks for that the public snapshot does not carry (the ceiling pair arrived in AF12.3). */
   const NOT_IN_SNAPSHOT = [
     'classification', 'implementation_state', 'requirement_validation_state', 'starting_autonomy',
     'max_permitted_autonomy (each ceiling) and the reason for it', 'human_decision as its own field',
     'release_behaviour[] (per-rung behaviour and its acceptance criteria)',
   ];
+  const CEILING_FIELDS = ['starting_autonomy', 'max_permitted_autonomy (each ceiling) and the reason for it'];
 
   // Endpoint names from the story brief, used only to say what WOULD have been read when the
   // snapshot that names them did not load.
@@ -110,7 +111,9 @@ window.CC = window.CC || {};
       return { state: 'loaded', body: h('div', {},
         h('p', {}, `${plural(list.length, 'capability', 'capabilities')} in the snapshot. ${human} of them are marked as human decisions, which no autonomy level ever automates.`),
         h('p', { class: 'muted' }, `The human-decision mark comes from effectiveAuthority()’s reason ${HUMAN}, not from a field of its own. Listed in the snapshot’s order (sorted by capability id); research order is not in the snapshot.`),
-        h('p', { class: 'muted' }, 'Not in the public snapshot, so not shown: classification, implementation state, requirement validation state, starting autonomy and ceiling. Because validation state is not shown, none of these should be read as agreed.'),
+        h('p', { class: 'muted' }, CC.ladder.snapshotHasCeilings(snap)
+          ? 'Not in the public snapshot, so not shown: classification, implementation state and requirement validation state. Because validation state is not shown, none of these should be read as agreed. Each capability’s approved autonomy, ceiling and ceiling reason are on panel 3.'
+          : 'Not in the public snapshot, so not shown: classification, implementation state, requirement validation state, starting autonomy and ceiling. Because validation state is not shown, none of these should be read as agreed.'),
         h('details', {}, h('summary', {}, `Show all ${list.length} capabilities`),
           h('table', {}, h('tr', {}, h('th', {}, 'Capability'), h('th', {}, 'Effective authority'), h('th', {}, 'Human decision')),
             list.map((c) => h('tr', {}, h('td', {}, h('code', {}, orNotSet(c.capability_id, 'no id'))),
@@ -119,39 +122,9 @@ window.CC = window.CC || {};
     });
   }
 
-  // ── 3. Autonomy ladder and authority ─────────────────────────────────────────
+  // ── 3. Autonomy ladder and authority (ladder.js) ─────────────────────────────
   function ladder(data) {
-    return resolve(data, (snap) => {
-      const list = snap.authority;
-      const rule = snap.authority_rule;
-      if (!Array.isArray(list) || !rule || typeof rule !== 'object') return invalid('authority or authority_rule');
-      const at = (stage) => list.filter((c) => c.effective_autonomy === stage).length;
-      const noLevel = list.filter((c) => !c.effective_autonomy).length;
-      const constrained = list.filter((c) => arr(c.reasons).includes('no_tool_grants')).length;
-      const reported = rule.approved_above_r2;
-      const level = snap.agent && snap.agent.exists !== false ? snap.agent.autonomy_level : null;
-      return { state: 'loaded', body: h('div', {},
-        h('table', {}, h('tr', {}, h('th', {}, 'Rung'), h('th', {}, 'What it means (owner’s words)'), h('th', {}, 'Capabilities whose effective authority is here'), h('th', {}, 'Ceilings that stop here')),
-          RUNGS.map(([r, text]) => h('tr', {}, h('td', {}, `autonomy:${r}`), h('td', {}, text),
-            h('td', {}, String(at(`autonomy:${r}`))),
-            h('td', {}, r === 'R8' ? 'Unreachable by fact: agent-to-agent handoff does not exist in this platform today.'
-              : h('span', { class: 'empty' }, 'Not in the public snapshot'))))),
-        noLevel ? h('p', {}, `${plural(noLevel, 'capability has', 'capabilities have')} no effective authority (no approved autonomy).`) : null,
-        h('p', { class: 'muted' }, level
-          ? `Your employee is not placed on this ladder. Its autonomy (${level}) is an agent-level setting on a different scale, so marking it as a rung would be wrong.`
-          : 'Your employee is not placed on this ladder: the snapshot has no agent-level autonomy to report, and that scale is different from these rungs anyway.'),
-        h('p', { class: 'muted' }, 'Ceilings (max_permitted_autonomy) are not in the public snapshot, so no capability can be marked against the rung it stops at. That needs the platform to publish them.'),
-        h('h4', {}, 'Effective authority, as effectiveAuthority() returned it'),
-        h('p', {}, RUNGS.filter(([r]) => at(`autonomy:${r}`)).map(([r]) => `autonomy:${r}: ${plural(at(`autonomy:${r}`), 'capability', 'capabilities')}`).join('; ') || 'No capability has an effective authority.'),
-        h('p', { class: 'muted' }, 'Computed by the platform’s effectiveAuthority() (autonomyLadder.ts) when it wrote the snapshot. This page shows the value it returned and does not recompute it. The level each capability record asks for is not in the public snapshot, so the two cannot be shown side by side.'),
-        h('h4', {}, 'The no_tool_grants rule'),
-        h('p', {}, orNotSet(rule.rule, 'rule text not in the snapshot')),
-        h('p', { class: 'big-ish' }, constrained === 0
-          ? 'In force, and currently constrains 0 capabilities: no capability in this domain is approved above autonomy:R2 yet, so the rule binds nothing.'
-          : `In force, and currently constrains ${plural(constrained, 'capability', 'capabilities')}: each is held at autonomy:R2 because no tool is granted.`),
-        typeof reported === 'number' && reported !== constrained
-          ? h('p', { class: 'warning-text' }, `The snapshot’s own count (authority_rule.approved_above_r2 = ${reported}) disagrees with the ${constrained} no_tool_grants reasons listed. Shown above: the reasons.`) : null) };
-    });
+    return resolve(data, (snap) => CC.ladder.build(snap, invalid));
   }
 
   // ── 4. Per-rung behaviour ────────────────────────────────────────────────────
@@ -220,7 +193,7 @@ window.CC = window.CC || {};
       'Coordinated handoff between two agents does not exist in this platform today, so autonomy:R8 is unreachable by fact, not by choice.',
       'Draft is not approved. The validation state of each capability is not in the public snapshot, so this page cannot show which are agreed; treat none as agreed.',
       'Per-rung behaviour (release_behaviour[]) is not in the public snapshot, so no capability’s next rung can be shown.',
-      `Not in the public snapshot at all: ${NOT_IN_SNAPSHOT.join('; ')}.`,
+      `Not in the public snapshot at all: ${NOT_IN_SNAPSHOT.filter((f) => !(CC.ladder.snapshotHasCeilings(data.agentDomain) && CEILING_FIELDS.includes(f))).join('; ')}.`,
       `${(data.agentDomain && data.agentDomain.sources && data.agentDomain.sources.capabilities) || EXPECTED.capabilities(data)}/coverage is not in the snapshot, so nothing from it is shown.`,
       'Nothing is reported live: no running system writes a status this page can read.',
     ];
