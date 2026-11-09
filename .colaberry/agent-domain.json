@@ -30,376 +30,696 @@
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R4",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Discovering and proving the gap is agent work. Deciding what each agent is permitted to write is an authority decision, and switching enforcement on will refuse writes that currently work, so both stay human."
     },
     {
       "capability_id": "marketing.ai_news_ingestion_and_card_publication",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R5",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "The pipeline publishes machine-written content to a real audience with no human in the loop today. Generation and ingestion can be automated; publication to an audience is a human decision until a pre-publication review exists, so shadow mode is the ceiling."
     },
     {
       "capability_id": "marketing.authority_content_drafting",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R5",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Authority content is a Colaberry point of view published under the brand. Generation can be automated; the decision to say it in public cannot be, until a manager explicitly authorises a class of content. Shadow mode is the honest ceiling."
     },
     {
       "capability_id": "marketing.banned_copy_compliance_scanning",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R9",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "A pure, deterministic source scan with no write and no outbound action, whose whole purpose is to keep a statutory rule continuously true. Operational ownership is the correct destination."
     },
     {
       "capability_id": "marketing.brand_and_competitor_mention_monitoring",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R6",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Monitoring mentions is a read. It is capped at a supervised pilot because a mention feed shapes how the brand is understood internally, and an incomplete scan presented as share of voice would mislead in a way nobody downstream can detect."
     },
     {
       "capability_id": "marketing.brand_attribution_of_campaigns",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Resolution is a validation step with a clear refusal path. It can be owned for reporting integrity; assigning a brand to a campaign is an ownership decision a human makes, so the agent's role stops at resolving and reporting."
     },
     {
       "capability_id": "marketing.brand_governance_enforcement",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R5",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Running the check can be automated. Authoring or publishing a brand's rules is a statement about what Colaberry will claim in public and stays a human act, so the agent's ceiling is shadow mode against rules a human published."
     },
     {
       "capability_id": "marketing.brand_network_connection_administration",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R2",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Binding a named person's social identity to a brand's publishing path is a consent decision by that person, not an operation. The agent's useful role is explaining what each network needs and reporting the result; the connecting stays human."
     },
     {
       "capability_id": "marketing.brand_registry_and_readiness",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Reading and reporting brand readiness is safe. Changing what a brand is, or which domain it owns, is a business-identity decision, so write access stays human and the ceiling stops short of unattended ownership."
     },
     {
       "capability_id": "marketing.brand_social_publishing",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R5",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "This is the only path in the domain that can put brand content on a live network under a real person's profile. The platform's own HITL rule makes a public social post always require a human yes. Shadow mode is the ceiling; each provider's move to direct publishing needs its own manager authorisation, not a general one."
     },
     {
       "capability_id": "marketing.browser_session_reliability",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R9",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Session healing is internal infrastructure recovery with no content and no outbound message. It is the clearest candidate in the domain for genuine operational ownership, provided credential replacement stays a human action."
     },
     {
       "capability_id": "marketing.campaign_and_channel_metric_reporting",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Reporting is read-only and already gated on a registry that forbids unregistered figures. It is held below full ownership because several money metrics on the same surfaces are still computed from a hardcoded price constant, so the capability cannot yet claim every number it renders is measured."
     },
     {
       "capability_id": "marketing.campaign_approval_and_golive",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R3",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Approving a campaign authorises outbound contact with real people. An agent must never hold that decision, and the approval ladder currently has a bypass, so the agent's ceiling is preparing and submitting on an explicit human request."
     },
     {
       "capability_id": "marketing.campaign_funnel_performance_analysis",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R9",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Read-only by contract with tenant partitioning, bounded queries and a test suite that asserts the absence of writes. Two runs over unchanged data leave the database byte-identical, so there is no side effect to make idempotent and operational ownership is the natural destination."
     },
     {
       "capability_id": "marketing.channel_account_connection_and_credential_custody",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R2",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Connecting an account binds a real person's social identity to the platform's publishing path, and the credential is a secret. The agent's share of this is reading health only; the connect, rotate and revoke actions stay with a named human at every level."
     },
     {
       "capability_id": "marketing.community_direct_message_response",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R4",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "This is a one-to-one message to a named human under the Colaberry identity, sent today with no approval gate and no manager-visible surface. Until a gate and a surface exist, the honest ceiling is stateful sandbox work; any production send stays a human decision."
     },
     {
       "capability_id": "marketing.community_signal_detection",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R6",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "A credentialed headless browser acting inside a third-party community is a terms-of-service surface, not just a read. It is capped at a separately approved supervised pilot because the account being driven is a real Colaberry identity and a scraping block would be visible to the community, not only to us."
     },
     {
       "capability_id": "marketing.content_approval_workflow",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R4",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "The approval decision is the human gate the rest of the domain depends on; an agent that could approve its own content would dissolve every other control. The agent may prepare and request; deciding stays human at every level, so the ceiling is stateful sandbox work on the request side only."
     },
     {
       "capability_id": "marketing.content_composition_and_variant_generation",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Composing is fully reversible: an item stays a draft until a separate approval and a separate publish act on it. A scoped automation class is therefore reachable for drafting, and the two gates downstream are what keep it safe."
     },
     {
       "capability_id": "marketing.content_history_import_from_loomly",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R4",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "A dry run is safe and repeatable. The execute step writes customer content history at scale and depends on a calendar-to-brand mapping that is a business decision, so it stays a human action; the ceiling is stateful sandbox work."
     },
     {
       "capability_id": "marketing.content_idea_proposal_queue",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "A proposal with an enforced single-table write and no send path is about as contained as an agent action gets. A scoped automation class is reachable; the proposal remains a proposal, and acceptance stays human."
     },
     {
       "capability_id": "marketing.content_platform_fitness_validation",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R9",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "A deterministic check against a single registry, with no write and no outbound action, whose failure mode is a false block rather than a publish. Operational ownership is appropriate once registry freshness is itself monitored."
     },
     {
       "capability_id": "marketing.content_repurposing_and_template_library",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Deriving drafts is reversible and every derived item still passes the existing approval gate, so a scoped automation class is reachable. Authoring the templates is brand work and stays with the manager."
     },
     {
       "capability_id": "marketing.conversation_followup_sequencing",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Drafting a follow-up is reversible and the queue is human-approved before anything is posted. The ceiling stays below full ownership because the cadence rules decide how often a real person is contacted, and no manager has set them."
     },
     {
       "capability_id": "marketing.engagement_monitoring_and_intent_scoring",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Monitoring reads public replies and writes internal rows; nothing is sent. Ownership stops short of R8/R9 because three of the highest-value platforms are manual-entry only, so the agent cannot claim complete coverage of its own domain."
     },
     {
       "capability_id": "marketing.free_tier_learner_journey_scoring",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Scoring writes internal rows about enrolled learners and sends nothing; the no-send guard is enforced at build time for this directory, not just documented. Full ownership waits on the scores actually driving something, which is a separate unbuilt epic."
     },
     {
       "capability_id": "marketing.free_tier_next_best_action_decisioning",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R5",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "The decisions are about contacting real learners. The capability is already in shadow mode with executed false and a build-enforced no-send guard, which is exactly what autonomy:R5 describes. Moving to execution is a separate authorisation per channel, not a promotion of this capability."
     },
     {
       "capability_id": "marketing.handoff_package_manual_publication",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R4",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Minting the package is fully automatable and is the point of the design. Publishing it and asserting that it was published are both human acts, so the agent's ceiling is producing and tracking packages in a sandbox-provable way."
     },
     {
       "capability_id": "marketing.intelligence_card_generation",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R5",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Nine streams of machine-written content reach a real audience with no editorial gate, and one of them puts words in the mouths of named real people. Collection and generation can be automated; publication cannot be, so shadow mode is the ceiling and the quote stream should arguably never leave it."
     },
     {
       "capability_id": "marketing.intelligence_card_prepublication_review",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R4",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Building the hold-and-queue mechanism is implementation work. The review decision is editorial judgement about what the brand publishes to its own students, and attribution of words to real people is exactly the kind of claim no model should clear, so the decision stays human."
     },
     {
       "capability_id": "marketing.landing_page_generation_and_publication",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R5",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Drafting and previewing can be automated. Putting a page on a public Colaberry domain is a published claim about the business, and the generator has a recorded history of inventing copy nobody wrote, so publication stays a human decision and the ceiling is shadow mode."
     },
     {
       "capability_id": "marketing.lifecycle_content_catalogue_projection",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R9",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "A pointer projection with a proven-idempotent upsert, no body duplication, no decision and a build-enforced inability to send. This is the clearest candidate in the inherited set for genuine operational ownership."
     },
     {
       "capability_id": "marketing.linkedin_comment_watch_and_reply_drafting",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "The capability deliberately ends at a draft a human pastes, which is the whole reason it is safe. It can reach a scoped automation class for watching and drafting; it must never acquire a posting action, because LinkedIn comments are declared human-execution."
     },
     {
       "capability_id": "marketing.linkedin_relationship_action_suggestions",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R4",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "The suggestions include connection requests and direct messages to named individuals. Suggesting is safe; executing is a one-to-one approach under a real person's identity and stays a human action. The ceiling is stateful sandbox work until the gate is rebuilt."
     },
     {
       "capability_id": "marketing.manager_marketing_brief_subscription",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R4",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Rendering and previewing is safe and useful. Delivery is a real send and the schedule is not timezone-safe, so both the subscription decision and the send stay human until the prerequisite exists."
     },
     {
       "capability_id": "marketing.marketing_agent_management_and_oversight",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R2",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Management is the human's side of the relationship by definition. The agent may read and obey its own directives and explain its own state; authoring a restriction, setting a goal or approving a memory is the manager's act at every level."
     },
     {
       "capability_id": "marketing.marketing_calendar_planning",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "The calendar is a read surface over content and job state. An agent can own keeping it accurate and explaining it; choosing what goes on it is planning work that stays with the manager, and scheduling is timezone-unsafe for anyone outside Central."
     },
     {
       "capability_id": "marketing.marketing_department_strategy_planning",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R6",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Proposing initiatives is reversible, but each one creates tickets that consume other people's time, and no resolver can close them - an unattended proposer with no terminal state accumulates permanent open work. A supervised pilot with a human accepting each initiative is the honest ceiling."
     },
     {
       "capability_id": "marketing.marketing_overview_and_attention_triage",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R9",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "A read-only surface whose governing discipline is already 'never render a number you cannot stand behind', with the trust judgement separated from the I/O and tested against an injected oracle. Operational ownership of accuracy is the right destination."
     },
     {
       "capability_id": "marketing.marketing_surface_problem_reporting",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R2",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "The useful agent role here is reading reports and spotting patterns across them. Submitting one sends live mail, which is a denied capability for an agent, so the ceiling is answering from stored reports."
     },
     {
       "capability_id": "marketing.metric_trust_escalation_decisions",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R3",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Finding and documenting an untrustworthy metric is exactly what an agent should do unprompted. Deciding what the business's revenue definition is, and therefore which dashboards are wrong, is a governance decision for the accountable humans."
     },
     {
       "capability_id": "marketing.multi_touch_attribution",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Attribution is read-only and its coverage limit is already reported rather than hidden. Full ownership waits on identity coverage being good enough that the answer describes the campaign rather than a subset of it."
     },
     {
       "capability_id": "marketing.outreach_consent_and_channel_suppression",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R2",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Consent is the one thing in this domain that must never be inferred, relaxed or automated. The agent may read the suppression state and refuse to act on it; recording or changing a consent state stays human, and the ceiling is answering from approved knowledge."
     },
     {
       "capability_id": "marketing.outreach_conversion_attribution",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R6",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Attribution writes rows that executives read as performance. Because the click side is spoofable and the opportunity figure is a pipeline marker rather than cash, this is capped at a supervised production pilot until the money definition is settled by marketing.revenue_and_cost_metric_truthing."
     },
     {
       "capability_id": "marketing.outreach_coverage_and_blind_spot_reporting",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R9",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "A read-only assembly of limits the modules already declare, whose failure mode is understating confidence. It is the one proposed capability whose whole purpose is to make the rest of the domain honest, so operational ownership is appropriate."
     },
     {
       "capability_id": "marketing.outreach_daily_human_action_queue",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "A read-only, write-nothing computation whose output is advice to a human. It can safely reach a scoped automation class; it never needs more, because the human is the actor."
     },
     {
       "capability_id": "marketing.outreach_human_approval_gap_closure",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R4",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "The gap itself is a defect an agent can diagnose and fix in a sandbox with a protective test. The approval it restores is the human decision the whole domain rests on, so the agent never acquires that decision at any level."
     },
     {
       "capability_id": "marketing.outreach_lead_capture_and_scoring",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Capture and scoring write internal records only. The ceiling stops below full ownership because these records feed a channel that can send real mail, and the placeholder-address design makes a downstream mistake cheap to make and expensive to discover."
     },
     {
       "capability_id": "marketing.outreach_learning_loop",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Deriving a learning is read-only aggregation. It is held at a scoped automation class because the loop silently steers where the scanner looks, and until an applied/approved marker is actually read, nobody can audit which learning changed behaviour."
     },
     {
       "capability_id": "marketing.outreach_post_verification",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Verification is a read followed by an internal flag. The ceiling sits below full ownership because coverage exists for only two platforms, so the capability cannot honestly claim to verify the estate."
     },
     {
       "capability_id": "marketing.outreach_quality_gate",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "A deterministic gate with no LLM and no outbound action is exactly the kind of check that should eventually run unattended. It is held below full ownership while one of its two implementations (Skool) still converts its own score into a publish authorisation, which is a different and much larger claim than scoring."
     },
     {
       "capability_id": "marketing.outreach_queue_supervision",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R9",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "This is internal queue mechanics with no outbound side effect, an existing circuit breaker and an existing rate limiter - the one capability in this domain whose whole purpose is reliable operation, monitoring and recovery, so R9 is the right destination rather than a stretch."
     },
     {
       "capability_id": "marketing.outreach_rate_and_circuit_control",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R9",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "This is a pure safety control computed from existing rows, with no content and no outbound action of its own. Operational ownership is the point of it, so R9 is the destination rather than a concession."
     },
     {
       "capability_id": "marketing.outreach_reply_drafting",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Drafting itself is reversible and internal, so a scoped automation class is defensible. It stops short of full ownership because the same module currently also mints a posting task on one code path, and until that is split the capability cannot claim it only drafts."
     },
     {
       "capability_id": "marketing.outreach_reply_publication",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R5",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Publishing under the Colaberry name on a third-party platform is irreversible in practice and visible to strangers. The platform's own HITL rule already makes a public social post always require a human yes (agentAutonomy.ts:123). The ceiling is therefore shadow mode; R6 and above would each need a separate, explicit manager authorisation per platform."
     },
     {
       "capability_id": "marketing.platform_app_review_and_representation",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R2",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Submission makes legal and factual representations on the company's behalf and is already an explicit hard stop for automation. Preparing and fact-checking the package is genuinely useful agent work; submitting is not, at any level."
     },
     {
       "capability_id": "marketing.platform_change_surveillance",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Reading public release notes and writing an internal note has no blast radius. It is capped below full ownership because a watcher with no staleness alarm cannot honestly claim it is still watching."
     },
     {
       "capability_id": "marketing.publishing_calendar_operations_ownership",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R2",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "This is the manager's own job: deciding what the brand says and when. An agent can help inventory, map and explain; the plan and the mapping are human decisions, so the ceiling is answering from approved knowledge."
     },
     {
       "capability_id": "marketing.publishing_failure_and_handoff_recovery",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R4",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Retrying a job can cause a real publication, and marking a handoff complete asserts something happened in the world. The agent may diagnose and explain; the actions that change external reality or assert it stay human."
     },
     {
       "capability_id": "marketing.recurring_marketing_performance_reporting",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R4",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Composing the report is safe and is the clearest DA task to hand over. Delivering it sends real mail, which is a denied capability, so delivery stays a human-initiated or separately-authorised send and the agent's ceiling is producing and previewing."
     },
     {
       "capability_id": "marketing.revenue_and_cost_metric_truthing",
       "effective_autonomy": "autonomy:R0",
       "reasons": [
         "human_decision_required_at_every_level"
-      ]
+      ],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R4",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Tracing and proposing is good agent work. What revenue means is a business definition spanning Finance and Executive, and changing it changes what every dashboard asserts, so the definition stays a human decision."
     },
     {
       "capability_id": "marketing.signal_triage_and_prioritisation",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Triage produces an internal verdict and a queued task; nothing is published by this step. Full ownership is withheld until the thresholds are manager-set policy rather than code constants, because a threshold change silently changes how much brand exposure the pipeline generates."
     },
     {
       "capability_id": "marketing.social_signal_discovery",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Discovery only reads public data and writes an internal signal table; no content leaves the system, so a scoped automation class is reachable. R8/R9 withheld because the scan hands work to a publication chain that is itself human-gated, and ownership of keyword policy has never been reviewed by the manager."
     },
     {
       "capability_id": "marketing.tracked_link_and_utm_governance",
       "effective_autonomy": "autonomy:R0",
-      "reasons": []
+      "reasons": [],
+      "approved_autonomy": "autonomy:R0",
+      "approved_autonomy_note": null,
+      "max_permitted_autonomy": "autonomy:R7",
+      "max_permitted_autonomy_note": null,
+      "ceiling_reason": "Minting a link and flagging untagged traffic are low-blast-radius and reversible. Full ownership waits on the two gaps the module names itself - no link health check and no persisting create path - because a capability cannot own what it does not yet do."
     }
   ],
   "authority_rule": {
@@ -412,6 +732,3323 @@
     "disclosure": "A filed request grants nothing. Status is what a named human decided, and a pending row means nobody has decided yet.",
     "requests": [],
     "pending": 0
+  },
+  "verification": {
+    "known": true,
+    "disclosure": "A criterion counts as passing when it is marked in `.colaberry/progress.json` in this repository. The verifier reads that file on every sync and records what it found. A story showing 0 of N is not a rejection: nothing has been claimed yet.",
+    "summary": {
+      "stories": 248,
+      "checked": 71,
+      "verified": 6,
+      "awaiting_criteria": 65,
+      "outstanding_criteria": 70
+    },
+    "stories": [
+      {
+        "story_id": "marketing.CAP.agent_write_authorization_enforcement",
+        "title": "Enforcing agent write authorization on marketing agents",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.agent_write_authorization_enforcement and changes a file. Commit your work with a `Story: marketing.CAP.agent_write_authorization_enforcement` trailer (or marketing.CAP.agent_write_authorization_enforcement in the subject line) and push."
+        ],
+        "outstanding": [
+          "The enumeration is complete against a source sweep; an agent with no declared tier is named, not defaulted silently."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.agent_write_authorization_enforcement.autonomy:R1",
+        "title": "Enforcing agent write authorization on marketing agents · R1",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.agent_write_authorization_enforcement.autonomy:R4",
+        "title": "Enforcing agent write authorization on marketing agents · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.ai_news_ingestion_and_card_publication",
+        "title": "AI news ingestion and daily card publication",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.ai_news_ingestion_and_card_publication and changes a file. Commit your work with a `Story: marketing.CAP.ai_news_ingestion_and_card_publication` trailer (or marketing.CAP.ai_news_ingestion_and_card_publication in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every card cites its library item and source feed; no generation occurs."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.ai_news_ingestion_and_card_publication.autonomy:R2",
+        "title": "AI news ingestion and daily card publication · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.ai_news_ingestion_and_card_publication.autonomy:R4",
+        "title": "AI news ingestion and daily card publication · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.ai_news_ingestion_and_card_publication.autonomy:R5",
+        "title": "AI news ingestion and daily card publication · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.authority_content_drafting",
+        "title": "Authority and thought-leadership content drafting",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.authority_content_drafting and changes a file. Commit your work with a `Story: marketing.CAP.authority_content_drafting` trailer (or marketing.CAP.authority_content_drafting in the subject line) and push."
+        ],
+        "outstanding": [
+          "Claims cite openclaw_signals and openclaw_authority_content rows; no generation occurs."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.authority_content_drafting.autonomy:R2",
+        "title": "Authority and thought-leadership content drafting · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.authority_content_drafting.autonomy:R3",
+        "title": "Authority and thought-leadership content drafting · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.authority_content_drafting.autonomy:R5",
+        "title": "Authority and thought-leadership content drafting · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.banned_copy_compliance_scanning",
+        "title": "Banned-copy compliance scanning across source",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.banned_copy_compliance_scanning and changes a file. Commit your work with a `Story: marketing.CAP.banned_copy_compliance_scanning` trailer (or marketing.CAP.banned_copy_compliance_scanning in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every occurrence is classified; none is reported without its role."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.banned_copy_compliance_scanning.autonomy:R2",
+        "title": "Banned-copy compliance scanning across source · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.banned_copy_compliance_scanning.autonomy:R4",
+        "title": "Banned-copy compliance scanning across source · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.banned_copy_compliance_scanning.autonomy:R9",
+        "title": "Banned-copy compliance scanning across source · R9",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_and_competitor_mention_monitoring",
+        "title": "Brand and competitor mention monitoring",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.brand_and_competitor_mention_monitoring and changes a file. Commit your work with a `Story: marketing.CAP.brand_and_competitor_mention_monitoring` trailer (or marketing.CAP.brand_and_competitor_mention_monitoring in the subject line) and push."
+        ],
+        "outstanding": [
+          "The brand and competitor lists are written down and the response policy names a human for every negative-mention case."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_and_competitor_mention_monitoring.autonomy:R0",
+        "title": "Brand and competitor mention monitoring · R0",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_and_competitor_mention_monitoring.autonomy:R4",
+        "title": "Brand and competitor mention monitoring · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_and_competitor_mention_monitoring.autonomy:R6",
+        "title": "Brand and competitor mention monitoring · R6",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_attribution_of_campaigns",
+        "title": "Brand attribution integrity for campaigns",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.brand_attribution_of_campaigns and changes a file. Commit your work with a `Story: marketing.CAP.brand_attribution_of_campaigns` trailer (or marketing.CAP.brand_attribution_of_campaigns in the subject line) and push."
+        ],
+        "outstanding": [
+          "Unresolved campaigns are listed individually; none is guessed into a brand."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_attribution_of_campaigns.autonomy:R2",
+        "title": "Brand attribution integrity for campaigns · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_attribution_of_campaigns.autonomy:R4",
+        "title": "Brand attribution integrity for campaigns · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_attribution_of_campaigns.autonomy:R7",
+        "title": "Brand attribution integrity for campaigns · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_governance_enforcement",
+        "title": "Brand governance rule enforcement",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.brand_governance_enforcement and changes a file. Commit your work with a `Story: marketing.CAP.brand_governance_enforcement` trailer (or marketing.CAP.brand_governance_enforcement in the subject line) and push."
+        ],
+        "outstanding": [
+          "Answer names the rulesVersion; a brand with no rows is reported ungoverned, never compliant."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_governance_enforcement.autonomy:R2",
+        "title": "Brand governance rule enforcement · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_governance_enforcement.autonomy:R4",
+        "title": "Brand governance rule enforcement · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_governance_enforcement.autonomy:R5",
+        "title": "Brand governance rule enforcement · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_network_connection_administration",
+        "title": "Brand network connection administration",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.brand_network_connection_administration and changes a file. Commit your work with a `Story: marketing.CAP.brand_network_connection_administration` trailer (or marketing.CAP.brand_network_connection_administration in the subject line) and push."
+        ],
+        "outstanding": [
+          "Requirements match the recorded runbook; no flow is initiated and no credential is read."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_network_connection_administration.autonomy:R2",
+        "title": "Brand network connection administration · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_network_connection_administration.autonomy:R3",
+        "title": "Brand network connection administration · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_registry_and_readiness",
+        "title": "Brand registry and publish readiness",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.brand_registry_and_readiness and changes a file. Commit your work with a `Story: marketing.CAP.brand_registry_and_readiness` trailer (or marketing.CAP.brand_registry_and_readiness in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every gap named maps to a real missing account or an absent governance row; a brand with no rules is reported ungoverned, never compliant."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_registry_and_readiness.autonomy:R2",
+        "title": "Brand registry and publish readiness · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_registry_and_readiness.autonomy:R4",
+        "title": "Brand registry and publish readiness · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_registry_and_readiness.autonomy:R7",
+        "title": "Brand registry and publish readiness · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_social_publishing",
+        "title": "Brand social publishing queue",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.brand_social_publishing and changes a file. Commit your work with a `Story: marketing.CAP.brand_social_publishing` trailer (or marketing.CAP.brand_social_publishing in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every provider still in handoff is named as such; no job is claimed during the answer."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_social_publishing.autonomy:R2",
+        "title": "Brand social publishing queue · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_social_publishing.autonomy:R4",
+        "title": "Brand social publishing queue · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.brand_social_publishing.autonomy:R5",
+        "title": "Brand social publishing queue · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.browser_session_reliability",
+        "title": "Headless browser session health and self-healing",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.browser_session_reliability and changes a file. Commit your work with a `Story: marketing.CAP.browser_session_reliability` trailer (or marketing.CAP.browser_session_reliability in the subject line) and push."
+        ],
+        "outstanding": [
+          "Health verdicts reproduce from openclaw_sessions; no restart is attempted."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.browser_session_reliability.autonomy:R2",
+        "title": "Headless browser session health and self-healing · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.browser_session_reliability.autonomy:R4",
+        "title": "Headless browser session health and self-healing · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.browser_session_reliability.autonomy:R9",
+        "title": "Headless browser session health and self-healing · R9",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.campaign_and_channel_metric_reporting",
+        "title": "Campaign and channel metric reporting under a trust registry",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.campaign_and_channel_metric_reporting and changes a file. Commit your work with a `Story: marketing.CAP.campaign_and_channel_metric_reporting` trailer (or marketing.CAP.campaign_and_channel_metric_reporting in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every figure cites its registry key; any unavailable metric is reported as such with its reason."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.campaign_and_channel_metric_reporting.autonomy:R2",
+        "title": "Campaign and channel metric reporting under a trust registry · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.campaign_and_channel_metric_reporting.autonomy:R5",
+        "title": "Campaign and channel metric reporting under a trust registry · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.campaign_and_channel_metric_reporting.autonomy:R7",
+        "title": "Campaign and channel metric reporting under a trust registry · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.campaign_approval_and_golive",
+        "title": "Campaign approval and go-live control",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.campaign_approval_and_golive and changes a file. Commit your work with a `Story: marketing.CAP.campaign_approval_and_golive` trailer (or marketing.CAP.campaign_approval_and_golive in the subject line) and push."
+        ],
+        "outstanding": [
+          "The bypass population is reported explicitly by comparing status against approval_status."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.campaign_approval_and_golive.autonomy:R2",
+        "title": "Campaign approval and go-live control · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.campaign_approval_and_golive.autonomy:R3",
+        "title": "Campaign approval and go-live control · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.campaign_funnel_performance_analysis",
+        "title": "Campaign funnel performance analysis",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.campaign_funnel_performance_analysis and changes a file. Commit your work with a `Story: marketing.CAP.campaign_funnel_performance_analysis` trailer (or marketing.CAP.campaign_funnel_performance_analysis in the subject line) and push."
+        ],
+        "outstanding": [
+          "Verdict reproduces from the stored report; the failure rate and its denominator are both stated."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.campaign_funnel_performance_analysis.autonomy:R2",
+        "title": "Campaign funnel performance analysis · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.campaign_funnel_performance_analysis.autonomy:R4",
+        "title": "Campaign funnel performance analysis · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.campaign_funnel_performance_analysis.autonomy:R9",
+        "title": "Campaign funnel performance analysis · R9",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.channel_account_connection_and_credential_custody",
+        "title": "Social channel connection and credential custody",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.channel_account_connection_and_credential_cust and changes a file. Commit your work with a `Story: marketing.CAP.channel_account_connection_and_credential_cust` trailer (or marketing.CAP.channel_account_connection_and_credential_cust in the subject line) and push."
+        ],
+        "outstanding": [
+          "No credential value appears in any output or log; health verdicts match the stored expiry."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.channel_account_connection_and_credential_custody.autonomy:R2",
+        "title": "Social channel connection and credential custody · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.channel_account_connection_and_credential_custody.autonomy:R3",
+        "title": "Social channel connection and credential custody · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.channel_account_connection_and_credential_custody.autonomy:R4",
+        "title": "Social channel connection and credential custody · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.community_direct_message_response",
+        "title": "Community notification and direct-message response",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.community_direct_message_response and changes a file. Commit your work with a `Story: marketing.CAP.community_direct_message_response` trailer (or marketing.CAP.community_direct_message_response in the subject line) and push."
+        ],
+        "outstanding": [
+          "Counts reconcile to skool_engagements; no navigation and no send in the trace."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.community_direct_message_response.autonomy:R2",
+        "title": "Community notification and direct-message response · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.community_direct_message_response.autonomy:R3",
+        "title": "Community notification and direct-message response · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.community_direct_message_response.autonomy:R4",
+        "title": "Community notification and direct-message response · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.community_signal_detection",
+        "title": "Skool community question detection",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.community_signal_detection and changes a file. Commit your work with a `Story: marketing.CAP.community_signal_detection` trailer (or marketing.CAP.community_signal_detection in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every claim resolves to a skool_signals row; no browser is launched."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.community_signal_detection.autonomy:R2",
+        "title": "Skool community question detection · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.community_signal_detection.autonomy:R4",
+        "title": "Skool community question detection · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.community_signal_detection.autonomy:R6",
+        "title": "Skool community question detection · R6",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_approval_workflow",
+        "title": "Content approval with revision-pinned decisions",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.content_approval_workflow and changes a file. Commit your work with a `Story: marketing.CAP.content_approval_workflow` trailer (or marketing.CAP.content_approval_workflow in the subject line) and push."
+        ],
+        "outstanding": [
+          "Queue contents reconcile to content_approval_requests; no decision is written."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_approval_workflow.autonomy:R2",
+        "title": "Content approval with revision-pinned decisions · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_approval_workflow.autonomy:R3",
+        "title": "Content approval with revision-pinned decisions · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_approval_workflow.autonomy:R4",
+        "title": "Content approval with revision-pinned decisions · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_composition_and_variant_generation",
+        "title": "Multi-network content composition",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.content_composition_and_variant_generation and changes a file. Commit your work with a `Story: marketing.CAP.content_composition_and_variant_generation` trailer (or marketing.CAP.content_composition_and_variant_generation in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every provider in the target set gets a variant; revision increments on every recorded edit."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_composition_and_variant_generation.autonomy:R1",
+        "title": "Multi-network content composition · R1",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_composition_and_variant_generation.autonomy:R4",
+        "title": "Multi-network content composition · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_composition_and_variant_generation.autonomy:R7",
+        "title": "Multi-network content composition · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_history_import_from_loomly",
+        "title": "Content history import from the incumbent scheduler",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.content_history_import_from_loomly and changes a file. Commit your work with a `Story: marketing.CAP.content_history_import_from_loomly` trailer (or marketing.CAP.content_history_import_from_loomly in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every category names its destination table or states explicitly that it is not imported."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_history_import_from_loomly.autonomy:R2",
+        "title": "Content history import from the incumbent scheduler · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_history_import_from_loomly.autonomy:R3",
+        "title": "Content history import from the incumbent scheduler · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_history_import_from_loomly.autonomy:R4",
+        "title": "Content history import from the incumbent scheduler · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_idea_proposal_queue",
+        "title": "Grounded content-idea proposal queue",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.content_idea_proposal_queue and changes a file. Commit your work with a `Story: marketing.CAP.content_idea_proposal_queue` trailer (or marketing.CAP.content_idea_proposal_queue in the subject line) and push."
+        ],
+        "outstanding": [
+          "Claims cite the signal and the pending proposals; no new proposal is written."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_idea_proposal_queue.autonomy:R2",
+        "title": "Grounded content-idea proposal queue · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_idea_proposal_queue.autonomy:R4",
+        "title": "Grounded content-idea proposal queue · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_idea_proposal_queue.autonomy:R7",
+        "title": "Grounded content-idea proposal queue · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_platform_fitness_validation",
+        "title": "Per-network content fitness validation",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.content_platform_fitness_validation and changes a file. Commit your work with a `Story: marketing.CAP.content_platform_fitness_validation` trailer (or marketing.CAP.content_platform_fitness_validation in the subject line) and push."
+        ],
+        "outstanding": [
+          "The explanation names the limit and the actual value; re-running validation reproduces it exactly."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_platform_fitness_validation.autonomy:R2",
+        "title": "Per-network content fitness validation · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_platform_fitness_validation.autonomy:R4",
+        "title": "Per-network content fitness validation · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_platform_fitness_validation.autonomy:R9",
+        "title": "Per-network content fitness validation · R9",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_repurposing_and_template_library",
+        "title": "Content repurposing and reusable template library",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.content_repurposing_and_template_library and changes a file. Commit your work with a `Story: marketing.CAP.content_repurposing_and_template_library` trailer (or marketing.CAP.content_repurposing_and_template_library in the subject line) and push."
+        ],
+        "outstanding": [
+          "Each template pattern names its channel, its cadence and its approver."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_repurposing_and_template_library.autonomy:R0",
+        "title": "Content repurposing and reusable template library · R0",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_repurposing_and_template_library.autonomy:R4",
+        "title": "Content repurposing and reusable template library · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.content_repurposing_and_template_library.autonomy:R7",
+        "title": "Content repurposing and reusable template library · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.conversation_followup_sequencing",
+        "title": "Stalled-conversation follow-up drafting",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.conversation_followup_sequencing and changes a file. Commit your work with a `Story: marketing.CAP.conversation_followup_sequencing` trailer (or marketing.CAP.conversation_followup_sequencing in the subject line) and push."
+        ],
+        "outstanding": [
+          "Stage and stall age reproduce from openclaw_conversations; no draft is written."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.conversation_followup_sequencing.autonomy:R2",
+        "title": "Stalled-conversation follow-up drafting · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.conversation_followup_sequencing.autonomy:R4",
+        "title": "Stalled-conversation follow-up drafting · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.conversation_followup_sequencing.autonomy:R7",
+        "title": "Stalled-conversation follow-up drafting · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.engagement_monitoring_and_intent_scoring",
+        "title": "Posted-content engagement monitoring",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.engagement_monitoring_and_intent_scoring and changes a file. Commit your work with a `Story: marketing.CAP.engagement_monitoring_and_intent_scoring` trailer (or marketing.CAP.engagement_monitoring_and_intent_scoring in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every answer cites an openclaw_engagement_events row; no fetch occurs."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.engagement_monitoring_and_intent_scoring.autonomy:R2",
+        "title": "Posted-content engagement monitoring · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.engagement_monitoring_and_intent_scoring.autonomy:R4",
+        "title": "Posted-content engagement monitoring · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.engagement_monitoring_and_intent_scoring.autonomy:R7",
+        "title": "Posted-content engagement monitoring · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.free_tier_learner_journey_scoring",
+        "title": "Free-tier learner journey scoring",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.free_tier_learner_journey_scoring and changes a file. Commit your work with a `Story: marketing.CAP.free_tier_learner_journey_scoring` trailer (or marketing.CAP.free_tier_learner_journey_scoring in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every component resolves to a stored snapshot; no recompute occurs during the answer."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.free_tier_learner_journey_scoring.autonomy:R2",
+        "title": "Free-tier learner journey scoring · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.free_tier_learner_journey_scoring.autonomy:R4",
+        "title": "Free-tier learner journey scoring · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.free_tier_learner_journey_scoring.autonomy:R7",
+        "title": "Free-tier learner journey scoring · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.free_tier_next_best_action_decisioning",
+        "title": "Free-tier next-best-action decisioning in shadow",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.free_tier_next_best_action_decisioning and changes a file. Commit your work with a `Story: marketing.CAP.free_tier_next_best_action_decisioning` trailer (or marketing.CAP.free_tier_next_best_action_decisioning in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every suppressed candidate names its reason; the chosen action reproduces from the stored row."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.free_tier_next_best_action_decisioning.autonomy:R2",
+        "title": "Free-tier next-best-action decisioning in shadow · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.free_tier_next_best_action_decisioning.autonomy:R4",
+        "title": "Free-tier next-best-action decisioning in shadow · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.free_tier_next_best_action_decisioning.autonomy:R5",
+        "title": "Free-tier next-best-action decisioning in shadow · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.handoff_package_manual_publication",
+        "title": "Handoff package publication by a person",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.handoff_package_manual_publication and changes a file. Commit your work with a `Story: marketing.CAP.handoff_package_manual_publication` trailer (or marketing.CAP.handoff_package_manual_publication in the subject line) and push."
+        ],
+        "outstanding": [
+          "The handoff list matches the live-connector configuration; no package is marked complete."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.handoff_package_manual_publication.autonomy:R2",
+        "title": "Handoff package publication by a person · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.handoff_package_manual_publication.autonomy:R4",
+        "title": "Handoff package publication by a person · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.intelligence_card_generation",
+        "title": "Multi-source intelligence card generation",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.intelligence_card_generation and changes a file. Commit your work with a `Story: marketing.CAP.intelligence_card_generation` trailer (or marketing.CAP.intelligence_card_generation in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every card resolves to an intel_items row; unreviewable attribution claims are named as such."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.intelligence_card_generation.autonomy:R2",
+        "title": "Multi-source intelligence card generation · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.intelligence_card_generation.autonomy:R4",
+        "title": "Multi-source intelligence card generation · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.intelligence_card_generation.autonomy:R5",
+        "title": "Multi-source intelligence card generation · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.intelligence_card_prepublication_review",
+        "title": "Pre-publication review for generated intelligence cards",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.intelligence_card_prepublication_review and changes a file. Commit your work with a `Story: marketing.CAP.intelligence_card_prepublication_review` trailer (or marketing.CAP.intelligence_card_prepublication_review in the subject line) and push."
+        ],
+        "outstanding": [
+          "The quote and market-brief streams are named explicitly as attribution and figure risks."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.intelligence_card_prepublication_review.autonomy:R2",
+        "title": "Pre-publication review for generated intelligence cards · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.intelligence_card_prepublication_review.autonomy:R4",
+        "title": "Pre-publication review for generated intelligence cards · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.landing_page_generation_and_publication",
+        "title": "Landing page generation and publication",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.landing_page_generation_and_publication and changes a file. Commit your work with a `Story: marketing.CAP.landing_page_generation_and_publication` trailer (or marketing.CAP.landing_page_generation_and_publication in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every section in the brief appears; a count of generated sentences not present in the brief is reported, not hidden."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.landing_page_generation_and_publication.autonomy:R1",
+        "title": "Landing page generation and publication · R1",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.landing_page_generation_and_publication.autonomy:R3",
+        "title": "Landing page generation and publication · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.landing_page_generation_and_publication.autonomy:R5",
+        "title": "Landing page generation and publication · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.lifecycle_content_catalogue_projection",
+        "title": "Lifecycle content catalogue projection",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.lifecycle_content_catalogue_projection and changes a file. Commit your work with a `Story: marketing.CAP.lifecycle_content_catalogue_projection` trailer (or marketing.CAP.lifecycle_content_catalogue_projection in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every asset resolves to a published source card; approval columns are reported as unset, never as approved."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.lifecycle_content_catalogue_projection.autonomy:R2",
+        "title": "Lifecycle content catalogue projection · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.lifecycle_content_catalogue_projection.autonomy:R4",
+        "title": "Lifecycle content catalogue projection · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.lifecycle_content_catalogue_projection.autonomy:R9",
+        "title": "Lifecycle content catalogue projection · R9",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.linkedin_comment_watch_and_reply_drafting",
+        "title": "Tracked LinkedIn post comment watch",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.linkedin_comment_watch_and_reply_drafting and changes a file. Commit your work with a `Story: marketing.CAP.linkedin_comment_watch_and_reply_drafting` trailer (or marketing.CAP.linkedin_comment_watch_and_reply_drafting in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every commenter cited exists in openclaw_responses; no scrape runs."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.linkedin_comment_watch_and_reply_drafting.autonomy:R2",
+        "title": "Tracked LinkedIn post comment watch · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.linkedin_comment_watch_and_reply_drafting.autonomy:R4",
+        "title": "Tracked LinkedIn post comment watch · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.linkedin_comment_watch_and_reply_drafting.autonomy:R7",
+        "title": "Tracked LinkedIn post comment watch · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.linkedin_relationship_action_suggestions",
+        "title": "LinkedIn relationship action suggestions",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.linkedin_relationship_action_suggestions and changes a file. Commit your work with a `Story: marketing.CAP.linkedin_relationship_action_suggestions` trailer (or marketing.CAP.linkedin_relationship_action_suggestions in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every suggestion type is produced for its fixture; caps are asserted per type."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.linkedin_relationship_action_suggestions.autonomy:R1",
+        "title": "LinkedIn relationship action suggestions · R1",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.linkedin_relationship_action_suggestions.autonomy:R3",
+        "title": "LinkedIn relationship action suggestions · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.linkedin_relationship_action_suggestions.autonomy:R4",
+        "title": "LinkedIn relationship action suggestions · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.manager_marketing_brief_subscription",
+        "title": "Manager marketing brief subscription",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.manager_marketing_brief_subscription and changes a file. Commit your work with a `Story: marketing.CAP.manager_marketing_brief_subscription` trailer (or marketing.CAP.manager_marketing_brief_subscription in the subject line) and push."
+        ],
+        "outstanding": [
+          "Unmeasurable sections are named; no delivery is attempted."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.manager_marketing_brief_subscription.autonomy:R2",
+        "title": "Manager marketing brief subscription · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.manager_marketing_brief_subscription.autonomy:R4",
+        "title": "Manager marketing brief subscription · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_agent_management_and_oversight",
+        "title": "Manager oversight of the marketing AI employee",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.marketing_agent_management_and_oversight and changes a file. Commit your work with a `Story: marketing.CAP.marketing_agent_management_and_oversight` trailer (or marketing.CAP.marketing_agent_management_and_oversight in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every statement resolves to a stored record; a goal with no backing metric reports unmeasured, never a number."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_agent_management_and_oversight.autonomy:R2",
+        "title": "Manager oversight of the marketing AI employee · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_agent_management_and_oversight.autonomy:R4",
+        "title": "Manager oversight of the marketing AI employee · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_calendar_planning",
+        "title": "Marketing calendar and scheduled-content planning",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.marketing_calendar_planning and changes a file. Commit your work with a `Story: marketing.CAP.marketing_calendar_planning` trailer (or marketing.CAP.marketing_calendar_planning in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every item cited exists with that schedule; all times stated in Central and labelled as such."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_calendar_planning.autonomy:R2",
+        "title": "Marketing calendar and scheduled-content planning · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_calendar_planning.autonomy:R4",
+        "title": "Marketing calendar and scheduled-content planning · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_calendar_planning.autonomy:R7",
+        "title": "Marketing calendar and scheduled-content planning · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_department_strategy_planning",
+        "title": "Marketing department strategy and initiative planning",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.marketing_department_strategy_planning and changes a file. Commit your work with a `Story: marketing.CAP.marketing_department_strategy_planning` trailer (or marketing.CAP.marketing_department_strategy_planning in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every signal cited resolves to real data; no initiative or ticket is created."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_department_strategy_planning.autonomy:R2",
+        "title": "Marketing department strategy and initiative planning · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_department_strategy_planning.autonomy:R5",
+        "title": "Marketing department strategy and initiative planning · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_department_strategy_planning.autonomy:R6",
+        "title": "Marketing department strategy and initiative planning · R6",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_overview_and_attention_triage",
+        "title": "Marketing overview and needs-attention triage",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.marketing_overview_and_attention_triage and changes a file. Commit your work with a `Story: marketing.CAP.marketing_overview_and_attention_triage` trailer (or marketing.CAP.marketing_overview_and_attention_triage in the subject line) and push."
+        ],
+        "outstanding": [
+          "Any metric the registry cannot compute is named as unavailable, never reported as zero."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_overview_and_attention_triage.autonomy:R2",
+        "title": "Marketing overview and needs-attention triage · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_overview_and_attention_triage.autonomy:R4",
+        "title": "Marketing overview and needs-attention triage · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_overview_and_attention_triage.autonomy:R9",
+        "title": "Marketing overview and needs-attention triage · R9",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_surface_problem_reporting",
+        "title": "In-surface problem reporting for marketing operators",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.marketing_surface_problem_reporting and changes a file. Commit your work with a `Story: marketing.CAP.marketing_surface_problem_reporting` trailer (or marketing.CAP.marketing_surface_problem_reporting in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every pattern claim cites the reports behind it; no mail is sent in the trace."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_surface_problem_reporting.autonomy:R2",
+        "title": "In-surface problem reporting for marketing operators · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.marketing_surface_problem_reporting.autonomy:R4",
+        "title": "In-surface problem reporting for marketing operators · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.metric_trust_escalation_decisions",
+        "title": "Marketing metric trust escalation and resolution",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.metric_trust_escalation_decisions and changes a file. Commit your work with a `Story: marketing.CAP.metric_trust_escalation_decisions` trailer (or marketing.CAP.metric_trust_escalation_decisions in the subject line) and push."
+        ],
+        "outstanding": [
+          "Each finding names the file, the constant or column at fault, and the rule it contradicts."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.metric_trust_escalation_decisions.autonomy:R2",
+        "title": "Marketing metric trust escalation and resolution · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.metric_trust_escalation_decisions.autonomy:R3",
+        "title": "Marketing metric trust escalation and resolution · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.multi_touch_attribution",
+        "title": "Multi-touch campaign attribution with honest coverage",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.multi_touch_attribution and changes a file. Commit your work with a `Story: marketing.CAP.multi_touch_attribution` trailer (or marketing.CAP.multi_touch_attribution in the subject line) and push."
+        ],
+        "outstanding": [
+          "Coverage is always stated; an uncovered lead is reported as uncovered, never as direct."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.multi_touch_attribution.autonomy:R2",
+        "title": "Multi-touch campaign attribution with honest coverage · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.multi_touch_attribution.autonomy:R4",
+        "title": "Multi-touch campaign attribution with honest coverage · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.multi_touch_attribution.autonomy:R7",
+        "title": "Multi-touch campaign attribution with honest coverage · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_consent_and_channel_suppression",
+        "title": "Per-channel consent and suppression honouring",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_consent_and_channel_suppression and changes a file. Commit your work with a `Story: marketing.CAP.outreach_consent_and_channel_suppression` trailer (or marketing.CAP.outreach_consent_and_channel_suppression in the subject line) and push."
+        ],
+        "outstanding": [
+          "The verdict cites the opt-out row and its channel; no suppression state is written."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_consent_and_channel_suppression.autonomy:R2",
+        "title": "Per-channel consent and suppression honouring · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_consent_and_channel_suppression.autonomy:R4",
+        "title": "Per-channel consent and suppression honouring · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_conversion_attribution",
+        "title": "Social-outreach conversion attribution",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_conversion_attribution and changes a file. Commit your work with a `Story: marketing.CAP.outreach_conversion_attribution` trailer (or marketing.CAP.outreach_conversion_attribution in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every hop in the chain resolves to a stored row; no stage is advanced."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_conversion_attribution.autonomy:R2",
+        "title": "Social-outreach conversion attribution · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_conversion_attribution.autonomy:R5",
+        "title": "Social-outreach conversion attribution · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_conversion_attribution.autonomy:R6",
+        "title": "Social-outreach conversion attribution · R6",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_coverage_and_blind_spot_reporting",
+        "title": "Outreach coverage and blind-spot reporting",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_coverage_and_blind_spot_reporting and changes a file. Commit your work with a `Story: marketing.CAP.outreach_coverage_and_blind_spot_reporting` trailer (or marketing.CAP.outreach_coverage_and_blind_spot_reporting in the subject line) and push."
+        ],
+        "outstanding": [
+          "Each surface has a written coverage definition and a named owner for its blind spot."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_coverage_and_blind_spot_reporting.autonomy:R0",
+        "title": "Outreach coverage and blind-spot reporting · R0",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_coverage_and_blind_spot_reporting.autonomy:R4",
+        "title": "Outreach coverage and blind-spot reporting · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_coverage_and_blind_spot_reporting.autonomy:R9",
+        "title": "Outreach coverage and blind-spot reporting · R9",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_daily_human_action_queue",
+        "title": "Daily human outreach action queue",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_daily_human_action_queue and changes a file. Commit your work with a `Story: marketing.CAP.outreach_daily_human_action_queue` trailer (or marketing.CAP.outreach_daily_human_action_queue in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every item names the thread and the signal behind its priority; nothing is persisted."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_daily_human_action_queue.autonomy:R2",
+        "title": "Daily human outreach action queue · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_daily_human_action_queue.autonomy:R4",
+        "title": "Daily human outreach action queue · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_daily_human_action_queue.autonomy:R7",
+        "title": "Daily human outreach action queue · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_human_approval_gap_closure",
+        "title": "Closing the outreach human-approval bypasses",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_human_approval_gap_closure and changes a file. Commit your work with a `Story: marketing.CAP.outreach_human_approval_gap_closure` trailer (or marketing.CAP.outreach_human_approval_gap_closure in the subject line) and push."
+        ],
+        "outstanding": [
+          "Each test fails before the fix and passes after; removing the fix makes the named test die."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_human_approval_gap_closure.autonomy:R1",
+        "title": "Closing the outreach human-approval bypasses · R1",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_human_approval_gap_closure.autonomy:R4",
+        "title": "Closing the outreach human-approval bypasses · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_lead_capture_and_scoring",
+        "title": "Social-signal lead capture and tiering",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_lead_capture_and_scoring and changes a file. Commit your work with a `Story: marketing.CAP.outreach_lead_capture_and_scoring` trailer (or marketing.CAP.outreach_lead_capture_and_scoring in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every lead cited exists in leads with an opportunity score; nothing is written."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_lead_capture_and_scoring.autonomy:R2",
+        "title": "Social-signal lead capture and tiering · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_lead_capture_and_scoring.autonomy:R4",
+        "title": "Social-signal lead capture and tiering · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_lead_capture_and_scoring.autonomy:R7",
+        "title": "Social-signal lead capture and tiering · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_learning_loop",
+        "title": "Outreach performance learning loop",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_learning_loop and changes a file. Commit your work with a `Story: marketing.CAP.outreach_learning_loop` trailer (or marketing.CAP.outreach_learning_loop in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every claim reports its sample size; a thin sample is labelled as such, never rounded into a recommendation."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_learning_loop.autonomy:R2",
+        "title": "Outreach performance learning loop · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_learning_loop.autonomy:R5",
+        "title": "Outreach performance learning loop · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_learning_loop.autonomy:R7",
+        "title": "Outreach performance learning loop · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_post_verification",
+        "title": "Published-comment visibility verification",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_post_verification and changes a file. Commit your work with a `Story: marketing.CAP.outreach_post_verification` trailer (or marketing.CAP.outreach_post_verification in the subject line) and push."
+        ],
+        "outstanding": [
+          "Unverifiable platforms are reported as unknown, never as verified or as zero."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_post_verification.autonomy:R2",
+        "title": "Published-comment visibility verification · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_post_verification.autonomy:R4",
+        "title": "Published-comment visibility verification · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_post_verification.autonomy:R7",
+        "title": "Published-comment visibility verification · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_quality_gate",
+        "title": "Deterministic pre-publication quality gate",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_quality_gate and changes a file. Commit your work with a `Story: marketing.CAP.outreach_quality_gate` trailer (or marketing.CAP.outreach_quality_gate in the subject line) and push."
+        ],
+        "outstanding": [
+          "The named rule reproduces the stored score when re-run; no new verdict is written."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_quality_gate.autonomy:R2",
+        "title": "Deterministic pre-publication quality gate · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_quality_gate.autonomy:R4",
+        "title": "Deterministic pre-publication quality gate · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_quality_gate.autonomy:R7",
+        "title": "Deterministic pre-publication quality gate · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_queue_supervision",
+        "title": "Outreach work-queue supervision and recovery",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_queue_supervision and changes a file. Commit your work with a `Story: marketing.CAP.outreach_queue_supervision` trailer (or marketing.CAP.outreach_queue_supervision in the subject line) and push."
+        ],
+        "outstanding": [
+          "Figures reconcile to openclaw_tasks and skool_tasks; nothing is mutated."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_queue_supervision.autonomy:R2",
+        "title": "Outreach work-queue supervision and recovery · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_queue_supervision.autonomy:R4",
+        "title": "Outreach work-queue supervision and recovery · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_queue_supervision.autonomy:R9",
+        "title": "Outreach work-queue supervision and recovery · R9",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_rate_and_circuit_control",
+        "title": "Outreach rate limiting and circuit breaking",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_rate_and_circuit_control and changes a file. Commit your work with a `Story: marketing.CAP.outreach_rate_and_circuit_control` trailer (or marketing.CAP.outreach_rate_and_circuit_control in the subject line) and push."
+        ],
+        "outstanding": [
+          "Counts reconcile to openclaw_responses.posted_at; no verdict is cached."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_rate_and_circuit_control.autonomy:R2",
+        "title": "Outreach rate limiting and circuit breaking · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_rate_and_circuit_control.autonomy:R4",
+        "title": "Outreach rate limiting and circuit breaking · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_rate_and_circuit_control.autonomy:R9",
+        "title": "Outreach rate limiting and circuit breaking · R9",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_reply_drafting",
+        "title": "Platform-native reply drafting",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_reply_drafting and changes a file. Commit your work with a `Story: marketing.CAP.outreach_reply_drafting` trailer (or marketing.CAP.outreach_reply_drafting in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every fixture produces a draft; the sign-off rule is asserted per platform strategy, both branches covered."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_reply_drafting.autonomy:R1",
+        "title": "Platform-native reply drafting · R1",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_reply_drafting.autonomy:R4",
+        "title": "Platform-native reply drafting · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_reply_drafting.autonomy:R7",
+        "title": "Platform-native reply drafting · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_reply_publication",
+        "title": "Approved reply publication to public platforms",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.outreach_reply_publication and changes a file. Commit your work with a `Story: marketing.CAP.outreach_reply_publication` trailer (or marketing.CAP.outreach_reply_publication in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every post traces to a named human action; no scheduled run publishes anything."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_reply_publication.autonomy:R3",
+        "title": "Approved reply publication to public platforms · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_reply_publication.autonomy:R4",
+        "title": "Approved reply publication to public platforms · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.outreach_reply_publication.autonomy:R5",
+        "title": "Approved reply publication to public platforms · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.platform_app_review_and_representation",
+        "title": "Network app review and public representation",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.platform_app_review_and_representation and changes a file. Commit your work with a `Story: marketing.CAP.platform_app_review_and_representation` trailer (or marketing.CAP.platform_app_review_and_representation in the subject line) and push."
+        ],
+        "outstanding": [
+          "Each claim is marked verified or unverified with its file reference; an unmet requirement is reported as a blocker."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.platform_app_review_and_representation.autonomy:R1",
+        "title": "Network app review and public representation · R1",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.platform_app_review_and_representation.autonomy:R2",
+        "title": "Network app review and public representation · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.platform_change_surveillance",
+        "title": "Outreach platform and tooling change watch",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.platform_change_surveillance and changes a file. Commit your work with a `Story: marketing.CAP.platform_change_surveillance` trailer (or marketing.CAP.platform_change_surveillance in the subject line) and push."
+        ],
+        "outstanding": [
+          "Each answer cites a tech_update row and its date; no fetch is performed."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.platform_change_surveillance.autonomy:R2",
+        "title": "Outreach platform and tooling change watch · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.platform_change_surveillance.autonomy:R4",
+        "title": "Outreach platform and tooling change watch · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.platform_change_surveillance.autonomy:R7",
+        "title": "Outreach platform and tooling change watch · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.publishing_calendar_operations_ownership",
+        "title": "Day-to-day publishing calendar ownership and tool retirement",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.publishing_calendar_operations_ownership and changes a file. Commit your work with a `Story: marketing.CAP.publishing_calendar_operations_ownership` trailer (or marketing.CAP.publishing_calendar_operations_ownership in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every category states its destination or that it is deliberately not imported; nothing is reported as none that has not been looked at."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.publishing_calendar_operations_ownership.autonomy:R2",
+        "title": "Day-to-day publishing calendar ownership and tool retirement · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.publishing_calendar_operations_ownership.autonomy:R3",
+        "title": "Day-to-day publishing calendar ownership and tool retirement · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.publishing_failure_and_handoff_recovery",
+        "title": "Publishing failure and handoff reconciliation",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.publishing_failure_and_handoff_recovery and changes a file. Commit your work with a `Story: marketing.CAP.publishing_failure_and_handoff_recovery` trailer (or marketing.CAP.publishing_failure_and_handoff_recovery in the subject line) and push."
+        ],
+        "outstanding": [
+          "Explanation cites the delivery events and the dead-letter reason; no job state changes."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.publishing_failure_and_handoff_recovery.autonomy:R2",
+        "title": "Publishing failure and handoff reconciliation · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.publishing_failure_and_handoff_recovery.autonomy:R3",
+        "title": "Publishing failure and handoff reconciliation · R3",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.publishing_failure_and_handoff_recovery.autonomy:R4",
+        "title": "Publishing failure and handoff reconciliation · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.recurring_marketing_performance_reporting",
+        "title": "Recurring marketing performance reporting (DA responsibility in transition)",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.recurring_marketing_performance_reporting and changes a file. Commit your work with a `Story: marketing.CAP.recurring_marketing_performance_reporting` trailer (or marketing.CAP.recurring_marketing_performance_reporting in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every figure cites its registry key and trust status; uncomputable figures are named, never zeroed."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.recurring_marketing_performance_reporting.autonomy:R2",
+        "title": "Recurring marketing performance reporting (DA responsibility in transition) · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.recurring_marketing_performance_reporting.autonomy:R4",
+        "title": "Recurring marketing performance reporting (DA responsibility in transition) · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.revenue_and_cost_metric_truthing",
+        "title": "Revenue and cost-per-lead truthing",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.revenue_and_cost_metric_truthing and changes a file. Commit your work with a `Story: marketing.CAP.revenue_and_cost_metric_truthing` trailer (or marketing.CAP.revenue_and_cost_metric_truthing in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every finding names the file and the constant or column; nothing is reported as fixed that is not."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.revenue_and_cost_metric_truthing.autonomy:R2",
+        "title": "Revenue and cost-per-lead truthing · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.revenue_and_cost_metric_truthing.autonomy:R4",
+        "title": "Revenue and cost-per-lead truthing · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.signal_triage_and_prioritisation",
+        "title": "Outreach signal triage",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.signal_triage_and_prioritisation and changes a file. Commit your work with a `Story: marketing.CAP.signal_triage_and_prioritisation` trailer (or marketing.CAP.signal_triage_and_prioritisation in the subject line) and push."
+        ],
+        "outstanding": [
+          "Explanation reproduces the stored verdict exactly; no re-scoring occurs during the answer."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.signal_triage_and_prioritisation.autonomy:R2",
+        "title": "Outreach signal triage · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.signal_triage_and_prioritisation.autonomy:R5",
+        "title": "Outreach signal triage · R5",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.signal_triage_and_prioritisation.autonomy:R7",
+        "title": "Outreach signal triage · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.social_signal_discovery",
+        "title": "Public-platform buying-signal discovery",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet."
+        ],
+        "outstanding": [
+          "Every answer cites a stored openclaw_signals row id; zero outbound network calls in the trace."
+        ],
+        "commit_sha": "0af6f49fe44d10f0f7ed239d056c979d6fd0a0ed"
+      },
+      {
+        "story_id": "marketing.CAP.social_signal_discovery.autonomy:R2",
+        "title": "Public-platform buying-signal discovery · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.social_signal_discovery.autonomy:R4",
+        "title": "Public-platform buying-signal discovery · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.social_signal_discovery.autonomy:R7",
+        "title": "Public-platform buying-signal discovery · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.tracked_link_and_utm_governance",
+        "title": "Tracked link, UTM taxonomy and traffic registration",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "reasons": [
+          "None of the 1 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.tracked_link_and_utm_governance and changes a file. Commit your work with a `Story: marketing.CAP.tracked_link_and_utm_governance` trailer (or marketing.CAP.tracked_link_and_utm_governance in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every flagged source cites its traffic rows; no link is created."
+        ],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.tracked_link_and_utm_governance.autonomy:R2",
+        "title": "Tracked link, UTM taxonomy and traffic registration · R2",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.tracked_link_and_utm_governance.autonomy:R4",
+        "title": "Tracked link, UTM taxonomy and traffic registration · R4",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.tracked_link_and_utm_governance.autonomy:R7",
+        "title": "Tracked link, UTM taxonomy and traffic registration · R7",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.LEGACY-MIGRATION-PLAN",
+        "title": "Legacy migration plan",
+        "status": "complete",
+        "verification_state": "verified",
+        "verified": true,
+        "criteria_passed": 3,
+        "criteria_total": 3,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": "e08f24b579654bfa355bd5f5ea7f0a65b15bf024"
+      },
+      {
+        "story_id": "marketing.RESEARCH-1-SYSTEM-CLASSES",
+        "title": "Compare the five system classes, and place this domain among them",
+        "status": "complete",
+        "verification_state": "verified",
+        "verified": true,
+        "criteria_passed": 3,
+        "criteria_total": 3,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": "208076d37cade18a1330d9418b35fff3d3ea3afd"
+      },
+      {
+        "story_id": "marketing.RESEARCH-2-AGENT-ANATOMY",
+        "title": "Map the nine anatomy elements onto this domain's agent",
+        "status": "complete",
+        "verification_state": "verified",
+        "verified": true,
+        "criteria_passed": 3,
+        "criteria_total": 3,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": "208076d37cade18a1330d9418b35fff3d3ea3afd"
+      },
+      {
+        "story_id": "marketing.RESEARCH-3-ROLE-AND-DA-TRANSITION",
+        "title": "Document Sohail Syed's role, and which DA responsibilities transition",
+        "status": "complete",
+        "verification_state": "verified",
+        "verified": true,
+        "criteria_passed": 3,
+        "criteria_total": 3,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": "208076d37cade18a1330d9418b35fff3d3ea3afd"
+      },
+      {
+        "story_id": "marketing.RESEARCH-4-MANAGER-INTERVIEW",
+        "title": "Prepare a 30-minute interview with Sohail Syed and propose a weekly check-in",
+        "status": "complete",
+        "verification_state": "verified",
+        "verified": true,
+        "criteria_passed": 3,
+        "criteria_total": 3,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": "208076d37cade18a1330d9418b35fff3d3ea3afd"
+      },
+      {
+        "story_id": "marketing.RESEARCH-5-THREE-PROPOSED-TASKS",
+        "title": "Capture three proposed agent tasks with boundaries and completion evidence",
+        "status": "complete",
+        "verification_state": "verified",
+        "verified": true,
+        "criteria_passed": 3,
+        "criteria_total": 3,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": "208076d37cade18a1330d9418b35fff3d3ea3afd"
+      },
+      {
+        "story_id": "marketing.STORY-000",
+        "title": "STORY-000 · Build your Command Center",
+        "status": "not_started",
+        "verification_state": "in_progress",
+        "verified": false,
+        "criteria_passed": 0,
+        "criteria_total": 6,
+        "reasons": [
+          "None of the 6 acceptance criteria are marked as passing yet."
+        ],
+        "outstanding": [
+          "Given the Command Center, when it is opened, then all six panels render and each one names the endpoint it read.",
+          "Given a panel whose endpoint returned nothing, when it renders, then it says so in words and is visibly distinct from a panel that is still loading.",
+          "Given the autonomy ladder panel, when it renders, then all ten rungs are present with the owner's wording, and each capability's ceiling is marked against the rung it stops at.",
+          "Given the autonomy ladder panel, when a capability's authority is shown, then the page shows the effective authority `effectiveAuthority()` returns rather than the level the capability record asks for, and names the `no_tool_grants` rule with the number of capabilities it currently constrains, saying so in words when that number is zero.",
+          "Given the governance panel, when a tool request is shown, then nothing on the page states or implies that filing it granted anything.",
+          "Trust -- no panel shows a number, a grant, a rung or a result this domain has not actually produced."
+        ],
+        "commit_sha": "50b248053fcb10f4ec28f1d6c696395ccd22876e"
+      }
+    ]
   },
   "not_recorded": [
     {
