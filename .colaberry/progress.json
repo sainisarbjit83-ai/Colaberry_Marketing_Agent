@@ -2033,31 +2033,50 @@
       "criteria": [
         {
           "text": "Given the Command Center, when it is opened, then all six panels render and each one names the endpoint it read.",
-          "passed": false
+          "passed": true,
+          "evidence": "assets/panels.js:215-220 renders the six panels; panels.js:35-46 names each endpoint from agent-domain.json sources (\"Endpoint read: GET /api/admin/... via .colaberry/agent-domain.json\"). Tests: tests/command-center/render.test.js:181-183 (six panels, each names its endpoint, all three sources shown)."
         },
         {
           "text": "Given a panel whose endpoint returned nothing, when it renders, then it says so in words and is visibly distinct from a panel that is still loading.",
-          "passed": false
+          "passed": true,
+          "evidence": "assets/data.js:34-58,71-79 classifies each file as loading, loaded, empty, missing or invalid; assets/panels.js:62-73 says each in words; assets/app.css:79-85 styles each state differently. Tests: render.test.js:231-236 (missing, invalid, empty copies), 268-270 (held-back snapshot shows loading, not empty), 225 and 249-250 (real empty governance panel)."
         },
         {
           "text": "Given the autonomy ladder panel, when it renders, then all ten rungs are present with the owner's wording, and each capability's ceiling is marked against the rung it stops at.",
-          "passed": false
+          "passed": true,
+          "evidence": "assets/ui.js:84-95 holds the ten rungs, an exact match to platform AUTONOMY_MEANINGS; assets/ladder.js:79-92 marks each capability (approved, ceiling, effective, ceiling reason, reasons), ladder.js:57-76 strip with R8 unreachable by fact and rungs above the ceiling greyed, ladder.js:46-54 R8/R9 ceilings capped at R7 today, ladder.js:27-40 missing values explained. Tests: render.test.js:192-222, 252-264; all 64 rows also checked against agent-domain.json (64 of 64 match)."
         },
         {
           "text": "Given the autonomy ladder panel, when a capability's authority is shown, then the page shows the effective authority `effectiveAuthority()` returns rather than the level the capability record asks for, and names the `no_tool_grants` rule with the number of capabilities it currently constrains, saying so in words when that number is zero.",
-          "passed": false
+          "passed": true,
+          "evidence": "assets/ladder.js:130-134 shows the effective authority effectiveAuthority() returned (64 at autonomy:R0), with the requested level only as \"Approved (asks for)\"; ladder.js:135-141 names the no_tool_grants rule and says \"In force, and currently constrains 0 capabilities\". Tests: render.test.js:194 (zero in words), 239 (count of 1 on an edited copy)."
         },
         {
           "text": "Given the governance panel, when a tool request is shown, then nothing on the page states or implies that filing it granted anything.",
-          "passed": false
+          "passed": true,
+          "evidence": "assets/panels.js:138-150 uses the platform's kinds (change, tool) and statuses (submitted, approved, declined); panels.js:174-187 shows the disclosure \"A filed request grants nothing\", \"Tool requests (asked for, not granted)\", \"Submitted: nobody has decided yet. Grants nothing.\" and takes granted tools only from the agent record. Tests: render.test.js:240-250."
         },
         {
           "text": "Trust -- no panel shows a number, a grant, a rung or a result this domain has not actually produced.",
-          "passed": false
+          "passed": true,
+          "evidence": "Every panel value comes from .colaberry/agent-domain.json; missing fields are labelled, never filled; Sample mode never draws the panels (assets/panels.js:209-212); ceiling statements follow the data (assets/ladder.js:145). Tests: render.test.js:161-170 (no undefined/NaN/SAMPLE in Real mode on any page), 189, 232, 273. A sweep of all 26 rendered pages traced every number to a data file."
         }
       ],
-      "files_touched": [],
-      "tests_added": [],
+      "files_touched": [
+        "index.html",
+        "assets/app.css",
+        "assets/app.js",
+        "assets/chat.js",
+        "assets/data.js",
+        "assets/ladder.js",
+        "assets/panels.js",
+        "assets/tabs-work.js",
+        "assets/ui.js"
+      ],
+      "tests_added": [
+        "tests/command-center/render.test.js",
+        "tests/command-center/chat.test.js"
+      ],
       "notes": null,
       "updated_at": null,
       "verification": {
