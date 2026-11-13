@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-04T16:45:02.202Z",
+  "generated_at": "2026-11-13T20:06:17.934Z",
   "plan_version": 1,
   "plan_sha256": "3551a58b38932557d08df0f2fcb0a76250d09e5bb9d845af796ad2e1d9206746",
-  "correlation_id": "aea8e5bd-a4dc-4149-b780-6ab75468931a",
+  "correlation_id": "cc-20261113-q7m2-postladder-marketing",
   "project_id": "26cb06c4-75f3-5397-89f4-b56a4cc49483",
   "truth_revision": null,
   "files": [
@@ -308,7 +308,7 @@
     },
     {
       "path": "docs/stories/marketing.STORY-000.md",
-      "sha256": "32b50b42d7958f9dd943511b635a509a014ed727c6cbbcdc654af6a3e80a7794"
+      "sha256": "d7cac116f36b29300865753ffc953ab4f90e785f8055d03fbc184695add5d9ba"
     },
     {
       "path": ".colaberry/plan.json",
@@ -316,7 +316,7 @@
     },
     {
       "path": ".colaberry/progress.json",
-      "sha256": "0c3c40a2354b8484126824f2722f53d85f612d86c8e39f1a41c4ae5edb2167da"
+      "sha256": "90587fac6be9486fb0d3df7d663931054c9f4128965b568f70a7d7e615f8a059"
     },
     {
       "path": ".colaberry/profile.json",
@@ -324,7 +324,7 @@
     },
     {
       "path": ".colaberry/agent-domain.json",
-      "sha256": "f0c6af33dbc444b6e7fc8732ae1948675c712c2a9c5bfd640a4b578a8684e7db"
+      "sha256": "1951f7f7273e879a7bdf52d23bd0b53078abc402fff83d89d4dee2dfa480b6c4"
     },
     {
       "path": "docs/stories/STORY-000.md",
