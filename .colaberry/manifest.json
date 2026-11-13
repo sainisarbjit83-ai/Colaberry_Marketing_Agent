@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-11-13T20:06:17.934Z",
-  "plan_version": 1,
-  "plan_sha256": "3551a58b38932557d08df0f2fcb0a76250d09e5bb9d845af796ad2e1d9206746",
-  "correlation_id": "cc-20261113-q7m2-postladder-marketing",
+  "generated_at": "2026-11-13T22:53:49.850Z",
+  "plan_version": 2,
+  "plan_sha256": "92f39b28bf538d4dada3ddfd127eaf5679ae1536ec0b86ae1d6eeceb6ba2f09d",
+  "correlation_id": null,
   "project_id": "26cb06c4-75f3-5397-89f4-b56a4cc49483",
   "truth_revision": null,
   "files": [
     {
       "path": "docs/REQUIREMENTS.md",
-      "sha256": "1b7c40492b00d330100757c38e278cd04c5419e954390b654c00246e16a17a2c"
+      "sha256": "baaf372e651aabe54acd0f21c250d93923bb1949e9953d999d985faa3d5c664c"
     },
     {
       "path": "docs/STORIES.md",
-      "sha256": "cea4fb95e89ceac9cc2a0d2f58edad3d0fc593d7aa007f916528e1c8ef65a2e1"
+      "sha256": "88588953cf92b31adc603eceb1ef57722aced7d801d1764ab1607237facac7a1"
     },
     {
       "path": "docs/TRACEABILITY.md",
-      "sha256": "ae2a1f5d259cc7c42c975cc6b8ff525470c61d7bb58561575fb5c85952c5ee13"
+      "sha256": "d7f0222ec0089557e40d60400f39ecf918bb0b2fb85d61512aaa36975dfbcc4f"
     },
     {
       "path": "docs/DATA_CONTRACT.md",
@@ -24,299 +24,315 @@
     },
     {
       "path": "CLAUDE.md",
-      "sha256": "b6d0d875752631846bcb129aaf3d9831ff5b6c3276de6c8910d1da16829cc218"
+      "sha256": "25ea80e8de456d2c99ed7864e004ac0947e80517df2bac2085d63e44f2a33fb6"
     },
     {
       "path": "docs/stories/marketing.CAP.agent_write_authorization_enforcement.md",
-      "sha256": "cf75e9c42b8aaaabb8586ff539a6b3d32187180f198408db6f87eb4310182293"
+      "sha256": "3829286b4b553bde8a1dc93f201eb0b4aa8681b2b5fd186f7cc74d54d5ed3977"
     },
     {
       "path": "docs/stories/marketing.CAP.ai_news_ingestion_and_card_publication.md",
-      "sha256": "14865f5dba2e22e32e814e92517eb4f1444378350dc7e3a23cd48c1f67b42b2f"
+      "sha256": "aff26349981372bedd1862c3ab6262a98270f0bcd835f6acf70b85e27fe1c841"
     },
     {
       "path": "docs/stories/marketing.CAP.authority_content_drafting.md",
-      "sha256": "73d408d697fcad5de826aab03d4ba7aa4647753acb68565ca85f78d1f1971579"
+      "sha256": "fd4490dfdd083ea7eac49a3d50e48b47825ac1b1222580b42838af61ce6546e3"
     },
     {
       "path": "docs/stories/marketing.CAP.banned_copy_compliance_scanning.md",
-      "sha256": "f00e9ef3c8bd903f2f68c59be50603598b9d87f1b9df409826bd6410fad0f9ad"
+      "sha256": "dc0cd226f6d4ad0baa3c269d83b836b51d1fdb3549f4d079cad86d3f634c035b"
     },
     {
       "path": "docs/stories/marketing.CAP.brand_and_competitor_mention_monitoring.md",
-      "sha256": "3beb0f99214bea48dea6f1fed620b4f424de8110112e26c816bde8606e47341d"
+      "sha256": "20570212250b66ec82d8b46843d0de4de875803ed17e4f65f2f9222e0b42cdc3"
     },
     {
       "path": "docs/stories/marketing.CAP.brand_attribution_of_campaigns.md",
-      "sha256": "3d059810382c77824d9fb7af5f4be276c20d62ad9999a4843ff80d0bccfc1cbb"
+      "sha256": "5d9ad9d95d386add91f3a005890514ab796f67c3eb17c827deb2d8106fca3f33"
     },
     {
       "path": "docs/stories/marketing.CAP.brand_governance_enforcement.md",
-      "sha256": "e5a911c9d81451452fc4d8f77bf57041f74548dfd804d3c5000425af3c08e26c"
+      "sha256": "0041bf021eee8d6dfa52fe85414fb0f3ef89239d037c215e8f7914fc69486441"
     },
     {
       "path": "docs/stories/marketing.CAP.brand_network_connection_administration.md",
-      "sha256": "b9df1b0e99cb99b81de228064c78ea93958770315a9463fb237c0aa189af85dc"
+      "sha256": "cf2af4a3a4e1edff106de1517ca9a5d8a4341e4eb8bd8b56319505453b58e199"
     },
     {
       "path": "docs/stories/marketing.CAP.brand_registry_and_readiness.md",
-      "sha256": "037f9f263cca24ebd5d6514b1e8006c84ed58e2b0664ca97b986bb0d7cc2adaf"
+      "sha256": "a67d49e4453fff098a0d64eacd4505a269f2871774c18f17aa72747c66fc0271"
     },
     {
       "path": "docs/stories/marketing.CAP.brand_social_publishing.md",
-      "sha256": "dd9b957a3ec5197e6a24a743a06d89161c471d8e01ba8945cce579ce36fe0acd"
+      "sha256": "293789c43b65597a89792022851e05dd5325e2e57247f6d95816326bd1c579da"
     },
     {
       "path": "docs/stories/marketing.CAP.browser_session_reliability.md",
-      "sha256": "04d5bf85cfe8c3fbfca6e9425d28808fe8f7e27bf35783bc583ee23548c1dc9b"
+      "sha256": "1862581322ade4fced21e9cb02ce1037921c4f89ed17ad4d6081af5320d7243e"
     },
     {
       "path": "docs/stories/marketing.CAP.campaign_and_channel_metric_reporting.md",
-      "sha256": "228a047cd2b2ca627e4ecd39276213c0f88621b51629580b34d00788c5267885"
+      "sha256": "658ee1f386b13d94d02a8725a0fd5a2714361383c4a9c6cc745c1d1255496121"
     },
     {
       "path": "docs/stories/marketing.CAP.campaign_approval_and_golive.md",
-      "sha256": "bc9a95d19d49dcbaad3ee2a347ef9c6c32e6a21a1376eb66bee6af3c3ebec266"
+      "sha256": "17f118b4f887e77c407ab2508b8e2ea9d10d1c0a175f24a885943f59ec2ada2f"
     },
     {
       "path": "docs/stories/marketing.CAP.campaign_funnel_performance_analysis.md",
-      "sha256": "7391719225873d6dfdfb4ed80559c851671d5859164e6f0b8a6a6ec02164d57d"
+      "sha256": "3777520f0a34a44d0f1a4f5ce8f24116b94f0b18b1436c2c11c223ccbf55afac"
     },
     {
-      "path": "docs/stories/marketing.CAP.channel_account_connection_and_credential_cust.md",
-      "sha256": "85645e549e0ea812444c533520a4c8b4183c101d7eab75196be325631b66d912"
+      "path": "docs/stories/marketing.CAP.channel_account_connection_and_credential_custody.md",
+      "sha256": "7c82621a89439a54150a2a96cc3af79b7a661449575a2487c9425624a5361db2"
     },
     {
       "path": "docs/stories/marketing.CAP.community_direct_message_response.md",
-      "sha256": "3c90130d48afef066d8081a1b06b8f68c88cbb624da43ccb54afa37994aa8388"
+      "sha256": "984e26ce016f0d83570b9827ae6b77c5f508da077b34411838bc93ddcecb8f54"
     },
     {
       "path": "docs/stories/marketing.CAP.community_signal_detection.md",
-      "sha256": "c5abccb8d66508acbdefd6b500d99bc2f8553a6b976479dc2ed04bfa66b67b5e"
+      "sha256": "3ea2084ed5da82dc289d8932d18eb293f9a1d1a642dc397abf8cffe9dfd3dc3e"
     },
     {
       "path": "docs/stories/marketing.CAP.content_approval_workflow.md",
-      "sha256": "9435b75a020f180e8201134b7ef4ab5f9108484b3fad3542908b7b146e0801ea"
+      "sha256": "39f1e22aab76af5be110976546749cd96bbaca626db4fe5d56ce7c53b1dd9403"
     },
     {
       "path": "docs/stories/marketing.CAP.content_composition_and_variant_generation.md",
-      "sha256": "60408ad874d42989a5e3d1657df2a72ba3534c75b59533c441a0186b5efdd4dc"
+      "sha256": "961c28fc190297fa95663381b8583a9253899436711f942ec3c4424955af9060"
     },
     {
       "path": "docs/stories/marketing.CAP.content_history_import_from_loomly.md",
-      "sha256": "8a84afe1615426adfb5649f32585943875e3fee9303ceb7e113ca21175b9d824"
+      "sha256": "77eed598240dea0ea704a4b7a4afbfd856eb9fbc920c3d3e2d089362213b3ad4"
     },
     {
       "path": "docs/stories/marketing.CAP.content_idea_proposal_queue.md",
-      "sha256": "2d08631ee8c83dfaa5a15cd2b976a8fbe4ec2d45000765c03754ff8a979cdd7a"
+      "sha256": "b66592bcb331ba19996e78c920b1e0783faa52667f4762965fc7e60488bbc162"
     },
     {
       "path": "docs/stories/marketing.CAP.content_platform_fitness_validation.md",
-      "sha256": "59726486f8f0b37dcfe3edc468820e6167af6942452231d812ee55a33967325b"
+      "sha256": "a2906e5d6fe42e3e26e1ea72641fcdc8817b2986e5782020f0a4aeaf08961fcd"
     },
     {
       "path": "docs/stories/marketing.CAP.content_repurposing_and_template_library.md",
-      "sha256": "eef3662f6595fc5cd4980854fa78644d26c756acfe787012b5c99356713fc5a6"
+      "sha256": "b0ffebae6800fae8e8b7b1d20fbdec342a07be58d747c169d0d0a1bc8cce7654"
     },
     {
       "path": "docs/stories/marketing.CAP.conversation_followup_sequencing.md",
-      "sha256": "40c65933187409e7f3fbbc90cee69b717c5b35fda0fcda204ef8773583d18bbc"
+      "sha256": "531a3bd7c2bda765398fa8857fafa44f6d2aa126ebd98e6a64c04a4b14ea6c0c"
     },
     {
       "path": "docs/stories/marketing.CAP.engagement_monitoring_and_intent_scoring.md",
-      "sha256": "1738e50df354dbd626578ac25d797f82c4adad56bfc10768efc9b4db1abf8241"
+      "sha256": "609e5951c51869ca42813455d275d21e450d22048d63e96f57d21c7851bb0144"
     },
     {
       "path": "docs/stories/marketing.CAP.free_tier_learner_journey_scoring.md",
-      "sha256": "f655e0c89464b5687e9ada7df401b893c571de19563c9825a186fafe210b9ed0"
+      "sha256": "72762bc9a941a0eee224218bf174703cf6426896a1ed6fb55392d506d0fd6f02"
     },
     {
       "path": "docs/stories/marketing.CAP.free_tier_next_best_action_decisioning.md",
-      "sha256": "bbbdd3e8f3137d5feff32edf0f4cc2885de683a41512dfc6dc6129c682635dfd"
+      "sha256": "d814ffa8f38d8297de8564ad9c20c30c36451d1bb79dd86db54b762b615d4737"
     },
     {
       "path": "docs/stories/marketing.CAP.handoff_package_manual_publication.md",
-      "sha256": "618771256a2cbbed7c4a436d850d91b10fc264bb54fef302b0b5d1a1cea813dc"
+      "sha256": "d911225399734c02551bb588072707c3150e7ba1814cc1dc92375e7118f17ee0"
     },
     {
       "path": "docs/stories/marketing.CAP.intelligence_card_generation.md",
-      "sha256": "a6b67e0790dfbca433b5319df9d07425ce12a7cbde36856e1676943dde211820"
+      "sha256": "02ad3b2e8c293c8dee0296e9a082d3cd295315247eaa40875ad5b32a4be56a1a"
     },
     {
       "path": "docs/stories/marketing.CAP.intelligence_card_prepublication_review.md",
-      "sha256": "d2ee02bba5eea210bc43fed3abf8773513fae0389e457dd7aa68f3ab1642947b"
+      "sha256": "38119dff2dcfafbd690d6352c75017f5546735a6c98f10859d0b46239ba5709b"
     },
     {
       "path": "docs/stories/marketing.CAP.landing_page_generation_and_publication.md",
-      "sha256": "e045b0084dc217288c9c8b190a537af1fcc37e8808b3f9d5dbe67675eff14d96"
+      "sha256": "0d6381a1b0e5dcafabd351ea6a910981d1060cb7791d50901e88910f308a68ab"
     },
     {
       "path": "docs/stories/marketing.CAP.lifecycle_content_catalogue_projection.md",
-      "sha256": "fdd6d63f9c99c99ee1efadec759009687cfef379f599a105ad15a6df9bc1934d"
+      "sha256": "0f7fced58dff76b2df528da93e3cd0191a99549bed9fce84ee042fb480997d54"
     },
     {
       "path": "docs/stories/marketing.CAP.linkedin_comment_watch_and_reply_drafting.md",
-      "sha256": "f8d3d6421f367be4bed4e5068d120205174e6ea3c9062e83134b45301cc4a28d"
+      "sha256": "69d56a98fd27ceba323feed2ee05f7e7b190021f72e68f951df2ae8fac230860"
     },
     {
       "path": "docs/stories/marketing.CAP.linkedin_relationship_action_suggestions.md",
-      "sha256": "1f3bd75863c06cf303b94faa246108cdefc0e3a39fff7d48de31237d6fd84068"
+      "sha256": "634a246f4c3771d824b51190b2d1c31238ada12e4682157c7089602d35e18e58"
     },
     {
       "path": "docs/stories/marketing.CAP.manager_marketing_brief_subscription.md",
-      "sha256": "41c77a4bfa4d59ebf0547305ef1a07fd9db060320f3930a5743dfd0a78ccecc5"
+      "sha256": "5c6419d37ae3f34a8db67fd546ba1a38148f2dfe15304d58ffd34b03c9654f17"
     },
     {
       "path": "docs/stories/marketing.CAP.marketing_agent_management_and_oversight.md",
-      "sha256": "75ca5e0dfad16f692d79508349e21eb656712d62f1fcfff756059c0d4f90500e"
+      "sha256": "31b2b427707e816fe49780b1f5bec17ee9e8c96a780560bbaadcdeafc2f9b6be"
     },
     {
       "path": "docs/stories/marketing.CAP.marketing_calendar_planning.md",
-      "sha256": "9c77e14da052654277a85858d70d078e4a7985964a6f747a8c7e4f232dc2e7e8"
+      "sha256": "2f825ce34f9ba04a1f483f382ca6a2238dde151baa88ef0dd978929a3bd1a625"
     },
     {
       "path": "docs/stories/marketing.CAP.marketing_department_strategy_planning.md",
-      "sha256": "e49264f544544f077fe4c4adae3ad4fed3f0edbe9c47cf3795bd75778d2912ad"
+      "sha256": "5f8130376365ef9590026f477c42d698e18fb5c671a01d30200458292a34e394"
     },
     {
       "path": "docs/stories/marketing.CAP.marketing_overview_and_attention_triage.md",
-      "sha256": "a09d56fdd08ab2722d7e2ba66882a69332a85de5bba2249e6c17ced28a199ad0"
+      "sha256": "a2fb36a4b5b67100252a08ccc1cf03d397cebbe0d256f7a476c463e3487dfec0"
     },
     {
       "path": "docs/stories/marketing.CAP.marketing_surface_problem_reporting.md",
-      "sha256": "c3ef62f801230371ab4389530a77936abef65920c0f87c1247a29d0ec543720e"
+      "sha256": "c7e2e81b5ed12908d7d79f89eea87a91b5fba23fb6fa1f7d023d66c52fb8abe5"
     },
     {
       "path": "docs/stories/marketing.CAP.metric_trust_escalation_decisions.md",
-      "sha256": "c43f941322ad995afc4c350f5dadd1257540984d44a3d2a16a629402f52a9bb0"
+      "sha256": "568a90cd05d0f9d8171704ef57f947de4ab58ea69dc7b2553be896a1be1ec27c"
     },
     {
       "path": "docs/stories/marketing.CAP.multi_touch_attribution.md",
-      "sha256": "2648cbe7e2a043cbde5aa1f873a9d302caaf395570ce9f9c8ab5b74ac6a1f8da"
+      "sha256": "8564b08cc4eb2c912ac9866bafd13084bd07695f67700858a47db01a82f323cc"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_consent_and_channel_suppression.md",
-      "sha256": "90759f0f5a4964290f288eaeb1170c62a66126f1aa3e1b81ed7c88033d925e1b"
+      "sha256": "da50e396719f663ff79a56e62189cdbc7c3f893bde2bf58dc150bd1a847bb410"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_conversion_attribution.md",
-      "sha256": "ac04a4661feef392569d2003f993336915a09aa5c1e507b26769cf53ccfbadab"
+      "sha256": "6edaf0907a96791fe8381c317c8345f5af086a3d0f19075ff49ffe046d146244"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_coverage_and_blind_spot_reporting.md",
-      "sha256": "3eadef2a19c341ff87dee78b1b65a482fe2a659a4bcf6c6c0fb878cfd794a861"
+      "sha256": "5b3f19fb34a607f9c5fb56b09486ce98f7dfb98138b865fb65205c1bed826c19"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_daily_human_action_queue.md",
-      "sha256": "02798a30da3c2c84f60f04bd31ffcae89cbfc56f9e1032a9c499d5e65a55c893"
+      "sha256": "c8c9ce4ca573c0f0a0f9123fce7341ee94b11c0431516e1cf4c253fd9c78ef96"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_human_approval_gap_closure.md",
-      "sha256": "2d74ff07da0ea895864cf3fd3071b0410855403f61d6c0e8d96f8b078ab604e5"
+      "sha256": "52469982abbd57f131ac05e4a7b4ba51b6f63d08ac664a4a3700faeb211db4c1"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_lead_capture_and_scoring.md",
-      "sha256": "8619ba8130e43b98e9824c6d469eec3f50f880d73490865eb51e0dd1cd081d5f"
+      "sha256": "895f9033e4f08f22086e8f6971bda36daa1f9e3e401d437c96bac0b209f8dd7b"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_learning_loop.md",
-      "sha256": "7becdfc8ecd282bc20b47fed2f51c33cc0cdc9455e61dde69fc8b6a90fa3550d"
+      "sha256": "60b3e5a1310e8587c1ac79652b25c7422d6a667a12d1b7d5e919d1ce4ad4dad7"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_post_verification.md",
-      "sha256": "bd703bb15ac153543882f1152bf2de3d0eddc325eb36b32b81cd08236fff2813"
+      "sha256": "53c5d6fd2d0eb759be900a03593fa23ebe33fcc889bfd8266ce27834bbddbafa"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_quality_gate.md",
-      "sha256": "4e45920839a7979b4c55ae2b8ed121a6739b496b0976382ad5b76e77439504d0"
+      "sha256": "4e9256c60341944691ff7082ee20a2db43c2285c9eb633c975c35fe6b5a68f2b"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_queue_supervision.md",
-      "sha256": "ef69f67ca64a099fb0ff42af8e1bd11ef9f5adab9192f9ec96ed95c5f9a184cd"
+      "sha256": "3e81508811da24617e62d23cb95a34e04a18d38e72887ba17773997fd63b7e8c"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_rate_and_circuit_control.md",
-      "sha256": "69dbca73a3b133ec426038692f84c3554b3d0833cf575bee028c3525b8cf72e6"
+      "sha256": "8ed5efcee11c309698639e76351bac0556addb20266541421b8747497b7ac508"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_reply_drafting.md",
-      "sha256": "2d819917227c70c692222bc53459b24e739066998796c88af04825914b7eb8d3"
+      "sha256": "1fe56db8f05152a8845fd2f81557cfd4cf5018d05346ea27aedd3f0b6f04f1ee"
     },
     {
       "path": "docs/stories/marketing.CAP.outreach_reply_publication.md",
-      "sha256": "13414d05086ca53bfb9b13d7b9be9acf19557c264f4626146dc248fef64b98fe"
+      "sha256": "6d3dffde03829f6cf79974d83ca24afaa7683c9b05dc910d755eea46c5ad6a13"
     },
     {
       "path": "docs/stories/marketing.CAP.platform_app_review_and_representation.md",
-      "sha256": "c9d890e9989b1eb4e4f37c75300b306a37f40dd3dd4baf42af2f44bcbe74324d"
+      "sha256": "5d67c29d1bee7702cda08285c2bffb86b2288a09e498eb2bc87dce616bf9d274"
     },
     {
       "path": "docs/stories/marketing.CAP.platform_change_surveillance.md",
-      "sha256": "04a86c84a904f52354a9dbafa32b9356cd11034add5a86d1acb60092545165c7"
+      "sha256": "7dfc22b7ab6149ac1cddc5ce2554abc54af57ceef472fbfaea0d7fcb21d7df1f"
     },
     {
       "path": "docs/stories/marketing.CAP.publishing_calendar_operations_ownership.md",
-      "sha256": "de8aea6946cf2ea37ef212e2a9cb71ecf275c1022e97405f601350f216d982ff"
+      "sha256": "25e168097ab99cb61b0ed3b8b6c349edf01911a7bca8d88037ad63db723cec2e"
     },
     {
       "path": "docs/stories/marketing.CAP.publishing_failure_and_handoff_recovery.md",
-      "sha256": "91bed2fa10526042bcd8b2e8873a62ed251098ecc066e2da6f5c7c92898a2ca8"
+      "sha256": "7db43aaef2eccd62db64dcd7ac53891e34c3f9ac6c823d5401fffe37c533f4be"
     },
     {
       "path": "docs/stories/marketing.CAP.recurring_marketing_performance_reporting.md",
-      "sha256": "28c0f18b02e32a464c853b6097a7e8c74b205d9bd853627e7b1f1a5a9651de90"
+      "sha256": "8d0984392f43c61e56a4b6a9228dd59aa9fb4d24541b5da161fd1aed05e4ba17"
     },
     {
       "path": "docs/stories/marketing.CAP.revenue_and_cost_metric_truthing.md",
-      "sha256": "ff5c216d22dc712f971c6022a33670b75c48ea28991504250bc72a32b58ea5a1"
+      "sha256": "46e32485caf7c8d3357af475df7b907e7f89e88ac070f559399a9ff8c51ac52a"
     },
     {
       "path": "docs/stories/marketing.CAP.signal_triage_and_prioritisation.md",
-      "sha256": "f0e367a2147987e3608105e28a3cc46f076e27b9c2e8e975f6b06560692daf17"
+      "sha256": "4261470090829b757cc3119bc326330dc6b8f29262e4ab0b8d2fda0c79179998"
     },
     {
       "path": "docs/stories/marketing.CAP.social_signal_discovery.md",
-      "sha256": "ec2a9a4bf536299f6fde7f14af68e7e89d30e232b95ec1eb0088cae4ded02478"
+      "sha256": "afc703d1432e9b037e9ca55695d71d3ba51939048b00315740a89da568c4036e"
+    },
+    {
+      "path": "docs/stories/marketing.CAP.social_signal_discovery.L1-BY-HAND.md",
+      "sha256": "be38c82f4baf986ef67761b0433978e1fe21324950d955837ae0dd0590ae6155"
+    },
+    {
+      "path": "docs/stories/marketing.CAP.social_signal_discovery.L2-IN-THE-APP.md",
+      "sha256": "d72f85b2d5836a3b0c446c8715c4447c88f8e7347b2139a3119defb254a11b52"
+    },
+    {
+      "path": "docs/stories/marketing.CAP.social_signal_discovery.L3-TOOL-REQUEST.md",
+      "sha256": "3ae0b2c19e7181b3e4812771bf2434e88adbc1c388f15855f61d57d281e84cda"
+    },
+    {
+      "path": "docs/stories/marketing.CAP.social_signal_discovery.L4-AGENT-WATCHED.md",
+      "sha256": "89a11e9e37591c216aa93f1384bbcdc5dbb3ac88675b249b0f672b79a17dd6b8"
     },
     {
       "path": "docs/stories/marketing.CAP.tracked_link_and_utm_governance.md",
-      "sha256": "89123f86d9e53c4d184e99855805188ce1cfb0114976ab8d969d3bf6aa94687c"
+      "sha256": "2aa393d1bf0d68846b50625c7fd368250675e7590bc97f3874333864c706b44b"
     },
     {
       "path": "docs/stories/marketing.LEGACY-MIGRATION-PLAN.md",
-      "sha256": "ad5249475600cc5242167733200b8d85cafb268f4471cbabb070a307e55c8652"
+      "sha256": "4e2b998e18ea29ff415a91410b398625dbee6c889484962615a4ca5e142802d6"
     },
     {
       "path": "docs/stories/marketing.RESEARCH-1-SYSTEM-CLASSES.md",
-      "sha256": "face1a52ddef3f708e181c3f8a7605fe2ca2e81351beb96f3d2a18799c4acb19"
+      "sha256": "6f6242552aecdfdc96bceac32e49f57a36ced4d519860e93d4c9e629a23a056b"
     },
     {
       "path": "docs/stories/marketing.RESEARCH-2-AGENT-ANATOMY.md",
-      "sha256": "7e4bf6d2dd76846ebf512463d904545f463efd893a274c21f6092b4606222a2a"
+      "sha256": "3517f6be8b2c92fb78cf85963e17b92eb24aa9c71e4c7c96fba684bf485ba91b"
     },
     {
       "path": "docs/stories/marketing.RESEARCH-3-ROLE-AND-DA-TRANSITION.md",
-      "sha256": "df66b98e5bf002e7b530f82b0d7c5ea6050f17d681b8a99a3af19cc88a0ec4a4"
+      "sha256": "9c339b723ea4f2f200081203386ed6486b39c17ebf8d90ab057af4cd651c6a41"
     },
     {
       "path": "docs/stories/marketing.RESEARCH-4-MANAGER-INTERVIEW.md",
-      "sha256": "82051d247e6e562951abf5ddeeae601a5fd8eba01427bb755150fe62fa73981f"
+      "sha256": "6194068cbef5fc88174ee4da6d649f155dd1526cfc25acf8a8198ac902e8a1aa"
     },
     {
       "path": "docs/stories/marketing.RESEARCH-5-THREE-PROPOSED-TASKS.md",
-      "sha256": "ea91db4cf8c5756d311c2effe7336046ae467ae26cc39b8c640463ff9e1a9873"
+      "sha256": "e15792dd7ec17bba40c6754e2cf7ba0a8361a0d8fda71d6eeecf0b9aa145b47a"
     },
     {
       "path": "docs/stories/marketing.STORY-000.md",
-      "sha256": "d7cac116f36b29300865753ffc953ab4f90e785f8055d03fbc184695add5d9ba"
+      "sha256": "1a73708a3c6bc6c2cdb0cadfa96038a0e4e3b72e3d34cbd6a510a31f66e93c8c"
     },
     {
       "path": ".colaberry/plan.json",
-      "sha256": "ea730253e5c33f68d96b53ad41bc96ab6b10a6ff87f098ed4673fb1b92b7236a"
+      "sha256": "2513e278896eaf1ef2953c5bf6142c6ef3c5e20a99017dd851a5cea67de74aef"
     },
     {
       "path": ".colaberry/progress.json",
-      "sha256": "90587fac6be9486fb0d3df7d663931054c9f4128965b568f70a7d7e615f8a059"
+      "sha256": "7e0ada05031640a995dc1f27370f3e9748f27a4a2ea27bbd2545158f3ab60e75"
     },
     {
       "path": ".colaberry/profile.json",

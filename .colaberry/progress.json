@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "project": "marketing",
+  "project": "Marketing Intelligence & Brand",
   "totals": {
-    "stories_total": 71,
+    "stories_total": 75,
     "stories_verified": 7,
     "stories_submitted": 0,
-    "stories_in_progress": 63,
-    "stories_not_started": 1,
+    "stories_in_progress": 64,
+    "stories_not_started": 4,
     "criteria_total": 82,
     "criteria_passed": 18,
     "points_awarded": 77
@@ -14,7 +14,7 @@
   "stories": [
     {
       "id": "marketing.CAP.agent_write_authorization_enforcement",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -42,7 +42,7 @@
     },
     {
       "id": "marketing.CAP.ai_news_ingestion_and_card_publication",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -70,7 +70,7 @@
     },
     {
       "id": "marketing.CAP.authority_content_drafting",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -98,7 +98,7 @@
     },
     {
       "id": "marketing.CAP.banned_copy_compliance_scanning",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -126,7 +126,7 @@
     },
     {
       "id": "marketing.CAP.brand_and_competitor_mention_monitoring",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -154,7 +154,7 @@
     },
     {
       "id": "marketing.CAP.brand_attribution_of_campaigns",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -182,7 +182,7 @@
     },
     {
       "id": "marketing.CAP.brand_governance_enforcement",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -210,7 +210,7 @@
     },
     {
       "id": "marketing.CAP.brand_network_connection_administration",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -238,7 +238,7 @@
     },
     {
       "id": "marketing.CAP.brand_registry_and_readiness",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -266,7 +266,7 @@
     },
     {
       "id": "marketing.CAP.brand_social_publishing",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -294,7 +294,7 @@
     },
     {
       "id": "marketing.CAP.browser_session_reliability",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -322,7 +322,7 @@
     },
     {
       "id": "marketing.CAP.campaign_and_channel_metric_reporting",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -350,7 +350,7 @@
     },
     {
       "id": "marketing.CAP.campaign_approval_and_golive",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -378,7 +378,7 @@
     },
     {
       "id": "marketing.CAP.campaign_funnel_performance_analysis",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -405,8 +405,8 @@
       }
     },
     {
-      "id": "marketing.CAP.channel_account_connection_and_credential_cust",
-      "release": "r2",
+      "id": "marketing.CAP.channel_account_connection_and_credential_custody",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -418,11 +418,23 @@
       "tests_added": [],
       "notes": null,
       "updated_at": null,
-      "verification": null
+      "verification": {
+        "state": "in_progress",
+        "criteria_passed": 0,
+        "criteria_total": 1,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": [
+          "No credential value appears in any output or log; health verdicts match the stored expiry."
+        ]
+      }
     },
     {
       "id": "marketing.CAP.community_direct_message_response",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -450,7 +462,7 @@
     },
     {
       "id": "marketing.CAP.community_signal_detection",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -478,7 +490,7 @@
     },
     {
       "id": "marketing.CAP.content_approval_workflow",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -506,7 +518,7 @@
     },
     {
       "id": "marketing.CAP.content_composition_and_variant_generation",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -534,7 +546,7 @@
     },
     {
       "id": "marketing.CAP.content_history_import_from_loomly",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -562,7 +574,7 @@
     },
     {
       "id": "marketing.CAP.content_idea_proposal_queue",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -590,7 +602,7 @@
     },
     {
       "id": "marketing.CAP.content_platform_fitness_validation",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -618,7 +630,7 @@
     },
     {
       "id": "marketing.CAP.content_repurposing_and_template_library",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -646,7 +658,7 @@
     },
     {
       "id": "marketing.CAP.conversation_followup_sequencing",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -674,7 +686,7 @@
     },
     {
       "id": "marketing.CAP.engagement_monitoring_and_intent_scoring",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -702,7 +714,7 @@
     },
     {
       "id": "marketing.CAP.free_tier_learner_journey_scoring",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -730,7 +742,7 @@
     },
     {
       "id": "marketing.CAP.free_tier_next_best_action_decisioning",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -758,7 +770,7 @@
     },
     {
       "id": "marketing.CAP.handoff_package_manual_publication",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -786,7 +798,7 @@
     },
     {
       "id": "marketing.CAP.intelligence_card_generation",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -814,7 +826,7 @@
     },
     {
       "id": "marketing.CAP.intelligence_card_prepublication_review",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -842,7 +854,7 @@
     },
     {
       "id": "marketing.CAP.landing_page_generation_and_publication",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -870,7 +882,7 @@
     },
     {
       "id": "marketing.CAP.lifecycle_content_catalogue_projection",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -898,7 +910,7 @@
     },
     {
       "id": "marketing.CAP.linkedin_comment_watch_and_reply_drafting",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -926,7 +938,7 @@
     },
     {
       "id": "marketing.CAP.linkedin_relationship_action_suggestions",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -954,7 +966,7 @@
     },
     {
       "id": "marketing.CAP.manager_marketing_brief_subscription",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -982,7 +994,7 @@
     },
     {
       "id": "marketing.CAP.marketing_agent_management_and_oversight",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1010,7 +1022,7 @@
     },
     {
       "id": "marketing.CAP.marketing_calendar_planning",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1038,7 +1050,7 @@
     },
     {
       "id": "marketing.CAP.marketing_department_strategy_planning",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1066,7 +1078,7 @@
     },
     {
       "id": "marketing.CAP.marketing_overview_and_attention_triage",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1094,7 +1106,7 @@
     },
     {
       "id": "marketing.CAP.marketing_surface_problem_reporting",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1122,7 +1134,7 @@
     },
     {
       "id": "marketing.CAP.metric_trust_escalation_decisions",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1150,7 +1162,7 @@
     },
     {
       "id": "marketing.CAP.multi_touch_attribution",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1178,7 +1190,7 @@
     },
     {
       "id": "marketing.CAP.outreach_consent_and_channel_suppression",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1206,7 +1218,7 @@
     },
     {
       "id": "marketing.CAP.outreach_conversion_attribution",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1234,7 +1246,7 @@
     },
     {
       "id": "marketing.CAP.outreach_coverage_and_blind_spot_reporting",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1262,7 +1274,7 @@
     },
     {
       "id": "marketing.CAP.outreach_daily_human_action_queue",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1290,7 +1302,7 @@
     },
     {
       "id": "marketing.CAP.outreach_human_approval_gap_closure",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1318,7 +1330,7 @@
     },
     {
       "id": "marketing.CAP.outreach_lead_capture_and_scoring",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1346,7 +1358,7 @@
     },
     {
       "id": "marketing.CAP.outreach_learning_loop",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1374,7 +1386,7 @@
     },
     {
       "id": "marketing.CAP.outreach_post_verification",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1402,7 +1414,7 @@
     },
     {
       "id": "marketing.CAP.outreach_quality_gate",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1430,7 +1442,7 @@
     },
     {
       "id": "marketing.CAP.outreach_queue_supervision",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1458,7 +1470,7 @@
     },
     {
       "id": "marketing.CAP.outreach_rate_and_circuit_control",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1486,7 +1498,7 @@
     },
     {
       "id": "marketing.CAP.outreach_reply_drafting",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1514,7 +1526,7 @@
     },
     {
       "id": "marketing.CAP.outreach_reply_publication",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1542,7 +1554,7 @@
     },
     {
       "id": "marketing.CAP.platform_app_review_and_representation",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1570,7 +1582,7 @@
     },
     {
       "id": "marketing.CAP.platform_change_surveillance",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1598,7 +1610,7 @@
     },
     {
       "id": "marketing.CAP.publishing_calendar_operations_ownership",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1626,7 +1638,7 @@
     },
     {
       "id": "marketing.CAP.publishing_failure_and_handoff_recovery",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1654,7 +1666,7 @@
     },
     {
       "id": "marketing.CAP.recurring_marketing_performance_reporting",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1682,7 +1694,7 @@
     },
     {
       "id": "marketing.CAP.revenue_and_cost_metric_truthing",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1710,7 +1722,7 @@
     },
     {
       "id": "marketing.CAP.signal_triage_and_prioritisation",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1738,7 +1750,7 @@
     },
     {
       "id": "marketing.CAP.social_signal_discovery",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1765,8 +1777,136 @@
       }
     },
     {
+      "id": "marketing.CAP.social_signal_discovery.L1-BY-HAND",
+      "release": "autonomy:R0",
+      "acceptance_total": 2,
+      "criteria": [
+        {
+          "text": "The capability was performed end to end by hand, producing its real outcome on real inputs.",
+          "passed": false
+        },
+        {
+          "text": "A run log exists recording the date, the elapsed time, each step actually performed, every judgment call made, and at least one way the recorded workflow differed from what the work was really like.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 0,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "marketing.CAP.social_signal_discovery.L2-IN-THE-APP",
+      "release": "autonomy:R0",
+      "acceptance_total": 2,
+      "criteria": [
+        {
+          "text": "The same outcome was produced a second time using only the product, with no agent, no script and no direct database edit -- or the exact step that made this impossible is written down as a named gap.",
+          "passed": false
+        },
+        {
+          "text": "The app route was compared against the step 1 run log, and every difference between them is recorded.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 0,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "marketing.CAP.social_signal_discovery.L3-TOOL-REQUEST",
+      "release": "autonomy:R0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "A change request for a tool exists against this domain, filed by the builder, naming the tool, its scope, what it must never touch, and who approves a run.",
+          "passed": false
+        },
+        {
+          "text": "The request cites the step 1 run log and the step 2 result as its evidence.",
+          "passed": false
+        },
+        {
+          "text": "A named human other than the builder has recorded a decision on it. A decline counts; an undecided request does not.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 0,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "marketing.CAP.social_signal_discovery.L4-AGENT-WATCHED",
+      "release": "autonomy:R0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Every answer cites a stored openclaw_signals row id; zero outbound network calls in the trace.",
+          "passed": false
+        },
+        {
+          "text": "The agent produced the same outcome as the step 1 run log, on the same inputs, including the exceptions recorded there.",
+          "passed": false
+        },
+        {
+          "text": "Every run in the evidence window was approved by a named human before it took effect, and the record shows who.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 0,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
       "id": "marketing.CAP.tracked_link_and_utm_governance",
-      "release": "r2",
+      "release": "autonomy:R0",
       "acceptance_total": 1,
       "criteria": [
         {
@@ -1794,7 +1934,7 @@
     },
     {
       "id": "marketing.LEGACY-MIGRATION-PLAN",
-      "release": "r1",
+      "release": "autonomy:R0",
       "acceptance_total": 3,
       "criteria": [
         {
@@ -1833,7 +1973,7 @@
     },
     {
       "id": "marketing.RESEARCH-1-SYSTEM-CLASSES",
-      "release": "r0",
+      "release": "autonomy:R0",
       "acceptance_total": 3,
       "criteria": [
         {
@@ -1872,7 +2012,7 @@
     },
     {
       "id": "marketing.RESEARCH-2-AGENT-ANATOMY",
-      "release": "r0",
+      "release": "autonomy:R0",
       "acceptance_total": 3,
       "criteria": [
         {
@@ -1911,7 +2051,7 @@
     },
     {
       "id": "marketing.RESEARCH-3-ROLE-AND-DA-TRANSITION",
-      "release": "r0",
+      "release": "autonomy:R0",
       "acceptance_total": 3,
       "criteria": [
         {
@@ -1950,7 +2090,7 @@
     },
     {
       "id": "marketing.RESEARCH-4-MANAGER-INTERVIEW",
-      "release": "r0",
+      "release": "autonomy:R0",
       "acceptance_total": 3,
       "criteria": [
         {
@@ -1989,7 +2129,7 @@
     },
     {
       "id": "marketing.RESEARCH-5-THREE-PROPOSED-TASKS",
-      "release": "r0",
+      "release": "autonomy:R0",
       "acceptance_total": 3,
       "criteria": [
         {
