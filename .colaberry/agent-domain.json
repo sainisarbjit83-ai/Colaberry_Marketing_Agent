@@ -738,16 +738,16 @@
     "disclosure": "A criterion counts as passing when it is marked in `.colaberry/progress.json` in this repository. The verifier reads that file on every sync and records what it found. A story showing 0 of N is not a rejection: nothing has been claimed yet.",
     "summary": {
       "stories": 75,
-      "checked": 70,
+      "checked": 75,
       "verified": 7,
-      "awaiting_criteria": 64,
-      "outstanding_criteria": 64
+      "awaiting_criteria": 68,
+      "outstanding_criteria": 74
     },
     "stories": [
       {
         "story_id": "marketing.CAP.agent_write_authorization_enforcement",
         "title": "Enforcing agent write authorization on marketing agents",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -764,7 +764,7 @@
       {
         "story_id": "marketing.CAP.ai_news_ingestion_and_card_publication",
         "title": "AI news ingestion and daily card publication",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -781,7 +781,7 @@
       {
         "story_id": "marketing.CAP.authority_content_drafting",
         "title": "Authority and thought-leadership content drafting",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -798,7 +798,7 @@
       {
         "story_id": "marketing.CAP.banned_copy_compliance_scanning",
         "title": "Banned-copy compliance scanning across source",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -815,7 +815,7 @@
       {
         "story_id": "marketing.CAP.brand_and_competitor_mention_monitoring",
         "title": "Brand and competitor mention monitoring",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -832,7 +832,7 @@
       {
         "story_id": "marketing.CAP.brand_attribution_of_campaigns",
         "title": "Brand attribution integrity for campaigns",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -849,7 +849,7 @@
       {
         "story_id": "marketing.CAP.brand_governance_enforcement",
         "title": "Brand governance rule enforcement",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -866,7 +866,7 @@
       {
         "story_id": "marketing.CAP.brand_network_connection_administration",
         "title": "Brand network connection administration",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -883,7 +883,7 @@
       {
         "story_id": "marketing.CAP.brand_registry_and_readiness",
         "title": "Brand registry and publish readiness",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -900,7 +900,7 @@
       {
         "story_id": "marketing.CAP.brand_social_publishing",
         "title": "Brand social publishing queue",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -917,7 +917,7 @@
       {
         "story_id": "marketing.CAP.browser_session_reliability",
         "title": "Headless browser session health and self-healing",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -934,7 +934,7 @@
       {
         "story_id": "marketing.CAP.campaign_and_channel_metric_reporting",
         "title": "Campaign and channel metric reporting under a trust registry",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -951,7 +951,7 @@
       {
         "story_id": "marketing.CAP.campaign_approval_and_golive",
         "title": "Campaign approval and go-live control",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -968,7 +968,7 @@
       {
         "story_id": "marketing.CAP.campaign_funnel_performance_analysis",
         "title": "Campaign funnel performance analysis",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -985,14 +985,14 @@
       {
         "story_id": "marketing.CAP.channel_account_connection_and_credential_custody",
         "title": "Social channel connection and credential custody",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
         "criteria_total": 1,
         "reasons": [
           "None of the 1 acceptance criteria are marked as passing yet.",
-          "No commit in the repo names marketing.CAP.channel_account_connection_and_credential_cust and changes a file. Commit your work with a `Story: marketing.CAP.channel_account_connection_and_credential_cust` trailer (or marketing.CAP.channel_account_connection_and_credential_cust in the subject line) and push."
+          "No commit in the repo names marketing.CAP.channel_account_connection_and_credential_custody and changes a file. Commit your work with a `Story: marketing.CAP.channel_account_connection_and_credential_custody` trailer (or marketing.CAP.channel_account_connection_and_credential_custody in the subject line) and push."
         ],
         "outstanding": [
           "No credential value appears in any output or log; health verdicts match the stored expiry."
@@ -1002,7 +1002,7 @@
       {
         "story_id": "marketing.CAP.community_direct_message_response",
         "title": "Community notification and direct-message response",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1019,7 +1019,7 @@
       {
         "story_id": "marketing.CAP.community_signal_detection",
         "title": "Skool community question detection",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1036,7 +1036,7 @@
       {
         "story_id": "marketing.CAP.content_approval_workflow",
         "title": "Content approval with revision-pinned decisions",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1053,7 +1053,7 @@
       {
         "story_id": "marketing.CAP.content_composition_and_variant_generation",
         "title": "Multi-network content composition",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1070,7 +1070,7 @@
       {
         "story_id": "marketing.CAP.content_history_import_from_loomly",
         "title": "Content history import from the incumbent scheduler",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1087,7 +1087,7 @@
       {
         "story_id": "marketing.CAP.content_idea_proposal_queue",
         "title": "Grounded content-idea proposal queue",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1104,7 +1104,7 @@
       {
         "story_id": "marketing.CAP.content_platform_fitness_validation",
         "title": "Per-network content fitness validation",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1121,7 +1121,7 @@
       {
         "story_id": "marketing.CAP.content_repurposing_and_template_library",
         "title": "Content repurposing and reusable template library",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1138,7 +1138,7 @@
       {
         "story_id": "marketing.CAP.conversation_followup_sequencing",
         "title": "Stalled-conversation follow-up drafting",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1155,7 +1155,7 @@
       {
         "story_id": "marketing.CAP.engagement_monitoring_and_intent_scoring",
         "title": "Posted-content engagement monitoring",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1172,7 +1172,7 @@
       {
         "story_id": "marketing.CAP.free_tier_learner_journey_scoring",
         "title": "Free-tier learner journey scoring",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1189,7 +1189,7 @@
       {
         "story_id": "marketing.CAP.free_tier_next_best_action_decisioning",
         "title": "Free-tier next-best-action decisioning in shadow",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1206,7 +1206,7 @@
       {
         "story_id": "marketing.CAP.handoff_package_manual_publication",
         "title": "Handoff package publication by a person",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1223,7 +1223,7 @@
       {
         "story_id": "marketing.CAP.intelligence_card_generation",
         "title": "Multi-source intelligence card generation",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1240,7 +1240,7 @@
       {
         "story_id": "marketing.CAP.intelligence_card_prepublication_review",
         "title": "Pre-publication review for generated intelligence cards",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1257,7 +1257,7 @@
       {
         "story_id": "marketing.CAP.landing_page_generation_and_publication",
         "title": "Landing page generation and publication",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1274,7 +1274,7 @@
       {
         "story_id": "marketing.CAP.lifecycle_content_catalogue_projection",
         "title": "Lifecycle content catalogue projection",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1291,7 +1291,7 @@
       {
         "story_id": "marketing.CAP.linkedin_comment_watch_and_reply_drafting",
         "title": "Tracked LinkedIn post comment watch",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1308,7 +1308,7 @@
       {
         "story_id": "marketing.CAP.linkedin_relationship_action_suggestions",
         "title": "LinkedIn relationship action suggestions",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1325,7 +1325,7 @@
       {
         "story_id": "marketing.CAP.manager_marketing_brief_subscription",
         "title": "Manager marketing brief subscription",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1342,7 +1342,7 @@
       {
         "story_id": "marketing.CAP.marketing_agent_management_and_oversight",
         "title": "Manager oversight of the marketing AI employee",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1359,7 +1359,7 @@
       {
         "story_id": "marketing.CAP.marketing_calendar_planning",
         "title": "Marketing calendar and scheduled-content planning",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1376,7 +1376,7 @@
       {
         "story_id": "marketing.CAP.marketing_department_strategy_planning",
         "title": "Marketing department strategy and initiative planning",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1393,7 +1393,7 @@
       {
         "story_id": "marketing.CAP.marketing_overview_and_attention_triage",
         "title": "Marketing overview and needs-attention triage",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1410,7 +1410,7 @@
       {
         "story_id": "marketing.CAP.marketing_surface_problem_reporting",
         "title": "In-surface problem reporting for marketing operators",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1427,7 +1427,7 @@
       {
         "story_id": "marketing.CAP.metric_trust_escalation_decisions",
         "title": "Marketing metric trust escalation and resolution",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1444,7 +1444,7 @@
       {
         "story_id": "marketing.CAP.multi_touch_attribution",
         "title": "Multi-touch campaign attribution with honest coverage",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1461,7 +1461,7 @@
       {
         "story_id": "marketing.CAP.outreach_consent_and_channel_suppression",
         "title": "Per-channel consent and suppression honouring",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1478,7 +1478,7 @@
       {
         "story_id": "marketing.CAP.outreach_conversion_attribution",
         "title": "Social-outreach conversion attribution",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1495,7 +1495,7 @@
       {
         "story_id": "marketing.CAP.outreach_coverage_and_blind_spot_reporting",
         "title": "Outreach coverage and blind-spot reporting",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1512,7 +1512,7 @@
       {
         "story_id": "marketing.CAP.outreach_daily_human_action_queue",
         "title": "Daily human outreach action queue",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1529,7 +1529,7 @@
       {
         "story_id": "marketing.CAP.outreach_human_approval_gap_closure",
         "title": "Closing the outreach human-approval bypasses",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1546,7 +1546,7 @@
       {
         "story_id": "marketing.CAP.outreach_lead_capture_and_scoring",
         "title": "Social-signal lead capture and tiering",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1563,7 +1563,7 @@
       {
         "story_id": "marketing.CAP.outreach_learning_loop",
         "title": "Outreach performance learning loop",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1580,7 +1580,7 @@
       {
         "story_id": "marketing.CAP.outreach_post_verification",
         "title": "Published-comment visibility verification",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1597,7 +1597,7 @@
       {
         "story_id": "marketing.CAP.outreach_quality_gate",
         "title": "Deterministic pre-publication quality gate",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1614,7 +1614,7 @@
       {
         "story_id": "marketing.CAP.outreach_queue_supervision",
         "title": "Outreach work-queue supervision and recovery",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1631,7 +1631,7 @@
       {
         "story_id": "marketing.CAP.outreach_rate_and_circuit_control",
         "title": "Outreach rate limiting and circuit breaking",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1648,7 +1648,7 @@
       {
         "story_id": "marketing.CAP.outreach_reply_drafting",
         "title": "Platform-native reply drafting",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1665,7 +1665,7 @@
       {
         "story_id": "marketing.CAP.outreach_reply_publication",
         "title": "Approved reply publication to public platforms",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1682,7 +1682,7 @@
       {
         "story_id": "marketing.CAP.platform_app_review_and_representation",
         "title": "Network app review and public representation",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1699,7 +1699,7 @@
       {
         "story_id": "marketing.CAP.platform_change_surveillance",
         "title": "Outreach platform and tooling change watch",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1716,7 +1716,7 @@
       {
         "story_id": "marketing.CAP.publishing_calendar_operations_ownership",
         "title": "Day-to-day publishing calendar ownership and tool retirement",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1733,7 +1733,7 @@
       {
         "story_id": "marketing.CAP.publishing_failure_and_handoff_recovery",
         "title": "Publishing failure and handoff reconciliation",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1750,7 +1750,7 @@
       {
         "story_id": "marketing.CAP.recurring_marketing_performance_reporting",
         "title": "Recurring marketing performance reporting (DA responsibility in transition)",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1767,7 +1767,7 @@
       {
         "story_id": "marketing.CAP.revenue_and_cost_metric_truthing",
         "title": "Revenue and cost-per-lead truthing",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1784,7 +1784,7 @@
       {
         "story_id": "marketing.CAP.signal_triage_and_prioritisation",
         "title": "Outreach signal triage",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1801,7 +1801,7 @@
       {
         "story_id": "marketing.CAP.social_signal_discovery",
         "title": "Public-platform buying-signal discovery",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1817,55 +1817,81 @@
       {
         "story_id": "marketing.CAP.social_signal_discovery.L1-BY-HAND",
         "title": "Public-platform buying-signal discovery · 1 · do it by hand",
-        "status": "not_started",
-        "verification_state": null,
+        "status": "in_progress",
+        "verification_state": "in_progress",
         "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
+        "criteria_passed": 0,
+        "criteria_total": 2,
+        "reasons": [
+          "None of the 2 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.social_signal_discovery.L1-BY-HAND and changes a file. Commit your work with a `Story: marketing.CAP.social_signal_discovery.L1-BY-HAND` trailer (or marketing.CAP.social_signal_discovery.L1-BY-HAND in the subject line) and push."
+        ],
+        "outstanding": [
+          "The capability was performed end to end by hand, producing its real outcome on real inputs.",
+          "A run log exists recording the date, the elapsed time, each step actually performed, every judgment call made, and at least one way the recorded workflow differed from what the work was really like."
+        ],
         "commit_sha": null
       },
       {
         "story_id": "marketing.CAP.social_signal_discovery.L2-IN-THE-APP",
         "title": "Public-platform buying-signal discovery · 2 · do it in the app",
-        "status": "not_started",
-        "verification_state": null,
+        "status": "in_progress",
+        "verification_state": "in_progress",
         "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
+        "criteria_passed": 0,
+        "criteria_total": 2,
+        "reasons": [
+          "None of the 2 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.social_signal_discovery.L2-IN-THE-APP and changes a file. Commit your work with a `Story: marketing.CAP.social_signal_discovery.L2-IN-THE-APP` trailer (or marketing.CAP.social_signal_discovery.L2-IN-THE-APP in the subject line) and push."
+        ],
+        "outstanding": [
+          "The same outcome was produced a second time using only the product, with no agent, no script and no direct database edit -- or the exact step that made this impossible is written down as a named gap.",
+          "The app route was compared against the step 1 run log, and every difference between them is recorded."
+        ],
         "commit_sha": null
       },
       {
         "story_id": "marketing.CAP.social_signal_discovery.L3-TOOL-REQUEST",
         "title": "Public-platform buying-signal discovery · 3 · request the tool",
-        "status": "not_started",
-        "verification_state": null,
+        "status": "in_progress",
+        "verification_state": "in_progress",
         "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "reasons": [
+          "None of the 3 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.social_signal_discovery.L3-TOOL-REQUEST and changes a file. Commit your work with a `Story: marketing.CAP.social_signal_discovery.L3-TOOL-REQUEST` trailer (or marketing.CAP.social_signal_discovery.L3-TOOL-REQUEST in the subject line) and push."
+        ],
+        "outstanding": [
+          "A change request for a tool exists against this domain, filed by the builder, naming the tool, its scope, what it must never touch, and who approves a run.",
+          "The request cites the step 1 run log and the step 2 result as its evidence.",
+          "A named human other than the builder has recorded a decision on it. A decline counts; an undecided request does not."
+        ],
         "commit_sha": null
       },
       {
         "story_id": "marketing.CAP.social_signal_discovery.L4-AGENT-WATCHED",
         "title": "Public-platform buying-signal discovery · 4 · agent does it, watched",
-        "status": "not_started",
-        "verification_state": null,
+        "status": "in_progress",
+        "verification_state": "in_progress",
         "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "reasons": [
+          "None of the 3 acceptance criteria are marked as passing yet.",
+          "No commit in the repo names marketing.CAP.social_signal_discovery.L4-AGENT-WATCHED and changes a file. Commit your work with a `Story: marketing.CAP.social_signal_discovery.L4-AGENT-WATCHED` trailer (or marketing.CAP.social_signal_discovery.L4-AGENT-WATCHED in the subject line) and push."
+        ],
+        "outstanding": [
+          "Every answer cites a stored openclaw_signals row id; zero outbound network calls in the trace.",
+          "The agent produced the same outcome as the step 1 run log, on the same inputs, including the exceptions recorded there.",
+          "Every run in the evidence window was approved by a named human before it took effect, and the record shows who."
+        ],
         "commit_sha": null
       },
       {
         "story_id": "marketing.CAP.tracked_link_and_utm_governance",
         "title": "Tracked link, UTM taxonomy and traffic registration",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -1955,13 +1981,13 @@
         "story_id": "marketing.STORY-000",
         "title": "STORY-000 · Build your Command Center",
         "status": "complete",
-        "verification_state": null,
+        "verification_state": "verified",
         "verified": true,
-        "criteria_passed": null,
-        "criteria_total": null,
+        "criteria_passed": 6,
+        "criteria_total": 6,
         "reasons": [],
         "outstanding": [],
-        "commit_sha": null
+        "commit_sha": "50b248053fcb10f4ec28f1d6c696395ccd22876e"
       }
     ]
   },
