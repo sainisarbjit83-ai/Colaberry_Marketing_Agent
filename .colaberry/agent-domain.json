@@ -3,7 +3,8 @@
   "domain_key": "marketing",
   "sources": {
     "agent": "GET /api/admin/agent-domains-mine",
-    "capabilities": "GET /api/admin/agent-domains/marketing",
+    "capabilities": "GET /api/admin/agent-domains-mine/marketing",
+    "capability_ladder": "GET /api/admin/agent-domains-mine/marketing/coverage",
     "governance": "GET /api/admin/agent-domain-change-requests-mine"
   },
   "autonomy_models": {
@@ -24,6 +25,1661 @@
     "tools_granted": [],
     "tools_granted_count": 0
   },
+  "capabilities": [
+    {
+      "capability_id": "marketing.social_signal_discovery",
+      "name": "Public-platform buying-signal discovery",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers 'where are buyers talking about this' from already-stored signals without scanning.",
+          "acceptance_criteria": "Every answer cites a stored openclaw_signals row id; zero outbound network calls in the trace."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs a full multi-platform scan in a sandbox against recorded fixtures, writing to a sandbox signals table.",
+          "acceptance_criteria": "Two consecutive runs over the same fixture set produce an identical row set (de-dup proven, not asserted)."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Scans the approved platform allow-list on schedule in production, writing only openclaw_signals.",
+          "acceptance_criteria": "No write outside openclaw_signals across a 7-day window; per-platform call volume stays inside openclawRateLimiter ceilings."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.community_signal_detection",
+      "name": "Skool community question detection",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R6",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Reports which community categories were scanned and what was found, from stored rows only.",
+          "acceptance_criteria": "Every claim resolves to a skool_signals row; no browser is launched."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs the full scrape against saved HTML fixtures in a sandbox.",
+          "acceptance_criteria": "Signal extraction is byte-identical across two runs on the same fixture; zero live navigation in the trace."
+        },
+        {
+          "autonomy": "autonomy:R6",
+          "behaviour": "Supervised production scrape under a daily cap with a named human watching the first 14 days.",
+          "acceptance_criteria": "No ToS warning or access block during the pilot; cap never exceeded; every run has a reviewable record."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.signal_triage_and_prioritisation",
+      "name": "Outreach signal triage",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains why a given signal was or was not queued, from its stored scores.",
+          "acceptance_criteria": "Explanation reproduces the stored verdict exactly; no re-scoring occurs during the answer."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow-scores a held-out set of signals against verdicts a human made independently.",
+          "acceptance_criteria": "Agreement rate and every disagreement are reported per signal; no task is queued from shadow output."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Triages on schedule in production within manager-approved thresholds.",
+          "acceptance_criteria": "Every queued task cites its scores; no HUMAN_REQUIRED signal is ever queued for automated publication."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_reply_drafting",
+      "name": "Platform-native reply drafting",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R1",
+          "behaviour": "Generates drafts against recorded signal fixtures in isolation with a baseline reply-quality suite.",
+          "acceptance_criteria": "Every fixture produces a draft; the sign-off rule is asserted per platform strategy, both branches covered."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Drafts for a sandbox queue across a full multi-platform batch.",
+          "acceptance_criteria": "No draft on a HUMAN_EXECUTION platform carries a posting task; link policy holds for every PASSIVE_SIGNAL draft."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Drafts on schedule in production, writing drafts only.",
+          "acceptance_criteria": "Zero posting tasks originate from this module; every production draft arrives at the quality gate, not at the browser worker."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_quality_gate",
+      "name": "Deterministic pre-publication quality gate",
+      "classification": "inherited",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains a stored verdict and the exact rule that failed.",
+          "acceptance_criteria": "The named rule reproduces the stored score when re-run; no new verdict is written."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Re-gates a sandbox corpus including deliberate violations.",
+          "acceptance_criteria": "Every seeded violation is caught and named; no false pass; two runs give identical verdicts."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Scores production drafts and routes them for human decision, never to a publisher.",
+          "acceptance_criteria": "No draft moves from this module to a state a posting worker will consume."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_reply_publication",
+      "name": "Approved reply publication to public platforms",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R5",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "Posts to a sandbox or test community on an explicit, user-initiated request.",
+          "acceptance_criteria": "Every post traces to a named human action; no scheduled run publishes anything."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs the full claim-post-record cycle against dry-run adapters.",
+          "acceptance_criteria": "A replayed task never produces a second post; failure classification is exercised for permanent and transient cases."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow mode: prepares the exact post and compares it against what the human published.",
+          "acceptance_criteria": "Per-post diff recorded; zero live posts originate from the shadow run."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.community_direct_message_response",
+      "name": "Community notification and direct-message response",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R4",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Summarises the unanswered community inbox from stored engagement rows.",
+          "acceptance_criteria": "Counts reconcile to skool_engagements; no navigation and no send in the trace."
+        },
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "Drafts a reply on an explicit human request and shows it for approval.",
+          "acceptance_criteria": "No message is transmitted without a recorded human approval id."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs the full detect-classify-draft cycle in a sandbox inbox.",
+          "acceptance_criteria": "Loop-avoidance holds against seeded bot messages; zero live sends across the run."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.engagement_monitoring_and_intent_scoring",
+      "name": "Posted-content engagement monitoring",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers which threads are live and who replied, from stored events.",
+          "acceptance_criteria": "Every answer cites an openclaw_engagement_events row; no fetch occurs."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs the fetch-score-attach cycle over recorded platform payloads.",
+          "acceptance_criteria": "Re-running produces no duplicate events; orphan attachment is exercised."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Monitors on schedule in production, reporting coverage honestly per platform.",
+          "acceptance_criteria": "Platforms with no readable API are reported as unmeasured, never as zero engagement."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.conversation_followup_sequencing",
+      "name": "Stalled-conversation follow-up drafting",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Reports which conversations are stalled and at what stage, from stored state.",
+          "acceptance_criteria": "Stage and stall age reproduce from openclaw_conversations; no draft is written."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs orchestration and follow-up over a sandbox conversation set.",
+          "acceptance_criteria": "Per-run caps hold; no conversation receives two drafts in one cycle."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Drafts follow-ups on schedule inside manager-approved cadence limits.",
+          "acceptance_criteria": "Every production draft names the stall it answers; the queue, not the agent, remains the only path to a post."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_queue_supervision",
+      "name": "Outreach work-queue supervision and recovery",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R9",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Reports queue depth, stuck counts and breaker state from stored rows.",
+          "acceptance_criteria": "Figures reconcile to openclaw_tasks and skool_tasks; nothing is mutated."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs supervision over a sandbox queue seeded with stuck, failed and pending work.",
+          "acceptance_criteria": "Every seeded condition is handled once; two runs leave the queue in the same state."
+        },
+        {
+          "autonomy": "autonomy:R9",
+          "behaviour": "Owns queue health in production with monitoring and a documented recovery path.",
+          "acceptance_criteria": "No task sits 'running' beyond the threshold for a full week; every intervention is attributable and reversible."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.browser_session_reliability",
+      "name": "Headless browser session health and self-healing",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R9",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Reports which sessions are unhealthy and why.",
+          "acceptance_criteria": "Health verdicts reproduce from openclaw_sessions; no restart is attempted."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Exercises detect-pause-restart against sandbox sessions including a seeded captcha block.",
+          "acceptance_criteria": "A captcha block always pauses and never retries; restart is idempotent."
+        },
+        {
+          "autonomy": "autonomy:R9",
+          "behaviour": "Owns session health in production with alerting and an escalation path for credential loss.",
+          "acceptance_criteria": "No platform is silently unable to post for more than one monitoring interval without a raised ticket."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_learning_loop",
+      "name": "Outreach performance learning loop",
+      "classification": "inherited",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains which tone and timing performed best, with the sample behind each claim.",
+          "acceptance_criteria": "Every claim reports its sample size; a thin sample is labelled as such, never rounded into a recommendation."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow mode: proposes scan-weight changes alongside the weights currently in use.",
+          "acceptance_criteria": "Proposed and live weights are shown side by side; no proposal is applied."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Applies only learnings a manager has accepted, within approved bounds.",
+          "acceptance_criteria": "Every live multiplier traces to an accepted learning row; an unaccepted learning cannot change scanning."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.platform_change_surveillance",
+      "name": "Outreach platform and tooling change watch",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers what changed recently in the platforms we automate, from stored findings.",
+          "acceptance_criteria": "Each answer cites a tech_update row and its date; no fetch is performed."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs the full poll against recorded source payloads.",
+          "acceptance_criteria": "Duplicate findings are not re-recorded; an unreachable source is reported, not skipped silently."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Polls daily in production and reports source freshness alongside findings.",
+          "acceptance_criteria": "A source with no update inside its expected cadence is reported as stale rather than as 'no change'."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.linkedin_comment_watch_and_reply_drafting",
+      "name": "Tracked LinkedIn post comment watch",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Reports new commenters on tracked posts from stored rows.",
+          "acceptance_criteria": "Every commenter cited exists in openclaw_responses; no scrape runs."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs watch-and-draft over saved LinkedIn page fixtures.",
+          "acceptance_criteria": "No duplicate draft for a commenter already answered; every draft is ready_for_manual_post."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Watches and drafts on schedule, and reports a blocked scrape as blocked.",
+          "acceptance_criteria": "Zero posting tasks exist for linkedin_comments across the window; a blocked scrape raises rather than reporting zero."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.authority_content_drafting",
+      "name": "Authority and thought-leadership content drafting",
+      "classification": "inherited",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R5",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Summarises what the market is discussing and what has been drafted already.",
+          "acceptance_criteria": "Claims cite openclaw_signals and openclaw_authority_content rows; no generation occurs."
+        },
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "Generates a draft on an explicit human request.",
+          "acceptance_criteria": "Every draft traces to a named human trigger; no scheduled generation exists."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow mode: drafts against pieces a human actually published, for comparison.",
+          "acceptance_criteria": "Draft and published piece are compared per item; nothing is published from the shadow run."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.linkedin_relationship_action_suggestions",
+      "name": "LinkedIn relationship action suggestions",
+      "classification": "inherited",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R4",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R1",
+          "behaviour": "Rebuilt in isolation against recorded signal and engagement fixtures.",
+          "acceptance_criteria": "Every suggestion type is produced for its fixture; caps are asserted per type."
+        },
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "Produces a day's suggestion list on an explicit human request.",
+          "acceptance_criteria": "No suggestion is ever marked complete by anything other than a human action."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs the full daily suggestion cycle in a sandbox.",
+          "acceptance_criteria": "Re-running the same day produces no duplicate suggestions; every row stays pending."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_lead_capture_and_scoring",
+      "name": "Social-signal lead capture and tiering",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers who is in the social pipeline and at what tier, from stored rows.",
+          "acceptance_criteria": "Every lead cited exists in leads with an opportunity score; nothing is written."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs capture and scoring over a sandbox signal set including duplicates.",
+          "acceptance_criteria": "A replayed signal set produces no duplicate leads; placeholder addresses are never emitted into a send path."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Captures and scores on schedule in production.",
+          "acceptance_criteria": "No capture triggers an outbound message; score distribution is reported with its sample, not asserted."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_conversion_attribution",
+      "name": "Social-outreach conversion attribution",
+      "classification": "existing_application",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R6",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains a single conversation's chain from signal to outcome.",
+          "acceptance_criteria": "Every hop in the chain resolves to a stored row; no stage is advanced."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow mode: proposes conversions beside the ones a human recorded.",
+          "acceptance_criteria": "Agreement and every disagreement are reported per conversation; no row is written."
+        },
+        {
+          "autonomy": "autonomy:R6",
+          "behaviour": "Supervised pilot writing attribution rows with a named human reviewing weekly.",
+          "acceptance_criteria": "No monetary figure is published; every opportunity row is labelled pipeline, not revenue."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_rate_and_circuit_control",
+      "name": "Outreach rate limiting and circuit breaking",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R9",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Reports how much posting headroom remains per platform.",
+          "acceptance_criteria": "Counts reconcile to openclaw_responses.posted_at; no verdict is cached."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Exercises limit and breaker logic against seeded success and failure histories.",
+          "acceptance_criteria": "OPEN, HALF_OPEN and CLOSED transitions are each proven; a manual post outside the system is reported as unaccounted."
+        },
+        {
+          "autonomy": "autonomy:R9",
+          "behaviour": "Owns rate and circuit enforcement in production with alerting.",
+          "acceptance_criteria": "No platform exceeds its ceiling in a 30-day window; every circuit opening produced an alert a human saw."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_post_verification",
+      "name": "Published-comment visibility verification",
+      "classification": "existing_application",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Reports which posted responses have been verified and which cannot be.",
+          "acceptance_criteria": "Unverifiable platforms are reported as unknown, never as verified or as zero."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs verification over recorded public payloads including a removed comment.",
+          "acceptance_criteria": "A removed comment is detected; an unverifiable platform yields unknown, not false."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Verifies on schedule and raises missing posts for a human.",
+          "acceptance_criteria": "Every posted response on a verifiable platform carries a dated verdict; coverage is reported per platform."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_daily_human_action_queue",
+      "name": "Daily human outreach action queue",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers what to do first today and why.",
+          "acceptance_criteria": "Every item names the thread and the signal behind its priority; nothing is persisted."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Builds the full queue over a sandbox conversation estate.",
+          "acceptance_criteria": "Ordering is deterministic for a fixed input; no row is written anywhere."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Produces the daily queue in production on request and on schedule.",
+          "acceptance_criteria": "Queue contents always reconcile to live conversation state; no item outlives its thread."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.brand_registry_and_readiness",
+      "name": "Brand registry and publish readiness",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers which brands are ready to publish and what each is missing.",
+          "acceptance_criteria": "Every gap named maps to a real missing account or an absent governance row; a brand with no rules is reported ungoverned, never compliant."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Walks the full readiness computation across a sandbox brand estate.",
+          "acceptance_criteria": "Readiness verdict is reproducible; an unhealthy connection always downgrades the verdict."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Reports brand readiness in production and raises regressions.",
+          "acceptance_criteria": "A connection expiring inside the warning window is raised before it expires, not after a failed publish."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.channel_account_connection_and_credential_custody",
+      "name": "Social channel connection and credential custody",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R2",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Reports which accounts are connected, expiring or revoked, and what each is missing.",
+          "acceptance_criteria": "No credential value appears in any output or log; health verdicts match the stored expiry."
+        },
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "On an explicit human request, prepares the connect link for a named brand and provider.",
+          "acceptance_criteria": "The agent never completes the flow; the OAuth approval is always performed by the account owner."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Exercises connect, rotate and revoke against a sandbox vault.",
+          "acceptance_criteria": "A vault-unavailable case refuses rather than degrading; redaction holds across every log line in the run."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.content_composition_and_variant_generation",
+      "name": "Multi-network content composition",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R1",
+          "behaviour": "Builds items and variants in isolation against fixtures with a baseline suite.",
+          "acceptance_criteria": "Every provider in the target set gets a variant; revision increments on every recorded edit."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Composes a full multi-network item in a sandbox including media and a poll.",
+          "acceptance_criteria": "An edit after approval always invalidates that approval; a read-only import always refuses the edit."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Drafts production content for an approved content class.",
+          "acceptance_criteria": "No item reaches a published state without passing the approval capability; every edit is attributable."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.content_platform_fitness_validation",
+      "name": "Per-network content fitness validation",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R9",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains why a variant would be rejected by a given network.",
+          "acceptance_criteria": "The explanation names the limit and the actual value; re-running validation reproduces it exactly."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Validates a sandbox corpus including deliberate over-limit variants.",
+          "acceptance_criteria": "Every seeded violation is blocked and named; a stale entry warns and never silently passes."
+        },
+        {
+          "autonomy": "autonomy:R9",
+          "behaviour": "Owns pre-publish validation with registry-freshness monitoring.",
+          "acceptance_criteria": "No publish fails at a network for a limit the registry knew; registry entries past their trust window raise before they are used."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.content_approval_workflow",
+      "name": "Content approval with revision-pinned decisions",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R4",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers what is awaiting approval, for how long, and at which revision.",
+          "acceptance_criteria": "Queue contents reconcile to content_approval_requests; no decision is written."
+        },
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "Sends a named item for approval on an explicit human request.",
+          "acceptance_criteria": "Every request records the revision; the agent never appears as decided_by."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs the request side of the full loop in a sandbox, including a stale-revision case.",
+          "acceptance_criteria": "A decision on a stale revision is always refused; every decision in the trace has a human actor."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.brand_governance_enforcement",
+      "name": "Brand governance rule enforcement",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R5",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers what the brand's current rules require and which version is in force.",
+          "acceptance_criteria": "Answer names the rulesVersion; a brand with no rows is reported ungoverned, never compliant."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs the check over a sandbox corpus including deliberate violations.",
+          "acceptance_criteria": "Every seeded violation is named; rulesVersion 0 never returns a passing verdict."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow mode: checks production content and compares with the reviewer's own verdict.",
+          "acceptance_criteria": "Disagreements are reported per item; no publish is gated on the shadow verdict alone."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.banned_copy_compliance_scanning",
+      "name": "Banned-copy compliance scanning across source",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R9",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers where a banned term currently appears and in what role.",
+          "acceptance_criteria": "Every occurrence is classified; none is reported without its role."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Scans a sandbox tree with a seeded new occurrence.",
+          "acceptance_criteria": "The seeded occurrence fails the baseline; a comment-only occurrence does not raise a false violation."
+        },
+        {
+          "autonomy": "autonomy:R9",
+          "behaviour": "Owns the compliance scan with a baseline that cannot rot.",
+          "acceptance_criteria": "Fixing or deleting a baselined occurrence fails the check until the baseline entry is removed."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.brand_social_publishing",
+      "name": "Brand social publishing queue",
+      "classification": "inherited",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R5",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers what is queued, what is late, and what will be handed off rather than posted.",
+          "acceptance_criteria": "Every provider still in handoff is named as such; no job is claimed during the answer."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs the full claim-publish-reconcile cycle against dry-run adapters in a sandbox.",
+          "acceptance_criteria": "A replayed job never produces a second publication; permanent and transient failure paths are both exercised."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow mode: mints handoff packages a human then publishes, and compares outcomes.",
+          "acceptance_criteria": "Zero direct network publications originate from the agent; every package a human used is recorded against its receipt."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.publishing_failure_and_handoff_recovery",
+      "name": "Publishing failure and handoff reconciliation",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R4",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains why a specific post did not go out and what the recovery options are.",
+          "acceptance_criteria": "Explanation cites the delivery events and the dead-letter reason; no job state changes."
+        },
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "Prepares a retry for a named job on an explicit human request.",
+          "acceptance_criteria": "The retry is executed only after a recorded human action; no scheduled retry exists."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Exercises retry, cancel and handoff reconciliation in a sandbox.",
+          "acceptance_criteria": "A cancelled job never publishes; an unconfirmed handoff is never auto-marked complete."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.marketing_calendar_planning",
+      "name": "Marketing calendar and scheduled-content planning",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers what is going out this week, on which brand and network.",
+          "acceptance_criteria": "Every item cited exists with that schedule; all times stated in Central and labelled as such."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Renders a full month across a sandbox brand estate including a DST boundary.",
+          "acceptance_criteria": "No item shifts day across the boundary; unscheduled items never render as today."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Keeps the production calendar accurate and flags plan gaps.",
+          "acceptance_criteria": "Calendar contents always reconcile to content_items and publishing_jobs; a gap is reported, never filled unilaterally."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.marketing_overview_and_attention_triage",
+      "name": "Marketing overview and needs-attention triage",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R9",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers whether we can still publish and whether anything failed to go out.",
+          "acceptance_criteria": "Any metric the registry cannot compute is named as unavailable, never reported as zero."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Computes the whole overview over a sandbox estate including an expired account and a late job.",
+          "acceptance_criteria": "Worst-first health ordering holds; an untrusted metric is excluded from every aggregate it would otherwise enter."
+        },
+        {
+          "autonomy": "autonomy:R9",
+          "behaviour": "Owns overview accuracy in production with a derived trust signal.",
+          "acceptance_criteria": "The badge never reads live during a failed or in-flight fetch; every unavailable metric carries a reason."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.landing_page_generation_and_publication",
+      "name": "Landing page generation and publication",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R5",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R1",
+          "behaviour": "Generates pages in isolation from fixture briefs with a baseline render suite.",
+          "acceptance_criteria": "Every section in the brief appears; a count of generated sentences not present in the brief is reported, not hidden."
+        },
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "Drafts and previews a page on an explicit human request.",
+          "acceptance_criteria": "Nothing is public without a recorded human publish action."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow mode: drafts beside pages a human wrote, for comparison.",
+          "acceptance_criteria": "Per-bullet fidelity against the brief is reported; no invented detail line reaches a published page."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.content_history_import_from_loomly",
+      "name": "Content history import from the incumbent scheduler",
+      "classification": "existing_application",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R4",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains what would land where, per export category, from the mapping document.",
+          "acceptance_criteria": "Every category names its destination table or states explicitly that it is not imported."
+        },
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "Runs a dry run on a human-supplied export and reports the exceptions.",
+          "acceptance_criteria": "No row is written; the exception report names every unrecognised header and unknown calendar."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs the full import against a sandbox database twice.",
+          "acceptance_criteria": "The second run imports nothing and reports duplicate_existing for every row."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.marketing_surface_problem_reporting",
+      "name": "In-surface problem reporting for marketing operators",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R2",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Summarises what operators have reported and what recurs.",
+          "acceptance_criteria": "Every pattern claim cites the reports behind it; no mail is sent in the trace."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Assembles report context in a sandbox across every marketing page.",
+          "acceptance_criteria": "Context capture is correct for each page and brand scope; no transport is invoked."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.campaign_funnel_performance_analysis",
+      "name": "Campaign funnel performance analysis",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R9",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers how each campaign's funnel is performing and why a verdict was reached.",
+          "acceptance_criteria": "Verdict reproduces from the stored report; the failure rate and its denominator are both stated."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs the full scan over a sandbox estate including a malformed campaign row.",
+          "acceptance_criteria": "The malformed row appears in errors and never inflates campaigns_processed; two runs return identical numbers."
+        },
+        {
+          "autonomy": "autonomy:R9",
+          "behaviour": "Owns funnel reporting in production with alerting on a degraded verdict.",
+          "acceptance_criteria": "No campaign reads degraded for more than one cycle without a raised item; no action ever contains two tenants."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.campaign_and_channel_metric_reporting",
+      "name": "Campaign and channel metric reporting under a trust registry",
+      "classification": "existing_application",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers a marketing performance question and names each metric's definition and trust status.",
+          "acceptance_criteria": "Every figure cites its registry key; any unavailable metric is reported as such with its reason."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow mode: computes the period's figures beside a human-prepared set.",
+          "acceptance_criteria": "Every disagreement is itemised with its denominator; no figure is published from the shadow run."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Produces scheduled reporting over manager-approved metrics only.",
+          "acceptance_criteria": "No unregistered figure ever appears; no untrusted metric enters an aggregate or a narrative."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.multi_touch_attribution",
+      "name": "Multi-touch campaign attribution with honest coverage",
+      "classification": "existing_application",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers which touches earned a given lead, under which model, with what coverage.",
+          "acceptance_criteria": "Coverage is always stated; an uncovered lead is reported as uncovered, never as direct."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs every model over a sandbox touchpoint set.",
+          "acceptance_criteria": "Credits sum correctly under each model; a lead with no visitor link is excluded and counted in coverage."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Produces attribution on the manager-approved model on schedule.",
+          "acceptance_criteria": "Every report carries its coverage figure; no model change happens without a recorded decision."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.tracked_link_and_utm_governance",
+      "name": "Tracked link, UTM taxonomy and traffic registration",
+      "classification": "inherited",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers which campaigns have registered links and where untagged traffic is coming from.",
+          "acceptance_criteria": "Every flagged source cites its traffic rows; no link is created."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Mints and validates links in a sandbox including a collision and a disallowed destination.",
+          "acceptance_criteria": "A disallowed destination is always refused; a short-code collision never produces a duplicate."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Mints links under the approved taxonomy and flags untagged traffic on schedule.",
+          "acceptance_criteria": "No link bypasses destination validation; every flagged item names the campaign it should have carried."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.brand_attribution_of_campaigns",
+      "name": "Brand attribution integrity for campaigns",
+      "classification": "existing_application",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Reports which campaigns have no resolved brand.",
+          "acceptance_criteria": "Unresolved campaigns are listed individually; none is guessed into a brand."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Exercises resolution in a sandbox including an unknown brand.",
+          "acceptance_criteria": "An unknown brand always rejects; no code path writes a null brand_id."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Keeps brand attribution complete and raises unresolved campaigns.",
+          "acceptance_criteria": "No new campaign is created without a resolved brand; the unresolved backlog is reported, not silently carried."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.campaign_approval_and_golive",
+      "name": "Campaign approval and go-live control",
+      "classification": "existing_application",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R3",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers which campaigns are awaiting approval, which are live, and which went live without an approval record.",
+          "acceptance_criteria": "The bypass population is reported explicitly by comparing status against approval_status."
+        },
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "Submits a named campaign for approval on an explicit human request.",
+          "acceptance_criteria": "The agent never appears as approved_by; no submission occurs without a recorded human action."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_consent_and_channel_suppression",
+      "name": "Per-channel consent and suppression honouring",
+      "classification": "existing_application",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R2",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers whether a person is contactable on a given channel and why.",
+          "acceptance_criteria": "The verdict cites the opt-out row and its channel; no suppression state is written."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Exercises per-channel sendability in a sandbox against historic and new rows.",
+          "acceptance_criteria": "A historic global-semantics row never becomes email-eligible; a new per-channel opt-out suppresses only its channel."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.marketing_department_strategy_planning",
+      "name": "Marketing department strategy and initiative planning",
+      "classification": "inherited",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R6",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains the department's health signals and what they imply, without creating anything.",
+          "acceptance_criteria": "Every signal cited resolves to real data; no initiative or ticket is created."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow mode: proposes initiatives beside priorities the manager set independently.",
+          "acceptance_criteria": "Overlap and divergence are reported per initiative; nothing is persisted."
+        },
+        {
+          "autonomy": "autonomy:R6",
+          "behaviour": "Supervised pilot creating initiatives the manager accepts one at a time.",
+          "acceptance_criteria": "No initiative exists that a human did not accept; open-ticket count does not grow without a named owner."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.content_idea_proposal_queue",
+      "name": "Grounded content-idea proposal queue",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers what the strongest current signal is and what has already been proposed.",
+          "acceptance_criteria": "Claims cite the signal and the pending proposals; no new proposal is written."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Produces proposals over a sandbox signal set, including a repeated trigger.",
+          "acceptance_criteria": "A repeated trigger produces no second proposal and no second model call."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Proposes on an approved cadence, writing only proposed_agent_actions.",
+          "acceptance_criteria": "No write outside proposed_agent_actions; no proposal becomes content without a human acceptance."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.ai_news_ingestion_and_card_publication",
+      "name": "AI news ingestion and daily card publication",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R5",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers what was published, from which source, and when.",
+          "acceptance_criteria": "Every card cites its library item and source feed; no generation occurs."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs ingest and materialize against recorded feed payloads, writing drafts only.",
+          "acceptance_criteria": "Two runs produce no duplicate library rows; an incomplete generation publishes nothing."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow mode: generates cards for review beside what is currently published.",
+          "acceptance_criteria": "No card reaches the live feed from the shadow run; every generated card is reviewable before it could."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.intelligence_card_generation",
+      "name": "Multi-source intelligence card generation",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R5",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers what each stream published and from which source item.",
+          "acceptance_criteria": "Every card resolves to an intel_items row; unreviewable attribution claims are named as such."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs collect-ingest-materialize for every source against recorded payloads, writing drafts only.",
+          "acceptance_criteria": "A truncated generation publishes nothing; two runs produce no duplicate library rows; a missing API key degrades the source rather than the run."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow mode: generates for review against what is currently live.",
+          "acceptance_criteria": "Zero cards reach the live feed from the shadow run; every quote-stream item is held for named human attribution review."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.free_tier_learner_journey_scoring",
+      "name": "Free-tier learner journey scoring",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers where a free-tier learner is in their journey and what the score is made of.",
+          "acceptance_criteria": "Every component resolves to a stored snapshot; no recompute occurs during the answer."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Recomputes a sandbox learner population twice at the same as-of time.",
+          "acceptance_criteria": "Both runs produce identical scores; no mailer can be imported into the directory without failing the build."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Recomputes on schedule in production and reports score distribution honestly.",
+          "acceptance_criteria": "No learner is scored without a signal trail; coverage gaps are reported rather than defaulted."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.free_tier_next_best_action_decisioning",
+      "name": "Free-tier next-best-action decisioning in shadow",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R5",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains what was decided for a learner and which candidates were suppressed and why.",
+          "acceptance_criteria": "Every suppressed candidate names its reason; the chosen action reproduces from the stored row."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Runs the full decision cycle over a sandbox population.",
+          "acceptance_criteria": "One decision per learner per day, no duplicates; a contact-history failure always suppresses."
+        },
+        {
+          "autonomy": "autonomy:R5",
+          "behaviour": "Shadow mode in production: decides and records, executes nothing.",
+          "acceptance_criteria": "Every row is executed false across the window; no mailer is importable in the directory."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.lifecycle_content_catalogue_projection",
+      "name": "Lifecycle content catalogue projection",
+      "classification": "inherited",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R9",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers which content is currently offerable and what was retired.",
+          "acceptance_criteria": "Every asset resolves to a published source card; approval columns are reported as unset, never as approved."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Syncs a sandbox catalogue twice, including a retirement.",
+          "acceptance_criteria": "Both runs produce an identical row set; retired content is retired exactly once."
+        },
+        {
+          "autonomy": "autonomy:R9",
+          "behaviour": "Owns catalogue freshness in production ahead of the decision window.",
+          "acceptance_criteria": "The catalogue is never stale at decision time; no body copy is ever written into the registry."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.publishing_calendar_operations_ownership",
+      "name": "Day-to-day publishing calendar ownership and tool retirement",
+      "classification": "manager_defined",
+      "implementation_state": "unknown",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R2",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains what lives in the incumbent tool, where each category lands, and what is not imported.",
+          "acceptance_criteria": "Every category states its destination or that it is deliberately not imported; nothing is reported as none that has not been looked at."
+        },
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "Runs an importer dry run on a human-supplied export and reports exceptions.",
+          "acceptance_criteria": "No row is written; every unmapped calendar is named rather than guessed."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.brand_network_connection_administration",
+      "name": "Brand network connection administration",
+      "classification": "manager_defined",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R2",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains what a given network requires and which brands still need connecting.",
+          "acceptance_criteria": "Requirements match the recorded runbook; no flow is initiated and no credential is read."
+        },
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "Prepares the connect link for a named brand and network on request.",
+          "acceptance_criteria": "The person completes the approval; the agent never appears as the connecting identity."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.handoff_package_manual_publication",
+      "name": "Handoff package publication by a person",
+      "classification": "manager_defined",
+      "implementation_state": "implemented",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R4",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers which networks still hand off and what is waiting for a person.",
+          "acceptance_criteria": "The handoff list matches the live-connector configuration; no package is marked complete."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Mints packages for a full sandbox queue.",
+          "acceptance_criteria": "Each package contains exactly the approved content per network; no package self-marks complete."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.platform_app_review_and_representation",
+      "name": "Network app review and public representation",
+      "classification": "manager_defined",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R2",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R1",
+          "behaviour": "Verifies every claim in a prepared package against the codebase.",
+          "acceptance_criteria": "Each claim is marked verified or unverified with its file reference; an unmet requirement is reported as a blocker."
+        },
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains what each network's review requires and what is still missing.",
+          "acceptance_criteria": "Requirements are stated as of the package's date with an explicit instruction to re-check the live dashboard; no submission occurs."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.metric_trust_escalation_decisions",
+      "name": "Marketing metric trust escalation and resolution",
+      "classification": "manager_defined",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R3",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains which marketing numbers cannot be trusted and why.",
+          "acceptance_criteria": "Each finding names the file, the constant or column at fault, and the rule it contradicts."
+        },
+        {
+          "autonomy": "autonomy:R3",
+          "behaviour": "On request, traces every surface affected by one untrustworthy metric.",
+          "acceptance_criteria": "The trace is complete and names surfaces owned elsewhere rather than silently fixing them."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.marketing_agent_management_and_oversight",
+      "name": "Manager oversight of the marketing AI employee",
+      "classification": "manager_defined",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R2",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains its own charter, current directives, goals and open proposals.",
+          "acceptance_criteria": "Every statement resolves to a stored record; a goal with no backing metric reports unmeasured, never a number."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Exercises the full management loop against a sandbox agent and manager.",
+          "acceptance_criteria": "A directive can only restrict; an admin outside the reporting chain is refused; no self-approval of a memory proposal is possible."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.recurring_marketing_performance_reporting",
+      "name": "Recurring marketing performance reporting (DA responsibility in transition)",
+      "classification": "proposed_new",
+      "implementation_state": "absent",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R4",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers the questions the recurring report would answer, on demand, from registered metrics.",
+          "acceptance_criteria": "Every figure cites its registry key and trust status; uncomputable figures are named, never zeroed."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Renders a full period report in a sandbox and persists it with its metric set.",
+          "acceptance_criteria": "Two renders over the same period are identical; every untrusted metric is excluded from every aggregate and listed."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.revenue_and_cost_metric_truthing",
+      "name": "Revenue and cost-per-lead truthing",
+      "classification": "proposed_new",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R4",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Explains which money figures are fabricated, where, and what each one contradicts.",
+          "acceptance_criteria": "Every finding names the file and the constant or column; nothing is reported as fixed that is not."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Implements an approved definition in a sandbox and proves no unregistered money figure can render.",
+          "acceptance_criteria": "A seeded unregistered money metric fails the check; a withdrawn metric renders unavailable with a reason, never zero."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_human_approval_gap_closure",
+      "name": "Closing the outreach human-approval bypasses",
+      "classification": "proposed_new",
+      "implementation_state": "absent",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R4",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R1",
+          "behaviour": "Reproduces both bypasses in isolation with failing tests.",
+          "acceptance_criteria": "Each test fails before the fix and passes after; removing the fix makes the named test die."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Implements the single-gate path in a sandbox across both fleets.",
+          "acceptance_criteria": "No module other than the approval endpoint can create a posting task; a seeded attempt fails the test by name."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.agent_write_authorization_enforcement",
+      "name": "Enforcing agent write authorization on marketing agents",
+      "classification": "proposed_new",
+      "implementation_state": "absent",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R4",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R1",
+          "behaviour": "Enumerates every marketing-agent write and its declared tier, in isolation.",
+          "acceptance_criteria": "The enumeration is complete against a source sweep; an agent with no declared tier is named, not defaulted silently."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Implements enforcement in a sandbox for an approved tier set.",
+          "acceptance_criteria": "A seeded out-of-allowlist write is refused and audited; no enforcement change alters a tier without a recorded decision."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.intelligence_card_prepublication_review",
+      "name": "Pre-publication review for generated intelligence cards",
+      "classification": "proposed_new",
+      "implementation_state": "absent",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R4",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Reports which streams publish unreviewed and what each one asserts.",
+          "acceptance_criteria": "The quote and market-brief streams are named explicitly as attribution and figure risks."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Implements hold-and-queue in a sandbox across every stream.",
+          "acceptance_criteria": "No card can reach a published state without a recorded decision; a seeded direct-publish attempt fails the test by name."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.brand_and_competitor_mention_monitoring",
+      "name": "Brand and competitor mention monitoring",
+      "classification": "proposed_new",
+      "implementation_state": "absent",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R6",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R0",
+          "behaviour": "Defines the mention vocabulary, the competitor set, the risks and the human decisions.",
+          "acceptance_criteria": "The brand and competitor lists are written down and the response policy names a human for every negative-mention case."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Scans a sandbox corpus and separates mentions from intent signals.",
+          "acceptance_criteria": "No mention enters the intent pipeline; sentiment classification is reported with its sample, not as a score."
+        },
+        {
+          "autonomy": "autonomy:R6",
+          "behaviour": "Supervised pilot reporting mentions and share of voice with a stated coverage figure.",
+          "acceptance_criteria": "Share of voice always carries its coverage; a negative mention is raised to a human and never answered by the agent."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.content_repurposing_and_template_library",
+      "name": "Content repurposing and reusable template library",
+      "classification": "proposed_new",
+      "implementation_state": "absent",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R7",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R0",
+          "behaviour": "Defines which assets are repurposable, into which channels, and who approves the set.",
+          "acceptance_criteria": "Each template pattern names its channel, its cadence and its approver."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Derives a full multi-channel set in a sandbox from one source asset.",
+          "acceptance_criteria": "Every derived item carries provenance; a claim absent from the source is flagged rather than written."
+        },
+        {
+          "autonomy": "autonomy:R7",
+          "behaviour": "Derives sets from approved templates on request in production.",
+          "acceptance_criteria": "No derived item reaches a published state without its own approval; provenance resolves for every item."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.manager_marketing_brief_subscription",
+      "name": "Manager marketing brief subscription",
+      "classification": "proposed_new",
+      "implementation_state": "partial",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R4",
+      "human_decision": true,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R2",
+          "behaviour": "Answers what a brief would contain and what it cannot measure.",
+          "acceptance_criteria": "Unmeasurable sections are named; no delivery is attempted."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Renders a preview on a sandbox cadence across a timezone boundary.",
+          "acceptance_criteria": "No unwired channel is selectable; a delivery time is refused where no timezone is recorded, rather than assumed."
+        }
+      ]
+    },
+    {
+      "capability_id": "marketing.outreach_coverage_and_blind_spot_reporting",
+      "name": "Outreach coverage and blind-spot reporting",
+      "classification": "proposed_new",
+      "implementation_state": "absent",
+      "requirement_validation_state": "draft",
+      "starting_autonomy": "autonomy:R0",
+      "max_permitted_autonomy": "autonomy:R9",
+      "human_decision": false,
+      "release_behaviour": [
+        {
+          "autonomy": "autonomy:R0",
+          "behaviour": "Defines what coverage means per surface and which figures may never be reported as totals.",
+          "acceptance_criteria": "Each surface has a written coverage definition and a named owner for its blind spot."
+        },
+        {
+          "autonomy": "autonomy:R4",
+          "behaviour": "Assembles the coverage statement over a sandbox estate.",
+          "acceptance_criteria": "Every declared module limit appears; a figure with partial coverage is never rendered as a total."
+        },
+        {
+          "autonomy": "autonomy:R9",
+          "behaviour": "Owns the coverage statement in production alongside every marketing report.",
+          "acceptance_criteria": "No reach or engagement figure is published without its coverage; a new blind spot appears in the statement the period it arises."
+        }
+      ]
+    }
+  ],
   "authority": [
     {
       "capability_id": "marketing.agent_write_authorization_enforcement",
