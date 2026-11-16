@@ -1,46 +1,14 @@
 {
   "schema_version": 2,
-  "project_name": "marketing",
+  "project_name": "Marketing Intelligence & Brand",
   "descriptor": "The marketing domain agent.",
   "requirements": [],
   "releases": [
     {
-      "key": "r0",
-      "demo": "The r0 documents exist in the repository and their acceptance criteria are met.",
-      "goal": "Deliver every r0 story for marketing.",
-      "name": "Discovery and validation",
-      "week_end": 0,
-      "week_start": 0,
-      "story_ids": [
-        "marketing.RESEARCH-1-SYSTEM-CLASSES",
-        "marketing.RESEARCH-2-AGENT-ANATOMY",
-        "marketing.RESEARCH-3-ROLE-AND-DA-TRANSITION",
-        "marketing.RESEARCH-4-MANAGER-INTERVIEW",
-        "marketing.RESEARCH-5-THREE-PROPOSED-TASKS"
-      ],
-      "starts_on": "2026-09-20",
-      "ends_on": "2026-09-20",
-      "is_demo_target": true
-    },
-    {
-      "key": "r1",
-      "demo": "The r1 documents exist in the repository and their acceptance criteria are met.",
-      "goal": "Deliver every r1 story for marketing.",
+      "key": "autonomy:R0",
+      "demo": "The autonomy:R0 documents exist in the repository and their acceptance criteria are met.",
+      "goal": "Deliver every autonomy:R0 story for Marketing Intelligence & Brand.",
       "name": "Legacy migration plan",
-      "week_end": 0,
-      "week_start": 0,
-      "story_ids": [
-        "marketing.LEGACY-MIGRATION-PLAN"
-      ],
-      "starts_on": "2026-09-20",
-      "ends_on": "2026-09-20",
-      "is_demo_target": false
-    },
-    {
-      "key": "r2",
-      "demo": "The r2 documents exist in the repository and their acceptance criteria are met.",
-      "goal": "Deliver every r2 story for marketing.",
-      "name": "r2",
       "week_end": 0,
       "week_start": 0,
       "story_ids": [
@@ -58,7 +26,7 @@
         "marketing.CAP.campaign_and_channel_metric_reporting",
         "marketing.CAP.campaign_approval_and_golive",
         "marketing.CAP.campaign_funnel_performance_analysis",
-        "marketing.CAP.channel_account_connection_and_credential_cust",
+        "marketing.CAP.channel_account_connection_and_credential_custody",
         "marketing.CAP.community_direct_message_response",
         "marketing.CAP.community_signal_detection",
         "marketing.CAP.content_approval_workflow",
@@ -107,20 +75,31 @@
         "marketing.CAP.revenue_and_cost_metric_truthing",
         "marketing.CAP.signal_triage_and_prioritisation",
         "marketing.CAP.social_signal_discovery",
-        "marketing.CAP.tracked_link_and_utm_governance"
+        "marketing.CAP.social_signal_discovery.L1-BY-HAND",
+        "marketing.CAP.social_signal_discovery.L2-IN-THE-APP",
+        "marketing.CAP.social_signal_discovery.L3-TOOL-REQUEST",
+        "marketing.CAP.social_signal_discovery.L4-AGENT-WATCHED",
+        "marketing.CAP.tracked_link_and_utm_governance",
+        "marketing.LEGACY-MIGRATION-PLAN",
+        "marketing.RESEARCH-1-SYSTEM-CLASSES",
+        "marketing.RESEARCH-2-AGENT-ANATOMY",
+        "marketing.RESEARCH-3-ROLE-AND-DA-TRANSITION",
+        "marketing.RESEARCH-4-MANAGER-INTERVIEW",
+        "marketing.RESEARCH-5-THREE-PROPOSED-TASKS",
+        "marketing.STORY-000"
       ],
       "starts_on": "2026-09-20",
       "ends_on": "2026-09-20",
-      "is_demo_target": false
+      "is_demo_target": true
     }
   ],
   "stories": [
     {
       "id": "marketing.CAP.agent_write_authorization_enforcement",
       "title": "Enforcing agent write authorization on marketing agents",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The permission tiers the platform already declares for marketing agents actually gate their writes, instead of describing a policy nothing checks.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Enforcement will break currently-working writes and must be staged\n- deciding each agent's tier is an authority decision, not an implementation one\n- manager has not validated any marketing agent's write scope\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe permission tiers the platform already declares for marketing agents actually gate their writes, instead of describing a policy nothing checks.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Enforcement will break currently-working writes and must be staged\n- deciding each agent's tier is an authority decision, not an implementation one\n- manager has not validated any marketing agent's write scope\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "The enumeration is complete against a source sweep; an agent with no declared tier is named, not defaulted silently."
       ],
@@ -133,9 +112,9 @@
     {
       "id": "marketing.CAP.ai_news_ingestion_and_card_publication",
       "title": "AI news ingestion and daily card publication",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A daily, deduplicated AI-news card appears in the product without anyone sourcing it, so the platform demonstrably tracks the field it teaches.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- marketing.intelligence_card_prepublication_review does not exist, so there is no gate between generation and the live feed\n- domain ownership is unconfirmed: this content is student-facing portal content, and the slice assigned it to marketing on a name match, not a product decision\n- manager has not validated editorial standards for published cards\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA daily, deduplicated AI-news card appears in the product without anyone sourcing it, so the platform demonstrably tracks the field it teaches.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- marketing.intelligence_card_prepublication_review does not exist, so there is no gate between generation and the live feed\n- domain ownership is unconfirmed: this content is student-facing portal content, and the slice assigned it to marketing on a name match, not a product decision\n- manager has not validated editorial standards for published cards\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every card cites its library item and source feed; no generation occurs."
       ],
@@ -148,9 +127,9 @@
     {
       "id": "marketing.CAP.authority_content_drafting",
       "title": "Authority and thought-leadership content drafting",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Signals the market is already generating become publishable Colaberry points of view - short LinkedIn posts and long-form articles - so the brand has a reason to speak that is grounded in something real.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Publishing externally remains a human decision until Sohail Syed says otherwise\n- manager has not validated the brand point of view this content asserts\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nSignals the market is already generating become publishable Colaberry points of view - short LinkedIn posts and long-form articles - so the brand has a reason to speak that is grounded in something real.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Publishing externally remains a human decision until Sohail Syed says otherwise\n- manager has not validated the brand point of view this content asserts\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Claims cite openclaw_signals and openclaw_authority_content rows; no generation occurs."
       ],
@@ -163,9 +142,9 @@
     {
       "id": "marketing.CAP.banned_copy_compliance_scanning",
       "title": "Banned-copy compliance scanning across source",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The word Colaberry is legally barred from advertising cannot appear anywhere a prospect can read it - including React source the composer never sees - so a statutory rule is enforced rather than remembered.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated the banned word list beyond the statutory term already encoded\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe word Colaberry is legally barred from advertising cannot appear anywhere a prospect can read it - including React source the composer never sees - so a statutory rule is enforced rather than remembered.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated the banned word list beyond the statutory term already encoded\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every occurrence is classified; none is reported without its role."
       ],
@@ -178,9 +157,9 @@
     {
       "id": "marketing.CAP.brand_and_competitor_mention_monitoring",
       "title": "Brand and competitor mention monitoring",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Colaberry knows when it is being talked about - and when a competitor is being chosen over it - rather than only knowing when someone asks a question it can answer.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- unbounded_network (mention scanning must stay on the explicit provider allow-list)\n- responding to a negative mention is a human decision and is out of scope for this capability\n- manager has not named the competitors or defined share of voice\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nColaberry knows when it is being talked about - and when a competitor is being chosen over it - rather than only knowing when someone asks a question it can answer.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- unbounded_network (mention scanning must stay on the explicit provider allow-list)\n- responding to a negative mention is a human decision and is out of scope for this capability\n- manager has not named the competitors or defined share of voice\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "The brand and competitor lists are written down and the response policy names a human for every negative-mention case."
       ],
@@ -193,9 +172,9 @@
     {
       "id": "marketing.CAP.brand_attribution_of_campaigns",
       "title": "Brand attribution integrity for campaigns",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Every campaign resolves to a real brand at creation, so the brand dimension in every downstream report means something instead of collapsing into an Unattributed bucket.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Historic campaigns with a null brand cannot be back-assigned without a human decision\n- manager has not validated brand ownership of existing campaigns\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nEvery campaign resolves to a real brand at creation, so the brand dimension in every downstream report means something instead of collapsing into an Unattributed bucket.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Historic campaigns with a null brand cannot be back-assigned without a human decision\n- manager has not validated brand ownership of existing campaigns\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Unresolved campaigns are listed individually; none is guessed into a brand."
       ],
@@ -208,9 +187,9 @@
     {
       "id": "marketing.CAP.brand_governance_enforcement",
       "title": "Brand governance rule enforcement",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Every piece of brand content is checked against the brand's own published rules on voice, approved offers and required claims - read from data, so a rule change takes effect without a deploy.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Publishing a governance rule version is a human decision\n- manager has not validated the rule set for any brand in this domain\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nEvery piece of brand content is checked against the brand's own published rules on voice, approved offers and required claims - read from data, so a rule change takes effect without a deploy.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Publishing a governance rule version is a human decision\n- manager has not validated the rule set for any brand in this domain\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Answer names the rulesVersion; a brand with no rows is reported ungoverned, never compliant."
       ],
@@ -223,9 +202,9 @@
     {
       "id": "marketing.CAP.brand_network_connection_administration",
       "title": "Brand network connection administration",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The marketing team can put a brand on a new network themselves, and everyone knows whose profile a brand's posts will appear under.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- secret_exfiltration (the agent must never see the resulting credential)\n- the person whose profile is bound must consent\n- manager has not confirmed which colleague's profile should carry which brand\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe marketing team can put a brand on a new network themselves, and everyone knows whose profile a brand's posts will appear under.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- secret_exfiltration (the agent must never see the resulting credential)\n- the person whose profile is bound must consent\n- manager has not confirmed which colleague's profile should carry which brand\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Requirements match the recorded runbook; no flow is initiated and no credential is read."
       ],
@@ -238,9 +217,9 @@
     {
       "id": "marketing.CAP.brand_registry_and_readiness",
       "title": "Brand registry and publish readiness",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Every piece of marketing work is attached to a named brand that is demonstrably ready to publish - accounts connected, governance rules in place - so nothing is produced for a brand that cannot ship it.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated which brands the marketing AI employee may act for\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nEvery piece of marketing work is attached to a named brand that is demonstrably ready to publish - accounts connected, governance rules in place - so nothing is produced for a brand that cannot ship it.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated which brands the marketing AI employee may act for\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every gap named maps to a real missing account or an absent governance row; a brand with no rules is reported ungoverned, never compliant."
       ],
@@ -253,9 +232,9 @@
     {
       "id": "marketing.CAP.brand_social_publishing",
       "title": "Brand social publishing queue",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "An approved post goes out at the minute it was scheduled for - or, where no network app is live, becomes a precise package a person publishes - so scheduling is real rather than aspirational.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Publishing brand content externally remains a human decision until Sohail Syed says otherwise\n- the agent row is seeded disabled and turning it on is a documented production action\n- manager has not authorised any provider for unattended direct publishing\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nAn approved post goes out at the minute it was scheduled for - or, where no network app is live, becomes a precise package a person publishes - so scheduling is real rather than aspirational.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Publishing brand content externally remains a human decision until Sohail Syed says otherwise\n- the agent row is seeded disabled and turning it on is a documented production action\n- manager has not authorised any provider for unattended direct publishing\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every provider still in handoff is named as such; no job is claimed during the answer."
       ],
@@ -268,9 +247,9 @@
     {
       "id": "marketing.CAP.browser_session_reliability",
       "title": "Headless browser session health and self-healing",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The browser identities the outreach pipeline depends on stay usable, so a captcha or a crashed session is detected and healed instead of silently stopping all posting.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Credential expiry cannot be self-healed and escalates to a human reconnection\n- manager has not validated the auto-restart policy\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe browser identities the outreach pipeline depends on stay usable, so a captcha or a crashed session is detected and healed instead of silently stopping all posting.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Credential expiry cannot be self-healed and escalates to a human reconnection\n- manager has not validated the auto-restart policy\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Health verdicts reproduce from openclaw_sessions; no restart is attempted."
       ],
@@ -283,9 +262,9 @@
     {
       "id": "marketing.CAP.campaign_and_channel_metric_reporting",
       "title": "Campaign and channel metric reporting under a trust registry",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Marketing numbers come from one registered definition each, with a trust status attached - so two screens cannot quietly disagree and an uncomputable figure says so instead of showing a zero.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- marketing.revenue_and_cost_metric_truthing is an open escalation and blocks any monetary claim\n- manager has not validated which metrics define marketing success\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nMarketing numbers come from one registered definition each, with a trust status attached - so two screens cannot quietly disagree and an uncomputable figure says so instead of showing a zero.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- marketing.revenue_and_cost_metric_truthing is an open escalation and blocks any monetary claim\n- manager has not validated which metrics define marketing success\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every figure cites its registry key; any unavailable metric is reported as such with its reason."
       ],
@@ -298,9 +277,9 @@
     {
       "id": "marketing.CAP.campaign_approval_and_golive",
       "title": "Campaign approval and go-live control",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A campaign that will contact real people passes through a recorded approval before it goes live, with a named approver and a timestamp - so sending is authorised rather than assumed.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (going live starts real sends)\n- the activate route bypasses the approval ladder entirely and must be closed before any automation is defensible\n- no campaign-level approval UI exists for a manager to use\n- manager has not validated who may approve a marketing campaign\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA campaign that will contact real people passes through a recorded approval before it goes live, with a named approver and a timestamp - so sending is authorised rather than assumed.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (going live starts real sends)\n- the activate route bypasses the approval ladder entirely and must be closed before any automation is defensible\n- no campaign-level approval UI exists for a manager to use\n- manager has not validated who may approve a marketing campaign\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "The bypass population is reported explicitly by comparing status against approval_status."
       ],
@@ -313,9 +292,9 @@
     {
       "id": "marketing.CAP.campaign_funnel_performance_analysis",
       "title": "Campaign funnel performance analysis",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Each active campaign is graded healthy, degraded or empty against its own real numbers, per tenant, every six hours - so a broken funnel is found by a check rather than by someone noticing.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated the degraded threshold or what to do when a funnel reads degraded\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nEach active campaign is graded healthy, degraded or empty against its own real numbers, per tenant, every six hours - so a broken funnel is found by a check rather than by someone noticing.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated the degraded threshold or what to do when a funnel reads degraded\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Verdict reproduces from the stored report; the failure rate and its denominator are both stated."
       ],
@@ -326,11 +305,11 @@
       "due_baseline_on": "2026-09-20"
     },
     {
-      "id": "marketing.CAP.channel_account_connection_and_credential_cust",
+      "id": "marketing.CAP.channel_account_connection_and_credential_custody",
       "title": "Social channel connection and credential custody",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A brand's social accounts can be connected, rotated and revoked through one screen, with the tokens sealed in a vault, so publishing is possible without anyone handling a raw credential.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- secret_exfiltration (an agent must never read a sealed credential; only the single scoped accessor may)\n- manager and the profile owner must each consent to the binding\n- manager has not validated which profiles may be bound to which brand\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA brand's social accounts can be connected, rotated and revoked through one screen, with the tokens sealed in a vault, so publishing is possible without anyone handling a raw credential.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- secret_exfiltration (an agent must never read a sealed credential; only the single scoped accessor may)\n- manager and the profile owner must each consent to the binding\n- manager has not validated which profiles may be bound to which brand\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "No credential value appears in any output or log; health verdicts match the stored expiry."
       ],
@@ -343,9 +322,9 @@
     {
       "id": "marketing.CAP.community_direct_message_response",
       "title": "Community notification and direct-message response",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A community member who asks Colaberry something directly gets a real answer the same day, without a staff member living in the Skool inbox.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (a direct message to an individual is the same class of outbound as mail and must not be automated here)\n- no human-approval gate exists on this path at all\n- no admin screen exists for a manager to review or stop it\n- manager has not validated reply policy for direct messages\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA community member who asks Colaberry something directly gets a real answer the same day, without a staff member living in the Skool inbox.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (a direct message to an individual is the same class of outbound as mail and must not be automated here)\n- no human-approval gate exists on this path at all\n- no admin screen exists for a manager to review or stop it\n- manager has not validated reply policy for direct messages\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Counts reconcile to skool_engagements; no navigation and no send in the trace."
       ],
@@ -358,9 +337,9 @@
     {
       "id": "marketing.CAP.community_signal_detection",
       "title": "Skool community question detection",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Colaberry sees every genuine question asked in the AI Automation Agency Hub community within half an hour, so the brand shows up where practitioners already gather rather than paying for attention.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Skool has no admin UI, so a manager cannot currently see or stop this except through the agent enable flag\n- unbounded_network (browser navigation must stay inside the configured community)\n- manager has not validated category scope or daily caps\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nColaberry sees every genuine question asked in the AI Automation Agency Hub community within half an hour, so the brand shows up where practitioners already gather rather than paying for attention.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Skool has no admin UI, so a manager cannot currently see or stop this except through the agent enable flag\n- unbounded_network (browser navigation must stay inside the configured community)\n- manager has not validated category scope or daily caps\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every claim resolves to a skool_signals row; no browser is launched."
       ],
@@ -373,9 +352,9 @@
     {
       "id": "marketing.CAP.content_approval_workflow",
       "title": "Content approval with revision-pinned decisions",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Nothing publishes without a named person approving the exact version they read, and an edit after approval invalidates it - so an audit can always answer who approved what.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- An agent must never hold the decide permission on its own content\n- manager has not named the required approver per brand or content class\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nNothing publishes without a named person approving the exact version they read, and an edit after approval invalidates it - so an audit can always answer who approved what.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- An agent must never hold the decide permission on its own content\n- manager has not named the required approver per brand or content class\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Queue contents reconcile to content_approval_requests; no decision is written."
       ],
@@ -388,9 +367,9 @@
     {
       "id": "marketing.CAP.content_composition_and_variant_generation",
       "title": "Multi-network content composition",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "One idea becomes a per-network post - text, media, links, polls - drafted in a single guided flow, so publishing to five places does not mean rewriting five times.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated brand voice, tone or the default network set\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nOne idea becomes a per-network post - text, media, links, polls - drafted in a single guided flow, so publishing to five places does not mean rewriting five times.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated brand voice, tone or the default network set\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every provider in the target set gets a variant; revision increments on every recorded edit."
       ],
@@ -403,9 +382,9 @@
     {
       "id": "marketing.CAP.content_history_import_from_loomly",
       "title": "Content history import from the incumbent scheduler",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Years of calendars, posts and permalinks move off the third-party scheduler into the platform without a flag day and without a fabricated history, so retiring the tool does not mean losing the record.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No export exists yet: the inventory's Found column is empty, which means not-yet-looked rather than none\n- the calendar-to-brand mapping is an unmade ownership decision\n- manager must supply the export; the build has no login to the incumbent tool\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nYears of calendars, posts and permalinks move off the third-party scheduler into the platform without a flag day and without a fabricated history, so retiring the tool does not mean losing the record.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No export exists yet: the inventory's Found column is empty, which means not-yet-looked rather than none\n- the calendar-to-brand mapping is an unmade ownership decision\n- manager must supply the export; the build has no login to the incumbent tool\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every category names its destination table or states explicitly that it is not imported."
       ],
@@ -418,9 +397,9 @@
     {
       "id": "marketing.CAP.content_idea_proposal_queue",
       "title": "Grounded content-idea proposal queue",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A marketing content idea arrives already grounded in the strongest current signal, queued for a human to accept or discard - never posted, never sent.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated what makes a content idea worth proposing\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA marketing content idea arrives already grounded in the strongest current signal, queued for a human to accept or discard - never posted, never sent.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated what makes a content idea worth proposing\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Claims cite the signal and the pending proposals; no new proposal is written."
       ],
@@ -433,9 +412,9 @@
     {
       "id": "marketing.CAP.content_platform_fitness_validation",
       "title": "Per-network content fitness validation",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A post is told, before anyone approves it, exactly which network would reject it and why - with the limit and the actual value - so failures happen in the composer rather than at the network.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Registry staleness is reported but not alarmed, so an old limit can persist unnoticed\n- manager has not validated whether a stale-registry warning should block\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA post is told, before anyone approves it, exactly which network would reject it and why - with the limit and the actual value - so failures happen in the composer rather than at the network.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Registry staleness is reported but not alarmed, so an old limit can persist unnoticed\n- manager has not validated whether a stale-registry warning should block\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "The explanation names the limit and the actual value; re-running validation reproduces it exactly."
       ],
@@ -448,9 +427,9 @@
     {
       "id": "marketing.CAP.content_repurposing_and_template_library",
       "title": "Content repurposing and reusable template library",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "One substantial asset - a case study, a class, a published outcome - becomes a month of multi-channel content from reusable templates, so output stops depending on someone starting from a blank page.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No template authoring surface exists\n- manager has not defined the channel patterns or the cadence a template should express\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nOne substantial asset - a case study, a class, a published outcome - becomes a month of multi-channel content from reusable templates, so output stops depending on someone starting from a blank page.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No template authoring surface exists\n- manager has not defined the channel patterns or the cadence a template should express\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Each template pattern names its channel, its cadence and its approver."
       ],
@@ -463,9 +442,9 @@
     {
       "id": "marketing.CAP.conversation_followup_sequencing",
       "title": "Stalled-conversation follow-up drafting",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A high-intent conversation that went quiet gets one considered, stage-aware nudge instead of being forgotten or chased repeatedly.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Follow-up cadence and stall thresholds are code config, not manager policy\n- manager has not validated how persistently a prospect may be followed up\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA high-intent conversation that went quiet gets one considered, stage-aware nudge instead of being forgotten or chased repeatedly.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Follow-up cadence and stall thresholds are code config, not manager policy\n- manager has not validated how persistently a prospect may be followed up\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Stage and stall age reproduce from openclaw_conversations; no draft is written."
       ],
@@ -478,9 +457,9 @@
     {
       "id": "marketing.CAP.engagement_monitoring_and_intent_scoring",
       "title": "Posted-content engagement monitoring",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "When someone replies to Colaberry content, the reply is noticed, scored for buying intent, and attached to the right conversation - so a warm thread is never lost to an unread notification.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- LinkedIn, Reddit and Quora coverage depends on a human typing engagements in\n- manager has not validated what counts as buying intent\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nWhen someone replies to Colaberry content, the reply is noticed, scored for buying intent, and attached to the right conversation - so a warm thread is never lost to an unread notification.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- LinkedIn, Reddit and Quora coverage depends on a human typing engagements in\n- manager has not validated what counts as buying intent\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every answer cites an openclaw_engagement_events row; no fetch occurs."
       ],
@@ -493,9 +472,9 @@
     {
       "id": "marketing.CAP.free_tier_learner_journey_scoring",
       "title": "Free-tier learner journey scoring",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Every free-tier learner carries a current, dated set of engagement, intent and fit scores plus a journey state, so lifecycle marketing can act on where someone actually is rather than when they signed up.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Entire subsystem is dark by default behind two flags\n- domain ownership is unconfirmed: these are enrolled free-tier learners, so this may belong to Learner Success rather than Marketing - the slice matched on the name 'Explorer'\n- manager has not validated what the scores should mean or what they should trigger\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nEvery free-tier learner carries a current, dated set of engagement, intent and fit scores plus a journey state, so lifecycle marketing can act on where someone actually is rather than when they signed up.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Entire subsystem is dark by default behind two flags\n- domain ownership is unconfirmed: these are enrolled free-tier learners, so this may belong to Learner Success rather than Marketing - the slice matched on the name 'Explorer'\n- manager has not validated what the scores should mean or what they should trigger\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every component resolves to a stored snapshot; no recompute occurs during the answer."
       ],
@@ -508,9 +487,9 @@
     {
       "id": "marketing.CAP.free_tier_next_best_action_decisioning",
       "title": "Free-tier next-best-action decisioning in shadow",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "For each free-tier learner, one action per day is chosen and recorded with every rejected alternative and its reason - so lifecycle decisions are auditable before any of them is ever executed.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (and SMS and auto-dial) - the execution flags exist and are all default off; turning any on is a separate manager decision\n- every decision row is executed false by construction and must stay so until execution is separately approved\n- domain ownership is unconfirmed between Marketing and Learner Success\n- manager has not validated the priority tiers or the daily contact cap\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nFor each free-tier learner, one action per day is chosen and recorded with every rejected alternative and its reason - so lifecycle decisions are auditable before any of them is ever executed.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (and SMS and auto-dial) - the execution flags exist and are all default off; turning any on is a separate manager decision\n- every decision row is executed false by construction and must stay so until execution is separately approved\n- domain ownership is unconfirmed between Marketing and Learner Success\n- manager has not validated the priority tiers or the daily contact cap\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every suppressed candidate names its reason; the chosen action reproduces from the stored row."
       ],
@@ -523,9 +502,9 @@
     {
       "id": "marketing.CAP.handoff_package_manual_publication",
       "title": "Handoff package publication by a person",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Until a network's app is approved and switched on, the platform still does all the work and a person does the last click - so publishing is never blocked on an app review.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Publishing externally remains a human decision\n- manager has not validated who owns the handoff queue day to day\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nUntil a network's app is approved and switched on, the platform still does all the work and a person does the last click - so publishing is never blocked on an app review.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Publishing externally remains a human decision\n- manager has not validated who owns the handoff queue day to day\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "The handoff list matches the live-connector configuration; no package is marked complete."
       ],
@@ -538,9 +517,9 @@
     {
       "id": "marketing.CAP.intelligence_card_generation",
       "title": "Multi-source intelligence card generation",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Nine distinct intelligence streams - research, architecture, builds, tools, quotes, techniques, MCP servers, video and market briefs - each produce their own card through one shared, cost-gated engine, so breadth does not mean nine bespoke pipelines.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- marketing.intelligence_card_prepublication_review does not exist; the only controls are completeness gates, cost gates, volume caps and post-hoc routing, all of which are either before generation or after students can see it\n- domain ownership is unconfirmed: this is student-facing curriculum-adjacent content assigned to marketing by a name match\n- manager has not validated editorial standards, and nobody has validated attributing LLM-expanded words to real people\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nNine distinct intelligence streams - research, architecture, builds, tools, quotes, techniques, MCP servers, video and market briefs - each produce their own card through one shared, cost-gated engine, so breadth does not mean nine bespoke pipelines.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- marketing.intelligence_card_prepublication_review does not exist; the only controls are completeness gates, cost gates, volume caps and post-hoc routing, all of which are either before generation or after students can see it\n- domain ownership is unconfirmed: this is student-facing curriculum-adjacent content assigned to marketing by a name match\n- manager has not validated editorial standards, and nobody has validated attributing LLM-expanded words to real people\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every card resolves to an intel_items row; unreviewable attribution claims are named as such."
       ],
@@ -553,9 +532,9 @@
     {
       "id": "marketing.CAP.intelligence_card_prepublication_review",
       "title": "Pre-publication review for generated intelligence cards",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "No machine-written card reaches a real audience without a person having been able to read it first - especially one that puts words in the mouth of a named real person.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Domain ownership of this content is unconfirmed between Marketing, Curriculum and Product\n- adding review slows publication, which is a manager trade-off\n- manager has not set editorial standards or named a reviewer\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nNo machine-written card reaches a real audience without a person having been able to read it first - especially one that puts words in the mouth of a named real person.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Domain ownership of this content is unconfirmed between Marketing, Curriculum and Product\n- adding review slows publication, which is a manager trade-off\n- manager has not set editorial standards or named a reviewer\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "The quote and market-brief streams are named explicitly as attribution and figure risks."
       ],
@@ -568,9 +547,9 @@
     {
       "id": "marketing.CAP.landing_page_generation_and_publication",
       "title": "Landing page generation and publication",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A campaign gets a real, branded landing page from a content brief in minutes, previewable before it is public, so paid and organic traffic has somewhere credible to land.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- push_to_protected_main (a generated page must never be committed straight to a protected branch)\n- production_deploy (publishing a page must not carry a deploy)\n- every generated claim must be read against the author's brief before publish\n- manager has not validated the generator's copy latitude\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA campaign gets a real, branded landing page from a content brief in minutes, previewable before it is public, so paid and organic traffic has somewhere credible to land.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- push_to_protected_main (a generated page must never be committed straight to a protected branch)\n- production_deploy (publishing a page must not carry a deploy)\n- every generated claim must be read against the author's brief before publish\n- manager has not validated the generator's copy latitude\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every section in the brief appears; a count of generated sentences not present in the brief is reported, not hidden."
       ],
@@ -583,9 +562,9 @@
     {
       "id": "marketing.CAP.lifecycle_content_catalogue_projection",
       "title": "Lifecycle content catalogue projection",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The lifecycle decision engine can offer a learner a real, published piece of content by pointer - never a copy of it - so there is exactly one place the content lives and no second version to drift.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- An unbuilt approval flow means the registry's approval columns are NULL and must not be read as approved\n- domain ownership is unconfirmed between Marketing and Curriculum\n- manager has not validated which content should be offerable\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe lifecycle decision engine can offer a learner a real, published piece of content by pointer - never a copy of it - so there is exactly one place the content lives and no second version to drift.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- An unbuilt approval flow means the registry's approval columns are NULL and must not be read as approved\n- domain ownership is unconfirmed between Marketing and Curriculum\n- manager has not validated which content should be offerable\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every asset resolves to a published source card; approval columns are reported as unset, never as approved."
       ],
@@ -598,9 +577,9 @@
     {
       "id": "marketing.CAP.linkedin_comment_watch_and_reply_drafting",
       "title": "Tracked LinkedIn post comment watch",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Comments on the LinkedIn posts that matter get a drafted, on-brand reply ready for a person to paste, so the highest-value platform stays responsive without automating a channel that forbids it.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Scrape blocks are not distinguishable from genuinely quiet posts\n- manager has not validated which posts should be tracked\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nComments on the LinkedIn posts that matter get a drafted, on-brand reply ready for a person to paste, so the highest-value platform stays responsive without automating a channel that forbids it.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Scrape blocks are not distinguishable from genuinely quiet posts\n- manager has not validated which posts should be tracked\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every commenter cited exists in openclaw_responses; no scrape runs."
       ],
@@ -613,9 +592,9 @@
     {
       "id": "marketing.CAP.linkedin_relationship_action_suggestions",
       "title": "LinkedIn relationship action suggestions",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A person working LinkedIn by hand is told exactly which comment to leave, which connection to request and which follow-up to send today, so relationship building is deliberate rather than whatever the feed surfaces.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Currently unwired: no scheduler entry, no importer, so the capability does not run at all\n- live_email (a LinkedIn direct message is the same class of individual outbound)\n- manager has not validated connection-request or direct-message policy\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA person working LinkedIn by hand is told exactly which comment to leave, which connection to request and which follow-up to send today, so relationship building is deliberate rather than whatever the feed surfaces.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Currently unwired: no scheduler entry, no importer, so the capability does not run at all\n- live_email (a LinkedIn direct message is the same class of individual outbound)\n- manager has not validated connection-request or direct-message policy\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every suggestion type is produced for its fixture; caps are asserted per type."
       ],
@@ -628,9 +607,9 @@
     {
       "id": "marketing.CAP.manager_marketing_brief_subscription",
       "title": "Manager marketing brief subscription",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The accountable human receives the state of marketing on a cadence he chose, in his own timezone, covering only what the platform can actually measure.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (delivery is a real send)\n- no per-manager timezone field exists, which is a hard prerequisite\n- a dormant Slack channel must not be offered\n- manager has not chosen a scope or a cadence\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe accountable human receives the state of marketing on a cadence he chose, in his own timezone, covering only what the platform can actually measure.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (delivery is a real send)\n- no per-manager timezone field exists, which is a hard prerequisite\n- a dormant Slack channel must not be offered\n- manager has not chosen a scope or a cadence\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Unmeasurable sections are named; no delivery is attempted."
       ],
@@ -643,9 +622,9 @@
     {
       "id": "marketing.CAP.marketing_agent_management_and_oversight",
       "title": "Manager oversight of the marketing AI employee",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The accountable human can actually manage the marketing AI employee - set restrictions, agree goals, hold a one-to-one, approve what it learns, and receive reports - rather than only reading about it.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No marketing AI employee exists: agent_id is null for this domain\n- reports_to must point at this manager before he can reach the surface at all\n- no per-manager timezone field exists, so a scheduled report cannot be timezone-safe\n- manager has not validated any of his own oversight procedures\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe accountable human can actually manage the marketing AI employee - set restrictions, agree goals, hold a one-to-one, approve what it learns, and receive reports - rather than only reading about it.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No marketing AI employee exists: agent_id is null for this domain\n- reports_to must point at this manager before he can reach the surface at all\n- no per-manager timezone field exists, so a scheduled report cannot be timezone-safe\n- manager has not validated any of his own oversight procedures\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every statement resolves to a stored record; a goal with no backing metric reports unmeasured, never a number."
       ],
@@ -658,9 +637,9 @@
     {
       "id": "marketing.CAP.marketing_calendar_planning",
       "title": "Marketing calendar and scheduled-content planning",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Everybody can see what is going out, on which brand and network, in one month view in Central time - so the plan is a shared artefact rather than something in one person's head or a third-party tool.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No per-user or per-manager timezone field exists anywhere in the platform, so a non-Central operator cannot be scheduled for safely\n- manager has not validated the publishing cadence the calendar should express\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nEverybody can see what is going out, on which brand and network, in one month view in Central time - so the plan is a shared artefact rather than something in one person's head or a third-party tool.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No per-user or per-manager timezone field exists anywhere in the platform, so a non-Central operator cannot be scheduled for safely\n- manager has not validated the publishing cadence the calendar should express\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every item cited exists with that schedule; all times stated in Central and labelled as such."
       ],
@@ -673,9 +652,9 @@
     {
       "id": "marketing.CAP.marketing_department_strategy_planning",
       "title": "Marketing department strategy and initiative planning",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The department's own health turns into a small number of named strategic initiatives with tickets attached, so improvement work is proposed on evidence rather than appearing in a meeting.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Initiative.status has no write path, so nothing can close what this creates\n- manager has not validated what counts as a marketing strategic priority\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe department's own health turns into a small number of named strategic initiatives with tickets attached, so improvement work is proposed on evidence rather than appearing in a meeting.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Initiative.status has no write path, so nothing can close what this creates\n- manager has not validated what counts as a marketing strategic priority\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every signal cited resolves to real data; no initiative or ticket is created."
       ],
@@ -688,9 +667,9 @@
     {
       "id": "marketing.CAP.marketing_overview_and_attention_triage",
       "title": "Marketing overview and needs-attention triage",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The first screen a marketing operator opens answers two questions honestly - can we still publish, and did something not go out - and refuses to show a number it cannot stand behind.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated what belongs in the needs-attention queue or in what order\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe first screen a marketing operator opens answers two questions honestly - can we still publish, and did something not go out - and refuses to show a number it cannot stand behind.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated what belongs in the needs-attention queue or in what order\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Any metric the registry cannot compute is named as unavailable, never reported as zero."
       ],
@@ -703,9 +682,9 @@
     {
       "id": "marketing.CAP.marketing_surface_problem_reporting",
       "title": "In-surface problem reporting for marketing operators",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "When the marketing tooling does something wrong, the operator reports it from the screen they were on with the context already attached, instead of describing it from memory later.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (the report delivery path sends real mail and must stay a human-initiated action)\n- manager has not validated where reports should be routed\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nWhen the marketing tooling does something wrong, the operator reports it from the screen they were on with the context already attached, instead of describing it from memory later.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (the report delivery path sends real mail and must stay a human-initiated action)\n- manager has not validated where reports should be routed\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every pattern claim cites the reports behind it; no mail is sent in the trace."
       ],
@@ -718,9 +697,9 @@
     {
       "id": "marketing.CAP.metric_trust_escalation_decisions",
       "title": "Marketing metric trust escalation and resolution",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A number the platform cannot stand behind is escalated to a decision rather than quietly rendered, so marketing reporting stays something an executive can act on.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- The escalation is open and undecided\n- the decision spans Marketing, Finance and Executive surfaces, so it is not the marketing manager's alone\n- manager has not confirmed his share of the decision\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA number the platform cannot stand behind is escalated to a decision rather than quietly rendered, so marketing reporting stays something an executive can act on.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- The escalation is open and undecided\n- the decision spans Marketing, Finance and Executive surfaces, so it is not the marketing manager's alone\n- manager has not confirmed his share of the decision\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Each finding names the file, the constant or column at fault, and the rule it contradicts."
       ],
@@ -733,9 +712,9 @@
     {
       "id": "marketing.CAP.multi_touch_attribution",
       "title": "Multi-touch campaign attribution with honest coverage",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Credit for a lead is split across the touches that actually earned it, under a named model, with the identity coverage stated - so attribution describes the leads it can see rather than implying it saw them all.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Visitor-to-lead identity linking is partial, which caps how much of any campaign can be attributed\n- manager has not chosen the attribution model marketing should report on\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nCredit for a lead is split across the touches that actually earned it, under a named model, with the identity coverage stated - so attribution describes the leads it can see rather than implying it saw them all.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Visitor-to-lead identity linking is partial, which caps how much of any campaign can be attributed\n- manager has not chosen the attribution model marketing should report on\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Coverage is always stated; an uncovered lead is reported as uncovered, never as direct."
       ],
@@ -748,9 +727,9 @@
     {
       "id": "marketing.CAP.outreach_consent_and_channel_suppression",
       "title": "Per-channel consent and suppression honouring",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Someone who declined one channel is not silenced on every channel, and someone who opted out is never contacted again on the channel they closed - so consent is honoured precisely rather than crudely.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (nothing here may trigger or authorise a send)\n- this module is shared with Sales and Admissions, so scope ownership is not marketing's alone\n- manager has not validated marketing's share of this control\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nSomeone who declined one channel is not silenced on every channel, and someone who opted out is never contacted again on the channel they closed - so consent is honoured precisely rather than crudely.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (nothing here may trigger or authorise a send)\n- this module is shared with Sales and Admissions, so scope ownership is not marketing's alone\n- manager has not validated marketing's share of this control\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "The verdict cites the opt-out row and its channel; no suppression state is written."
       ],
@@ -763,9 +742,9 @@
     {
       "id": "marketing.CAP.outreach_conversion_attribution",
       "title": "Social-outreach conversion attribution",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "When a social conversation turns into a real opportunity, the chain from first signal to that outcome is recorded - so the question 'does outreach work' has an answer with rows behind it.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- marketing.revenue_and_cost_metric_truthing must land before any monetary claim is reportable\n- the public /i/:tag redirect is unauthenticated and spoofable\n- manager has not validated what counts as a conversion\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nWhen a social conversation turns into a real opportunity, the chain from first signal to that outcome is recorded - so the question 'does outreach work' has an answer with rows behind it.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- marketing.revenue_and_cost_metric_truthing must land before any monetary claim is reportable\n- the public /i/:tag redirect is unauthenticated and spoofable\n- manager has not validated what counts as a conversion\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every hop in the chain resolves to a stored row; no stage is advanced."
       ],
@@ -778,9 +757,9 @@
     {
       "id": "marketing.CAP.outreach_coverage_and_blind_spot_reporting",
       "title": "Outreach coverage and blind-spot reporting",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Marketing knows what it cannot see - which platforms have no verifier, which engagements only a human can enter, which leads cannot be attributed - so reach figures are read as samples rather than as totals.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated what coverage threshold makes a figure reportable\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nMarketing knows what it cannot see - which platforms have no verifier, which engagements only a human can enter, which leads cannot be attributed - so reach figures are read as samples rather than as totals.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated what coverage threshold makes a figure reportable\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Each surface has a written coverage definition and a named owner for its blind spot."
       ],
@@ -793,9 +772,9 @@
     {
       "id": "marketing.CAP.outreach_daily_human_action_queue",
       "title": "Daily human outreach action queue",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The person doing outreach opens one ordered list of what to do today, with the reason attached, instead of deciding from a dashboard of counters.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Priority weights are not manager-configurable\n- manager has not validated how the day should be ordered\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe person doing outreach opens one ordered list of what to do today, with the reason attached, instead of deciding from a dashboard of counters.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Priority weights are not manager-configurable\n- manager has not validated how the day should be ordered\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every item names the thread and the signal behind its priority; nothing is persisted."
       ],
@@ -808,9 +787,9 @@
     {
       "id": "marketing.CAP.outreach_human_approval_gap_closure",
       "title": "Closing the outreach human-approval bypasses",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Every public post made under the Colaberry name has a recorded human approval behind it, closing the two paths that currently publish without one.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Closing this reduces Skool posting volume until a human reviews, which is a manager trade-off\n- a Skool review surface must be built, not just a state changed\n- manager has not validated who reviews Skool content\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nEvery public post made under the Colaberry name has a recorded human approval behind it, closing the two paths that currently publish without one.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Closing this reduces Skool posting volume until a human reviews, which is a manager trade-off\n- a Skool review surface must be built, not just a state changed\n- manager has not validated who reviews Skool content\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Each test fails before the fix and passes after; removing the fix makes the named test die."
       ],
@@ -823,9 +802,9 @@
     {
       "id": "marketing.CAP.outreach_lead_capture_and_scoring",
       "title": "Social-signal lead capture and tiering",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A person who shows up in a public conversation becomes a scored, de-duplicated lead record the rest of the business can act on, instead of a name in a social thread nobody follows up.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (nothing in this capability may trigger a send; the placeholder address makes that a live hazard)\n- manager has not validated the scoring weights or the hot/warm/cold thresholds\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA person who shows up in a public conversation becomes a scored, de-duplicated lead record the rest of the business can act on, instead of a name in a social thread nobody follows up.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (nothing in this capability may trigger a send; the placeholder address makes that a live hazard)\n- manager has not validated the scoring weights or the hot/warm/cold thresholds\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every lead cited exists in leads with an opportunity score; nothing is written."
       ],
@@ -838,9 +817,9 @@
     {
       "id": "marketing.CAP.outreach_learning_loop",
       "title": "Outreach performance learning loop",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "What actually earned replies last month changes what gets written and where it gets looked for next month, so outreach improves from evidence instead of opinion.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No enforced approval marker on a learning before it steers scanning\n- manager has not validated a minimum sample size or confidence floor\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nWhat actually earned replies last month changes what gets written and where it gets looked for next month, so outreach improves from evidence instead of opinion.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No enforced approval marker on a learning before it steers scanning\n- manager has not validated a minimum sample size or confidence floor\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every claim reports its sample size; a thin sample is labelled as such, never rounded into a recommendation."
       ],
@@ -853,9 +832,9 @@
     {
       "id": "marketing.CAP.outreach_post_verification",
       "title": "Published-comment visibility verification",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A comment the system believes it posted is checked to be genuinely publicly visible, so shadow-banned or silently removed content is discovered rather than counted as reach.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Only two platforms have a verifier; the rest must report unknown rather than visible\n- manager has not validated what to do when a post is found missing\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA comment the system believes it posted is checked to be genuinely publicly visible, so shadow-banned or silently removed content is discovered rather than counted as reach.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Only two platforms have a verifier; the rest must report unknown rather than visible\n- manager has not validated what to do when a post is found missing\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Unverifiable platforms are reported as unknown, never as verified or as zero."
       ],
@@ -868,9 +847,9 @@
     {
       "id": "marketing.CAP.outreach_quality_gate",
       "title": "Deterministic pre-publication quality gate",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "No reply reaches a public platform without passing a repeatable, explainable check on length, banned language, link policy, duplication and sign-off, so brand risk is caught by a rule rather than by whoever happens to be reading.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- marketing.outreach_human_approval_gap_closure must close the Skool auto-approve path\n- manager has not validated the banned-phrase list or the pass threshold\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nNo reply reaches a public platform without passing a repeatable, explainable check on length, banned language, link policy, duplication and sign-off, so brand risk is caught by a rule rather than by whoever happens to be reading.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- marketing.outreach_human_approval_gap_closure must close the Skool auto-approve path\n- manager has not validated the banned-phrase list or the pass threshold\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "The named rule reproduces the stored score when re-run; no new verdict is written."
       ],
@@ -883,9 +862,9 @@
     {
       "id": "marketing.CAP.outreach_queue_supervision",
       "title": "Outreach work-queue supervision and recovery",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The outreach pipeline keeps moving without a person watching it: stuck work is released, failures are retried within limits, and a blocked platform stops being hammered.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated concurrency ceilings or stuck-task thresholds\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe outreach pipeline keeps moving without a person watching it: stuck work is released, failures are retried within limits, and a blocked platform stops being hammered.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- manager has not validated concurrency ceilings or stuck-task thresholds\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Figures reconcile to openclaw_tasks and skool_tasks; nothing is mutated."
       ],
@@ -898,9 +877,9 @@
     {
       "id": "marketing.CAP.outreach_rate_and_circuit_control",
       "title": "Outreach rate limiting and circuit breaking",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Colaberry never looks like a spammer on a platform, and a platform that starts rejecting us is backed away from automatically rather than hammered until the account is blocked.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Limits are per strategy and cannot currently be set per brand\n- manager has not validated the posting volume the limits permit\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nColaberry never looks like a spammer on a platform, and a platform that starts rejecting us is backed away from automatically rather than hammered until the account is blocked.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Limits are per strategy and cannot currently be set per brand\n- manager has not validated the posting volume the limits permit\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Counts reconcile to openclaw_responses.posted_at; no verdict is cached."
       ],
@@ -913,9 +892,9 @@
     {
       "id": "marketing.CAP.outreach_reply_drafting",
       "title": "Platform-native reply drafting",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Every queued conversation gets a reply that reads like a practitioner answering a question, obeys the platform's own rules about links and promotion, and is ready for a human to approve rather than rewrite.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- marketing.outreach_human_approval_gap_closure must land before this can be trusted to draft-only\n- manager has not validated brand voice or the sign-off policy\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nEvery queued conversation gets a reply that reads like a practitioner answering a question, obeys the platform's own rules about links and promotion, and is ready for a human to approve rather than rewrite.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- marketing.outreach_human_approval_gap_closure must land before this can be trusted to draft-only\n- manager has not validated brand voice or the sign-off policy\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every fixture produces a draft; the sign-off rule is asserted per platform strategy, both branches covered."
       ],
@@ -928,9 +907,9 @@
     {
       "id": "marketing.CAP.outreach_reply_publication",
       "title": "Approved reply publication to public platforms",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "An approved reply actually appears, verifiably, on the platform it was written for - with the posted URL and a screenshot recorded - so outreach effort converts into visible presence and an audit trail.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email is not required here, but public posting is the same class of irrevocable outbound and is treated the same way\n- marketing.outreach_human_approval_gap_closure\n- no manager-visible Skool surface exists to supervise the Skool half\n- manager has not authorised any platform for unattended posting\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nAn approved reply actually appears, verifiably, on the platform it was written for - with the posted URL and a screenshot recorded - so outreach effort converts into visible presence and an audit trail.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email is not required here, but public posting is the same class of irrevocable outbound and is treated the same way\n- marketing.outreach_human_approval_gap_closure\n- no manager-visible Skool surface exists to supervise the Skool half\n- manager has not authorised any platform for unattended posting\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every post traces to a named human action; no scheduled run publishes anything."
       ],
@@ -943,9 +922,9 @@
     {
       "id": "marketing.CAP.platform_app_review_and_representation",
       "title": "Network app review and public representation",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Colaberry can publish directly to the networks that matter, because someone with authority made the representations each network's review requires.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Submission is a human decision by explicit instruction and must never be automated\n- Meta's data-deletion URL requirement is unmet and blocks that submission\n- manager has not confirmed submission ownership between himself and the executive owner\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nColaberry can publish directly to the networks that matter, because someone with authority made the representations each network's review requires.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Submission is a human decision by explicit instruction and must never be automated\n- Meta's data-deletion URL requirement is unmet and blocks that submission\n- manager has not confirmed submission ownership between himself and the executive owner\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Each claim is marked verified or unverified with its file reference; an unmet requirement is reported as a blocker."
       ],
@@ -958,9 +937,9 @@
     {
       "id": "marketing.CAP.platform_change_surveillance",
       "title": "Outreach platform and tooling change watch",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A platform API change or a new anti-bot measure is noticed before it silently breaks outreach, so the pipeline degrades on purpose rather than by surprise.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No staleness detection: a dead source is indistinguishable from a quiet one\n- findings have no routing to a human today\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA platform API change or a new anti-bot measure is noticed before it silently breaks outreach, so the pipeline degrades on purpose rather than by surprise.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No staleness detection: a dead source is indistinguishable from a quiet one\n- findings have no routing to a human today\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Each answer cites a tech_update row and its date; no fetch is performed."
       ],
@@ -973,9 +952,9 @@
     {
       "id": "marketing.CAP.publishing_calendar_operations_ownership",
       "title": "Day-to-day publishing calendar ownership and tool retirement",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The person who actually runs the social calendars is the one who decides what goes out and when, and the move off the incumbent scheduler happens category by category with nothing lost.\n\n**Built today:** unknown. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No export has been produced, so discovery has not started\n- the calendar-to-brand mapping is an unmade decision recorded as Ali's\n- manager has not confirmed this is his responsibility in the AI-employee framing\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe person who actually runs the social calendars is the one who decides what goes out and when, and the move off the incumbent scheduler happens category by category with nothing lost.\n\n**Built today:** unknown. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- No export has been produced, so discovery has not started\n- the calendar-to-brand mapping is an unmade decision recorded as Ali's\n- manager has not confirmed this is his responsibility in the AI-employee framing\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every category states its destination or that it is deliberately not imported; nothing is reported as none that has not been looked at."
       ],
@@ -988,9 +967,9 @@
     {
       "id": "marketing.CAP.publishing_failure_and_handoff_recovery",
       "title": "Publishing failure and handoff reconciliation",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A post that did not go out is visible, explicable and recoverable - retried, cancelled or marked hand-published - so the calendar never quietly disagrees with reality.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- A retry can produce a live post, so it inherits the same human decision as publishing\n- manager has not validated who may retry or cancel\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nA post that did not go out is visible, explicable and recoverable - retried, cancelled or marked hand-published - so the calendar never quietly disagrees with reality.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- A retry can produce a live post, so it inherits the same human decision as publishing\n- manager has not validated who may retry or cancel\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Explanation cites the delivery events and the dead-letter reason; no job state changes."
       ],
@@ -1003,9 +982,9 @@
     {
       "id": "marketing.CAP.recurring_marketing_performance_reporting",
       "title": "Recurring marketing performance reporting (DA responsibility in transition)",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "The recurring marketing report a data analyst assembles by hand - campaign ROI, open and reply rates, cost per lead, funnel velocity - is produced on a cadence from registered metrics, with every untrustworthy figure named rather than filled in.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (report delivery sends real mail)\n- no per-manager timezone field exists, so scheduled delivery is timezone-unsafe\n- marketing.revenue_and_cost_metric_truthing must land before any money figure may appear\n- manager has not defined the report's scope, cadence or recipients\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nThe recurring marketing report a data analyst assembles by hand - campaign ROI, open and reply rates, cost per lead, funnel velocity - is produced on a cadence from registered metrics, with every untrustworthy figure named rather than filled in.\n\n**Built today:** absent. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- live_email (report delivery sends real mail)\n- no per-manager timezone field exists, so scheduled delivery is timezone-unsafe\n- marketing.revenue_and_cost_metric_truthing must land before any money figure may appear\n- manager has not defined the report's scope, cadence or recipients\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every figure cites its registry key and trust status; uncomputable figures are named, never zeroed."
       ],
@@ -1018,9 +997,9 @@
     {
       "id": "marketing.CAP.revenue_and_cost_metric_truthing",
       "title": "Revenue and cost-per-lead truthing",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Marketing stops reporting money it cannot evidence: revenue means collected, app-originated payment, and a cost metric that divides a column nothing writes is removed rather than rendered.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- The governing escalation is open and undecided\n- three of the five affected services are owned outside this domain\n- manager cannot settle a company-wide revenue definition alone\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nMarketing stops reporting money it cannot evidence: revenue means collected, app-originated payment, and a cost metric that divides a column nothing writes is removed rather than rendered.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- The governing escalation is open and undecided\n- three of the five affected services are owned outside this domain\n- manager cannot settle a company-wide revenue definition alone\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every finding names the file and the constant or column; nothing is reported as fixed that is not."
       ],
@@ -1033,9 +1012,9 @@
     {
       "id": "marketing.CAP.signal_triage_and_prioritisation",
       "title": "Outreach signal triage",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Only conversations worth joining reach the drafting stage, so human review time is spent on genuine opportunities and the brand does not reply to noise.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Thresholds are not manager-configurable; a policy change needs a code change\n- manager has not validated the risk appetite the thresholds encode\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nOnly conversations worth joining reach the drafting stage, so human review time is spent on genuine opportunities and the brand does not reply to noise.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Thresholds are not manager-configurable; a policy change needs a code change\n- manager has not validated the risk appetite the thresholds encode\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Explanation reproduces the stored verdict exactly; no re-scoring occurs during the answer."
       ],
@@ -1048,9 +1027,9 @@
     {
       "id": "marketing.CAP.social_signal_discovery",
       "title": "Public-platform buying-signal discovery",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "A continuously refreshed, de-duplicated pool of public posts and threads where an enterprise AI-leadership buyer is visibly asking the question Colaberry answers, so outreach starts from a real conversation instead of a cold list.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- unbounded_network (platform scanning must stay on an explicit provider allow-list, never arbitrary fetch)\n- manager has not validated the keyword or platform set\n\nFull build prompt is attached to this story.",
+      "narrative": "**IN FLIGHT.** This capability is the one this domain is building right now. The work itself is its four ladder stories -- do it by hand, do it in the app, request the tool, then let the agent do it watched -- and they run in that order. This row is the capability they belong to, not a fifth piece of work.\n\nA continuously refreshed, de-duplicated pool of public posts and threads where an enterprise AI-leadership buyer is visibly asking the question Colaberry answers, so outreach starts from a real conversation instead of a cold list.\n\n**Built today:** implemented. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- unbounded_network (platform scanning must stay on an explicit provider allow-list, never arbitrary fetch)\n- manager has not validated the keyword or platform set\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every answer cites a stored openclaw_signals row id; zero outbound network calls in the trace."
       ],
@@ -1061,11 +1040,77 @@
       "due_baseline_on": "2026-09-20"
     },
     {
+      "id": "marketing.CAP.social_signal_discovery.L1-BY-HAND",
+      "title": "Public-platform buying-signal discovery · 1 · do it by hand",
+      "release": "autonomy:R0",
+      "fulfills": [],
+      "narrative": "**Understand the work by doing it yourself, before anything automates it.**\n\nDo this capability yourself, by hand, once, end to end. Not a simulation and not a description -- the real task, with the real inputs, producing the real outcome.\n\n**The outcome you are producing**\nA continuously refreshed, de-duplicated pool of public posts and threads where an enterprise AI-leadership buyer is visibly asking the question Colaberry answers, so outreach starts from a real conversation instead of a cold list.\n\n**The workflow as it was recorded during research.** Treat this as a claim to be tested, not as instructions. Where it is wrong or incomplete, that difference is the single most valuable thing this story produces.\n- Read the optimized scan config (keyword priority x platform priority) from accumulated learnings\n- Issue read-only queries against each enabled platform's public API\n- Normalise author, URL, body excerpt and platform into a signal row\n- De-duplicate against existing signals before insert\n- Leave every new row at 'discovered' for the triage capability to score\n\n**What goes in**\n- Target keyword set with learned weights\n- Per-platform scan-frequency multipliers\n- Public platform search/listing APIs (reddit, hackernews, devto, hashnode, discourse, twitter, bluesky, youtube, producthunt, facebook_groups, linkedin_comments)\n\n**What comes out**\n- openclaw_signals rows at status 'discovered'\n- Per-platform scan telemetry\n- Keyword-priority deltas fed back from openclaw_learning\n\n**Exceptions the research expects you to hit**\n- A platform API returns 429 or 5xx: that platform is skipped for the tick, not retried unbounded\n- A signal with no resolvable author identity is still stored but cannot be lead-captured\n- Keyword weights are learned, so a cold start scans at flat weights\n\n**Write a run log.** It is the deliverable of this story and every later step cites it. Record the date, how long it actually took, each step you really performed, every judgment call you made and what you based it on, and at least one thing that was harder, slower or more ambiguous than the workflow above implies.\n\nWhile you work, keep asking which parts are mechanical and which need judgment. That split is what the tool request in step 3 will be argued from.\n\nThe four steps of this capability run in order. A later step opened before its predecessor is complete is the thing this ladder exists to prevent -- say so and go back rather than working ahead.",
+      "acceptance": [
+        "The capability was performed end to end by hand, producing its real outcome on real inputs.",
+        "A run log exists recording the date, the elapsed time, each step actually performed, every judgment call made, and at least one way the recorded workflow differed from what the work was really like."
+      ],
+      "owner_agent": "",
+      "failure_paths": [],
+      "task_guidance": "# Public-platform buying-signal discovery\n**Domain:** Marketing Intelligence & Brand · **Capability:** `marketing.social_signal_discovery`\n**Accountable human:** Sohail Syed · **Validation state:** draft\n**Built today:** implemented · **Source:** inherited\n## The business outcome\nA continuously refreshed, de-duplicated pool of public posts and threads where an enterprise AI-leadership buyer is visibly asking the question Colaberry answers, so outreach starts from a real conversation instead of a cold list.\nIntended users: Marketing manager, Marketing AI employee, Admissions (downstream lead consumer).\n## The human-operable process, as it works now\nThis must be operable by a person before an agent touches it. If a human cannot do it by hand\nagainst the surfaces below, the agent version has nothing to stand on.\n**Workflow**\n- Read the optimized scan config (keyword priority x platform priority) from accumulated learnings\n- Issue read-only queries against each enabled platform's public API\n- Normalise author, URL, body excerpt and platform into a signal row\n- De-duplicate against existing signals before insert\n- Leave every new row at 'discovered' for the triage capability to score\n**Inputs**\n- Target keyword set with learned weights\n- Per-platform scan-frequency multipliers\n- Public platform search/listing APIs (reddit, hackernews, devto, hashnode, discourse, twitter, bluesky, youtube, producthunt, facebook_groups, linkedin_comments)\n**Outputs**\n- openclaw_signals rows at status 'discovered'\n- Per-platform scan telemetry\n- Keyword-priority deltas fed back from openclaw_learning\n**Exceptions that must be handled**\n- A platform API returns 429 or 5xx: that platform is skipped for the tick, not retried unbounded\n- A signal with no resolvable author identity is still stored but cannot be lead-captured\n- Keyword weights are learned, so a cold start scans at flat weights\n## The tool interface\n**Tools this capability requires** (none is one of the eight default-denied capabilities;\nanything that would need one is listed under blockers instead)\n- platform_public_api_read_allowlisted\n- read_marketing_database\n- sandbox_database_write\n- agent_activity_log_write\n**Application surfaces**\n- /admin/intelligence (Outreach tab)\n- /admin/marketing/performance (Outreach tab)\n- GET /api/admin/openclaw/signals\n- GET /api/admin/openclaw/signals/:id\n- POST /api/admin/openclaw/scan\n- POST /api/admin/openclaw/signals/submit\n**Source modules**\n- backend/src/services/agents/openclaw/openclawMarketSignalAgent.ts\n- backend/src/services/agents/openclaw/openclawSignalScaler.ts\n**Dependencies**\n- Public platform API availability\n- openclawRateLimiter for per-platform ceilings\n- openclawCircuitBreaker for repeated-failure suppression\n## The agent behaviour that uses it\nStarting autonomy **autonomy:R0**; ceiling **autonomy:R7**.\nWhy that ceiling: Discovery only reads public data and writes an internal signal table; no content leaves the system, so a scoped automation class is reachable. R8/R9 withheld because the scan hands work to a publication chain that is itself human-gated, and ownership of keyword policy has never been reviewed by the manager.\n\nNot a human-reserved decision, but promotion is still evidence-based and one step at a time.\n**First release behaviour (autonomy:R2)**\nAnswers 'where are buyers talking about this' from already-stored signals without scanning.\n\nAcceptance: Every answer cites a stored openclaw_signals row id; zero outbound network calls in the trace.\n## Before you start\n- unbounded_network (platform scanning must stay on an explicit provider allow-list, never arbitrary fetch)\n- manager has not validated the keyword or platform set\n## Evidence this is done\nCite the real thing: a named passing test, a measured figure with its query, or a file:line.\n**None of these count:** this story being marked complete, elapsed time, a conversation that\nwent well, or a mocked test passing. Sohail Syed evaluates the evidence, and\nnothing here is validated yet.\n## Evidence this capability rests on\n- backend/src/services/agents/openclaw/openclawMarketSignalAgent.ts:19\n- backend/src/services/agents/openclaw/openclawSignalScaler.ts:32\n- backend/src/services/agents/openclaw/openclawSignalScaler.ts:126\n- backend/src/services/aiOpsScheduler.ts:244\n- backend/src/services/agentRegistrySeed.ts:1397\n- table: openclaw_signals\n- table: openclaw_learning",
+      "due_on": "2026-09-20",
+      "due_baseline_on": "2026-09-20"
+    },
+    {
+      "id": "marketing.CAP.social_signal_discovery.L2-IN-THE-APP",
+      "title": "Public-platform buying-signal discovery · 2 · do it in the app",
+      "release": "autonomy:R0",
+      "fulfills": [],
+      "narrative": "**Prove the product can already do it, with no agent involved.**\n\nProduce the same outcome a second time, using only the product. No agent, no script, and no direct database edit. If you cannot finish it this way, that is not a failure of this story -- it is the finding, and it is what this story is for.\n\n**The pages this capability was recorded against**\n- /admin/intelligence (Outreach tab)\n- /admin/marketing/performance (Outreach tab)\n\n**APIs behind those pages**, for reading when a page behaves in a way you did not expect:\n- GET /api/admin/openclaw/signals\n- GET /api/admin/openclaw/signals/:id\n- POST /api/admin/openclaw/scan\n- POST /api/admin/openclaw/signals/submit\n\n**Compare against your run log from step 1.** Same inputs, same outcome? Where the product made you do something the manual route did not, or could not do something the manual route could, write it down as a named gap: what you were trying to do, which page, and what happened instead.\n\n**A gap found here is a result, not a blocker.** Record it, and say plainly whether the capability can be completed in the product today. An agent cannot be given a tool for something the product itself cannot do, so an honest \"not yet\" here saves the whole capability from being automated on top of a hole.\n\nThe four steps of this capability run in order. A later step opened before its predecessor is complete is the thing this ladder exists to prevent -- say so and go back rather than working ahead.",
+      "acceptance": [
+        "The same outcome was produced a second time using only the product, with no agent, no script and no direct database edit -- or the exact step that made this impossible is written down as a named gap.",
+        "The app route was compared against the step 1 run log, and every difference between them is recorded."
+      ],
+      "owner_agent": "",
+      "failure_paths": [],
+      "task_guidance": "# Public-platform buying-signal discovery\n**Domain:** Marketing Intelligence & Brand · **Capability:** `marketing.social_signal_discovery`\n**Accountable human:** Sohail Syed · **Validation state:** draft\n**Built today:** implemented · **Source:** inherited\n## The business outcome\nA continuously refreshed, de-duplicated pool of public posts and threads where an enterprise AI-leadership buyer is visibly asking the question Colaberry answers, so outreach starts from a real conversation instead of a cold list.\nIntended users: Marketing manager, Marketing AI employee, Admissions (downstream lead consumer).\n## The human-operable process, as it works now\nThis must be operable by a person before an agent touches it. If a human cannot do it by hand\nagainst the surfaces below, the agent version has nothing to stand on.\n**Workflow**\n- Read the optimized scan config (keyword priority x platform priority) from accumulated learnings\n- Issue read-only queries against each enabled platform's public API\n- Normalise author, URL, body excerpt and platform into a signal row\n- De-duplicate against existing signals before insert\n- Leave every new row at 'discovered' for the triage capability to score\n**Inputs**\n- Target keyword set with learned weights\n- Per-platform scan-frequency multipliers\n- Public platform search/listing APIs (reddit, hackernews, devto, hashnode, discourse, twitter, bluesky, youtube, producthunt, facebook_groups, linkedin_comments)\n**Outputs**\n- openclaw_signals rows at status 'discovered'\n- Per-platform scan telemetry\n- Keyword-priority deltas fed back from openclaw_learning\n**Exceptions that must be handled**\n- A platform API returns 429 or 5xx: that platform is skipped for the tick, not retried unbounded\n- A signal with no resolvable author identity is still stored but cannot be lead-captured\n- Keyword weights are learned, so a cold start scans at flat weights\n## The tool interface\n**Tools this capability requires** (none is one of the eight default-denied capabilities;\nanything that would need one is listed under blockers instead)\n- platform_public_api_read_allowlisted\n- read_marketing_database\n- sandbox_database_write\n- agent_activity_log_write\n**Application surfaces**\n- /admin/intelligence (Outreach tab)\n- /admin/marketing/performance (Outreach tab)\n- GET /api/admin/openclaw/signals\n- GET /api/admin/openclaw/signals/:id\n- POST /api/admin/openclaw/scan\n- POST /api/admin/openclaw/signals/submit\n**Source modules**\n- backend/src/services/agents/openclaw/openclawMarketSignalAgent.ts\n- backend/src/services/agents/openclaw/openclawSignalScaler.ts\n**Dependencies**\n- Public platform API availability\n- openclawRateLimiter for per-platform ceilings\n- openclawCircuitBreaker for repeated-failure suppression\n## The agent behaviour that uses it\nStarting autonomy **autonomy:R0**; ceiling **autonomy:R7**.\nWhy that ceiling: Discovery only reads public data and writes an internal signal table; no content leaves the system, so a scoped automation class is reachable. R8/R9 withheld because the scan hands work to a publication chain that is itself human-gated, and ownership of keyword policy has never been reviewed by the manager.\n\nNot a human-reserved decision, but promotion is still evidence-based and one step at a time.\n**First release behaviour (autonomy:R2)**\nAnswers 'where are buyers talking about this' from already-stored signals without scanning.\n\nAcceptance: Every answer cites a stored openclaw_signals row id; zero outbound network calls in the trace.\n## Before you start\n- unbounded_network (platform scanning must stay on an explicit provider allow-list, never arbitrary fetch)\n- manager has not validated the keyword or platform set\n## Evidence this is done\nCite the real thing: a named passing test, a measured figure with its query, or a file:line.\n**None of these count:** this story being marked complete, elapsed time, a conversation that\nwent well, or a mocked test passing. Sohail Syed evaluates the evidence, and\nnothing here is validated yet.\n## Evidence this capability rests on\n- backend/src/services/agents/openclaw/openclawMarketSignalAgent.ts:19\n- backend/src/services/agents/openclaw/openclawSignalScaler.ts:32\n- backend/src/services/agents/openclaw/openclawSignalScaler.ts:126\n- backend/src/services/aiOpsScheduler.ts:244\n- backend/src/services/agentRegistrySeed.ts:1397\n- table: openclaw_signals\n- table: openclaw_learning",
+      "due_on": "2026-09-20",
+      "due_baseline_on": "2026-09-20"
+    },
+    {
+      "id": "marketing.CAP.social_signal_discovery.L3-TOOL-REQUEST",
+      "title": "Public-platform buying-signal discovery · 3 · request the tool",
+      "release": "autonomy:R0",
+      "fulfills": [],
+      "narrative": "**Ask for the tool, and let a human decide whether the agent may have it.**\n\nFile a tool request for this capability, and let it be decided. This is a real governance gate with a real human on the other side of it, not paperwork.\n\n**How to file it.** Open the Change Requests page in the admin and file one against `marketing`, the domain you own. It posts to `POST /api/admin/agent-domain-change-requests-mine`. Sohail Syed or an admin decides it at `POST /api/admin/agent-domain-change-requests/:id/decide`. You cannot decide your own.\n\n**The tools this capability was recorded as needing**\n- platform_public_api_read_allowlisted\n- read_marketing_database\n- sandbox_database_write\n- agent_activity_log_write\n\n**What the request has to say**, and all of it comes from work you have already done:\n- The exact thing the tool would do, in one sentence.\n- Why it is needed, citing your step 1 run log -- what was slow, repetitive or error-prone.\n- What you proved in step 2: that the product can already produce this outcome by hand, or exactly which gap stops it.\n- The scope: what the tool may touch and what it must never touch.\n- Who approves a run, and what happens when the tool is wrong.\n\nSay explicitly which parts of the work the tool takes and which stay with a person.\n\n**A declined request is a completed story.** The decision is the outcome, not the approval. Record what was decided and why, and if it was declined, what would have to change.\n\nThe four steps of this capability run in order. A later step opened before its predecessor is complete is the thing this ladder exists to prevent -- say so and go back rather than working ahead.",
+      "acceptance": [
+        "A change request for a tool exists against this domain, filed by the builder, naming the tool, its scope, what it must never touch, and who approves a run.",
+        "The request cites the step 1 run log and the step 2 result as its evidence.",
+        "A named human other than the builder has recorded a decision on it. A decline counts; an undecided request does not."
+      ],
+      "owner_agent": "",
+      "failure_paths": [],
+      "task_guidance": "# Public-platform buying-signal discovery\n**Domain:** Marketing Intelligence & Brand · **Capability:** `marketing.social_signal_discovery`\n**Accountable human:** Sohail Syed · **Validation state:** draft\n**Built today:** implemented · **Source:** inherited\n## The business outcome\nA continuously refreshed, de-duplicated pool of public posts and threads where an enterprise AI-leadership buyer is visibly asking the question Colaberry answers, so outreach starts from a real conversation instead of a cold list.\nIntended users: Marketing manager, Marketing AI employee, Admissions (downstream lead consumer).\n## The human-operable process, as it works now\nThis must be operable by a person before an agent touches it. If a human cannot do it by hand\nagainst the surfaces below, the agent version has nothing to stand on.\n**Workflow**\n- Read the optimized scan config (keyword priority x platform priority) from accumulated learnings\n- Issue read-only queries against each enabled platform's public API\n- Normalise author, URL, body excerpt and platform into a signal row\n- De-duplicate against existing signals before insert\n- Leave every new row at 'discovered' for the triage capability to score\n**Inputs**\n- Target keyword set with learned weights\n- Per-platform scan-frequency multipliers\n- Public platform search/listing APIs (reddit, hackernews, devto, hashnode, discourse, twitter, bluesky, youtube, producthunt, facebook_groups, linkedin_comments)\n**Outputs**\n- openclaw_signals rows at status 'discovered'\n- Per-platform scan telemetry\n- Keyword-priority deltas fed back from openclaw_learning\n**Exceptions that must be handled**\n- A platform API returns 429 or 5xx: that platform is skipped for the tick, not retried unbounded\n- A signal with no resolvable author identity is still stored but cannot be lead-captured\n- Keyword weights are learned, so a cold start scans at flat weights\n## The tool interface\n**Tools this capability requires** (none is one of the eight default-denied capabilities;\nanything that would need one is listed under blockers instead)\n- platform_public_api_read_allowlisted\n- read_marketing_database\n- sandbox_database_write\n- agent_activity_log_write\n**Application surfaces**\n- /admin/intelligence (Outreach tab)\n- /admin/marketing/performance (Outreach tab)\n- GET /api/admin/openclaw/signals\n- GET /api/admin/openclaw/signals/:id\n- POST /api/admin/openclaw/scan\n- POST /api/admin/openclaw/signals/submit\n**Source modules**\n- backend/src/services/agents/openclaw/openclawMarketSignalAgent.ts\n- backend/src/services/agents/openclaw/openclawSignalScaler.ts\n**Dependencies**\n- Public platform API availability\n- openclawRateLimiter for per-platform ceilings\n- openclawCircuitBreaker for repeated-failure suppression\n## The agent behaviour that uses it\nStarting autonomy **autonomy:R0**; ceiling **autonomy:R7**.\nWhy that ceiling: Discovery only reads public data and writes an internal signal table; no content leaves the system, so a scoped automation class is reachable. R8/R9 withheld because the scan hands work to a publication chain that is itself human-gated, and ownership of keyword policy has never been reviewed by the manager.\n\nNot a human-reserved decision, but promotion is still evidence-based and one step at a time.\n**First release behaviour (autonomy:R2)**\nAnswers 'where are buyers talking about this' from already-stored signals without scanning.\n\nAcceptance: Every answer cites a stored openclaw_signals row id; zero outbound network calls in the trace.\n## Before you start\n- unbounded_network (platform scanning must stay on an explicit provider allow-list, never arbitrary fetch)\n- manager has not validated the keyword or platform set\n## Evidence this is done\nCite the real thing: a named passing test, a measured figure with its query, or a file:line.\n**None of these count:** this story being marked complete, elapsed time, a conversation that\nwent well, or a mocked test passing. Sohail Syed evaluates the evidence, and\nnothing here is validated yet.\n## Evidence this capability rests on\n- backend/src/services/agents/openclaw/openclawMarketSignalAgent.ts:19\n- backend/src/services/agents/openclaw/openclawSignalScaler.ts:32\n- backend/src/services/agents/openclaw/openclawSignalScaler.ts:126\n- backend/src/services/aiOpsScheduler.ts:244\n- backend/src/services/agentRegistrySeed.ts:1397\n- table: openclaw_signals\n- table: openclaw_learning",
+      "due_on": "2026-09-20",
+      "due_baseline_on": "2026-09-20"
+    },
+    {
+      "id": "marketing.CAP.social_signal_discovery.L4-AGENT-WATCHED",
+      "title": "Public-platform buying-signal discovery · 4 · agent does it, watched",
+      "release": "autonomy:R0",
+      "fulfills": [],
+      "narrative": "**Let the agent do it at its starting rung, with a human approving every run.**\n\nOnly start this once step 3 has a recorded decision and the tool exists. The agent now does the capability at **R0**, its own starting rung, with a named human approving every single run before it takes effect.\n\n**The behaviour to reach**\nAnswers 'where are buyers talking about this' from already-stored signals without scanning.\n\n**How it is judged**\nEvery answer cites a stored openclaw_signals row id; zero outbound network calls in the trace.\n\n**Measure it against your run log, not against a feeling.** Same inputs, same outcome, and the exceptions from step 1 handled the way you handled them. A run that differs is evidence, and it belongs in the record whether or not it is convenient.\n\n**This capability's ceiling is autonomy:R7.** Discovery only reads public data and writes an internal signal table; no content leaves the system, so a scoped automation class is reachable. R8/R9 withheld because the scan hands work to a publication chain that is itself human-gated, and ownership of keyword policy has never been reviewed by the manager.\n\nHigher rungs are not part of this story and are not tasks. A rung is earned by a named human on evidence, after this one is working and has a record behind it.\n\n**When this passes, the capability is done and the next one starts.** One at a time is the point: pick the next capability with your manager and open its step 1.",
+      "acceptance": [
+        "Every answer cites a stored openclaw_signals row id; zero outbound network calls in the trace.",
+        "The agent produced the same outcome as the step 1 run log, on the same inputs, including the exceptions recorded there.",
+        "Every run in the evidence window was approved by a named human before it took effect, and the record shows who."
+      ],
+      "owner_agent": "",
+      "failure_paths": [],
+      "task_guidance": "# Public-platform buying-signal discovery · R2\n**Domain:** Marketing Intelligence & Brand · **Capability:** `marketing.social_signal_discovery`\n**Accountable human:** Sohail Syed · **Validation state:** draft\n**Built today:** implemented · **Source:** inherited\n## The business outcome\nA continuously refreshed, de-duplicated pool of public posts and threads where an enterprise AI-leadership buyer is visibly asking the question Colaberry answers, so outreach starts from a real conversation instead of a cold list.\nIntended users: Marketing manager, Marketing AI employee, Admissions (downstream lead consumer).\n## The human-operable process, as it works now\nThis must be operable by a person before an agent touches it. If a human cannot do it by hand\nagainst the surfaces below, the agent version has nothing to stand on.\n**Workflow**\n- Read the optimized scan config (keyword priority x platform priority) from accumulated learnings\n- Issue read-only queries against each enabled platform's public API\n- Normalise author, URL, body excerpt and platform into a signal row\n- De-duplicate against existing signals before insert\n- Leave every new row at 'discovered' for the triage capability to score\n**Inputs**\n- Target keyword set with learned weights\n- Per-platform scan-frequency multipliers\n- Public platform search/listing APIs (reddit, hackernews, devto, hashnode, discourse, twitter, bluesky, youtube, producthunt, facebook_groups, linkedin_comments)\n**Outputs**\n- openclaw_signals rows at status 'discovered'\n- Per-platform scan telemetry\n- Keyword-priority deltas fed back from openclaw_learning\n**Exceptions that must be handled**\n- A platform API returns 429 or 5xx: that platform is skipped for the tick, not retried unbounded\n- A signal with no resolvable author identity is still stored but cannot be lead-captured\n- Keyword weights are learned, so a cold start scans at flat weights\n## The tool interface\n**Tools this capability requires** (none is one of the eight default-denied capabilities;\nanything that would need one is listed under blockers instead)\n- platform_public_api_read_allowlisted\n- read_marketing_database\n- sandbox_database_write\n- agent_activity_log_write\n**Application surfaces**\n- /admin/intelligence (Outreach tab)\n- /admin/marketing/performance (Outreach tab)\n- GET /api/admin/openclaw/signals\n- GET /api/admin/openclaw/signals/:id\n- POST /api/admin/openclaw/scan\n- POST /api/admin/openclaw/signals/submit\n**Source modules**\n- backend/src/services/agents/openclaw/openclawMarketSignalAgent.ts\n- backend/src/services/agents/openclaw/openclawSignalScaler.ts\n**Dependencies**\n- Public platform API availability\n- openclawRateLimiter for per-platform ceilings\n- openclawCircuitBreaker for repeated-failure suppression\n## The agent behaviour that uses it\nStarting autonomy **autonomy:R0**; ceiling **autonomy:R7**.\nWhy that ceiling: Discovery only reads public data and writes an internal signal table; no content leaves the system, so a scoped automation class is reachable. R8/R9 withheld because the scan hands work to a publication chain that is itself human-gated, and ownership of keyword policy has never been reviewed by the manager.\n\nNot a human-reserved decision, but promotion is still evidence-based and one step at a time.\n**This story is one rung: autonomy:R2**\nAnswers 'where are buyers talking about this' from already-stored signals without scanning.\n\nAcceptance: Every answer cites a stored openclaw_signals row id; zero outbound network calls in the trace.\n\n**Satisfying this does not promote anything.** It makes autonomy:R2 *eligible*. A named human promotes the capability one step, on this evidence. Story completion, elapsed time, a conversation that went well and a passing mocked test are all recorded as non-promoting signals, so none of them moves the rung.\n## Before you start\n- unbounded_network (platform scanning must stay on an explicit provider allow-list, never arbitrary fetch)\n- manager has not validated the keyword or platform set\n## Evidence this is done\nCite the real thing: a named passing test, a measured figure with its query, or a file:line.\n**None of these count:** this story being marked complete, elapsed time, a conversation that\nwent well, or a mocked test passing. Sohail Syed evaluates the evidence, and\nnothing here is validated yet.\n## Evidence this capability rests on\n- backend/src/services/agents/openclaw/openclawMarketSignalAgent.ts:19\n- backend/src/services/agents/openclaw/openclawSignalScaler.ts:32\n- backend/src/services/agents/openclaw/openclawSignalScaler.ts:126\n- backend/src/services/aiOpsScheduler.ts:244\n- backend/src/services/agentRegistrySeed.ts:1397\n- table: openclaw_signals\n- table: openclaw_learning",
+      "due_on": "2026-09-20",
+      "due_baseline_on": "2026-09-20"
+    },
+    {
       "id": "marketing.CAP.tracked_link_and_utm_governance",
       "title": "Tracked link, UTM taxonomy and traffic registration",
-      "release": "r2",
+      "release": "autonomy:R0",
       "fulfills": [],
-      "narrative": "Every marketing link is minted under one taxonomy and registered to a campaign, and traffic arriving outside that scheme is flagged - so attribution has something to work with and untagged spend becomes visible.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Link health checking and QR support are not implemented in the tracked-link module\n- manager has not validated the UTM taxonomy or what to do about flagged traffic\n\nFull build prompt is attached to this story.",
+      "narrative": "**CANDIDATE -- not started, not assigned.** This is one line on this domain's list of everything its agent could eventually do. It becomes real work only when the builder picks it and their manager agrees, at which point it opens as four stories. Until then it is deliberately inert, and the honest status of it is \"not started\" rather than \"behind\".\n\nEvery marketing link is minted under one taxonomy and registered to a campaign, and traffic arriving outside that scheme is flagged - so attribution has something to work with and untagged spend becomes visible.\n\n**Built today:** partial. **Requirement validated:** draft -- Sohail Syed must confirm scope, exceptions and success measures\n\n**Blocked by**\n- Link health checking and QR support are not implemented in the tracked-link module\n- manager has not validated the UTM taxonomy or what to do about flagged traffic\n\nFull build prompt is attached to this story.",
       "acceptance": [
         "Every flagged source cites its traffic rows; no link is created."
       ],
@@ -1078,7 +1123,7 @@
     {
       "id": "marketing.LEGACY-MIGRATION-PLAN",
       "title": "Legacy migration plan",
-      "release": "r1",
+      "release": "autonomy:R0",
       "fulfills": [],
       "narrative": "Disposition of this domain's 40 inherited legacy agent record(s).\n\n- **migrated_to_capability**: 38\n- **retired**: 1\n- **superseded**: 1\n\n### Superseded (1) -- functionality carried forward\n- `MarketingReportingAgent` -> marketing.recurring_marketing_performance_reporting: The row is dead but the responsibility is not. Measured: a cron of '0 5 * * *' exists in registry data only (agentRegistrySeed.ts:1676, config department 'Marketing'), there is no entry for it anywhere in aiOpsScheduler.ts, and its source_file has zero external importers; the audit classifies it REPORTING_UNWIRED and the cron baseline fixture records it as confirmed_dead referenced only by the seed. So the campaign-ROI, open-and-reply-rate, cost-per-lead and funnel-velocity reporting it declared has never actually run. That is a data-analyst responsibility the domain still needs, which is why it is superseded by a proposed capability with a real delivery mechanism rather than retired into nothing. The superseding capability also inherits the two blockers the old row never faced: no object combines report scope, recipient, cadence, timezone and channel, and no per-manager timezone field exists anywhere in the platform.\n\n### Retired (1) -- and why each is safe to lose\n- `Content_Marketing_Agent`: Genuinely dead, not merely unwired: the declared source_file backend/src/services/agents/contentMarketingAgent.ts does not exist on disk and has no git history, and the audit classifies it NO_SOURCE_FILE / confirmed_dead (agentRegistryAuditClassification.ts:23, seeded at agentRegistrySeed.ts:1194). There is no verified functionality to migrate. Its declared scope - content ideas, outreach copy drafting, campaign optimisation from engagement data - is nonetheless already alive elsewhere and is not lost: ideas in marketing.content_idea_proposal_queue, copy in marketing.outreach_reply_drafting and marketing.content_composition_and_variant_generation, optimisation in marketing.campaign_funnel_performance_analysis. Retiring the row is therefore a records correction, not a capability reduction. Related precedent in the same folder: two fabricating marketing agents, audienceSegmentationAgent.ts and contentGenerationAgent.ts, were deleted after a DO_NOT_BUILD audit and are held dead by a ratchet test (departments/marketing/__tests__/deletedMarketingAgents.test.ts:1-40), which also records that a self-declared SERVES_CAPABILITY marker on an unimported module is a false claim of execution.\n\n**A `retire` marking is not self-justifying.** Across three domains in this programme, 28 of 39 rows marked `retire` turned out to hold live, reachable code. Each retirement above states why, and each needs the manager's confirmation.\n\n### Not covered by this plan\nThe 21 legacy records whose `proposed_owner_domain` is `unresolved` belong to no domain and are therefore not in any project's plan. Five of them are live production rows. They need an owner decision, and naming that here is the point.",
       "acceptance": [
@@ -1095,7 +1140,7 @@
     {
       "id": "marketing.RESEARCH-1-SYSTEM-CLASSES",
       "title": "Compare the five system classes, and place this domain among them",
-      "release": "r0",
+      "release": "autonomy:R0",
       "fulfills": [],
       "narrative": "Write a short, evidenced comparison of chatbots, fixed workflows, tool-using agents, agentic systems and multi-agent systems. Then say which one **Marketing Intelligence & Brand** actually needs, and why.\n\nGround it in this domain, not in the abstract: it has **64 candidate capabilities** and **40 inherited legacy records**. Of those capabilities, 28 are reserved to a human at every level. A comparison that does not change depending on that number has not been applied.\n\nState explicitly which class this domain does NOT need, and what would have to change for the next class up to be justified.",
       "acceptance": [
@@ -1112,7 +1157,7 @@
     {
       "id": "marketing.RESEARCH-2-AGENT-ANATOMY",
       "title": "Map the nine anatomy elements onto this domain's agent",
-      "release": "r0",
+      "release": "autonomy:R0",
       "fulfills": [],
       "narrative": "Map each of reasoning, memory, inputs, communication, tools, procedures, coordination, safeguards and verification onto **the AI employee this project will define (none exists yet)**.\n\nFor each element, answer with evidence or with \"unknown\": what exists today, what is missing, and what the first honest version looks like. Because no agent exists yet, every element is a design question and \"unknown\" is an acceptable answer.\n\nCoordination specifically: agent-to-agent handoff does NOT exist in this platform. Record what coordination would require rather than describing it as available.",
       "acceptance": [
@@ -1129,7 +1174,7 @@
     {
       "id": "marketing.RESEARCH-3-ROLE-AND-DA-TRANSITION",
       "title": "Document Sohail Syed's role, and which DA responsibilities transition",
-      "release": "r0",
+      "release": "autonomy:R0",
       "fulfills": [],
       "narrative": "Study the employee's role as it is actually performed. Write down the existing Data Analyst responsibilities in this domain and which of them are intended to transition to AI.\n\n**A warning from discovery:** no document in this repository enumerates DA duties for ANY domain. Three independent researchers confirmed this separately. So this story's honest output may be \"the source material does not exist, and here is what would have to be written\" -- which is a real deliverable. Do not infer a duty list from a job title.\n\nRecord each responsibility as: stays human / transitions to AI / splits, with the reason.",
       "acceptance": [
@@ -1146,7 +1191,7 @@
     {
       "id": "marketing.RESEARCH-4-MANAGER-INTERVIEW",
       "title": "Prepare a 30-minute interview with Sohail Syed and propose a weekly check-in",
-      "release": "r0",
+      "release": "autonomy:R0",
       "fulfills": [],
       "narrative": "Produce the interview agenda and the questions, as project work.\n\n**This story sends nothing.** No calendar invite, no scheduling link, no attendee list, no email. Arranging the meeting is a human action taken outside this project, and this story is complete when the agenda exists -- not when a meeting is booked. Any wording that implies a meeting is scheduled is wrong.\n\nCover: which capabilities they want first, which must stay human forever, what \"good\" looks like in measurable terms, and what they would want switched off immediately if it misbehaved.\n\nSohail Syed can reach the agent surface today, so the check-in can review real state.",
       "acceptance": [
@@ -1163,7 +1208,7 @@
     {
       "id": "marketing.RESEARCH-5-THREE-PROPOSED-TASKS",
       "title": "Capture three proposed agent tasks with boundaries and completion evidence",
-      "release": "r0",
+      "release": "autonomy:R0",
       "fulfills": [],
       "narrative": "Pick three candidate tasks for this domain and write each one up with: the tools and data it needs, its approval boundary, and what counts as evidence it completed correctly.\n\nChoose from this domain's own draft capabilities rather than inventing tasks -- there are 64 to choose from. For each, state the starting autonomy and the ceiling, and why the ceiling is where it is.\n\n**Completion evidence may not be any of these:** a story being marked done, time having passed, a conversation that went well, or a mocked test passing. This platform already has 106 approval rows whose only recorded decider is a 4.25-hour timer, which is the failure this requirement exists to prevent.",
       "acceptance": [
@@ -1176,26 +1221,43 @@
       "task_guidance": "# Capture three proposed agent tasks with boundaries and completion evidence\n**Domain:** Marketing Intelligence & Brand · **Release:** Discovery and validation · **Story:** `marketing.RESEARCH-5-THREE-PROPOSED-TASKS`\n**Accountable human:** Sohail Syed · **Deliverable:** `docs/discovery/05-three-proposed-tasks.md`\n\n## What this is\n\nThis is Claude Code work, and the product is a written document. There is no feature to ship\nand no agent to switch on. The document is the thing your manager reviews, so it is written\nto be read by them rather than by you.\n\n## The specification is the brief on this story, not this prompt\n\nRead the brief above this prompt on the story page. It names this domain's real figures, your\naccountable human, and the specific blockers discovery already found. **Those numbers are not\nrepeated here on purpose:** a second copy drifts from the first, and then nobody knows which\nis true. Work from the brief; this prompt tells you how to turn it into a document.\n\n## How to build it\n\n- **Choose from this domain's own draft capabilities rather than inventing tasks.** The brief says how many there are to choose from. An invented task cannot be validated against anything.\n- For each, state the starting autonomy and the ceiling on the `autonomy:R0` to `autonomy:R9` ladder, and WHY the ceiling is where it is. Read `backend/src/services/agentDomain/autonomyLadder.ts` for what each rung means.\n- Write the completion evidence before the task description. If you cannot say what would prove it worked, the task is not ready to propose.\n\n## What the document must contain\n\n- Three tasks, each with: the tools and data it needs, its approval boundary, and what counts as evidence it completed correctly.\n- Starting autonomy and ceiling for each, with the reason for the ceiling.\n- The named human who approves each one.\n- An explicit statement, per task, of what would make you switch it off.\n\nWrite it as Markdown with real headings. A wall of prose is not a deliverable, and neither is\na bulleted restatement of the brief.\n\n## The evidence rule this story exists to teach\n\n**Completion evidence may not be any of these:** a story marked done, time having passed, a\nconversation that went well, or a mocked test passing. This platform already carries 106\napproval rows whose only recorded decider is a 4.25-hour timer. That is the failure this\nrequirement exists to prevent, and proposing a task with timer-shaped evidence repeats it.\n\n## Evidence this is done\n\nCite the real thing. For this story that is the committed file `docs/discovery/05-three-proposed-tasks.md`, and inside it,\nevery claim carrying either a source or the word unknown.\n\n**None of these count:** this story being marked complete, elapsed time, a conversation that\nwent well, a document that restates the brief without answering it, or a confident sentence\nwith no source. Your accountable manager evaluates the evidence.\n\n**Unknown is a real answer and is worth more than a guess.** Several of these questions have\nno source material in this repository. Writing \"the source does not exist, and here is what\nwould have to be written\" is a complete answer, not a failure to find one.\n\n## Before you start\n\n- **The platform source is PUBLIC. You do not need access granted.** Wherever this brief\n  cites a file like `backend/src/services/agentRegistrySeed.ts`, it means the Colaberry\n  platform repository:\n  **https://github.com/ColaberryIntern/ColaberryEnterprise_AI_LeadershipAccelerator**\n  Clone it read-only beside your own project and point Claude Code at it. Sarbjit hit this\n  within hours of starting and was right to stop rather than invent an answer: a brief that\n  cites a path without naming its repository is the brief being wrong, not you.\n- **Nothing in this story authorizes an outbound message.** Do not send an invitation, an\n  email or a direct message, and do not record a meeting as booked. Arranging anything with a\n  person is a human action taken outside this project.\n- **Nothing here changes an agent.** Do not enable one, grant it a tool, or raise an autonomy\n  level. A capability stays `draft` until your manager has actually reviewed it.\n- Your repo may not be connected yet. The prompt works either way; the story cannot be\n  verified and no points are awarded until a repo is connected, because verification is a\n  read of your repo.",
       "due_on": "2026-09-20",
       "due_baseline_on": "2026-10-20"
+    },
+    {
+      "id": "marketing.STORY-000",
+      "title": "STORY-000 · Build your Command Center",
+      "release": "autonomy:R0",
+      "fulfills": [],
+      "narrative": "Build one page that shows what you are building and how far along it is, so you can see your\nown domain and demonstrate from it.\n\n**Your domain** is Marketing Intelligence & Brand (`marketing`). **Your employee** is the AI employee this project will define, which does not exist yet.\n**Your accountable human** is Sohail Syed.\n\n**The scope you are being handed:** 64 researched capabilities, of which\n28 are permanently human decisions that no autonomy level ever automates, and\n64 carry a recorded blocker. 40 legacy agent rows have a\ndisposition recorded against this domain. Capability research was recorded 2026-10-09.\n\n**The ladder you will walk it down:** ten rungs, `autonomy:R0` to `autonomy:R9`. Your\ncapabilities name 9 distinct rungs between them\n(autonomy:R0, autonomy:R1, autonomy:R2, autonomy:R3, autonomy:R4, autonomy:R5, autonomy:R6, autonomy:R7, autonomy:R9), and 177 per-rung behaviours with their own\nacceptance criteria are already written into the capability records. Those are not yours to\ninvent; they are yours to read, render and then satisfy one rung at a time.\n\n**Nothing here is validated yet.** Every capability is `draft` until your accountable human\nhas reviewed it. This page must show that state honestly rather than rendering a plan as a\nplan that somebody agreed to.",
+      "acceptance": [
+        "Given the Command Center, when it is opened, then all six panels render and each one names the endpoint it read.",
+        "Given a panel whose endpoint returned nothing, when it renders, then it says so in words and is visibly distinct from a panel that is still loading.",
+        "Given the autonomy ladder panel, when it renders, then all ten rungs are present with the owner's wording, and each capability's ceiling is marked against the rung it stops at.",
+        "Given the autonomy ladder panel, when a capability's authority is shown, then the page shows the effective authority `effectiveAuthority()` returns rather than the level the capability record asks for, and names the `no_tool_grants` rule with the number of capabilities it currently constrains, saying so in words when that number is zero.",
+        "Given the governance panel, when a tool request is shown, then nothing on the page states or implies that filing it granted anything.",
+        "Trust -- no panel shows a number, a grant, a rung or a result this domain has not actually produced."
+      ],
+      "owner_agent": "",
+      "failure_paths": [],
+      "task_guidance": "# STORY-000 · Build your Command Center -- Marketing Intelligence & Brand\n\nThis is Claude Code work, and the product is a page in this repository. It is the first thing\nyou build and the last thing you delete: every later story reports into it.\n\n## The specification is the brief on this story, not this prompt\n\nRead the brief above this prompt on the story page. It names your domain's real counts, your\naccountable human and your employee. **Those numbers are not repeated here on purpose:** a\nsecond copy drifts from the first, and then nobody knows which is true. Work from the brief.\n\n## The six panels, and the question each one answers\n\n**1. Your employee -- \"does it exist, and what is it allowed to do?\"**\n\nRead `GET /api/admin/agent-domains-mine`. Render the agent's `agent_name`, whether it is\n`enabled`, its `autonomy_level`, how many tools are granted to it, and when its autonomy was\nlast set and by whom. If the agent does not appear, say so in those words and do not draw an\nempty card that looks like a loading state. An agent with no identity rows renders as nothing,\nand a panel that cannot tell \"no agent\" from \"still fetching\" is the panel that wasted a day.\n\n**2. Your capability inventory -- \"what am I actually building?\"**\n\nRead `GET /api/admin/agent-domains/marketing` and\n`GET /api/admin/agent-domains/marketing/coverage`. One row per capability showing its\nname, `classification`, `implementation_state`, `requirement_validation_state`,\n`starting_autonomy`, `max_permitted_autonomy`, and a clear mark on the ones where\n`human_decision` is true. Sort by nothing clever: the order the records come in is the order\nresearch recorded them.\n\n**3. The autonomy ladder -- \"where is this going?\"**\n\nRender all ten rungs, in the owner's own words, with your employee's current rung marked and\neach capability's ceiling marked against the rung it stops at:\n\n| Rung | What it means |\n|---|---|\n| `autonomy:R0` | Define the workflow, requirements, risks and human decisions. |\n| `autonomy:R1` | Prepare isolated development, fixtures and baseline tests. |\n| `autonomy:R2` | Answer questions using approved knowledge and records. |\n| `autonomy:R3` | Perform approved, user-initiated sandbox tool operations. |\n| `autonomy:R4` | Execute and verify stateful, multi-step sandbox tasks. |\n| `autonomy:R5` | Evaluate in shadow mode against approved reference outcomes. |\n| `autonomy:R6` | Conduct a separately approved, supervised production pilot. |\n| `autonomy:R7` | Automate only explicitly authorized action classes within limits. |\n| `autonomy:R8` | Coordinate necessary, authorized handoffs with other agents. |\n| `autonomy:R9` | Demonstrate reliable operation, monitoring, recovery and ownership. |\n\nRungs above a capability's ceiling are drawn as unreachable for that capability rather than as\nfuture work. A ceiling is a decision somebody made with a reason, and the reason is on the\nrecord -- show it.\n\n**4. Per-rung behaviour -- \"what does the next rung require of me?\"**\n\nEach capability record carries `release_behaviour[]`: one entry per rung, each with a\n`behaviour` and its own `acceptance_criteria`. Render them under their rung. This is the panel\nthat turns the ladder from a diagram into a list of things to do, and none of it is invented\nby you -- it is already written down.\n\n**5. Your governance queue -- \"what am I waiting on a human for?\"**\n\nRead `GET /api/admin/agent-domain-change-requests-mine`. Show change requests and tool\nrequests separately, with status, who proposed, who decided and when. A tool request is how\nyou ask for a capability your agent needs; it grants nothing by itself, and this panel must\nnot imply that filing one did.\n\n**6. What is not available -- \"what would I be lying about?\"**\n\nA panel that names the gaps, because the gaps are the work. Specifically:\n\n- Coordinated handoff between two agents does not exist in this platform today, so the rung that asks for it -- `autonomy:R8` -- is unreachable by fact rather than by choice. Say so; do not draw it as merely incomplete.\n- A capability whose `requirement_validation_state` is `draft` has not been agreed by anyone.\n- A capability with an empty `release_behaviour[]` has no defined next rung, and defining it is the first piece of work on it.\n- Anything this page cannot source from a real endpoint is left blank and labelled, never filled with a plausible example.\n\n## The rules this page must not break\n\n**Tool grants are the throttle, and they are not yours.** `effectiveAuthority()` in\n`backend/src/services/agentDomain/autonomyLadder.ts` forces any capability above `autonomy:R2`\nback down to `autonomy:R2` when no tools are granted, with the reason `no_tool_grants`. Read\nthat function before you render any authority figure, and render what it returns rather than\nwhat the capability record asks for. The two differ on purpose.\n\n**Finishing work does not promote anything.** `NON_PROMOTING_SIGNALS` in\n`promotionCriteria.ts` names the four things that must never raise autonomy: a story marked\ncomplete, elapsed time, a conversation that went well, and a mocked test passing. This page\nmay show progress; it may never show progress as authority. A named human promotes an agent,\none rung at a time, on evidence.\n\n**Draft is not approved.** Render `draft` as draft everywhere. No panel may read as though a\nmanager has signed anything off.\n\n## Tools your capabilities say they will need\n\n- platform_public_api_read_allowlisted\n- read_marketing_database\n- sandbox_database_write\n- agent_activity_log_write\n- headless_browser_sandbox\n- credential_vault_read_scoped\n- risk_classification_read\n- llm_text_generation\n- content_item_draft_write\n- brand_governance_rules_read\n- sandbox_social_post_dry_run\n- screenshot_capture\n\nNone of these is granted today. Each one is a request you file and a human approves.\n\n## Evidence this story is done\n\nCite the real thing: a named passing test, a screenshot of the rendered page beside the\nendpoint response it was built from, or a file:line. **None of these count:** this story being\nmarked complete, elapsed time, a conversation that went well, or a mocked test passing.\nSohail Syed evaluates the evidence.",
+      "due_on": "2026-09-20",
+      "due_baseline_on": "2026-09-20"
     }
   ],
   "agents": [],
   "project": {
-    "name": "marketing",
+    "name": "Marketing Intelligence & Brand",
     "descriptor": "The marketing domain agent.",
     "repo_url": "https://github.com/sainisarbjit83-ai/Colaberry_Marketing_Agent",
-    "plan_version": 1,
-    "plan_sha256": "3551a58b38932557d08df0f2fcb0a76250d09e5bb9d845af796ad2e1d9206746"
+    "plan_version": 2,
+    "plan_sha256": "92f39b28bf538d4dada3ddfd127eaf5679ae1536ec0b86ae1d6eeceb6ba2f09d"
   },
   "schedule": {
     "build_start": "2026-09-20",
     "build_end": "2026-09-20",
     "demo_day": "2026-09-27",
     "build_weeks": 1,
-    "demo_release_key": "r0",
-    "roadmap_release_keys": [
-      "r1",
-      "r2"
-    ],
+    "demo_release_key": "autonomy:R0",
+    "roadmap_release_keys": [],
     "prep": [
       {
         "key": "PREP-1",
@@ -1237,8 +1299,8 @@
     "counts": {
       "requirements_total": 0,
       "requirements_by_kind": {},
-      "stories_total": 70,
-      "releases_total": 3,
+      "stories_total": 75,
+      "releases_total": 1,
       "agents_total": 0,
       "failure_paths_total": 0,
       "agents_by_autonomy": {}

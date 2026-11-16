@@ -737,11 +737,11 @@
     "known": true,
     "disclosure": "A criterion counts as passing when it is marked in `.colaberry/progress.json` in this repository. The verifier reads that file on every sync and records what it found. A story showing 0 of N is not a rejection: nothing has been claimed yet.",
     "summary": {
-      "stories": 248,
-      "checked": 71,
-      "verified": 6,
-      "awaiting_criteria": 65,
-      "outstanding_criteria": 70
+      "stories": 75,
+      "checked": 70,
+      "verified": 7,
+      "awaiting_criteria": 64,
+      "outstanding_criteria": 64
     },
     "stories": [
       {
@@ -762,30 +762,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.agent_write_authorization_enforcement.autonomy:R1",
-        "title": "Enforcing agent write authorization on marketing agents · R1",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.agent_write_authorization_enforcement.autonomy:R4",
-        "title": "Enforcing agent write authorization on marketing agents · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.ai_news_ingestion_and_card_publication",
         "title": "AI news ingestion and daily card publication",
         "status": "not_started",
@@ -800,42 +776,6 @@
         "outstanding": [
           "Every card cites its library item and source feed; no generation occurs."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.ai_news_ingestion_and_card_publication.autonomy:R2",
-        "title": "AI news ingestion and daily card publication · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.ai_news_ingestion_and_card_publication.autonomy:R4",
-        "title": "AI news ingestion and daily card publication · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.ai_news_ingestion_and_card_publication.autonomy:R5",
-        "title": "AI news ingestion and daily card publication · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -856,42 +796,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.authority_content_drafting.autonomy:R2",
-        "title": "Authority and thought-leadership content drafting · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.authority_content_drafting.autonomy:R3",
-        "title": "Authority and thought-leadership content drafting · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.authority_content_drafting.autonomy:R5",
-        "title": "Authority and thought-leadership content drafting · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.banned_copy_compliance_scanning",
         "title": "Banned-copy compliance scanning across source",
         "status": "not_started",
@@ -906,42 +810,6 @@
         "outstanding": [
           "Every occurrence is classified; none is reported without its role."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.banned_copy_compliance_scanning.autonomy:R2",
-        "title": "Banned-copy compliance scanning across source · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.banned_copy_compliance_scanning.autonomy:R4",
-        "title": "Banned-copy compliance scanning across source · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.banned_copy_compliance_scanning.autonomy:R9",
-        "title": "Banned-copy compliance scanning across source · R9",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -962,42 +830,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.brand_and_competitor_mention_monitoring.autonomy:R0",
-        "title": "Brand and competitor mention monitoring · R0",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_and_competitor_mention_monitoring.autonomy:R4",
-        "title": "Brand and competitor mention monitoring · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_and_competitor_mention_monitoring.autonomy:R6",
-        "title": "Brand and competitor mention monitoring · R6",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.brand_attribution_of_campaigns",
         "title": "Brand attribution integrity for campaigns",
         "status": "not_started",
@@ -1012,42 +844,6 @@
         "outstanding": [
           "Unresolved campaigns are listed individually; none is guessed into a brand."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_attribution_of_campaigns.autonomy:R2",
-        "title": "Brand attribution integrity for campaigns · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_attribution_of_campaigns.autonomy:R4",
-        "title": "Brand attribution integrity for campaigns · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_attribution_of_campaigns.autonomy:R7",
-        "title": "Brand attribution integrity for campaigns · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -1068,42 +864,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.brand_governance_enforcement.autonomy:R2",
-        "title": "Brand governance rule enforcement · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_governance_enforcement.autonomy:R4",
-        "title": "Brand governance rule enforcement · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_governance_enforcement.autonomy:R5",
-        "title": "Brand governance rule enforcement · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.brand_network_connection_administration",
         "title": "Brand network connection administration",
         "status": "not_started",
@@ -1118,30 +878,6 @@
         "outstanding": [
           "Requirements match the recorded runbook; no flow is initiated and no credential is read."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_network_connection_administration.autonomy:R2",
-        "title": "Brand network connection administration · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_network_connection_administration.autonomy:R3",
-        "title": "Brand network connection administration · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -1162,42 +898,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.brand_registry_and_readiness.autonomy:R2",
-        "title": "Brand registry and publish readiness · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_registry_and_readiness.autonomy:R4",
-        "title": "Brand registry and publish readiness · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_registry_and_readiness.autonomy:R7",
-        "title": "Brand registry and publish readiness · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.brand_social_publishing",
         "title": "Brand social publishing queue",
         "status": "not_started",
@@ -1212,42 +912,6 @@
         "outstanding": [
           "Every provider still in handoff is named as such; no job is claimed during the answer."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_social_publishing.autonomy:R2",
-        "title": "Brand social publishing queue · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_social_publishing.autonomy:R4",
-        "title": "Brand social publishing queue · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.brand_social_publishing.autonomy:R5",
-        "title": "Brand social publishing queue · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -1268,42 +932,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.browser_session_reliability.autonomy:R2",
-        "title": "Headless browser session health and self-healing · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.browser_session_reliability.autonomy:R4",
-        "title": "Headless browser session health and self-healing · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.browser_session_reliability.autonomy:R9",
-        "title": "Headless browser session health and self-healing · R9",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.campaign_and_channel_metric_reporting",
         "title": "Campaign and channel metric reporting under a trust registry",
         "status": "not_started",
@@ -1318,42 +946,6 @@
         "outstanding": [
           "Every figure cites its registry key; any unavailable metric is reported as such with its reason."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.campaign_and_channel_metric_reporting.autonomy:R2",
-        "title": "Campaign and channel metric reporting under a trust registry · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.campaign_and_channel_metric_reporting.autonomy:R5",
-        "title": "Campaign and channel metric reporting under a trust registry · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.campaign_and_channel_metric_reporting.autonomy:R7",
-        "title": "Campaign and channel metric reporting under a trust registry · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -1374,30 +966,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.campaign_approval_and_golive.autonomy:R2",
-        "title": "Campaign approval and go-live control · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.campaign_approval_and_golive.autonomy:R3",
-        "title": "Campaign approval and go-live control · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.campaign_funnel_performance_analysis",
         "title": "Campaign funnel performance analysis",
         "status": "not_started",
@@ -1412,42 +980,6 @@
         "outstanding": [
           "Verdict reproduces from the stored report; the failure rate and its denominator are both stated."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.campaign_funnel_performance_analysis.autonomy:R2",
-        "title": "Campaign funnel performance analysis · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.campaign_funnel_performance_analysis.autonomy:R4",
-        "title": "Campaign funnel performance analysis · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.campaign_funnel_performance_analysis.autonomy:R9",
-        "title": "Campaign funnel performance analysis · R9",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -1468,42 +1000,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.channel_account_connection_and_credential_custody.autonomy:R2",
-        "title": "Social channel connection and credential custody · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.channel_account_connection_and_credential_custody.autonomy:R3",
-        "title": "Social channel connection and credential custody · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.channel_account_connection_and_credential_custody.autonomy:R4",
-        "title": "Social channel connection and credential custody · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.community_direct_message_response",
         "title": "Community notification and direct-message response",
         "status": "not_started",
@@ -1518,42 +1014,6 @@
         "outstanding": [
           "Counts reconcile to skool_engagements; no navigation and no send in the trace."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.community_direct_message_response.autonomy:R2",
-        "title": "Community notification and direct-message response · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.community_direct_message_response.autonomy:R3",
-        "title": "Community notification and direct-message response · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.community_direct_message_response.autonomy:R4",
-        "title": "Community notification and direct-message response · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -1574,42 +1034,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.community_signal_detection.autonomy:R2",
-        "title": "Skool community question detection · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.community_signal_detection.autonomy:R4",
-        "title": "Skool community question detection · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.community_signal_detection.autonomy:R6",
-        "title": "Skool community question detection · R6",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.content_approval_workflow",
         "title": "Content approval with revision-pinned decisions",
         "status": "not_started",
@@ -1624,42 +1048,6 @@
         "outstanding": [
           "Queue contents reconcile to content_approval_requests; no decision is written."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_approval_workflow.autonomy:R2",
-        "title": "Content approval with revision-pinned decisions · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_approval_workflow.autonomy:R3",
-        "title": "Content approval with revision-pinned decisions · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_approval_workflow.autonomy:R4",
-        "title": "Content approval with revision-pinned decisions · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -1680,42 +1068,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.content_composition_and_variant_generation.autonomy:R1",
-        "title": "Multi-network content composition · R1",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_composition_and_variant_generation.autonomy:R4",
-        "title": "Multi-network content composition · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_composition_and_variant_generation.autonomy:R7",
-        "title": "Multi-network content composition · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.content_history_import_from_loomly",
         "title": "Content history import from the incumbent scheduler",
         "status": "not_started",
@@ -1730,42 +1082,6 @@
         "outstanding": [
           "Every category names its destination table or states explicitly that it is not imported."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_history_import_from_loomly.autonomy:R2",
-        "title": "Content history import from the incumbent scheduler · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_history_import_from_loomly.autonomy:R3",
-        "title": "Content history import from the incumbent scheduler · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_history_import_from_loomly.autonomy:R4",
-        "title": "Content history import from the incumbent scheduler · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -1786,42 +1102,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.content_idea_proposal_queue.autonomy:R2",
-        "title": "Grounded content-idea proposal queue · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_idea_proposal_queue.autonomy:R4",
-        "title": "Grounded content-idea proposal queue · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_idea_proposal_queue.autonomy:R7",
-        "title": "Grounded content-idea proposal queue · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.content_platform_fitness_validation",
         "title": "Per-network content fitness validation",
         "status": "not_started",
@@ -1836,42 +1116,6 @@
         "outstanding": [
           "The explanation names the limit and the actual value; re-running validation reproduces it exactly."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_platform_fitness_validation.autonomy:R2",
-        "title": "Per-network content fitness validation · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_platform_fitness_validation.autonomy:R4",
-        "title": "Per-network content fitness validation · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_platform_fitness_validation.autonomy:R9",
-        "title": "Per-network content fitness validation · R9",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -1892,42 +1136,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.content_repurposing_and_template_library.autonomy:R0",
-        "title": "Content repurposing and reusable template library · R0",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_repurposing_and_template_library.autonomy:R4",
-        "title": "Content repurposing and reusable template library · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.content_repurposing_and_template_library.autonomy:R7",
-        "title": "Content repurposing and reusable template library · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.conversation_followup_sequencing",
         "title": "Stalled-conversation follow-up drafting",
         "status": "not_started",
@@ -1942,42 +1150,6 @@
         "outstanding": [
           "Stage and stall age reproduce from openclaw_conversations; no draft is written."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.conversation_followup_sequencing.autonomy:R2",
-        "title": "Stalled-conversation follow-up drafting · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.conversation_followup_sequencing.autonomy:R4",
-        "title": "Stalled-conversation follow-up drafting · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.conversation_followup_sequencing.autonomy:R7",
-        "title": "Stalled-conversation follow-up drafting · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -1998,42 +1170,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.engagement_monitoring_and_intent_scoring.autonomy:R2",
-        "title": "Posted-content engagement monitoring · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.engagement_monitoring_and_intent_scoring.autonomy:R4",
-        "title": "Posted-content engagement monitoring · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.engagement_monitoring_and_intent_scoring.autonomy:R7",
-        "title": "Posted-content engagement monitoring · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.free_tier_learner_journey_scoring",
         "title": "Free-tier learner journey scoring",
         "status": "not_started",
@@ -2048,42 +1184,6 @@
         "outstanding": [
           "Every component resolves to a stored snapshot; no recompute occurs during the answer."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.free_tier_learner_journey_scoring.autonomy:R2",
-        "title": "Free-tier learner journey scoring · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.free_tier_learner_journey_scoring.autonomy:R4",
-        "title": "Free-tier learner journey scoring · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.free_tier_learner_journey_scoring.autonomy:R7",
-        "title": "Free-tier learner journey scoring · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -2104,42 +1204,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.free_tier_next_best_action_decisioning.autonomy:R2",
-        "title": "Free-tier next-best-action decisioning in shadow · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.free_tier_next_best_action_decisioning.autonomy:R4",
-        "title": "Free-tier next-best-action decisioning in shadow · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.free_tier_next_best_action_decisioning.autonomy:R5",
-        "title": "Free-tier next-best-action decisioning in shadow · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.handoff_package_manual_publication",
         "title": "Handoff package publication by a person",
         "status": "not_started",
@@ -2154,30 +1218,6 @@
         "outstanding": [
           "The handoff list matches the live-connector configuration; no package is marked complete."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.handoff_package_manual_publication.autonomy:R2",
-        "title": "Handoff package publication by a person · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.handoff_package_manual_publication.autonomy:R4",
-        "title": "Handoff package publication by a person · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -2198,42 +1238,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.intelligence_card_generation.autonomy:R2",
-        "title": "Multi-source intelligence card generation · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.intelligence_card_generation.autonomy:R4",
-        "title": "Multi-source intelligence card generation · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.intelligence_card_generation.autonomy:R5",
-        "title": "Multi-source intelligence card generation · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.intelligence_card_prepublication_review",
         "title": "Pre-publication review for generated intelligence cards",
         "status": "not_started",
@@ -2248,30 +1252,6 @@
         "outstanding": [
           "The quote and market-brief streams are named explicitly as attribution and figure risks."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.intelligence_card_prepublication_review.autonomy:R2",
-        "title": "Pre-publication review for generated intelligence cards · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.intelligence_card_prepublication_review.autonomy:R4",
-        "title": "Pre-publication review for generated intelligence cards · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -2292,42 +1272,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.landing_page_generation_and_publication.autonomy:R1",
-        "title": "Landing page generation and publication · R1",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.landing_page_generation_and_publication.autonomy:R3",
-        "title": "Landing page generation and publication · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.landing_page_generation_and_publication.autonomy:R5",
-        "title": "Landing page generation and publication · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.lifecycle_content_catalogue_projection",
         "title": "Lifecycle content catalogue projection",
         "status": "not_started",
@@ -2342,42 +1286,6 @@
         "outstanding": [
           "Every asset resolves to a published source card; approval columns are reported as unset, never as approved."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.lifecycle_content_catalogue_projection.autonomy:R2",
-        "title": "Lifecycle content catalogue projection · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.lifecycle_content_catalogue_projection.autonomy:R4",
-        "title": "Lifecycle content catalogue projection · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.lifecycle_content_catalogue_projection.autonomy:R9",
-        "title": "Lifecycle content catalogue projection · R9",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -2398,42 +1306,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.linkedin_comment_watch_and_reply_drafting.autonomy:R2",
-        "title": "Tracked LinkedIn post comment watch · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.linkedin_comment_watch_and_reply_drafting.autonomy:R4",
-        "title": "Tracked LinkedIn post comment watch · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.linkedin_comment_watch_and_reply_drafting.autonomy:R7",
-        "title": "Tracked LinkedIn post comment watch · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.linkedin_relationship_action_suggestions",
         "title": "LinkedIn relationship action suggestions",
         "status": "not_started",
@@ -2448,42 +1320,6 @@
         "outstanding": [
           "Every suggestion type is produced for its fixture; caps are asserted per type."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.linkedin_relationship_action_suggestions.autonomy:R1",
-        "title": "LinkedIn relationship action suggestions · R1",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.linkedin_relationship_action_suggestions.autonomy:R3",
-        "title": "LinkedIn relationship action suggestions · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.linkedin_relationship_action_suggestions.autonomy:R4",
-        "title": "LinkedIn relationship action suggestions · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -2504,30 +1340,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.manager_marketing_brief_subscription.autonomy:R2",
-        "title": "Manager marketing brief subscription · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.manager_marketing_brief_subscription.autonomy:R4",
-        "title": "Manager marketing brief subscription · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.marketing_agent_management_and_oversight",
         "title": "Manager oversight of the marketing AI employee",
         "status": "not_started",
@@ -2542,30 +1354,6 @@
         "outstanding": [
           "Every statement resolves to a stored record; a goal with no backing metric reports unmeasured, never a number."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.marketing_agent_management_and_oversight.autonomy:R2",
-        "title": "Manager oversight of the marketing AI employee · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.marketing_agent_management_and_oversight.autonomy:R4",
-        "title": "Manager oversight of the marketing AI employee · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -2586,42 +1374,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.marketing_calendar_planning.autonomy:R2",
-        "title": "Marketing calendar and scheduled-content planning · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.marketing_calendar_planning.autonomy:R4",
-        "title": "Marketing calendar and scheduled-content planning · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.marketing_calendar_planning.autonomy:R7",
-        "title": "Marketing calendar and scheduled-content planning · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.marketing_department_strategy_planning",
         "title": "Marketing department strategy and initiative planning",
         "status": "not_started",
@@ -2636,42 +1388,6 @@
         "outstanding": [
           "Every signal cited resolves to real data; no initiative or ticket is created."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.marketing_department_strategy_planning.autonomy:R2",
-        "title": "Marketing department strategy and initiative planning · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.marketing_department_strategy_planning.autonomy:R5",
-        "title": "Marketing department strategy and initiative planning · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.marketing_department_strategy_planning.autonomy:R6",
-        "title": "Marketing department strategy and initiative planning · R6",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -2692,42 +1408,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.marketing_overview_and_attention_triage.autonomy:R2",
-        "title": "Marketing overview and needs-attention triage · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.marketing_overview_and_attention_triage.autonomy:R4",
-        "title": "Marketing overview and needs-attention triage · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.marketing_overview_and_attention_triage.autonomy:R9",
-        "title": "Marketing overview and needs-attention triage · R9",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.marketing_surface_problem_reporting",
         "title": "In-surface problem reporting for marketing operators",
         "status": "not_started",
@@ -2742,30 +1422,6 @@
         "outstanding": [
           "Every pattern claim cites the reports behind it; no mail is sent in the trace."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.marketing_surface_problem_reporting.autonomy:R2",
-        "title": "In-surface problem reporting for marketing operators · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.marketing_surface_problem_reporting.autonomy:R4",
-        "title": "In-surface problem reporting for marketing operators · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -2786,30 +1442,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.metric_trust_escalation_decisions.autonomy:R2",
-        "title": "Marketing metric trust escalation and resolution · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.metric_trust_escalation_decisions.autonomy:R3",
-        "title": "Marketing metric trust escalation and resolution · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.multi_touch_attribution",
         "title": "Multi-touch campaign attribution with honest coverage",
         "status": "not_started",
@@ -2824,42 +1456,6 @@
         "outstanding": [
           "Coverage is always stated; an uncovered lead is reported as uncovered, never as direct."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.multi_touch_attribution.autonomy:R2",
-        "title": "Multi-touch campaign attribution with honest coverage · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.multi_touch_attribution.autonomy:R4",
-        "title": "Multi-touch campaign attribution with honest coverage · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.multi_touch_attribution.autonomy:R7",
-        "title": "Multi-touch campaign attribution with honest coverage · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -2880,30 +1476,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.outreach_consent_and_channel_suppression.autonomy:R2",
-        "title": "Per-channel consent and suppression honouring · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_consent_and_channel_suppression.autonomy:R4",
-        "title": "Per-channel consent and suppression honouring · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.outreach_conversion_attribution",
         "title": "Social-outreach conversion attribution",
         "status": "not_started",
@@ -2918,42 +1490,6 @@
         "outstanding": [
           "Every hop in the chain resolves to a stored row; no stage is advanced."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_conversion_attribution.autonomy:R2",
-        "title": "Social-outreach conversion attribution · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_conversion_attribution.autonomy:R5",
-        "title": "Social-outreach conversion attribution · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_conversion_attribution.autonomy:R6",
-        "title": "Social-outreach conversion attribution · R6",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -2974,42 +1510,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.outreach_coverage_and_blind_spot_reporting.autonomy:R0",
-        "title": "Outreach coverage and blind-spot reporting · R0",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_coverage_and_blind_spot_reporting.autonomy:R4",
-        "title": "Outreach coverage and blind-spot reporting · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_coverage_and_blind_spot_reporting.autonomy:R9",
-        "title": "Outreach coverage and blind-spot reporting · R9",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.outreach_daily_human_action_queue",
         "title": "Daily human outreach action queue",
         "status": "not_started",
@@ -3024,42 +1524,6 @@
         "outstanding": [
           "Every item names the thread and the signal behind its priority; nothing is persisted."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_daily_human_action_queue.autonomy:R2",
-        "title": "Daily human outreach action queue · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_daily_human_action_queue.autonomy:R4",
-        "title": "Daily human outreach action queue · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_daily_human_action_queue.autonomy:R7",
-        "title": "Daily human outreach action queue · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -3080,30 +1544,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.outreach_human_approval_gap_closure.autonomy:R1",
-        "title": "Closing the outreach human-approval bypasses · R1",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_human_approval_gap_closure.autonomy:R4",
-        "title": "Closing the outreach human-approval bypasses · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.outreach_lead_capture_and_scoring",
         "title": "Social-signal lead capture and tiering",
         "status": "not_started",
@@ -3118,42 +1558,6 @@
         "outstanding": [
           "Every lead cited exists in leads with an opportunity score; nothing is written."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_lead_capture_and_scoring.autonomy:R2",
-        "title": "Social-signal lead capture and tiering · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_lead_capture_and_scoring.autonomy:R4",
-        "title": "Social-signal lead capture and tiering · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_lead_capture_and_scoring.autonomy:R7",
-        "title": "Social-signal lead capture and tiering · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -3174,42 +1578,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.outreach_learning_loop.autonomy:R2",
-        "title": "Outreach performance learning loop · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_learning_loop.autonomy:R5",
-        "title": "Outreach performance learning loop · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_learning_loop.autonomy:R7",
-        "title": "Outreach performance learning loop · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.outreach_post_verification",
         "title": "Published-comment visibility verification",
         "status": "not_started",
@@ -3224,42 +1592,6 @@
         "outstanding": [
           "Unverifiable platforms are reported as unknown, never as verified or as zero."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_post_verification.autonomy:R2",
-        "title": "Published-comment visibility verification · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_post_verification.autonomy:R4",
-        "title": "Published-comment visibility verification · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_post_verification.autonomy:R7",
-        "title": "Published-comment visibility verification · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -3280,42 +1612,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.outreach_quality_gate.autonomy:R2",
-        "title": "Deterministic pre-publication quality gate · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_quality_gate.autonomy:R4",
-        "title": "Deterministic pre-publication quality gate · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_quality_gate.autonomy:R7",
-        "title": "Deterministic pre-publication quality gate · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.outreach_queue_supervision",
         "title": "Outreach work-queue supervision and recovery",
         "status": "not_started",
@@ -3330,42 +1626,6 @@
         "outstanding": [
           "Figures reconcile to openclaw_tasks and skool_tasks; nothing is mutated."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_queue_supervision.autonomy:R2",
-        "title": "Outreach work-queue supervision and recovery · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_queue_supervision.autonomy:R4",
-        "title": "Outreach work-queue supervision and recovery · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_queue_supervision.autonomy:R9",
-        "title": "Outreach work-queue supervision and recovery · R9",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -3386,42 +1646,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.outreach_rate_and_circuit_control.autonomy:R2",
-        "title": "Outreach rate limiting and circuit breaking · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_rate_and_circuit_control.autonomy:R4",
-        "title": "Outreach rate limiting and circuit breaking · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_rate_and_circuit_control.autonomy:R9",
-        "title": "Outreach rate limiting and circuit breaking · R9",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.outreach_reply_drafting",
         "title": "Platform-native reply drafting",
         "status": "not_started",
@@ -3436,42 +1660,6 @@
         "outstanding": [
           "Every fixture produces a draft; the sign-off rule is asserted per platform strategy, both branches covered."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_reply_drafting.autonomy:R1",
-        "title": "Platform-native reply drafting · R1",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_reply_drafting.autonomy:R4",
-        "title": "Platform-native reply drafting · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_reply_drafting.autonomy:R7",
-        "title": "Platform-native reply drafting · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -3492,42 +1680,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.outreach_reply_publication.autonomy:R3",
-        "title": "Approved reply publication to public platforms · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_reply_publication.autonomy:R4",
-        "title": "Approved reply publication to public platforms · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.outreach_reply_publication.autonomy:R5",
-        "title": "Approved reply publication to public platforms · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.platform_app_review_and_representation",
         "title": "Network app review and public representation",
         "status": "not_started",
@@ -3542,30 +1694,6 @@
         "outstanding": [
           "Each claim is marked verified or unverified with its file reference; an unmet requirement is reported as a blocker."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.platform_app_review_and_representation.autonomy:R1",
-        "title": "Network app review and public representation · R1",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.platform_app_review_and_representation.autonomy:R2",
-        "title": "Network app review and public representation · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -3586,42 +1714,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.platform_change_surveillance.autonomy:R2",
-        "title": "Outreach platform and tooling change watch · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.platform_change_surveillance.autonomy:R4",
-        "title": "Outreach platform and tooling change watch · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.platform_change_surveillance.autonomy:R7",
-        "title": "Outreach platform and tooling change watch · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.publishing_calendar_operations_ownership",
         "title": "Day-to-day publishing calendar ownership and tool retirement",
         "status": "not_started",
@@ -3636,30 +1728,6 @@
         "outstanding": [
           "Every category states its destination or that it is deliberately not imported; nothing is reported as none that has not been looked at."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.publishing_calendar_operations_ownership.autonomy:R2",
-        "title": "Day-to-day publishing calendar ownership and tool retirement · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.publishing_calendar_operations_ownership.autonomy:R3",
-        "title": "Day-to-day publishing calendar ownership and tool retirement · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -3680,42 +1748,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.publishing_failure_and_handoff_recovery.autonomy:R2",
-        "title": "Publishing failure and handoff reconciliation · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.publishing_failure_and_handoff_recovery.autonomy:R3",
-        "title": "Publishing failure and handoff reconciliation · R3",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.publishing_failure_and_handoff_recovery.autonomy:R4",
-        "title": "Publishing failure and handoff reconciliation · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.recurring_marketing_performance_reporting",
         "title": "Recurring marketing performance reporting (DA responsibility in transition)",
         "status": "not_started",
@@ -3730,30 +1762,6 @@
         "outstanding": [
           "Every figure cites its registry key and trust status; uncomputable figures are named, never zeroed."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.recurring_marketing_performance_reporting.autonomy:R2",
-        "title": "Recurring marketing performance reporting (DA responsibility in transition) · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.recurring_marketing_performance_reporting.autonomy:R4",
-        "title": "Recurring marketing performance reporting (DA responsibility in transition) · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -3774,30 +1782,6 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.revenue_and_cost_metric_truthing.autonomy:R2",
-        "title": "Revenue and cost-per-lead truthing · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.revenue_and_cost_metric_truthing.autonomy:R4",
-        "title": "Revenue and cost-per-lead truthing · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
         "story_id": "marketing.CAP.signal_triage_and_prioritisation",
         "title": "Outreach signal triage",
         "status": "not_started",
@@ -3812,42 +1796,6 @@
         "outstanding": [
           "Explanation reproduces the stored verdict exactly; no re-scoring occurs during the answer."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.signal_triage_and_prioritisation.autonomy:R2",
-        "title": "Outreach signal triage · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.signal_triage_and_prioritisation.autonomy:R5",
-        "title": "Outreach signal triage · R5",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.signal_triage_and_prioritisation.autonomy:R7",
-        "title": "Outreach signal triage · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -3867,8 +1815,8 @@
         "commit_sha": "0af6f49fe44d10f0f7ed239d056c979d6fd0a0ed"
       },
       {
-        "story_id": "marketing.CAP.social_signal_discovery.autonomy:R2",
-        "title": "Public-platform buying-signal discovery · R2",
+        "story_id": "marketing.CAP.social_signal_discovery.L1-BY-HAND",
+        "title": "Public-platform buying-signal discovery · 1 · do it by hand",
         "status": "not_started",
         "verification_state": null,
         "verified": false,
@@ -3879,8 +1827,8 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.social_signal_discovery.autonomy:R4",
-        "title": "Public-platform buying-signal discovery · R4",
+        "story_id": "marketing.CAP.social_signal_discovery.L2-IN-THE-APP",
+        "title": "Public-platform buying-signal discovery · 2 · do it in the app",
         "status": "not_started",
         "verification_state": null,
         "verified": false,
@@ -3891,8 +1839,20 @@
         "commit_sha": null
       },
       {
-        "story_id": "marketing.CAP.social_signal_discovery.autonomy:R7",
-        "title": "Public-platform buying-signal discovery · R7",
+        "story_id": "marketing.CAP.social_signal_discovery.L3-TOOL-REQUEST",
+        "title": "Public-platform buying-signal discovery · 3 · request the tool",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.social_signal_discovery.L4-AGENT-WATCHED",
+        "title": "Public-platform buying-signal discovery · 4 · agent does it, watched",
         "status": "not_started",
         "verification_state": null,
         "verified": false,
@@ -3917,42 +1877,6 @@
         "outstanding": [
           "Every flagged source cites its traffic rows; no link is created."
         ],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.tracked_link_and_utm_governance.autonomy:R2",
-        "title": "Tracked link, UTM taxonomy and traffic registration · R2",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.tracked_link_and_utm_governance.autonomy:R4",
-        "title": "Tracked link, UTM taxonomy and traffic registration · R4",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
-        "commit_sha": null
-      },
-      {
-        "story_id": "marketing.CAP.tracked_link_and_utm_governance.autonomy:R7",
-        "title": "Tracked link, UTM taxonomy and traffic registration · R7",
-        "status": "not_started",
-        "verification_state": null,
-        "verified": false,
-        "criteria_passed": null,
-        "criteria_total": null,
-        "reasons": [],
-        "outstanding": [],
         "commit_sha": null
       },
       {
@@ -4030,23 +1954,14 @@
       {
         "story_id": "marketing.STORY-000",
         "title": "STORY-000 · Build your Command Center",
-        "status": "not_started",
-        "verification_state": "in_progress",
-        "verified": false,
-        "criteria_passed": 0,
-        "criteria_total": 6,
-        "reasons": [
-          "None of the 6 acceptance criteria are marked as passing yet."
-        ],
-        "outstanding": [
-          "Given the Command Center, when it is opened, then all six panels render and each one names the endpoint it read.",
-          "Given a panel whose endpoint returned nothing, when it renders, then it says so in words and is visibly distinct from a panel that is still loading.",
-          "Given the autonomy ladder panel, when it renders, then all ten rungs are present with the owner's wording, and each capability's ceiling is marked against the rung it stops at.",
-          "Given the autonomy ladder panel, when a capability's authority is shown, then the page shows the effective authority `effectiveAuthority()` returns rather than the level the capability record asks for, and names the `no_tool_grants` rule with the number of capabilities it currently constrains, saying so in words when that number is zero.",
-          "Given the governance panel, when a tool request is shown, then nothing on the page states or implies that filing it granted anything.",
-          "Trust -- no panel shows a number, a grant, a rung or a result this domain has not actually produced."
-        ],
-        "commit_sha": "50b248053fcb10f4ec28f1d6c696395ccd22876e"
+        "status": "complete",
+        "verification_state": null,
+        "verified": true,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
       }
     ]
   },
