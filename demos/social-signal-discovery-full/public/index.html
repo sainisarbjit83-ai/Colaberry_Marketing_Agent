@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Signal Discovery · Local Demo</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">SSD</span>
+      <div>
+        <div class="brand-title">Social Signal Discovery Agent</div>
+        <div class="brand-sub">Hybrid demonstration of the 13-component agent architecture</div>
+      </div>
+    </div>
+    <div class="topbar-status" id="server-status" role="status">Connecting to the local server…</div>
+  </header>
+
+  <div class="demo-banner" role="note" id="demo-banner">
+    <strong>LOCAL DEMO · FICTIONAL RECORDS ONLY.</strong>
+    No live platform is searched and nothing is published, posted or sent.
+    <span id="provider-banner">The classifier is a simulated provider: deterministic word rules, not a language model. It does not interpret the system prompt like a real LLM.</span>
+  </div>
+
+  <div class="layout">
+    <nav class="sidenav" aria-label="Demo sections">
+      <a href="#overview" data-view="overview">Overview &amp; architecture</a>
+      <a href="#research" data-view="research">Research</a>
+      <a href="#trace" data-view="trace">Execution trace &amp; logs</a>
+      <a href="#memory" data-view="memory">Memory &amp; review history</a>
+      <a href="#knowledge" data-view="knowledge">Knowledge base</a>
+      <a href="#evaluation" data-view="evaluation">Evaluation</a>
+      <a href="#guardrails" data-view="guardrails">Guardrails</a>
+      <a href="#prompt" data-view="prompt">System prompt &amp; provider</a>
+      <p class="sidenav-foot">Served from 127.0.0.1 only. Outbound network access is blocked in the server process.</p>
+    </nav>
+    <main id="view" class="view" tabindex="-1" aria-live="polite"></main>
+  </div>
+
+  <script src="/js/core.js"></script>
+  <script src="/js/results.js"></script>
+  <script src="/js/views/overview.js"></script>
+  <script src="/js/views/research.js"></script>
+  <script src="/js/views/trace.js"></script>
+  <script src="/js/views/memory.js"></script>
+  <script src="/js/views/knowledge.js"></script>
+  <script src="/js/views/evaluation.js"></script>
+  <script src="/js/views/guardrails.js"></script>
+  <script src="/js/views/prompt.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/* Demo-only styles. Colors come from ../../assets/tokens.css. */
+.ssd-result { background: var(--color-surface); border: 1px solid var(--color-border); border-left-width: 4px; border-radius: var(--radius); padding: var(--space-4); margin: var(--space-3) 0; }
+.ssd-result.is-buying { border-left-color: var(--color-accent); }
+.ssd-result.is-general { border-left-color: var(--color-info-border); }
+.ssd-result.is-none { border-left-color: var(--color-status-unknown); }
+.ssd-result h3 { margin: var(--space-2) 0; }
+.ssd-result-head { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: baseline; font-size: var(--text-sm); }
+.ssd-id { font-weight: 700; }
+.ssd-platform, .ssd-date { color: var(--color-text-muted); }
+.ssd-class { background: var(--color-bg); padding: var(--space-2); border-radius: var(--radius); }
+.ssd-sample-note { font-size: var(--text-sm); color: var(--color-sample-text); margin-bottom: 0; }
+.ssd-error { color: var(--color-error-text); background: var(--color-error-bg); padding: var(--space-2); border-radius: var(--radius); }
+.ssd-trace { margin-top: var(--space-4); }

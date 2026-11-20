@@ -1,0 +1,11 @@
+{
+  "_note": "Configuration only. The demo never searches these platforms; it reads fictional sample records labelled with these platform names. Scope as authorized by Ali for L1 manual research.",
+  "approved_platforms": ["Reddit", "Hacker News", "Dev.to", "Hashnode", "Discourse", "Bluesky", "YouTube", "Product Hunt"],
+  "excluded_platforms": ["X", "LinkedIn comments", "Facebook Groups"],
+  "limits": {
+    "max_question_length": 300,
+    "max_keywords": 8,
+    "max_keyword_length": 40,
+    "max_results": 20
+  }
+}
