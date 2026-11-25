@@ -1,6 +1,6 @@
 # Marketing Intelligence & Brand — Stories
 
-75 stories across 1 releases, walking-skeleton first:
+79 stories across 1 releases, walking-skeleton first:
 the earliest release proves the thinnest end-to-end path including the trust
 spine, and later releases stack features on top of something already working.
 
@@ -81,11 +81,15 @@ system rather than a part of it.
 - **[marketing.CAP.revenue_and_cost_metric_truthing](stories/marketing.CAP.revenue_and_cost_metric_truthing.md)** — Revenue and cost-per-lead truthing
 - **[marketing.CAP.signal_triage_and_prioritisation](stories/marketing.CAP.signal_triage_and_prioritisation.md)** — Outreach signal triage
 - **[marketing.CAP.social_signal_discovery](stories/marketing.CAP.social_signal_discovery.md)** — Public-platform buying-signal discovery
+- **[marketing.CAP.social_signal_discovery.L0-ASK-FOR-A-SCREEN](stories/marketing.CAP.social_signal_discovery.L0-ASK-FOR-A-SCREEN.md)** — Public-platform buying-signal discovery · 0.3 · waiting on the platform
+- **[marketing.CAP.social_signal_discovery.L0-CHOOSE](stories/marketing.CAP.social_signal_discovery.L0-CHOOSE.md)** — Public-platform buying-signal discovery · 0.1 · pick one from the list
+- **[marketing.CAP.social_signal_discovery.L0-SCOPE-SHEET](stories/marketing.CAP.social_signal_discovery.L0-SCOPE-SHEET.md)** — Public-platform buying-signal discovery · 0.2 · write the scope sheet
 - **[marketing.CAP.social_signal_discovery.L1-BY-HAND](stories/marketing.CAP.social_signal_discovery.L1-BY-HAND.md)** — Public-platform buying-signal discovery · 1 · do it by hand
 - **[marketing.CAP.social_signal_discovery.L2-IN-THE-APP](stories/marketing.CAP.social_signal_discovery.L2-IN-THE-APP.md)** — Public-platform buying-signal discovery · 2 · do it in the app
 - **[marketing.CAP.social_signal_discovery.L3-TOOL-REQUEST](stories/marketing.CAP.social_signal_discovery.L3-TOOL-REQUEST.md)** — Public-platform buying-signal discovery · 3 · request the tool
 - **[marketing.CAP.social_signal_discovery.L4-AGENT-WATCHED](stories/marketing.CAP.social_signal_discovery.L4-AGENT-WATCHED.md)** — Public-platform buying-signal discovery · 4 · agent does it, watched
 - **[marketing.CAP.tracked_link_and_utm_governance](stories/marketing.CAP.tracked_link_and_utm_governance.md)** — Tracked link, UTM taxonomy and traffic registration
+- **[marketing.GATE.R0.1](stories/marketing.GATE.R0.1.md)** — R0 gate · 1 of 1 · a capability the agent does, watched
 - **[marketing.LEGACY-MIGRATION-PLAN](stories/marketing.LEGACY-MIGRATION-PLAN.md)** — Legacy migration plan
 - **[marketing.RESEARCH-1-SYSTEM-CLASSES](stories/marketing.RESEARCH-1-SYSTEM-CLASSES.md)** — Compare the five system classes, and place this domain among them
 - **[marketing.RESEARCH-2-AGENT-ANATOMY](stories/marketing.RESEARCH-2-AGENT-ANATOMY.md)** — Map the nine anatomy elements onto this domain's agent

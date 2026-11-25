@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-16T18:17:43.598Z",
-  "plan_version": 2,
-  "plan_sha256": "92f39b28bf538d4dada3ddfd127eaf5679ae1536ec0b86ae1d6eeceb6ba2f09d",
-  "correlation_id": "d60b2cc7-3f4c-4b02-a79c-db7bdae3f22d",
+  "generated_at": "2026-11-25T02:37:17.065Z",
+  "plan_version": 3,
+  "plan_sha256": "2dd7c7c09cf19980a137dd00fbedbe494c62fe6c5e81fe1ad418f2777febf244",
+  "correlation_id": "0112e512-927c-4062-b9b7-1e36c86e4ce9",
   "project_id": "26cb06c4-75f3-5397-89f4-b56a4cc49483",
   "truth_revision": null,
   "files": [
@@ -12,7 +12,7 @@
     },
     {
       "path": "docs/STORIES.md",
-      "sha256": "88588953cf92b31adc603eceb1ef57722aced7d801d1764ab1607237facac7a1"
+      "sha256": "0458cfa465cb5900c517f077c6f774444f5e418896ff045cc53a8d5d002232fa"
     },
     {
       "path": "docs/TRACEABILITY.md",
@@ -20,11 +20,19 @@
     },
     {
       "path": "docs/DATA_CONTRACT.md",
-      "sha256": "d56e89edcfe36725945d961cf3479b646507d1fa855bba0dcdfff3f8f8a658b0"
+      "sha256": "f40e4c188037375d1a26fa99184eb5a550e81a492723e28e98f37d33deb02b72"
     },
     {
       "path": "CLAUDE.md",
       "sha256": "25ea80e8de456d2c99ed7864e004ac0947e80517df2bac2085d63e44f2a33fb6"
+    },
+    {
+      "path": "docs/agent/README.md",
+      "sha256": "d505a1cb65080cccaeb1309179099c72bafbb60f86b4ad28d71e5293c4d79826"
+    },
+    {
+      "path": "docs/agent/capability.md",
+      "sha256": "21c003d5fa56a4da809ffc5deacbc557aa692ae7518e59feae278010d1836263"
     },
     {
       "path": "docs/stories/marketing.CAP.agent_write_authorization_enforcement.md",
@@ -279,6 +287,18 @@
       "sha256": "afc703d1432e9b037e9ca55695d71d3ba51939048b00315740a89da568c4036e"
     },
     {
+      "path": "docs/stories/marketing.CAP.social_signal_discovery.L0-ASK-FOR-A-SCREEN.md",
+      "sha256": "87c0fa27c58734464fd70c599672ed3572ca78237cfc52471b86996604b55afb"
+    },
+    {
+      "path": "docs/stories/marketing.CAP.social_signal_discovery.L0-CHOOSE.md",
+      "sha256": "b6a30657d5cec3510b14fc1157ec58e3d79eef14cf73fc5cf0a069a5b943339b"
+    },
+    {
+      "path": "docs/stories/marketing.CAP.social_signal_discovery.L0-SCOPE-SHEET.md",
+      "sha256": "c5c5fcd235517b887b81b4385fc646e5b68d1eea881f96431cd58f2dec2c972d"
+    },
+    {
       "path": "docs/stories/marketing.CAP.social_signal_discovery.L1-BY-HAND.md",
       "sha256": "be38c82f4baf986ef67761b0433978e1fe21324950d955837ae0dd0590ae6155"
     },
@@ -299,8 +319,12 @@
       "sha256": "2aa393d1bf0d68846b50625c7fd368250675e7590bc97f3874333864c706b44b"
     },
     {
+      "path": "docs/stories/marketing.GATE.R0.1.md",
+      "sha256": "d7ac94979c84e07e958864e773a70a6b66a6f3973064b150a7149cb9a469a0e4"
+    },
+    {
       "path": "docs/stories/marketing.LEGACY-MIGRATION-PLAN.md",
-      "sha256": "4e2b998e18ea29ff415a91410b398625dbee6c889484962615a4ca5e142802d6"
+      "sha256": "d6849a6742e7a94e499812983944feec611ae9e917d337494b2a27f832f79247"
     },
     {
       "path": "docs/stories/marketing.RESEARCH-1-SYSTEM-CLASSES.md",
@@ -328,11 +352,11 @@
     },
     {
       "path": ".colaberry/plan.json",
-      "sha256": "2513e278896eaf1ef2953c5bf6142c6ef3c5e20a99017dd851a5cea67de74aef"
+      "sha256": "2b84984d2970c0a1ebd86576b02cefd41ac17cf2b9c4736dc6f0a368941565fc"
     },
     {
       "path": ".colaberry/progress.json",
-      "sha256": "aad70e6a16ddb2d7fdcc66d067338422aaae835bc15de60f379df5d4760ece56"
+      "sha256": "90c1bebacbd6ca717b90756603dd8bf6fea13bbdabfd64cc22d83783334a69fb"
     },
     {
       "path": ".colaberry/profile.json",
@@ -340,11 +364,15 @@
     },
     {
       "path": ".colaberry/agent-domain.json",
-      "sha256": "1a6d268eef1d7eee069bffca3198c49e5afa345383418713277ccde0a37b9c97"
+      "sha256": "ceaf79f4d6aadbc6b106cf9a6efcfa244933ed28195f3e05f10f3351077ccb4f"
     },
     {
       "path": "docs/stories/STORY-000.md",
       "sha256": "37de73ab06b94b2a0b027042554c345a61acb3624055dcaf93abdd3b6fa610b6"
+    },
+    {
+      "path": ".nojekyll",
+      "sha256": "d217e70c3bf6e6d9e36bf665911518f42d770a37127ccdef341cdd48fd3ece4b"
     }
   ]
 }

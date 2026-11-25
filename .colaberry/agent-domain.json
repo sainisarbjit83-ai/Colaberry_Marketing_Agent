@@ -5,7 +5,9 @@
     "agent": "GET /api/admin/agent-domains-mine",
     "capabilities": "GET /api/admin/agent-domains-mine/marketing",
     "capability_ladder": "GET /api/admin/agent-domains-mine/marketing/coverage",
-    "governance": "GET /api/admin/agent-domain-change-requests-mine"
+    "governance": "GET /api/admin/agent-domain-change-requests-mine",
+    "candidates": "GET /api/admin/agent-domain-candidates-mine",
+    "owed_by_product": "GET /api/admin/agent-domain-candidates-mine"
   },
   "autonomy_models": {
     "agent_level": "observe | suggest | act_audited | communicate -- a property of the employee",
@@ -2393,7 +2395,7 @@
     "known": true,
     "disclosure": "A criterion counts as passing when it is marked in `.colaberry/progress.json` in this repository. The verifier reads that file on every sync and records what it found. A story showing 0 of N is not a rejection: nothing has been claimed yet.",
     "summary": {
-      "stories": 75,
+      "stories": 79,
       "checked": 75,
       "verified": 7,
       "awaiting_criteria": 68,
@@ -3471,6 +3473,42 @@
         "commit_sha": "0af6f49fe44d10f0f7ed239d056c979d6fd0a0ed"
       },
       {
+        "story_id": "marketing.CAP.social_signal_discovery.L0-ASK-FOR-A-SCREEN",
+        "title": "Public-platform buying-signal discovery · 0.3 · waiting on the platform",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.social_signal_discovery.L0-CHOOSE",
+        "title": "Public-platform buying-signal discovery · 0.1 · pick one from the list",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
+        "story_id": "marketing.CAP.social_signal_discovery.L0-SCOPE-SHEET",
+        "title": "Public-platform buying-signal discovery · 0.2 · write the scope sheet",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
         "story_id": "marketing.CAP.social_signal_discovery.L1-BY-HAND",
         "title": "Public-platform buying-signal discovery · 1 · do it by hand",
         "status": "in_progress",
@@ -3562,6 +3600,18 @@
         "commit_sha": null
       },
       {
+        "story_id": "marketing.GATE.R0.1",
+        "title": "R0 gate · 1 of 1 · a capability the agent does, watched",
+        "status": "not_started",
+        "verification_state": null,
+        "verified": false,
+        "criteria_passed": null,
+        "criteria_total": null,
+        "reasons": [],
+        "outstanding": [],
+        "commit_sha": null
+      },
+      {
         "story_id": "marketing.LEGACY-MIGRATION-PLAN",
         "title": "Legacy migration plan",
         "status": "complete",
@@ -3646,6 +3696,38 @@
         "commit_sha": "50b248053fcb10f4ec28f1d6c696395ccd22876e"
       }
     ]
+  },
+  "candidates": {
+    "known": true,
+    "reason": "No candidates have been put on the list yet for marketing. An empty list means nobody has proposed anything, not that nothing qualifies.",
+    "scoped_to_domains": [
+      "marketing"
+    ],
+    "summary": {
+      "candidates": 0,
+      "yours_to_move": 0,
+      "waiting_on_the_owner": 0,
+      "finished": 0,
+      "cleared_the_gate": 0
+    },
+    "candidates": []
+  },
+  "owed_by_product": {
+    "known": true,
+    "reason": "Nothing is waiting on the platform for you right now. Every candidate on your list is either yours to move or already through.",
+    "scoped_to_domains": [
+      "marketing"
+    ],
+    "stages_counted": [
+      "platform_owed",
+      "screen_built"
+    ],
+    "summary": {
+      "owed": 0,
+      "waiting_for_a_screen_or_a_ruling": 0,
+      "built_and_not_yet_used": 0
+    },
+    "owed": []
   },
   "not_recorded": [
     {
