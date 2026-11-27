@@ -3487,7 +3487,7 @@
       {
         "story_id": "marketing.CAP.social_signal_discovery.L0-CHOOSE",
         "title": "Public-platform buying-signal discovery · 0.1 · pick one from the list",
-        "status": "not_started",
+        "status": "in_progress",
         "verification_state": null,
         "verified": false,
         "criteria_passed": null,
@@ -3511,7 +3511,7 @@
       {
         "story_id": "marketing.CAP.social_signal_discovery.L1-BY-HAND",
         "title": "Public-platform buying-signal discovery · 1 · do it by hand",
-        "status": "in_progress",
+        "status": "not_started",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -3529,7 +3529,7 @@
       {
         "story_id": "marketing.CAP.social_signal_discovery.L2-IN-THE-APP",
         "title": "Public-platform buying-signal discovery · 2 · do it in the app",
-        "status": "in_progress",
+        "status": "not_started",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -3547,7 +3547,7 @@
       {
         "story_id": "marketing.CAP.social_signal_discovery.L3-TOOL-REQUEST",
         "title": "Public-platform buying-signal discovery · 3 · request the tool",
-        "status": "in_progress",
+        "status": "not_started",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
@@ -3566,7 +3566,7 @@
       {
         "story_id": "marketing.CAP.social_signal_discovery.L4-AGENT-WATCHED",
         "title": "Public-platform buying-signal discovery · 4 · agent does it, watched",
-        "status": "in_progress",
+        "status": "not_started",
         "verification_state": "in_progress",
         "verified": false,
         "criteria_passed": 0,
